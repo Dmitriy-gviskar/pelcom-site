@@ -1,49 +1,57 @@
 # Пелком — структура проекта
 
-## Два репозитория
+## Проекты
 
-У проекта «Пелком» **два независимых репозитория**, не путать:
-
-### 1. `pelcom-site` — основной сайт (v4)
+### 1. `pelcom-site` — ОСНОВНОЙ САЙТ (этот репо)
 - **Локальный путь:** `/Users/dmitri/pelcom-site/`
-- **GitHub (создать):** `Dmitriy-gviskar/pelcom-site` (или `Gviskar-com/pelcom-site`)
-- **Содержание:** полноценный сайт завода «Пелком» — тёмный дизайн, Manrope + IBM Plex Mono
-- **Файлы:**
-  - `index.html` — главная (hero, сферы, задачи, каталог, ПО, производство, процесс, квиз, контакты)
-  - `products.html` — каталог продукции (12 категорий: киоски, терминалы, столы, панели, трибуны, детское, уличное, стелы, витрины, стойки, платёжные, промо)
-  - `product-kiosk.html` — детальная страница продукта (сенсорный киоск — пример)
-  - `solutions.html` — отраслевые решения (8 вертикалей)
-  - `software.html` — программное обеспечение (9 направлений, интеграция)
-  - `pelcom-common.css` — общий CSS (725 строк), используется всеми страницами
-  - `assets/` — изображения, фавиконки, og-image
-- **Рабочий стол:** файлы также лежат в `/Users/dmitri/Desktop/` (pelcom-v4.html и др.) — это рабочая копия. При правках на десктопе → копировать в репо и коммитить.
-- **Деплой:** не настроен. Варианты: GitHub Pages (сделать репо публичным) или Cloudflare Pages (бесплатно для приватного).
+- **GitHub:** `https://github.com/Dmitriy-gviskar/pelcom-site`
+- **GitHub Pages:** `https://dmitriy-gviskar.github.io/pelcom-site/`
+- **Дизайн:** чёрный фон (#000), Unbounded (заголовки) + Manrope (текст), минимализм Porsche/Jony Ive
+- **Структура:**
+  - `index.html` → редирект на `pelcom-landing.html`
+  - `pelcom-landing.html` — главная: hero, каталог продуктов, отрасли, ПО, кейсы, отзывы, форма
+  - `pelcom-kiosk.html` — сенсорные киоски
+  - `pelcom-terminals.html` — терминалы самообслуживания
+  - `pelcom-tables.html` — интерактивные столы
+  - `pelcom-panels.html` — интерактивные панели
+  - `pelcom-lectern.html` — интерактивные трибуны
+  - `pelcom-kids.html` — оборудование для детей
+  - `pelcom-outdoor.html` — уличные всепогодные киоски
+  - `pelcom-payment.html` — платёжные терминалы
+  - `pelcom-nav.html` — навигация
+  - `pelcom-queue.html` — электронная очередь
+  - `pelcom-pylon.html` — информационные пилоны
+  - `pelcom-holo.html` — голографические решения
+  - `pelcom-accessible.html` — доступная среда
+  - `pelcom-led.html` — LED-экраны
+  - `pelcom-about.html` — о компании
+  - `pelcom-service.html` — сервис 24/7
+  - `pelcom-partners.html` — дилерам
+  - `contacts.html` — контакты
+  - `privacy.html` — политика конфиденциальности
+  - `404.html` — страница 404
+  - `common.css` — общий CSS (160 строк)
+  - `lead.js` — общий JS
+  - `img/` — изображения продуктов
+  - `specs/` — SVG-схемы продуктов
+- **Эталонная копия (без git):** `/Users/dmitri/Downloads/pelcom/` — синхронизировать с репо при правках.
 
-### 2. `pelcom-landings` — отдельные лендинги (старый репо)
-- **Локальный путь:** `/Users/dmitri/Downloads/Проекты/Pelcom/pelcom/`
-- **GitHub:** `https://github.com/Dmitriy-gviskar/pelcom.git` (репо `Dmitriy-gviskar/pelcom`)
-- **Содержание:** набор независимых лендингов под разные продукты/услуги — оплачены заказчиком отдельно. Светлый дизайн, Inter + Syne.
-- **Страницы (22 шт.):**
-  - `index.html` — сводная
-  - **Продуктовые:** `pelcom-kiosk.html` (инфокиоски), `pelcom-terminals.html` (терминалы), `pelcom-tables.html` (столы), `pelcom-panels.html` (панели), `pelcom-lectern.html` (трибуны), `pelcom-kids.html` (детское), `pelcom-outdoor.html` (уличное), `pelcom-payment.html` (оплата), `pelcom-nav.html` (навигация), `pelcom-queue.html` (очередь), `pelcom-pylon.html` (пилоны), `pelcom-holo.html` (голограммы), `pelcom-accessible.html` (доступная среда), `pelcom-led.html` (LED-экраны)
-  - **Инфо:** `pelcom-landing.html` (главный лендинг), `pelcom-about.html` (о компании), `pelcom-partners.html` (дилерам), `pelcom-service.html` (сервис 24/7)
-  - **Служебные:** `contacts.html`, `privacy.html`, `404.html`
-  - `common.css`, `lead.js`, `img/`, `specs/`
-- **Деплой:** репо приватный. DEPLOY.md рекомендует Cloudflare Pages.
+### 2. `pelcom-v4` — редизайн (НЕ основной сайт, R&D)
+- **Локальный путь:** `/Users/dmitri/Desktop/` (`pelcom-v4.html`, `products.html`, `product-kiosk.html`, `solutions.html`, `software.html`, `pelcom-common.css`, `assets/`)
+- **Дизайн:** тёмно-синий (#0E1E36), Manrope + IBM Plex Mono — экспериментальный редизайн
+- **Статус:** в разработке, НЕ деплоится. Когда будет готов — заменит содержимое `pelcom-site`.
 
 ## Важно: не путать
-- **Основной сайт** — это `pelcom-site` (v4, тёмный). Когда говорят «сайт пелком» или «pelcom-v4» — это сюда.
-- **Лендинги** — это старый репо `pelcom` в Загрузках. Когда говорят «лендинги», «отдельные страницы», «то за что заплатили» — это туда.
-- Правки в одном репо **не применяются автоматически** к другому. Это разные проекты.
+- **Основной сайт** (`pelcom-site`) = чёрный, Unbounded, лендинги — это то, что развёрнуто и за что заплатили.
+- **v4-редизайн** (Desktop) = тёмно-синий, Manrope — экспериментальная версия, не в продакшене.
+- Правки в одном НЕ применяются автоматически к другому.
 
 ## Рабочий процесс
-1. Правки основного сайта → редактировать файлы в `/Users/dmitri/pelcom-site/` (или на Desktop, затем копировать в репо)
-2. Коммитить в `pelcom-site`
-3. Пушить в GitHub
-4. Правки лендингов → редактировать в `/Users/dmitri/Downloads/Проекты/Pelcom/pelcom/`, коммитить, пушить
+1. Правки основного сайта → редактировать в `/Users/dmitri/Downloads/pelcom/`, затем копировать в `/Users/dmitri/pelcom-site/`, коммитить, пушить
+2. Правки v4-редизайна → редактировать на Desktop, в репо не пушить
 
 ## Контакты заказчика
-- Телефон: `+7 (495) 777-07-41` (плейсхолдер в лендингах: `+7 (495) 123-45-67`)
+- Телефон: `+7 (495) 777-07-41`
 - Email: `info@pelcom.ru`
 - Домен: `pelcom.ru`
 - Адрес: г. Дубна, Московская обл.

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инфокиоски — Pelcom</title>
+  <meta name="description" content="Сенсорные информационные киоски Pelcom: модели Standart, Pro и Maxi, антивандальное исполнение, ПО под задачу. Производство РФ."/>
+  <link rel="canonical" href="https://pelcom.ru/pelcom-kiosk.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Pelcom"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:title" content="Инфокиоски — Pelcom"/>
+  <meta property="og:description" content="Сенсорные информационные киоски Pelcom: модели Standart, Pro и Maxi, антивандальное исполнение, ПО под задачу. Производство РФ."/>
+  <meta property="og:url" content="https://pelcom.ru/pelcom-kiosk.html"/>
+  <meta property="og:image" content="https://pelcom.ru/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Инфокиоски — Pelcom"/>
+  <meta name="twitter:description" content="Сенсорные информационные киоски Pelcom: модели Standart, Pro и Maxi, антивандальное исполнение, ПО под задачу. Производство РФ."/>
+  <meta name="twitter:image" content="https://pelcom.ru/og-image.png"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="common.css">
+<style>
+/* SPECS */
+.specs-section{background:var(--cream)}
+.specs-section .s-label{color:var(--blue)}
+.specs-section .s-title{color:var(--ink)}
+.specs-section .s-sub{color:var(--ink-2)}
+.specs-header{margin-bottom:56px}
+.specs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.spec-card{background:#fff;border:1px solid var(--rule-l);border-radius:var(--r);padding:32px 28px;transition:box-shadow .25s,transform .25s}
+.spec-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+.spec-val{font-family:'Manrope',sans-serif;font-size:36px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:8px}
+.spec-val span{font-size:20px;font-weight:600;color:var(--blue)}
+.spec-label{font-size:14px;font-weight:500;color:var(--ink-2)}
+.spec-icon{width:40px;height:40px;background:rgba(0,113,227,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+
+/* MODELS */
+.models-section{background:var(--mid)}
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:36px 28px;position:relative;transition:border-color .25s,transform .25s}
+.model-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+.model-card.featured{border-color:var(--blue);background:rgba(0,113,227,.06)}
+.model-card.featured::before{content:'Популярный';position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px}
+.model-name{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:600;margin-bottom:6px}
+.model-price{font-size:14px;color:var(--dim);margin-bottom:24px}
+.model-price strong{font-size:24px;font-weight:600;color:#fff}
+.model-specs{list-style:none;display:flex;flex-direction:column;gap:10px}
+.model-specs li{font-size:14px;color:var(--dim);display:flex;align-items:flex-start;gap:10px}
+.model-specs li::before{content:'›';color:var(--blue);font-weight:600;flex-shrink:0;line-height:1.4}
+.model-cta{margin-top:28px;width:100%}
+
+/* INDUSTRIES */
+.ind-section{background:var(--black)}
+    .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin-top:56px}
+
+.ind-row{background:var(--dark);padding:56px;transition:background .4s}
+.ind-row:hover{background:var(--mid)}
+.ind-num{display:none}
+.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:12px;font-family:'Unbounded',sans-serif}
+.ind-desc{font-size:15px;color:var(--dim);line-height:1.5}
+
+/* SOFTWARE */
+.sw-section{background:var(--dark)}
+.sw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px}
+.sw-card{background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:36px 32px;transition:border-color .25s,transform .25s}
+.sw-card:hover{border-color:rgba(0,113,227,.4);transform:translateY(-3px)}
+.sw-card-top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.sw-icon{width:48px;height:48px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sw-name{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:600}
+.sw-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:24px}
+.sw-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.sw-features li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
+.sw-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
+
+/* CTA BAND */
+.cta-band{background:var(--blue);padding:80px 40px;text-align:center}
+.cta-band h2{font-family:'Unbounded',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.cta-band p{font-size:17px;opacity:.85;margin-bottom:36px}
+.cta-band .btn-white{background:#fff;color:var(--blue);font-weight:600}
+.cta-band .btn-white:hover{background:rgba(255,255,255,.9)}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);font-weight:600}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:#fff}
+
+/* FOOTER */
+footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(--rule)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand p{font-size:14px;color:var(--dim);line-height:1.7;margin-top:16px;max-width:260px}
+.footer-col h4{font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--rule);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--dim)}
+
+/* ANIMATIONS */
+.fi{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fi.vis{opacity:1;transform:none}
+.fi-d1{transition-delay:.1s}.fi-d2{transition-delay:.2s}.fi-d3{transition-delay:.3s}.fi-d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  header{padding:0 24px}
+  header .burger{display:flex}
+  .h-right{display:none}
+  nav{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#0c0c16;border-bottom:1px solid var(--rule);padding:4px 24px 14px;display:none}
+  header.open nav{display:flex}
+  nav a{padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+  .hero{padding:100px 24px 80px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-svg{order:-1}
+  section{padding:72px 24px}
+  .specs-grid{grid-template-columns:repeat(2,1fr)}
+  .models-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .hero-vline{left:60px}
+}
+@media(max-width:640px){
+  header{padding:0 16px}
+  nav{display:none}
+  .h-phone{display:none}
+  .hero{padding:90px 16px 60px}
+  .hero h1{font-size:36px}
+  section{padding:56px 16px}
+  .specs-grid{grid-template-columns:1fr 1fr}
+  .models-grid{grid-template-columns:1fr}
+  .sw-grid{grid-template-columns:1fr}
+  .ind-row{padding:36px 40px;gap:24px}
+  
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .cta-band{padding:60px 16px}
+  .hero-vline{display:none}
+  .hero-grid{opacity:.3}
+}
+</style>
+<style>
+.fab{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.fab a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);transition:transform .2s}
+.fab a:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab .tg{background:#229ED9}.fab .wa{background:#25D366}.fab .ph{background:#0071e3}
+@media(max-width:640px){.fab a{width:46px;height:46px}.fab svg{width:23px;height:23px}}
+</style>
+<style>
+.cookie{position:fixed;left:18px;bottom:18px;z-index:300;max-width:520px;background:#12121c;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:16px 20px;display:flex;gap:16px;align-items:center;box-shadow:0 10px 40px rgba(0,0,0,.45);font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
+.cookie a{color:var(--blue)}
+.cookie button{flex-shrink:0;padding:10px 20px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit}
+@media(max-width:560px){.cookie{flex-direction:column;align-items:flex-start;left:12px;right:84px;max-width:none;bottom:12px}}
+</style>
+<style>
+.crumbs{display:block;position:absolute;top:86px;left:0;right:0;z-index:3}
+.crumbs-i{max-width:1200px;margin:0 auto;padding:0 40px;font-size:13px;color:var(--dim);text-align:left}
+.crumbs-i a{color:var(--dim);text-decoration:none;transition:color .2s}
+.crumbs-i a:hover{color:#fff}
+.crumbs-i b{color:rgba(255,255,255,.3);margin:0 8px;font-weight:400}
+@media(max-width:1024px){.crumbs-i{padding:0 24px}}
+@media(max-width:640px){.crumbs{top:80px}.crumbs-i{padding:0 16px;font-size:12px}}
+</style>
+<style>
+.hero-svg img.hero-render{width:100%;max-width:420px;height:auto;border-radius:18px;background:#eeeeec;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+.model-card img.model-img{display:block;width:100%;height:180px;object-fit:contain;border-radius:var(--r);background:#eeeeec;margin-bottom:22px}
+</style><style>
+</style><style>
+.color-view{position:relative;width:100%;max-width:460px;margin:0 auto}
+.color-view .color-img{width:100%;height:auto;border-radius:18px;background:#eeeeec;box-shadow:0 24px 64px rgba(0,0,0,.35);display:block;transition:opacity .2s}
+.color-swatches{display:flex;gap:12px;justify-content:center;margin-top:22px}
+.color-swatches .sw{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.3);cursor:pointer;padding:0;transition:transform .15s,border-color .15s;position:relative}
+.color-swatches .sw:hover{transform:scale(1.12)}
+.color-swatches .sw.active{border-color:#fff;box-shadow:0 0 0 2px var(--blue,#0071e3)}
+.color-swatches .sw[data-c=metallic]{background:linear-gradient(135deg,#d8dadd,#a9adb2)}
+.color-swatches .sw[data-c=blue]{background:linear-gradient(135deg,#2c5fa8,#1b3e73)}
+.color-swatches .sw[data-c=white]{background:linear-gradient(135deg,#fff,#e3e3e3)}
+.color-label{text-align:center;margin-top:12px;font:600 12px/1 Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--dim,#9aa)}
+
+
+.hero-media{width:100%;max-width:460px;margin:0 auto}
+.media-tabs{display:flex;gap:6px;justify-content:center;margin-bottom:14px}
+.mt{font:600 11px/1 Manrope,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--dim,#9aa);background:transparent;border:1px solid rgba(0,0,0,.12);border-radius:100px;padding:8px 18px;cursor:pointer;transition:.2s}
+.mt:hover{border-color:#0071e3;color:#0071e3}
+.mt.active{background:#0071e3;border-color:#0071e3;color:#fff}
+.media-view[hidden]{display:none}
+.spin360{position:relative;width:100%;aspect-ratio:1/1;border-radius:18px;background:#eeeeec;box-shadow:0 24px 64px rgba(0,0,0,.35);cursor:grab;overflow:hidden;touch-action:pan-y;user-select:none}
+.spin360:active{cursor:grabbing}
+.spin360-img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
+.spin360-hint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font:600 12px/1 Manrope,sans-serif;color:#3a3a3a;background:rgba(255,255,255,.72);backdrop-filter:blur(4px);padding:7px 13px;border-radius:100px;transition:opacity .4s;pointer-events:none}
+.spin360.touched .spin360-hint{opacity:0}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Инфокиоски Pelcom", "description": "Сенсорные информационные киоски Pelcom: модели Standart, Pro и Maxi, антивандальное исполнение, ПО под задачу. Производство РФ.", "image": "https://pelcom.ru/img/colors/kiosk/metallic.jpg", "brand": {"@type": "Brand", "name": "Pelcom"}, "manufacturer": {"@type": "Organization", "name": "Pelcom", "url": "https://pelcom.ru/"}, "category": "Интерактивное оборудование", "offers": {"@type": "AggregateOffer", "priceCurrency": "RUB", "lowPrice": 89000, "availability": "https://schema.org/InStock", "seller": {"@type": "Organization", "name": "Pelcom", "url": "https://pelcom.ru/"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://pelcom.ru/"}, {"@type": "ListItem", "position": 2, "name": "Инфокиоски Pelcom", "item": "https://pelcom.ru/pelcom-kiosk.html"}]}</script>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="pelcom-landing.html" class="h-logo"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span>pelcom</span></a>
+  <nav>
+    <a href="pelcom-landing.html#products" class="active">Оборудование</a>
+    <a href="pelcom-landing.html#industries">Отрасли</a>
+    <a href="pelcom-landing.html#software">Программы</a>
+    <a href="pelcom-about.html">О компании</a>
+    <a href="pelcom-service.html">Сервис</a>
+  <a href="contacts.html">Контакты</a></nav>
+  <div class="h-right">
+    <a href="tel:+78001234567" class="h-phone">8 800 123-45-67</a>
+    <a href="pelcom-landing.html#contact" class="btn btn-blue btn-sm">Связаться</a>
+  </div>
+  <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <nav class="crumbs" aria-label="Хлебные крошки"><div class="crumbs-i"><a href="pelcom-landing.html">Главная</a><b>/</b><a href="pelcom-landing.html#products">Оборудование</a><b>/</b>Инфокиоски</div></nav>
+  <div class="hero-grid"></div>
+  <div class="hero-vline"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>
+        Инфокиоски
+      </div>
+      <h1>Инфокиоски<br>Pelcom</h1>
+      <div class="hero-price">от <strong>89 000 ₽</strong></div>
+      <p class="hero-desc">Напольные и настенные информационные киоски для самостоятельного обслуживания. Работают 24/7, поддерживают Android и Windows, оснащаются принтером и эквайрингом по запросу.</p>
+      <div class="hero-actions">
+        <a href="pelcom-landing.html#contact" class="btn btn-blue">Запросить КП</a>
+        <a href="specs/pelcom-kiosk.pdf" class="btn btn-ghost" download>Скачать паспорт</a>
+      </div>
+    </div>
+    <div class="hero-svg"><div class="hero-media"><div class="media-tabs"><button class="mt active" data-v="color">Цвет</button><button class="mt" data-v="spin">360°</button></div><div class="color-view media-view" data-path="img/colors/kiosk/"><img width="920" height="920" class="color-img" src="img/colors/kiosk/metallic.jpg" alt="Информационный киоск Pelcom" loading="lazy"/><div class="color-swatches"><button class="sw active" data-c="metallic" title="Металлик" aria-label="Металлик"></button><button class="sw" data-c="blue" title="Синий" aria-label="Синий"></button><button class="sw" data-c="white" title="Белый" aria-label="Белый"></button></div><div class="color-label">Металлик</div></div><div class="media-view spin-view" hidden><div class="spin360" data-frames="24" data-path="img/360/kiosk/" data-ext="jpg"><img width="720" height="720" class="spin360-img" src="img/360/kiosk/01.jpg" draggable="false" alt="Инфокиоск Pelcom — 360°"/><div class="spin360-hint">360° — тяните</div></div></div></div></div></div>
+</section>
+
+<!-- SPECS -->
+<section class="specs-section">
+  <div class="container">
+    <div class="specs-header fi">
+      <div class="s-label">Ключевые характеристики</div>
+      <h2 class="s-title">Технические параметры</h2>
+      <p class="s-sub">Киоски Pelcom соответствуют требованиям промышленной эксплуатации и сертифицированы для использования в государственных учреждениях.</p>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-card fi fi-d1">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="14" rx="2" stroke="#007CC2" stroke-width="1.5"/><line x1="2" y1="7" x2="18" y2="7" stroke="#007CC2" stroke-width="1.5"/></svg>
+        </div>
+        <div class="spec-val">21<span>"–55"</span></div>
+        <div class="spec-label">Диагональ экрана</div>
+      </div>
+      <div class="spec-card fi fi-d2">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L18 6v8l-8 4-8-4V6l8-4z" stroke="#007CC2" stroke-width="1.5"/></svg>
+        </div>
+        <div class="spec-val">IP<span>54</span></div>
+        <div class="spec-label">Степень защиты корпуса</div>
+      </div>
+      <div class="spec-card fi fi-d3">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#007CC2" stroke-width="1.5"/><circle cx="10" cy="10" r="3" stroke="#007CC2" stroke-width="1.5"/></svg>
+        </div>
+        <div class="spec-val" style="font-size:24px">Android<span style="display:block;font-size:18px">/Windows</span></div>
+        <div class="spec-label">Операционная система</div>
+      </div>
+      <div class="spec-card fi fi-d4">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#007CC2" stroke-width="1.5"/><polyline points="10,6 10,10 13,12" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="spec-val">24<span>/7</span></div>
+        <div class="spec-label">Режим работы</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="models-section">
+  <div class="container">
+    <div class="fi">
+      <div class="s-label">Модели</div>
+      <h2 class="s-title">Выберите конфигурацию</h2>
+      <p class="s-sub">Три линейки киосков для задач любого масштаба — от точки информации до многофункционального терминала самообслуживания.</p>
+    </div>
+    <div class="models-grid">
+      <div class="model-card fi fi-d1">
+        <img class="model-img" src="img/renders/kiosk/standart.jpg" alt="Информационный киоск Pelcom — модель 1" loading="lazy"/>
+        <div class="model-name">Standart</div>
+        <div class="model-price">от <strong>89 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>Экран 21", Full HD</li>
+          <li>Напольный монтаж</li>
+          <li>Android 11</li>
+          <li>1 USB-порт</li>
+          <li>Сенсорный экран 10 касаний</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card featured fi fi-d2">
+        <img class="model-img" src="img/renders/kiosk/pro.jpg" alt="Информационный киоск Pelcom — модель 2" loading="lazy"/>
+        <div class="model-name">Pro</div>
+        <div class="model-price">от <strong>135 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>Экран 32", Full HD</li>
+          <li>Напольный / настенный</li>
+          <li>Android 13</li>
+          <li>2 USB-порта</li>
+          <li>Принтер чеков — опция</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-blue model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d3">
+        <img class="model-img" src="img/renders/kiosk/maxi.jpg" alt="Информационный киоск Pelcom — модель 3" loading="lazy"/>
+        <div class="model-name">Maxi</div>
+        <div class="model-price">от <strong>210 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>Экран 55", 4K</li>
+          <li>Напольный монтаж</li>
+          <li>Windows 11</li>
+          <li>4 USB-порта</li>
+          <li>Принтер + сканер + эквайринг — опции</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+    </div>
+    <style>
+    .model-showcase{margin-top:64px}
+    .showcase-head{font:700 13px/1 Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--dim,#9aa);text-align:center;margin-bottom:24px}
+    .showcase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:720px;margin:0 auto}
+    .sc-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:20px;transition:border-color .25s,transform .25s}
+    .sc-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+    .sc-spin{position:relative;width:100%;aspect-ratio:1/1;border-radius:14px;background:#eeeeec;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none}
+    .sc-spin:active{cursor:grabbing}
+    .sc-spin img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
+    .sc-badge{position:absolute;top:10px;right:10px;font:600 11px/1 Manrope,sans-serif;letter-spacing:.06em;color:#fff;background:rgba(0,113,227,.9);padding:6px 11px;border-radius:100px;pointer-events:none;transition:opacity .3s}
+    .sc-spin.on .sc-badge{opacity:0}
+    .sc-name{font:700 18px/1.2 Manrope,sans-serif;margin-top:16px;color:#fff}
+    .sc-desc{font-size:13px;color:var(--dim,#9aa);margin-top:5px}
+    @media(max-width:640px){.showcase-grid{grid-template-columns:1fr}}
+    </style>
+    <div class="model-showcase fi">
+      <div class="showcase-head">3D-обзор моделей — наведите или тяните</div>
+      <div class="showcase-grid">
+        <div class="sc-card">
+          <div class="sc-spin" data-frames="24" data-path="img/360/blackglass/" data-ext="jpg"><img src="img/360/blackglass/01.jpg" draggable="false" alt="Киоск Black Glass — 360°"/><div class="sc-badge">360°</div></div>
+          <div class="sc-name">Black Glass</div>
+          <div class="sc-desc">Напольная стела с термопринтером</div>
+        </div>
+        <div class="sc-card">
+          <div class="sc-spin" data-frames="24" data-path="img/360/blackglass-noprinter/" data-ext="jpg"><img src="img/360/blackglass-noprinter/01.jpg" draggable="false" alt="Киоск Black Glass без принтера — 360°"/><div class="sc-badge">360°</div></div>
+          <div class="sc-name">Black Glass — без принтера</div>
+          <div class="sc-desc">Та же стела, комплектация без термопринтера</div>
+        </div>
+      </div>
+    </div>
+    <script>(function(){
+    function initSC(el){if(el.dataset.on)return;el.dataset.on='1';el.classList.add('on');
+    var n=+el.dataset.frames,path=el.dataset.path,ext=el.dataset.ext||'jpg';
+    var img=el.querySelector('img'),frames=[],cur=0,loaded=0,auto=null;
+    function nm(i){var s=String(i+1);return s.length<2?'0'+s:s;}
+    function startAuto(){if(!auto)auto=setInterval(function(){show(cur+1);},150);}
+    for(var i=0;i<n;i++){(function(im,j){im.onload=function(){if(++loaded===n)startAuto();};im.src=path+nm(j)+'.'+ext;})(frames[i]=new Image(),i);}
+    function show(i){cur=((i%n)+n)%n;if(frames[cur].complete)img.src=frames[cur].src;}
+    var drag=false,lastX=0,acc=0;
+    el.addEventListener('pointerdown',function(e){drag=true;lastX=e.clientX;if(auto){clearInterval(auto);auto=null;}try{el.setPointerCapture(e.pointerId)}catch(_){}});
+    el.addEventListener('pointermove',function(e){if(!drag)return;acc+=e.clientX-lastX;var st=Math.round(acc/14);if(st){show(cur-st);acc-=st*14;}lastX=e.clientX;});
+    function end(){drag=false;}el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);}
+    document.querySelectorAll('.sc-spin').forEach(function(el){el.addEventListener('pointerenter',function(){initSC(el);});el.addEventListener('click',function(){initSC(el);});});
+    })();</script>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind-section">
+  <div class="container">
+    <div class="fi">
+      <div class="s-label">Сферы применения</div>
+      <h2 class="s-title">Где работают<br>наши киоски</h2>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-row fi">
+        <div class="ind-num">01</div>
+        <div class="ind-name">МФЦ и госуслуги</div>
+        <div class="ind-desc">Терминалы самозаписи, получения талонов, оплаты государственных пошлин и предоставления информации об услугах. Поддержка Госуслуг и ЕПГУ.</div>
+      </div>
+      <div class="ind-row fi fi-d1">
+        <div class="ind-num">02</div>
+        <div class="ind-name">Банки и финансы</div>
+        <div class="ind-desc">Информационные терминалы в отделениях банков, пунктах обмена валют и страховых компаниях. Интеграция с АБС через API.</div>
+      </div>
+      <div class="ind-row fi fi-d2">
+        <div class="ind-num">03</div>
+        <div class="ind-name">Гостиницы и бизнес-центры</div>
+        <div class="ind-desc">Система самостоятельной регистрации гостей (check-in / check-out), навигация по территории, бронирование переговорных комнат.</div>
+      </div>
+      <div class="ind-row fi fi-d3">
+        <div class="ind-num">04</div>
+        <div class="ind-name">Медицина</div>
+        <div class="ind-desc">Запись к врачу, получение талонов в регистратуре, оплата медицинских услуг. Соответствие требованиям 152-ФЗ о персональных данных.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section class="sw-section">
+  <div class="container">
+    <div class="fi">
+      <div class="s-label">Программное обеспечение</div>
+      <h2 class="s-title">Собственные программные<br>решения Pelcom</h2>
+      <p class="s-sub">Киоски поставляются с предустановленным ПО линейки Pel, разработанным специально для интерактивного оборудования.</p>
+    </div>
+    <div class="sw-grid">
+      <div class="sw-card fi fi-d1">
+        <div class="sw-card-top">
+          <div class="sw-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#007CC2" stroke-width="1.5"/><polyline points="9,22 9,12 15,12 15,22" stroke="#007CC2" stroke-width="1.5"/></svg>
+          </div>
+          <div>
+            <div class="sw-tag">Навигация</div>
+            <div class="sw-name">Pelcom Навигация</div>
+          </div>
+        </div>
+        <p class="sw-desc">Система интерактивной навигации с поддержкой многоэтажных планов, маршрутизацией и мультиязычным интерфейсом. Управление контентом через браузер без программирования.</p>
+        <ul class="sw-features">
+          <li>Визуальный редактор планов этажей</li>
+          <li>Маршрутизация с анимацией пути</li>
+          <li>До 12 языков интерфейса</li>
+          <li>Работа в офлайн-режиме</li>
+        </ul>
+        <a href="pelcom-landing.html#software" class="btn btn-ghost btn-sm">Подробнее о Pelcom Навигация</a>
+      </div>
+      <div class="sw-card fi fi-d2">
+        <div class="sw-card-top">
+          <div class="sw-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#007CC2" stroke-width="1.5"/><line x1="8" y1="21" x2="16" y2="21" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="#007CC2" stroke-width="1.5"/></svg>
+          </div>
+          <div>
+            <div class="sw-tag">Очередь</div>
+            <div class="sw-name">Pelcom Очередь</div>
+          </div>
+        </div>
+        <p class="sw-desc">Система управления электронной очередью для операторов и посетителей. Киоск принимает запросы, выдаёт талоны и отображает статус на табло.</p>
+        <ul class="sw-features">
+          <li>SMS и Push-уведомления о вызове</li>
+          <li>Аналитика нагрузки по часам</li>
+          <li>Поддержка до 6 окон операторов</li>
+          <li>Интеграция с CRM и 1С</li>
+        </ul>
+        <a href="pelcom-landing.html#software" class="btn btn-ghost btn-sm">Подробнее о Pelcom Очередь</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Подберём киоск под ваш проект</h2>
+  <p>Оставьте заявку — наш инженер свяжется в течение 2 часов в рабочее время</p>
+  <div class="cta-actions">
+    <a href="pelcom-landing.html#contact" class="btn btn-white btn-blue" style="background:#fff;color:var(--blue);font-weight:600">Запросить КП</a>
+    <a href="pelcom-service.html" class="btn btn-outline-white">Сервис и монтаж</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="pelcom-landing.html" class="h-logo"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span>pelcom</span></a>
+        <p>Производитель интерактивного оборудования для бизнеса и государственных учреждений. На рынке с 2008 года.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Оборудование</h4>
+        <a href="pelcom-kiosk.html">Инфокиоски</a>
+        <a href="pelcom-panels.html">Интерактивные панели</a>
+        <a href="pelcom-tables.html">Интерактивные столы</a>
+        <a href="pelcom-terminals.html">Сенсорные терминалы</a>
+        <a href="pelcom-payment.html">Терминалы оплаты</a>
+        <a href="pelcom-outdoor.html">Уличные киоски</a>
+        <a href="pelcom-lectern.html">Интерактивные трибуны</a>
+        <a href="pelcom-kids.html">Детское оборудование</a>
+        <a href="pelcom-holo.html">Голограммы</a>
+        <a href="pelcom-pylon.html">Видеопилоны</a>
+        <a href="pelcom-led.html">LED-экраны</a>
+        <a href="pelcom-accessible.html">Доступная среда</a>
+        <a href="pelcom-queue.html">Электронная очередь</a>
+        <a href="pelcom-nav.html">Навигация</a>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <a href="pelcom-about.html">О компании</a>
+        <a href="pelcom-partners.html">Партнёрам</a>
+        <a href="pelcom-landing.html#cases">Проекты</a>
+        
+      </div>
+      <div class="footer-col">
+        <h4>Поддержка</h4>
+        <a href="pelcom-service.html">Сервис и монтаж</a>
+        <a href="pelcom-service.html">Гарантия</a>
+        <a href="pelcom-service.html">Документация</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2008–2026 Pelcom. Все права защищены.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="privacy.html#requisites">Реквизиты</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>40)},{passive:true});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+</script>
+<script>
+document.querySelectorAll('.color-view').forEach(function(v){
+  var path=v.dataset.path, img=v.querySelector('.color-img'), lab=v.querySelector('.color-label');
+  var names={metallic:'Металлик',blue:'Синий',white:'Белый'};
+  v.querySelectorAll('.sw').forEach(function(b){
+    b.addEventListener('click',function(){
+      v.querySelectorAll('.sw').forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      img.style.opacity=0;
+      var im=new Image(); im.onload=function(){img.src=im.src;img.style.opacity=1;};
+      im.src=path+b.dataset.c+'.jpg';
+      if(lab)lab.textContent=names[b.dataset.c];
+    });
+  });
+});
+</script>
+<script>(function(){
+function initSpin(el){var n=+el.dataset.frames,path=el.dataset.path,ext=el.dataset.ext||"jpg";
+var img=el.querySelector(".spin360-img"),frames=[],cur=0,loaded=0,auto=null;
+function nm(i){var s=String(i+1);return s.length<2?"0"+s:s;}
+function startAuto(){if(!auto)auto=setInterval(function(){show(cur+1);},150);}
+for(var i=0;i<n;i++){(function(im,j){im.onload=function(){if(++loaded===n)startAuto();};im.src=path+nm(j)+"."+ext;})(frames[i]=new Image(),i);}
+function show(i){cur=((i%n)+n)%n;if(frames[cur].complete)img.src=frames[cur].src;}
+var drag=false,lastX=0,acc=0;
+el.addEventListener("pointerdown",function(e){drag=true;lastX=e.clientX;if(auto){clearInterval(auto);auto=null;el.classList.add("touched");}try{el.setPointerCapture(e.pointerId)}catch(_){}});
+el.addEventListener("pointermove",function(e){if(!drag)return;acc+=e.clientX-lastX;var st=Math.round(acc/14);if(st){show(cur-st);acc-=st*14;}lastX=e.clientX;});
+function end(){drag=false;}el.addEventListener("pointerup",end);el.addEventListener("pointercancel",end);el.addEventListener("pointerleave",end);}
+document.querySelectorAll(".hero-media").forEach(function(m){
+var tabs=m.querySelectorAll(".mt"),views={};
+m.querySelectorAll(".media-view").forEach(function(v){if(v.classList.contains("color-view"))views.color=v;if(v.classList.contains("spin-view"))views.spin=v;});
+tabs.forEach(function(t){t.addEventListener("click",function(){
+tabs.forEach(function(x){x.classList.remove("active")});t.classList.add("active");
+var sel=t.dataset.v;Object.keys(views).forEach(function(k){views[k].hidden=(k!==sel);});
+if(sel==="spin"){var s=views.spin.querySelector(".spin360");if(s&&!s.dataset.init){s.dataset.init="1";initSpin(s);}}
+});});
+});
+})();</script>
+
+<!-- floating contact -->
+<div class="fab">
+<a class="tg" href="https://t.me/pelcom" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.6-3.4-2.2 2.1c-.3.3-.5.4-.9.4l.3-4.7L18 6.5c.4-.3-.1-.5-.6-.2L7.1 13l-4.5-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.5.2 1.3 1.5z"/></svg></a>
+<a class="wa" href="https://wa.me/74951234567" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4c-.2 0-.5 0-.7.4-.3.4-1 .9-1 2.2s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7s1.6-.6 1.8-1.3c.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.5-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.2-1.4-.5-.6-.9-1.2-1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+<a class="ph" href="tel:+74951234567" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+</div>
+
+<div class="cookie" id="cookieBar" hidden><span>Мы используем cookie для работы сайта и аналитики. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span><button type="button">Принять</button></div>
+<script>(function(){var b=document.getElementById('cookieBar');if(!b)return;try{if(!localStorage.getItem('pelcom_cookie'))b.hidden=false;}catch(e){b.hidden=false;}b.querySelector('button').addEventListener('click',function(){try{localStorage.setItem('pelcom_cookie','1');}catch(e){}b.hidden=true;});})();</script>
+
+</body>
+</html>

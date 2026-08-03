@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сервис 24/7 — Pelcom</title>
+  <meta name="description" content="Сервисное обслуживание оборудования Pelcom 24/7: гарантия, SLA, выезд инженера, поставка комплектующих. Три тарифа поддержки."/>
+  <link rel="canonical" href="https://pelcom.ru/pelcom-service.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Pelcom"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:title" content="Сервис 24/7 — Pelcom"/>
+  <meta property="og:description" content="Сервисное обслуживание оборудования Pelcom 24/7: гарантия, SLA, выезд инженера, поставка комплектующих. Три тарифа поддержки."/>
+  <meta property="og:url" content="https://pelcom.ru/pelcom-service.html"/>
+  <meta property="og:image" content="https://pelcom.ru/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Сервис 24/7 — Pelcom"/>
+  <meta name="twitter:description" content="Сервисное обслуживание оборудования Pelcom 24/7: гарантия, SLA, выезд инженера, поставка комплектующих. Три тарифа поддержки."/>
+  <meta name="twitter:image" content="https://pelcom.ru/og-image.png"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="common.css">
+<style>
+    /* ══ SLA ГАРАНТИИ ══ */
+    .sla-bg{background:var(--dark)}
+    .sla-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+    .sla-card{background:var(--mid);padding:48px 36px;text-align:center;transition:background .25s}
+    .sla-card:hover{background:#1F1F2E}
+    .sla-val{font-size:clamp(48px,5.5vw,72px);font-weight:800;letter-spacing:-3px;line-height:1;color:#fff;margin-bottom:8px}
+    .sla-val sup{font-size:clamp(16px,2vw,24px);letter-spacing:0;font-weight:400;color:var(--blue)}
+    .sla-label{font-size:12px;color:var(--dim);line-height:1.6;margin-top:10px}
+
+    /* ══ ЧТО ВКЛЮЧАЕТ ══ */
+    .incl-bg{background:var(--cream);color:var(--ink)}
+    .incl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(0,0,0,.04);margin-top:56px}
+    .incl-card{background:#fff;padding:56px;transition:background .4s}
+    .incl-card:hover{background:#fafafa}
+    .incl-icon{display:none}
+    .incl-h{font-size:22px;font-weight:600;letter-spacing:-.03em;color:var(--ink);margin-bottom:12px;font-family:'Unbounded',system-ui,sans-serif}
+    .incl-p{font-size:15px;color:var(--ink-2);line-height:1.5}
+
+    /* ══ ТАРИФЫ ══ */
+    .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .pkg-card{background:var(--mid);padding:44px 36px;border-top:2px solid transparent;transition:border-color .3s;border-radius:var(--r);position:relative}
+    .pkg-card.featured{background:#0e1f32;border-top-color:var(--blue)}
+    .pkg-card:hover:not(.featured){border-top-color:rgba(0,113,227,.35)}
+    .pkg-badge{position:absolute;top:20px;right:20px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;background:var(--blue);color:#fff;padding:5px 12px;border-radius:var(--r)}
+    .pkg-n{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+    .pkg-name{font-size:26px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+    .pkg-sub{font-size:13px;color:var(--dim);margin-bottom:28px;line-height:1.6}
+    .pkg-price{margin-bottom:28px}
+    .pkg-price strong{font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-2px;font-family:'Unbounded',system-ui,sans-serif}
+    .pkg-price span{font-size:13px;color:var(--dim);margin-left:6px}
+    .pkg-divider{height:1px;background:var(--rule);margin:24px 0}
+    .pkg-features{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .pkg-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--dim);line-height:1.5}
+    .pkg-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0;margin-top:1px}
+    .pkg-features li.dim::before{content:'—';color:rgba(255,255,255,.2)}
+    .pkg-features li.dim{color:rgba(255,255,255,.2)}
+    .btn-pkg{margin-top:28px;width:100%;padding:13px;background:transparent;border:1px solid var(--faint);color:var(--dim);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:all .2s;border-radius:var(--r)}
+    .btn-pkg:hover{border-color:rgba(255,255,255,.3);color:#fff}
+    .pkg-card.featured .btn-pkg{background:var(--blue);border-color:var(--blue);color:#fff}
+    .pkg-card.featured .btn-pkg:hover{background:var(--blue-hover)}
+
+    /* ══ КАК РАБОТАЕТ ══ */
+    .process-grid{display:flex;flex-direction:column;gap:0}
+    .process-row{display:grid;grid-template-columns:72px 2px 1fr;gap:0 40px;padding:40px 0;border-bottom:1px solid var(--rule);align-items:start;transition:padding-left .25s;cursor:default}
+    .process-row:last-child{border-bottom:none}
+    .process-row:hover{padding-left:16px}
+    .step-n{font-size:10px;font-weight:600;letter-spacing:2px;color:var(--blue);padding-top:4px;font-variant-numeric:tabular-nums;font-family:'Unbounded',system-ui,sans-serif}
+    .process-line{width:2px;background:var(--blue);align-self:stretch;margin-top:4px}
+    .process-body h4{font-size:17px;font-weight:600;margin-bottom:8px;font-family:'Unbounded',system-ui,sans-serif}
+    .process-body p{font-size:13px;color:var(--dim);line-height:1.75;max-width:560px}
+    .process-time{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue)}
+    .process-time::before{content:'→'}
+
+    /* ══ CTA BAND ══ */
+    .band{background:var(--blue);padding:72px 48px}
+    .band-i{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+    .band-h{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.5px;font-family:'Unbounded',system-ui,sans-serif}
+    .band-p{font-size:14px;color:rgba(255,255,255,.75);margin-top:8px}
+    .band-btns{display:flex;gap:12px;align-items:center;flex-shrink:0;flex-wrap:wrap}
+    .btn-band{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15px 34px;background:#fff;color:var(--blue);border:none;cursor:pointer;font-family:inherit;transition:all .2s;border-radius:var(--r)}
+    .btn-band:hover{background:var(--cream)}
+    .btn-band-s{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;background:transparent;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.35);cursor:pointer;font-family:inherit;transition:all .2s;border-radius:var(--r)}
+    .btn-band-s:hover{border-color:#fff;color:#fff}
+
+    /* ══ FOOTER ══ */
+    footer{background:var(--black);padding:72px 48px 36px;border-top:1px solid var(--rule)}
+    .ft-i{max-width:1320px;margin:0 auto}
+    .ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:64px;padding-bottom:56px;border-bottom:1px solid var(--rule);margin-bottom:32px}
+    .ft-brand p{font-size:13px;color:var(--dim);margin-top:18px;line-height:1.75;max-width:200px}
+    .ft-col h5{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px}
+    .ft-col a{display:block;font-size:13px;color:var(--dim);margin-bottom:12px;transition:color .2s}
+    .ft-col a:hover{color:#fff}
+    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+    .ft-links{display:flex;gap:24px}
+    .ft-links a{font-size:12px;color:rgba(255,255,255,.2);transition:color .2s}
+    .ft-links a:hover{color:rgba(255,255,255,.55)}
+
+    /* ══ UTILS ══ */
+    .fi{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .fi.in{opacity:1;transform:none}
+
+    @media(max-width:1024px){
+      .hd-i{gap:14px;justify-content:space-between}
+      .burger{display:flex}
+      .hd-ph{display:none}
+      .hd-r{display:none}
+      .hd-nav{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:#0c0c16;border-bottom:1px solid rgba(255,255,255,.08);padding:4px 24px 14px;display:none}
+      .hd.open .hd-nav{display:flex}
+      .hd-nav a{padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+      .sla-grid{grid-template-columns:repeat(2,1fr)}
+      .incl-grid{grid-template-columns:repeat(2,1fr)}
+      .pkg-grid{grid-template-columns:1fr}
+      .ft-top{grid-template-columns:1fr 1fr;gap:40px}
+    }
+    @media(max-width:640px){
+      .s{padding:72px 20px}
+      .pg-hero{padding:120px 20px 72px}
+      .hd-i,.band-i,.ft-i{padding-left:20px;padding-right:20px}
+      .sla-grid{grid-template-columns:1fr}
+      .incl-grid{grid-template-columns:1fr}
+      .pg-h{font-size:52px;letter-spacing:-2px}
+      .process-row{grid-template-columns:52px 2px 1fr;gap:0 16px}
+      .ft-top{grid-template-columns:1fr}
+    }
+  </style>
+<style>
+.fab{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.fab a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.fab a:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab .tg{background:#229ED9}.fab .wa{background:#25D366}.fab .ph{background:#0071e3}
+@media(max-width:640px){.fab a{width:46px;height:46px}.fab svg{width:23px;height:23px}}
+</style>
+<style>
+.cookie{position:fixed;left:18px;bottom:18px;z-index:300;max-width:520px;background:#12121c;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:16px 20px;display:flex;gap:16px;align-items:center;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
+.cookie a{color:var(--blue)}
+.cookie button{flex-shrink:0;padding:10px 20px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit}
+@media(max-width:560px){.cookie{flex-direction:column;align-items:flex-start;left:12px;right:84px;max-width:none;bottom:12px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd" id="hd">
+  <div class="hd-i">
+    <a href="pelcom-landing.html" class="logo">
+      <svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+      <span class="ln">pelcom</span>
+    </a>
+    <nav class="hd-nav">
+      <a href="pelcom-landing.html#products">Оборудование</a>
+      <a href="pelcom-landing.html#industries">Отрасли</a>
+      <a href="pelcom-landing.html#software">Программы</a>
+      <a href="pelcom-about.html">О компании</a>
+      <a href="pelcom-service.html" class="active">Сервис</a>
+    <a href="contacts.html">Контакты</a></nav>
+    <div class="hd-r">
+      <a href="tel:+74951234567" class="hd-ph">+7 (495) 123-45-67</a>
+      <button class="hd-btn" onclick="location.href='tel:+74951234567'">Вызвать инженера</button>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="pg-hero">
+  <div class="pg-hero-grid"></div>
+  <div class="pg-hero-line"></div>
+  <div class="pg-hero-i">
+    <div class="pg-eyebrow">Техническое обслуживание</div>
+    <h1 class="pg-h">Сервис<br/><em>24/7/365</em></h1>
+    <p class="pg-desc">Собственная служба сервиса по всей России. Выезд инженера по Москве в течение 4 часов. Удалённая диагностика, обменный фонд, плановое ТО — всё включено в договор.</p>
+    <div class="live-badge">
+      <div class="live-dot"></div>
+      <span class="live-text">Горячая линия работает сейчас</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLA ГАРАНТИИ -->
+<section class="s sla-bg">
+  <div class="s-i">
+    <div class="sla-grid fi">
+      <div class="sla-card">
+        <div class="sla-val">4<sup>ч</sup></div>
+        <div class="sla-label">Время выезда инженера<br/>по Москве и МО при аварии</div>
+      </div>
+      <div class="sla-card">
+        <div class="sla-val">24<sup>ч</sup></div>
+        <div class="sla-label">Максимальное время<br/>устранения неисправности</div>
+      </div>
+      <div class="sla-card">
+        <div class="sla-val">3<sup>г</sup></div>
+        <div class="sla-label">Расширенная гарантия<br/>на всё оборудование</div>
+      </div>
+      <div class="sla-card">
+        <div class="sla-val">200<sup>+</sup></div>
+        <div class="sla-label">Устройств в обменном фонде<br/>для замены без ожидания</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЧТО ВКЛЮЧАЕТ -->
+<section class="s incl-bg">
+  <div class="s-i">
+    <div class="s-head light fi">
+      <div><div class="s-tag" style="color:var(--blue)">Услуги</div><h2 class="s-title" style="color:var(--ink)">Что входит<br/>в сервис</h2></div>
+      <p class="s-sub light">Полный цикл поддержки — от удалённой диагностики до планового ТО</p>
+    </div>
+    <div class="incl-grid fi">
+      <div class="incl-card">
+        <div class="incl-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke="#007CC2" stroke-width="1.5"/><path d="M13 8V13L16 15" stroke="#007CC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="incl-h">Круглосуточный мониторинг</div>
+        <p class="incl-p">Pelcom Мониторинг отслеживает все устройства в режиме реального времени. При сбое — автоматический алерт дежурному инженеру. Большинство проблем решается удалённо ещё до вашего обращения.</p>
+      </div>
+      <div class="incl-card">
+        <div class="incl-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="5" width="20" height="16" rx="2" stroke="#007CC2" stroke-width="1.5"/><path d="M3 9H23" stroke="#007CC2" stroke-width="1.2"/><circle cx="18" cy="7" r="1.5" fill="#007CC2"/></svg>
+        </div>
+        <div class="incl-h">Удалённая диагностика</div>
+        <p class="incl-p">Инженер подключается к устройству по защищённому каналу и устраняет до 70% неисправностей дистанционно. Перезагрузка ПО, обновление конфигурации, диагностика железа — без выезда.</p>
+      </div>
+      <div class="incl-card">
+        <div class="incl-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 13C4 8.03 8.03 4 13 4s9 4.03 9 9-4.03 9-9 9" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round"/><path d="M13 22C10.5 22 4 19.5 4 13" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round"/><path d="M9 13L12 16L18 10" stroke="#007CC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="incl-h">Выезд и замена</div>
+        <p class="incl-p">Если удалённое устранение невозможно — выезжает инженер. По Москве и области в течение 4 часов, по регионам — на следующий рабочий день. Пока идёт ремонт — подменное устройство из обменного фонда.</p>
+      </div>
+      <div class="incl-card">
+        <div class="incl-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M7 14L11 18L19 10" stroke="#007CC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="20" height="20" rx="3" stroke="#007CC2" stroke-width="1.5"/></svg>
+        </div>
+        <div class="incl-h">Плановое ТО</div>
+        <p class="incl-p">Плановое техническое обслуживание 2 раза в год: чистка, проверка компонентов, калибровка сенсора, обновление ПО до последней версии. Профилактика продлевает жизнь устройств на 30%.</p>
+      </div>
+      <div class="incl-card">
+        <div class="incl-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3L15.5 8.5L21.5 9.5L17 13.5L18.5 20L13 17L7.5 20L9 13.5L4.5 9.5L10.5 8.5L13 3Z" stroke="#007CC2" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="incl-h">Обновление ПО</div>
+        <p class="incl-p">Автоматические обновления Pelcom Навигация, Pelcom Очередь, Pelcom Мониторинг включены в договор. Новые функции, патчи безопасности и совместимость с новым оборудованием — без доплат и простоев.</p>
+      </div>
+      <div class="incl-card">
+        <div class="incl-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="10" r="4" stroke="#007CC2" stroke-width="1.5"/><path d="M5 22c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="incl-h">Обучение персонала</div>
+        <p class="incl-p">Первичное обучение операторов при внедрении. Видеоинструкции и база знаний в личном кабинете. При смене персонала — бесплатный повторный инструктаж онлайн.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ТАРИФЫ -->
+<section class="s">
+  <div class="s-i">
+    <div class="s-head dark fi">
+      <div><div class="s-tag">Тарифы</div><h2 class="s-title">Планы<br/>обслуживания</h2></div>
+      <p class="s-sub dark">Выберите уровень поддержки под ваши задачи</p>
+    </div>
+    <div class="pkg-grid fi">
+
+      <div class="pkg-card">
+        <div class="pkg-n">Тариф 01</div>
+        <div class="pkg-name">Базовый</div>
+        <div class="pkg-sub">Для небольших объектов с 1–3 устройствами</div>
+        <div class="pkg-price"><strong>от 3 900</strong><span>₽ / устройство в месяц</span></div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Гарантийный ремонт в течение 3 лет</li>
+          <li>Удалённая диагностика в рабочее время</li>
+          <li>Выезд инженера в течение 2 дней</li>
+          <li>1 плановое ТО в год</li>
+          <li>Обновление ПО включено</li>
+          <li class="dim">Обменный фонд</li>
+          <li class="dim">Приоритетная линия 24/7</li>
+        </ul>
+        <button class="btn-pkg" onclick="location.href='pelcom-landing.html#contact'">Подключить</button>
+      </div>
+
+      <div class="pkg-card featured">
+        <div class="pkg-badge">Популярный</div>
+        <div class="pkg-n">Тариф 02</div>
+        <div class="pkg-name">Стандарт</div>
+        <div class="pkg-sub">Для коммерческих объектов с высокой нагрузкой</div>
+        <div class="pkg-price"><strong>от 6 500</strong><span>₽ / устройство в месяц</span></div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Расширенная гарантия 3 года с обменным фондом</li>
+          <li>Удалённая диагностика 24/7</li>
+          <li>Выезд по Москве за 4 часа, регионы — 24ч</li>
+          <li>2 плановых ТО в год</li>
+          <li>Обновление ПО включено</li>
+          <li>Подменное устройство на время ремонта</li>
+          <li class="dim">SLA-гарантия с штрафами</li>
+        </ul>
+        <button class="btn-pkg" onclick="location.href='pelcom-landing.html#contact'">Подключить</button>
+      </div>
+
+      <div class="pkg-card">
+        <div class="pkg-n">Тариф 03</div>
+        <div class="pkg-name">Премиум</div>
+        <div class="pkg-sub">Для критической инфраструктуры и госзаказчиков</div>
+        <div class="pkg-price"><strong>Индивидуально</strong><span></span></div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>SLA с финансовыми гарантиями по договору</li>
+          <li>Выезд в течение 2 часов по Москве</li>
+          <li>Выделенный инженер на объекте (по запросу)</li>
+          <li>Ежеквартальные плановые ТО</li>
+          <li>Резервный сервер мониторинга заказчика</li>
+          <li>Приоритетный заказ запчастей со склада</li>
+          <li>Ежемесячная отчётность по инцидентам</li>
+        </ul>
+        <button class="btn-pkg" onclick="location.href='pelcom-landing.html#contact'">Обсудить условия</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- КАК РАБОТАЕТ -->
+<section class="s" style="background:var(--dark)">
+  <div class="s-i">
+    <div class="s-head dark fi">
+      <div><div class="s-tag">Процесс</div><h2 class="s-title">Как мы работаем<br/>с инцидентом</h2></div>
+      <p class="s-sub dark">От звонка до закрытия заявки — прозрачно на каждом шаге</p>
+    </div>
+    <div class="process-grid fi">
+      <div class="process-row">
+        <div class="step-n">— 01</div>
+        <div class="process-line"></div>
+        <div class="process-body">
+          <h4>Обращение</h4>
+          <p>Звоните на горячую линию или создаёте заявку в личном кабинете. Дежурный инженер принимает обращение круглосуточно, включая выходные и праздники.</p>
+          <div class="process-time">Немедленно</div>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step-n">— 02</div>
+        <div class="process-line"></div>
+        <div class="process-body">
+          <h4>Диагностика</h4>
+          <p>Инженер подключается к устройству удалённо через Pelcom Мониторинг. Определяет характер неисправности: программная, аппаратная, инфраструктурная. Для 70% случаев этого достаточно для решения.</p>
+          <div class="process-time">В течение 30 минут</div>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step-n">— 03</div>
+        <div class="process-line"></div>
+        <div class="process-body">
+          <h4>Удалённое устранение</h4>
+          <p>Если неисправность программная — инженер устраняет её дистанционно: перезагрузка, обновление конфигурации, патч ПО, очистка кэша. Вы получаете уведомление о закрытии заявки.</p>
+          <div class="process-time">До 2 часов</div>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step-n">— 04</div>
+        <div class="process-line"></div>
+        <div class="process-body">
+          <h4>Выезд инженера</h4>
+          <p>При аппаратной неисправности — инженер выезжает на объект. Для объектов Москвы и МО — в течение 4 часов. Пока идёт диагностика на месте, доставляем подменное устройство из обменного фонда.</p>
+          <div class="process-time">4 часа (Москва) / 24 часа (регионы)</div>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step-n">— 05</div>
+        <div class="process-line"></div>
+        <div class="process-body">
+          <h4>Закрытие и отчёт</h4>
+          <p>После устранения — акт выполненных работ и краткий отчёт об инциденте: причина, решение, рекомендации. При наличии системной проблемы — предложение по профилактическим мерам.</p>
+          <div class="process-time">В течение рабочего дня</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="band fi">
+  <div class="band-i">
+    <div>
+      <div class="band-h">Оборудование уже стоит? Подключите сервис</div>
+      <div class="band-p">Принимаем оборудование на обслуживание независимо от того, кто его поставил.</div>
+    </div>
+    <div class="band-btns">
+      <button class="btn-band" onclick="location.href='pelcom-landing.html#contact'">Оформить договор</button>
+      <button class="btn-band-s" onclick="location.href='tel:+74951234567'">Позвонить сейчас</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-i">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="pelcom-landing.html" class="logo">
+          <svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+          <span class="ln">pelcom</span>
+        </a>
+        <p>Производитель и поставщик интерактивного оборудования. В реестре Минпромторга.</p>
+      </div>
+      <div class="ft-col" style="column-count:2;column-gap:24px"><h5 style="column-span:all">Оборудование</h5><a href="pelcom-kiosk.html">Инфокиоски</a><a href="pelcom-panels.html">Интерактивные панели</a><a href="pelcom-tables.html">Интерактивные столы</a><a href="pelcom-terminals.html">Сенсорные терминалы</a><a href="pelcom-payment.html">Терминалы оплаты</a><a href="pelcom-outdoor.html">Уличные киоски</a><a href="pelcom-lectern.html">Интерактивные трибуны</a><a href="pelcom-kids.html">Детское оборудование</a><a href="pelcom-holo.html">Голограммы</a><a href="pelcom-pylon.html">Видеопилоны</a><a href="pelcom-led.html">LED-экраны</a><a href="pelcom-accessible.html">Доступная среда</a><a href="pelcom-queue.html">Электронная очередь</a><a href="pelcom-nav.html">Навигация</a></div>
+      <div class="ft-col"><h5>Компания</h5><a href="pelcom-about.html">О нас</a><a href="pelcom-about.html">Реестр Минпромторга</a><a href="pelcom-partners.html">Партнёрам</a></div>
+      <div class="ft-col"><h5>Поддержка</h5><a href="pelcom-service.html">Сервис 24/7</a><a href="contacts.html">Контакты</a><a href="tel:+74951234567">+7 (495) 123-45-67</a></div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">© 2026 Pelcom. Все права защищены.</span>
+      <div class="ft-links"><a href="privacy.html">Политика конфиденциальности</a><a href="privacy.html#requisites">Реквизиты</a><a href="sitemap.xml">Карта сайта</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hd = document.getElementById('hd');
+window.addEventListener('scroll', () => hd.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target); });
+}, {threshold: 0.08, rootMargin: '0px 0px -32px 0px'});
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+
+<!-- floating contact -->
+<div class="fab">
+<a class="tg" href="https://t.me/pelcom" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.6-3.4-2.2 2.1c-.3.3-.5.4-.9.4l.3-4.7L18 6.5c.4-.3-.1-.5-.6-.2L7.1 13l-4.5-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.5.2 1.3 1.5z"/></svg></a>
+<a class="wa" href="https://wa.me/74951234567" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4c-.2 0-.5 0-.7.4-.3.4-1 .9-1 2.2s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7s1.6-.6 1.8-1.3c.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.5-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.2-1.4-.5-.6-.9-1.2-1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+<a class="ph" href="tel:+74951234567" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+</div>
+
+<div class="cookie" id="cookieBar" hidden><span>Мы используем cookie для работы сайта и аналитики. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span><button type="button">Принять</button></div>
+<script>(function(){var b=document.getElementById('cookieBar');if(!b)return;try{if(!localStorage.getItem('pelcom_cookie'))b.hidden=false;}catch(e){b.hidden=false;}b.querySelector('button').addEventListener('click',function(){try{localStorage.setItem('pelcom_cookie','1');}catch(e){}b.hidden=true;});})();</script>
+
+</body>
+</html>

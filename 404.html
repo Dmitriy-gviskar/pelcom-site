@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — страница не найдена — Pelcom</title>
+  <meta name="description" content="Запрашиваемая страница не найдена."/>
+  <link rel="canonical" href="https://pelcom.ru/404.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Pelcom"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:title" content="404 — страница не найдена — Pelcom"/>
+  <meta property="og:description" content="Запрашиваемая страница не найдена."/>
+  <meta property="og:url" content="https://pelcom.ru/404.html"/>
+  <meta property="og:image" content="https://pelcom.ru/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="404 — страница не найдена — Pelcom"/>
+  <meta name="twitter:description" content="Запрашиваемая страница не найдена."/>
+  <meta name="twitter:image" content="https://pelcom.ru/og-image.png"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="common.css">
+<style>
+    /* ══ ЧИСЛА ══ */
+    .nums-bg{background:var(--dark)}
+    .nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+    .num-card{background:var(--mid);padding:48px 40px;transition:background .25s}
+    .num-card:hover{background:#1F1F2E}
+    .num-val{font-size:clamp(52px,6vw,80px);font-weight:800;letter-spacing:-3px;line-height:1;color:#fff}
+    .num-val sup{font-size:clamp(20px,2.5vw,32px);letter-spacing:0;font-weight:400;color:var(--blue)}
+    .num-label{font-size:13px;color:var(--dim);line-height:1.55;margin-top:14px}
+
+    /* ══ ИСТОРИЯ ══ */
+    .history-bg{background:var(--cream);color:var(--ink)}
+    .timeline{display:flex;flex-direction:column;gap:0}
+    .timeline-row{display:grid;grid-template-columns:140px 2px 1fr;gap:0 40px;padding:40px 0;border-bottom:1px solid var(--rule-l);align-items:start;transition:padding-left .25s}
+    .timeline-row:last-child{border-bottom:none}
+    .timeline-row:hover{padding-left:16px}
+    .timeline-year{font-size:28px;font-weight:800;letter-spacing:-1px;color:var(--blue);line-height:1;padding-top:4px}
+    .timeline-line{width:2px;background:linear-gradient(to bottom,var(--blue),rgba(0,113,227,.1));align-self:stretch;margin-top:8px}
+    .timeline-body h4{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;font-family:'Unbounded',system-ui,sans-serif}
+    .timeline-body p{font-size:13px;color:var(--ink-2);line-height:1.75}
+
+    /* ══ ПРОИЗВОДСТВО ══ */
+    .prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .prod-left .s-tag{margin-bottom:16px}
+    .prod-h{font-size:clamp(32px,3.5vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.05;margin-bottom:20px;font-family:'Unbounded',system-ui,sans-serif}
+    .prod-p{font-size:14px;color:var(--dim);line-height:1.85;margin-bottom:32px}
+    .prod-facts{display:flex;flex-direction:column;gap:16px}
+    .prod-fact{display:flex;align-items:flex-start;gap:16px;padding:18px 20px;background:var(--mid);border-left:2px solid var(--blue);border-radius:0 var(--r) var(--r) 0}
+    .prod-fact-icon{flex-shrink:0;margin-top:2px}
+    .prod-fact-label{font-size:13px;font-weight:600;color:#fff;display:block}
+    .prod-fact-sub{font-size:12px;color:var(--dim);margin-top:2px}
+    .prod-right{position:relative}
+    .factory-svg-wrap{position:relative}
+    .factory-badge{position:absolute;top:24px;right:24px;background:var(--blue);color:#fff;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;border-radius:100px}
+
+    /* ══ СЕРТИФИКАТЫ ══ */
+    .cert-bg{background:var(--cream);color:var(--ink)}
+    .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .cert-card{background:#fff;padding:40px 32px;border-top:2px solid transparent;transition:border-color .3s,transform .3s;border-radius:var(--r)}
+    .cert-card:hover{border-top-color:var(--blue);transform:translateY(-4px)}
+    .cert-icon{width:56px;height:56px;border-radius:12px;background:var(--blue-dim);border:1px solid rgba(0,113,227,.2);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+    .cert-num{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+    .cert-name{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px;font-family:'Unbounded',system-ui,sans-serif}
+    .cert-desc{font-size:12px;color:var(--ink-2);line-height:1.7}
+
+    /* ══ КОМАНДА ══ */
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .team-card{background:var(--mid);padding:40px;border-top:2px solid transparent;transition:border-color .3s;border-radius:var(--r)}
+    .team-card:hover{border-top-color:var(--blue)}
+    .team-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#0e5f8a);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;margin-bottom:24px;letter-spacing:-1px;font-family:'Unbounded',system-ui,sans-serif}
+    .team-name{font-size:16px;font-weight:700;margin-bottom:4px;font-family:'Unbounded',system-ui,sans-serif}
+    .team-pos{font-size:12px;color:var(--blue);font-weight:600;letter-spacing:.5px;margin-bottom:14px}
+    .team-bio{font-size:13px;color:var(--dim);line-height:1.7}
+
+    /* ══ CTA BAND ══ */
+    .band{background:var(--blue);padding:72px 48px}
+    .band-i{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+    .band-h{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.5px;font-family:'Unbounded',system-ui,sans-serif}
+    .band-p{font-size:14px;color:rgba(255,255,255,.75);margin-top:8px}
+    .btn-band{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:15px 34px;background:#fff;color:var(--blue);border:none;cursor:pointer;font-family:inherit;transition:all .2s;flex-shrink:0;border-radius:var(--r)}
+    .btn-band:hover{background:var(--cream)}
+
+    /* ══ FOOTER ══ */
+    footer{background:var(--black);padding:72px 48px 36px;border-top:1px solid var(--rule)}
+    .ft-i{max-width:1320px;margin:0 auto}
+    .ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:64px;padding-bottom:56px;border-bottom:1px solid var(--rule);margin-bottom:32px}
+    .ft-brand p{font-size:13px;color:var(--dim);margin-top:18px;line-height:1.75;max-width:200px}
+    .ft-col h5{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px}
+    .ft-col a{display:block;font-size:13px;color:var(--dim);margin-bottom:12px;transition:color .2s}
+    .ft-col a:hover{color:#fff}
+    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+    .ft-links{display:flex;gap:24px}
+    .ft-links a{font-size:12px;color:rgba(255,255,255,.2);transition:color .2s}
+    .ft-links a:hover{color:rgba(255,255,255,.55)}
+
+    /* ══ UTILS ══ */
+    .fi{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .fi.in{opacity:1;transform:none}
+
+    @media(max-width:1024px){
+      .hd-i{gap:14px;justify-content:space-between}
+      .burger{display:flex}
+      .hd-ph{display:none}
+      .hd-r{display:none}
+      .hd-nav{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:#0c0c16;border-bottom:1px solid rgba(255,255,255,.08);padding:4px 24px 14px;display:none}
+      .hd.open .hd-nav{display:flex}
+      .hd-nav a{padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+      .nums-grid{grid-template-columns:repeat(2,1fr)}
+      .prod-grid{grid-template-columns:1fr;gap:48px}
+      .prod-right{display:none}
+      .cert-grid{grid-template-columns:repeat(2,1fr)}
+      .team-grid{grid-template-columns:1fr}
+      .ft-top{grid-template-columns:1fr 1fr;gap:40px}
+    }
+    @media(max-width:640px){
+      .s{padding:72px 20px}
+      .pg-hero{padding:120px 20px 72px}
+      .hd-i,.band-i,.ft-i{padding-left:20px;padding-right:20px}
+      .nums-grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr}
+      .pg-h{font-size:52px;letter-spacing:-2px}
+      .timeline-row{grid-template-columns:90px 2px 1fr;gap:0 20px}
+      .ft-top{grid-template-columns:1fr}
+    }
+  </style>
+<style>.nf{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px}
+.nf-code{font-family:'Manrope',sans-serif;font-size:clamp(90px,18vw,180px);font-weight:800;letter-spacing:-.04em;color:var(--blue);line-height:1}
+.nf h1{font-family:'Manrope',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:700;margin:8px 0 12px}
+.nf p{color:var(--dim);font-size:16px;margin-bottom:28px;max-width:440px}
+.nf a{display:inline-block;padding:14px 30px;background:var(--blue);color:#fff;border-radius:var(--r);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}</style>
+<style>
+.fab{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.fab a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);transition:transform .2s}
+.fab a:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab .tg{background:#229ED9}.fab .wa{background:#25D366}.fab .ph{background:#0071e3}
+@media(max-width:640px){.fab a{width:46px;height:46px}.fab svg{width:23px;height:23px}}
+</style>
+<style>
+.cookie{position:fixed;left:18px;bottom:18px;z-index:300;max-width:520px;background:#12121c;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 20px;display:flex;gap:16px;align-items:center;box-shadow:0 10px 40px rgba(0,0,0,.45);font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
+.cookie a{color:var(--blue)}
+.cookie button{flex-shrink:0;padding:10px 20px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit}
+@media(max-width:560px){.cookie{flex-direction:column;align-items:flex-start;left:12px;right:84px;max-width:none;bottom:12px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd" id="hd">
+  <div class="hd-i">
+    <a href="pelcom-landing.html" class="logo">
+      <svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+      <span class="ln">pelcom</span>
+    </a>
+    <nav class="hd-nav">
+      <a href="pelcom-landing.html#products">Оборудование</a>
+      <a href="pelcom-landing.html#industries">Отрасли</a>
+      <a href="pelcom-landing.html#software">Программы</a>
+      <a href="pelcom-about.html">О компании</a>
+      <a href="pelcom-service.html">Сервис</a>
+    <a href="contacts.html">Контакты</a></nav>
+    <div class="hd-r">
+      <a href="tel:+74951234567" class="hd-ph">+7 (495) 123-45-67</a>
+      <button class="hd-btn" onclick="location.href='pelcom-landing.html#contact'">Связаться</button>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main class="nf"><div class="nf-code">404</div><h1>Страница не найдена</h1><p>Возможно, страница была перемещена или удалена. Вернитесь на главную или воспользуйтесь меню.</p><a href="pelcom-landing.html">На главную</a></main>
+<!-- FOOTER -->
+<footer>
+  <div class="ft-i">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="pelcom-landing.html" class="logo">
+          <svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+          <span class="ln">pelcom</span>
+        </a>
+        <p>Производитель и поставщик интерактивного оборудования. В реестре Минпромторга.</p>
+      </div>
+      <div class="ft-col" style="column-count:2;column-gap:24px"><h5 style="column-span:all">Оборудование</h5><a href="pelcom-kiosk.html">Инфокиоски</a><a href="pelcom-panels.html">Интерактивные панели</a><a href="pelcom-tables.html">Интерактивные столы</a><a href="pelcom-terminals.html">Сенсорные терминалы</a><a href="pelcom-payment.html">Терминалы оплаты</a><a href="pelcom-outdoor.html">Уличные киоски</a><a href="pelcom-lectern.html">Интерактивные трибуны</a><a href="pelcom-kids.html">Детское оборудование</a><a href="pelcom-holo.html">Голограммы</a><a href="pelcom-pylon.html">Видеопилоны</a><a href="pelcom-led.html">LED-экраны</a><a href="pelcom-accessible.html">Доступная среда</a><a href="pelcom-queue.html">Электронная очередь</a><a href="pelcom-nav.html">Навигация</a></div>
+      <div class="ft-col"><h5>Компания</h5><a href="pelcom-about.html">О нас</a><a href="pelcom-about.html">Реестр Минпромторга</a><a href="pelcom-partners.html">Партнёрам</a></div>
+      <div class="ft-col"><h5>Поддержка</h5><a href="pelcom-service.html">Сервис 24/7</a><a href="contacts.html">Контакты</a><a href="tel:+74951234567">+7 (495) 123-45-67</a></div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">© 2026 Pelcom. Все права защищены.</span>
+      <div class="ft-links"><a href="privacy.html">Политика конфиденциальности</a><a href="privacy.html#requisites">Реквизиты</a><a href="sitemap.xml">Карта сайта</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hd = document.getElementById('hd');
+window.addEventListener('scroll', () => hd.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target); });
+}, {threshold: 0.08, rootMargin: '0px 0px -32px 0px'});
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+
+<!-- floating contact -->
+<div class="fab">
+<a class="tg" href="https://t.me/pelcom" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.6-3.4-2.2 2.1c-.3.3-.5.4-.9.4l.3-4.7L18 6.5c.4-.3-.1-.5-.6-.2L7.1 13l-4.5-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.5.2 1.3 1.5z"/></svg></a>
+<a class="wa" href="https://wa.me/74951234567" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4c-.2 0-.5 0-.7.4-.3.4-1 .9-1 2.2s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7s1.6-.6 1.8-1.3c.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.5-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.2-1.4-.5-.6-.9-1.2-1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+<a class="ph" href="tel:+74951234567" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+</div>
+
+<div class="cookie" id="cookieBar" hidden><span>Мы используем cookie для работы сайта и аналитики. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span><button type="button">Принять</button></div>
+<script>(function(){var b=document.getElementById('cookieBar');if(!b)return;try{if(!localStorage.getItem('pelcom_cookie'))b.hidden=false;}catch(e){b.hidden=false;}b.querySelector('button').addEventListener('click',function(){try{localStorage.setItem('pelcom_cookie','1');}catch(e){}b.hidden=true;});})();</script>
+
+</body>
+</html>

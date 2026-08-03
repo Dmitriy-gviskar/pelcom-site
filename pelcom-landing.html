@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pelcom — Интерактивное оборудование</title>
+  <meta name="description" content="Pelcom — российский производитель интерактивного оборудования: сенсорные киоски, интерактивные панели, терминалы оплаты, электронная очередь, навигация и LED-экраны. В реестре Минпромторга."/>
+  <link rel="canonical" href="https://pelcom.ru/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Pelcom"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:title" content="Pelcom — Интерактивное оборудование"/>
+  <meta property="og:description" content="Pelcom — российский производитель интерактивного оборудования: сенсорные киоски, интерактивные панели, терминалы оплаты, электронная очередь, навигация и LED-экраны. В реестре Минпромторга."/>
+  <meta property="og:url" content="https://pelcom.ru/"/>
+  <meta property="og:image" content="https://pelcom.ru/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Pelcom — Интерактивное оборудование"/>
+  <meta name="twitter:description" content="Pelcom — российский производитель интерактивного оборудования: сенсорные киоски, интерактивные панели, терминалы оплаты, электронная очередь, навигация и LED-экраны. В реестре Минпромторга."/>
+  <meta name="twitter:image" content="https://pelcom.ru/og-image.png"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    /* Display font — все заголовки и крупные числа */
+    h1,h2,h3,.display,.m-num,.adv-n,.stmt-card-num,.cat-view-title,.cat-price,
+    .case-stat-val,.sw-name,.hero-watermark,.stmt-h,.ct-h{
+      font-family:'Unbounded',system-ui,sans-serif;
+    }
+    a{text-decoration:none;color:inherit}
+    .logo{display:flex;align-items:center;gap:10px}
+    .lm{width:30px;height:28px;flex-shrink:0;display:block}
+    .ln{font-size:20px;font-weight:600;letter-spacing:-.02em;font-family:'Manrope',system-ui,sans-serif}
+
+    /* ══ HEADER ══════════════════════════ */
+    .hd{position:fixed;top:0;left:0;right:0;z-index:300;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+    .hd.scrolled{background:rgba(0,0,0,.9);backdrop-filter:blur(20px);border-color:var(--rule)}
+    .hd-i{max-width:1320px;margin:0 auto;padding:0 48px;height:64px;display:flex;align-items:center;gap:48px}
+    .hd-nav{display:flex;gap:2px;flex:1}
+    .hd-nav a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);padding:8px 14px;border-radius:3px;transition:color .2s}
+    .hd-nav a:hover{color:#fff}
+    .hd-r{display:flex;align-items:center;gap:24px}
+    .hd-ph{font-size:13px;font-weight:500;color:var(--dim);transition:color .2s}
+    .hd-ph:hover{color:#fff}
+    .hd-btn{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:10px 22px;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:inherit;transition:background .2s;border-radius:var(--r)}
+    .burger{display:none;border:none;background:none;padding:0;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;cursor:pointer;flex-shrink:0}
+    .burger span{display:block;height:2px;width:22px;background:#fff;border-radius:2px;transition:.25s}
+    .hd.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hd.open .burger span:nth-child(2){opacity:0}
+    .hd.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .hd-btn:hover{background:#0077ED}
+
+
+    .progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--blue);z-index:9999;width:0;transition:width .1s linear}
+
+    /* ══ HERO Porsche-style ══ */
+    .hero{height:100vh;min-height:700px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+    .hero-bg{position:absolute;inset:0;z-index:0}
+    .hero-bg canvas,.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+    .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 40%,transparent 100%)}
+    .hero-i{max-width:1320px;margin:0 auto;width:100%;padding:0 48px 80px;position:relative;z-index:2}
+    .hero-kicker{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+    .hero-kicker span{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--blue)}
+    .hero-kicker::before{content:'';width:28px;height:1px;background:var(--blue)}
+    .hero h1{font-size:clamp(48px,8vw,96px);font-weight:800;letter-spacing:-.04em;line-height:.92;text-transform:uppercase;max-width:960px;margin-bottom:48px;font-family:'Unbounded',system-ui,sans-serif}
+    .hero h1 .w1{display:block}
+    .hero h1 .w2{display:block;color:var(--blue)}
+    .hero h1 .w3{display:block}
+    .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
+    .hero-desc{font-size:17px;line-height:1.5;color:var(--dim);max-width:400px}
+    .hero-ctas{display:flex;gap:12px;align-items:center;flex-shrink:0}
+    .btn-p{font-size:15px;font-weight:500;letter-spacing:-.01em;padding:14px 32px;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:inherit;transition:background .4s;border-radius:var(--r)}
+    .btn-p:hover{background:var(--blue-hover)}
+    .btn-s{font-size:15px;font-weight:500;letter-spacing:-.01em;padding:13px 30px;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.35);cursor:pointer;font-family:inherit;transition:all .4s;border-radius:var(--r)}
+    .btn-s:hover{color:#fff;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.04)}
+    @keyframes slideIn{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3}
+    .scroll-arr{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:scrollPulse 2s ease-in-out infinite}
+    @keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:.35}50%{transform:scaleY(.5);opacity:.7}}
+
+    /* ══ MARQUEE ═════════════════════════ */
+    .mq{overflow:hidden;background:var(--dark);padding:14px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+    .mq-track{display:flex;gap:0;animation:marquee 30s linear infinite;width:max-content}
+    .mq-item{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.85);padding:0 56px;white-space:nowrap}
+    .mq-dot{color:rgba(255,255,255,.4)}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ══ РЕЕСТР ══════════════════════════ */
+    .reg{background:var(--cream);color:var(--ink);padding:80px 48px}
+    .reg-i{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
+    .reg-left{}
+    .reg-eyebrow{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+    .reg-eyebrow::before{content:'';width:32px;height:1px;background:var(--blue)}
+    .reg-h{font-size:clamp(36px,4.5vw,64px);font-weight:800;letter-spacing:-2px;line-height:1;color:var(--ink);margin-bottom:28px;font-family:'Manrope',system-ui,sans-serif}
+    .reg-h em{font-style:normal;color:var(--blue)}
+    .reg-sub{font-size:15px;color:var(--ink-2);line-height:1.8;max-width:520px;margin-bottom:36px}
+    .reg-badges{display:flex;gap:10px;flex-wrap:wrap}
+    .reg-badge{display:flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid rgba(0,113,227,.3);border-radius:100px;font-size:12px;font-weight:600;color:var(--ink);letter-spacing:.2px;transition:all .25s}
+    .reg-badge:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .reg-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);flex-shrink:0}
+    .reg-right{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    @media(max-width:900px){.reg-i{grid-template-columns:1fr}.reg-right{display:none}}
+
+    /* ══ SECTION ══════════════════════════ */
+    .s{padding:112px 48px}
+    .s-i{max-width:1320px;margin:0 auto}
+    .s-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:72px;padding-bottom:32px;gap:32px}
+    .s-head.dark{border-bottom:1px solid var(--rule)}
+    .s-head.light{border-bottom:1px solid var(--rule-l)}
+    .s-tag{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+    .s-title{font-size:clamp(34px,4vw,56px);font-weight:800;letter-spacing:-1.5px;line-height:1.02;font-family:'Manrope',system-ui,sans-serif}
+    .s-sub{font-size:14px;line-height:1.8;max-width:300px;text-align:right;font-feature-settings:'kern' 1}
+    .s-sub.dark{color:var(--dim)}
+    .s-sub.light{color:var(--ink-2)}
+
+    /* ══ PRODUCTS — PORSCHE GRID ══ */
+    .cat-bg{background:var(--black)}
+    .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule)}
+    .prod-card{position:relative;overflow:hidden;background:var(--dark);aspect-ratio:1/1;cursor:pointer;transition:all .4s cubic-bezier(.25,0,.25,1)}
+    .prod-card:hover{transform:scale(1.02);z-index:2;box-shadow:0 0 40px rgba(0,113,227,.15)}
+    .prod-card:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+    .prod-card-img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.25,0,.25,1)}
+    .prod-card:hover .prod-card-img{transform:scale(1.06)}
+    .prod-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.1) 35%,transparent 70%)}
+    .prod-card-body{position:absolute;bottom:8px;left:0;right:0;padding:16px 24px;z-index:1}
+    .prod-card-name{font-size:14px;font-weight:600;letter-spacing:-.02em;color:#fff;margin-bottom:2px;font-family:'Unbounded',system-ui,sans-serif}
+    .prod-card-price{font-size:10px;color:var(--dim)}
+    .prod-card-tag{display:inline-block;font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+    .stock-badge{display:inline-flex;align-items:center;gap:4px;margin-left:8px;font-size:8px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#1FAF6A}
+    .stock-badge::before{content:'';width:4px;height:4px;border-radius:50%;background:#1FAF6A;flex-shrink:0}
+    @media(max-width:1024px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:768px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.prod-grid{grid-template-columns:1fr;gap:1px}}
+
+    /* ══ КЕЙСЫ — CAROUSEL ═════════════════ */
+    .cases-bg{background:var(--dark)}
+    .cases-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;gap:0;margin:0;padding:0}
+    .cases-track::-webkit-scrollbar{display:none}
+    .cases-track{ -ms-overflow-style:none;scrollbar-width:none}
+    .case-card{flex:0 0 100%;scroll-snap-align:start;position:relative;overflow:hidden;background:var(--mid);border-radius:var(--r);display:grid;grid-template-columns:1fr 1fr;min-height:400px}
+    .case-thumb{overflow:hidden;position:relative;min-height:400px}
+    .case-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .case-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.6) 0%,transparent 60%);pointer-events:none}
+    .case-body{padding:56px;display:flex;flex-direction:column;justify-content:center}
+    .case-tag{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+    .case-name{font-size:28px;font-weight:600;letter-spacing:-.04em;margin-bottom:12px;font-family:'Unbounded',system-ui,sans-serif}
+    .case-meta{font-size:15px;color:var(--dim);line-height:1.5}
+    .case-stats{display:flex;gap:40px;margin-top:32px;padding-top:32px;border-top:1px solid var(--rule)}
+    .case-stat-val{font-size:28px;font-weight:600;letter-spacing:-.04em}
+    .case-stat-label{font-size:12px;color:var(--dim);margin-top:4px}
+    /* nav */
+    .cases-nav{display:flex;align-items:center;justify-content:center;gap:40px;margin-top:40px}
+    .cases-dots{display:flex;gap:12px}
+    .cases-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;transition:background .4s;padding:0}
+    .cases-dot.active{background:var(--blue)}
+    .cases-arrow{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .4s}
+    .cases-arrow:hover{border-color:rgba(255,255,255,.4);background:var(--faint)}
+    @media(max-width:768px){.case-card{grid-template-columns:1fr}.case-thumb{min-height:240px}.case-body{padding:40px}.cases-track{margin:0;padding:0}}
+
+    /* ══ ОТЗЫВЫ — CAROUSEL ═════════════════ */
+    .rev-bg{background:var(--cream);color:var(--ink)}
+    .rev-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;gap:0;margin:0;padding:0}
+    .rev-track::-webkit-scrollbar{display:none}
+    .rev-card{flex:0 0 100%;scroll-snap-align:start;background:#fff;padding:80px 96px;border-radius:var(--r);min-height:320px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+    .rev-card::before{content:'\201C';position:absolute;top:20px;left:40px;font-size:200px;font-weight:900;line-height:1;color:rgba(0,113,227,.04);pointer-events:none;font-family:'Unbounded',system-ui,sans-serif}
+    .rev-card::after{content:'pelcom';position:absolute;bottom:28px;right:48px;font-size:14px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(0,0,0,.05);pointer-events:none;font-family:'Unbounded',system-ui,sans-serif}
+    .rev-quote{font-size:22px;line-height:1.5;color:var(--ink-2);margin-bottom:48px;position:relative;max-width:680px}
+    .rev-quote p{position:relative;z-index:1}
+    .rev-person{display:flex;align-items:center;gap:16px;padding-top:32px;border-top:1px solid rgba(0,0,0,.06)}
+    .rev-avatar{width:52px;height:52px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+    .rev-name{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+    .rev-pos{font-size:13px;color:var(--ink-2);margin-top:1px}
+    .rev-company{font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);margin-top:4px}
+    .rev-nav{display:flex;align-items:center;justify-content:center;gap:40px;margin-top:40px}
+    .rev-dots{display:flex;gap:12px}
+    .rev-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);border:none;cursor:pointer;transition:background .4s;padding:0}
+    .rev-dot.active{background:var(--blue)}
+    .rev-arrow{width:40px;height:40px;border-radius:50%;border:1px solid rgba(0,0,0,.15);background:transparent;color:var(--ink);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .4s}
+    .rev-arrow:hover{border-color:rgba(0,0,0,.3)}
+    @media(max-width:768px){.rev-card{padding:48px 32px}.rev-card::before{font-size:120px;top:8px;left:16px}.rev-track{margin:0;padding:0}}
+
+    /* ══ STATEMENT BAND ══════════════════ */
+    .stmt{background:var(--dark);padding:100px 48px;position:relative;overflow:hidden}
+    .stmt::before{
+      content:'pelcom';
+      position:absolute;right:-20px;top:50%;transform:translateY(-50%);
+      font-size:clamp(140px,18vw,280px);font-weight:900;letter-spacing:-12px;
+      color:rgba(0,113,227,.05);line-height:1;pointer-events:none;user-select:none;
+    }
+    .stmt-i{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative}
+    .stmt-left{}
+    .stmt-kicker{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+    .stmt-h{font-size:clamp(40px,5vw,72px);font-weight:800;letter-spacing:-2px;line-height:.96;margin-bottom:24px;font-family:'Manrope',system-ui,sans-serif}
+    .stmt-h em{font-style:normal;color:var(--blue)}
+    .stmt-p{font-size:15px;color:var(--dim);line-height:1.8;max-width:380px}
+    .stmt-right{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .stmt-card{background:var(--mid);padding:32px;border-top:2px solid transparent;transition:border-color .3s;border-radius:var(--r)}
+    .stmt-card:hover{border-top-color:var(--blue)}
+    .stmt-card-num{font-size:44px;font-weight:800;letter-spacing:-2px;color:#fff;margin-bottom:8px;font-variant-numeric:tabular-nums;font-family:'Manrope',system-ui,sans-serif}
+    .stmt-card-num sub{font-size:16px;letter-spacing:0;font-weight:400;color:var(--dim)}
+    .stmt-card-label{font-size:12px;color:var(--dim);line-height:1.5}
+
+    /* ══ INDUSTRIES ══════════════════════ */
+    .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule)}
+    .ind-card{background:var(--dark);padding:44px 56px;transition:background .4s;position:relative;display:flex;align-items:flex-start;gap:40px}
+    .ind-card:hover{background:var(--mid)}
+    .ind-card::after{content:'';position:absolute;bottom:0;left:56px;right:56px;height:1px;background:var(--blue);transform:scaleX(0);transition:transform .4s}
+    .ind-card:hover::after{transform:scaleX(1)}
+    .ind-icon{width:44px;height:44px;flex-shrink:0;margin-top:2px;color:var(--blue);opacity:.55;transition:opacity .4s}
+    .ind-card:hover .ind-icon{opacity:1}
+    .ind-body{flex:1;min-width:0}
+    .ind-name{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px;font-family:'Unbounded',system-ui,sans-serif}
+    .ind-desc{font-size:14px;color:var(--dim);line-height:1.5}
+    @media(max-width:768px){.ind-grid{grid-template-columns:1fr}.ind-card{padding:40px 32px;gap:28px}}
+
+    /* ══ SOFTWARE ════════════════════════ */
+    .sw-bg{background:var(--mid)}
+    .sw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule)}
+    .sw-card{background:var(--dark);padding:56px 48px;transition:background .4s;border-radius:var(--r);position:relative;display:flex;flex-direction:column}
+    .sw-card:hover{background:#18181C}
+    .sw-card::after{content:'';position:absolute;bottom:0;left:48px;right:48px;height:1px;background:var(--blue);transform:scaleX(0);transition:transform .4s}
+    .sw-card:hover::after{transform:scaleX(1)}
+    .sw-n{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:32px}
+    .sw-name{font-size:28px;font-weight:700;letter-spacing:-.03em;margin-bottom:16px;font-family:'Unbounded',system-ui,sans-serif}
+    .sw-desc{font-size:15px;color:var(--dim);line-height:1.6}
+    .sw-more{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:40px;font-size:13px;font-weight:500;letter-spacing:-.01em;color:var(--blue);transition:gap .3s;text-decoration:none}
+    .sw-more:hover{gap:14px}
+    .sw-more::after{content:'→'}
+    @media(max-width:768px){.sw-grid{grid-template-columns:1fr}}
+
+    /* ══ ADVANTAGES ══════════════════════ */
+    .adv-bg{background:var(--cream);color:var(--ink)}
+    .adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(0,0,0,.04)}
+    .adv-item{background:#fff;padding:56px 56px 56px 152px;transition:background .4s;border-radius:0;position:relative;overflow:hidden}
+    .adv-item:hover{background:#fafafa}
+    .adv-n{position:absolute;left:-8px;top:50%;transform:translateY(-55%);font-size:140px;font-weight:800;letter-spacing:-6px;line-height:1;color:rgba(0,113,227,.07);pointer-events:none;font-family:'Unbounded',system-ui,sans-serif}
+    .adv-h{font-size:22px;font-weight:600;letter-spacing:-.03em;color:var(--ink);margin-bottom:10px;font-family:'Unbounded',system-ui,sans-serif;position:relative}
+    .adv-p{font-size:15px;color:var(--ink-2);line-height:1.6;position:relative}
+    @media(max-width:768px){.adv-grid{grid-template-columns:1fr}.adv-item{padding:48px 48px 48px 120px}.adv-n{font-size:100px}}
+
+    /* ══ CLIENTS ══════════════════════════ */
+    .cl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+    .cl-item{height:96px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;letter-spacing:-.01em;color:rgba(255,255,255,.35);transition:color .4s;cursor:default;position:relative}
+    .cl-item::before{content:'';position:absolute;inset:22% 12%;background:rgba(0,113,227,.08);border-radius:var(--r);transform:scale(.92);opacity:0;transition:all .4s cubic-bezier(.25,0,.25,1)}
+    .cl-item:hover{color:#fff}
+    .cl-item:hover::before{transform:scale(1);opacity:1;background:rgba(0,113,227,.12)}
+    @media(max-width:768px){.cl-grid{grid-template-columns:repeat(3,1fr)}.cl-item{height:80px;font-size:14px}}
+
+    /* ══ CTA BAND ════════════════════════ */
+    .band{background:var(--blue);padding:72px 48px}
+    .band-i{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+    .band-h{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.5px;font-family:'Manrope',system-ui,sans-serif}
+    .band-p{font-size:14px;color:rgba(255,255,255,.75);margin-top:8px}
+    .btn-band{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15px 34px;background:#fff;color:var(--blue);border:none;cursor:pointer;font-family:inherit;transition:all .2s;flex-shrink:0;border-radius:980px}
+    .btn-band:hover{background:var(--cream)}
+
+    /* ══ CONTACT ═════════════════════════ */
+    .ct-bg{background:var(--dark)}
+    .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+    .ct-h{font-size:clamp(40px,5vw,64px);font-weight:800;letter-spacing:-2px;line-height:.96;margin-bottom:20px;font-family:'Manrope',system-ui,sans-serif}
+    .ct-h em{font-style:normal;color:var(--blue)}
+    .ct-sub{font-size:15px;color:var(--dim);line-height:1.8;margin-bottom:52px}
+    .ct-row{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+    .ct-row:last-of-type{border-bottom:none}
+    .ct-lbl{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);width:72px;flex-shrink:0;padding-top:3px}
+    .ct-val strong{display:block;font-size:15px;font-weight:600}
+    .ct-val span{font-size:13px;color:var(--dim)}
+    .ff{margin-bottom:16px}
+    .ff label{display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px}
+    .ff input,.ff select,.ff textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--faint);padding:13px 16px;font-size:14px;color:#fff;font-family:inherit;outline:none;transition:border-color .2s;appearance:none;border-radius:10px}
+    .ff input::placeholder,.ff textarea::placeholder{color:rgba(255,255,255,.2)}
+    .ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--blue)}
+    .ff select option{background:var(--mid)}
+    .ff textarea{resize:vertical;min-height:96px}
+    .fl{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .btn-form{width:100%;padding:15px;background:var(--blue);border:none;color:#fff;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:background .2s;margin-top:4px;border-radius:980px}
+    .btn-form:hover{background:#0077ED}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin:6px 0 16px;cursor:pointer;font-size:12px;line-height:1.5;color:rgba(255,255,255,.55)}
+    .consent input{width:16px;height:16px;flex-shrink:0;margin-top:1px;accent-color:var(--blue);cursor:pointer}
+    .consent a{color:var(--blue)}
+    .form-ok{padding:28px;border:1px solid rgba(0,113,227,.4);background:rgba(0,113,227,.08);border-radius:12px;font-size:15px;color:#fff;line-height:1.6}
+    .form-legal{font-size:11px;color:rgba(255,255,255,.25);text-align:center;margin-top:12px}
+    .form-legal a{color:rgba(255,255,255,.4);text-decoration:underline}
+
+    /* ══ FOOTER ══════════════════════════ */
+    footer{background:var(--black);padding:72px 48px 36px;border-top:1px solid var(--rule)}
+    .ft-i{max-width:1320px;margin:0 auto}
+    .ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:64px;padding-bottom:56px;border-bottom:1px solid var(--rule);margin-bottom:32px}
+    .ft-brand p{font-size:13px;color:var(--dim);margin-top:18px;line-height:1.75;max-width:200px}
+    .ft-col h5{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px}
+    .ft-col a{display:block;font-size:13px;color:var(--dim);margin-bottom:12px;transition:color .2s}
+    .ft-col a:hover{color:#fff}
+    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+    .ft-links{display:flex;gap:24px}
+    .ft-links a{font-size:12px;color:rgba(255,255,255,.2);transition:color .2s}
+    .ft-links a:hover{color:rgba(255,255,255,.55)}
+
+    /* ══ UTILS ════════════════════════════ */
+    .fi{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+    .fi.in{opacity:1;transform:none}
+
+    @media(max-width:1024px){
+      .hd-i{gap:14px;justify-content:space-between}
+      .burger{display:flex}
+      .hd-ph{display:none}
+      .hd-r{display:none}
+      .hd-nav{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:#0c0c16;border-bottom:1px solid rgba(255,255,255,.08);padding:4px 24px 14px;display:none}
+      .hd.open .hd-nav{display:flex}
+      .hd-nav a{padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+      .hero h1{letter-spacing:-3px}
+      .hero-deco{display:none}
+      .catalog{grid-template-columns:1fr}
+      .cat-list{border-right:none;border-bottom:1px solid var(--rule-l);display:flex;overflow-x:auto}
+      .prod-grid{grid-template-columns:repeat(2,1fr)}
+      .metrics-i{grid-template-columns:repeat(2,1fr)}
+      .stmt-i{grid-template-columns:1fr}
+      .sw-grid{grid-template-columns:1fr}
+      .adv-grid{grid-template-columns:repeat(2,1fr)}
+      .ct-grid{grid-template-columns:1fr;gap:48px}
+      .case-card{grid-template-columns:1fr}
+      .rev-grid{grid-template-columns:1fr}
+      .ft-top{grid-template-columns:1fr 1fr;gap:40px}
+    }
+    @media(max-width:640px){
+      .s{padding:72px 20px}
+      .hd-i,.hero-i,.metrics-i,.stmt-i,.band-i,.ft-i{padding:0 20px}
+      .hero{padding:0}
+      .hero-i{padding:0 20px 56px}
+      .hero h1{font-size:clamp(24px,6.6vw,50px);letter-spacing:-1.5px}
+      .ind-grid{grid-template-columns:repeat(2,1fr)}
+      .ind-desc{display:none}
+      .adv-grid{grid-template-columns:1fr}
+      .fl{grid-template-columns:1fr}
+      .ft-top{grid-template-columns:1fr}
+      .cl-grid{grid-template-columns:repeat(3,1fr)}
+      .cat-specs{grid-template-columns:1fr 1fr}
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Pelcom","url":"https://pelcom.ru/","logo":"https://pelcom.ru/apple-touch-icon.png","description":"Российский производитель интерактивного оборудования: сенсорные киоски, интерактивные панели, терминалы оплаты, электронная очередь, навигация и LED-экраны.","email":"info@pelcom.ru","areaServed":"RU"}
+  </script>
+<style>
+.fab{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.fab a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.fab a:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab .tg{background:#229ED9}.fab .wa{background:#25D366}.fab .ph{background:#0071e3}
+@media(max-width:640px){.fab a{width:46px;height:46px}.fab svg{width:23px;height:23px}}
+</style>
+<style>
+.cookie{position:fixed;left:18px;bottom:18px;z-index:300;max-width:520px;background:var(--mid);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 20px;display:flex;gap:16px;align-items:center;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
+.cookie a{color:var(--blue)}
+.cookie button{flex-shrink:0;padding:10px 20px;background:var(--blue);color:#fff;border:none;border-radius:var(--r);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit}
+@media(max-width:560px){.cookie{flex-direction:column;align-items:flex-start;left:12px;right:84px;max-width:none;bottom:12px}}
+</style>
+<style>
+.faq-bg{background:var(--dark)}
+.faq-terminal{max-width:780px;margin:0 auto;border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;background:var(--mid)}
+.faq-topbar{display:flex;align-items:center;gap:12px;padding:14px 24px;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(255,255,255,.06)}
+.faq-topbar-dot{width:10px;height:10px;border-radius:50%}
+.faq-topbar-dot:nth-child(1){background:#FF5F57}
+.faq-topbar-dot:nth-child(2){background:#FFBD2E}
+.faq-topbar-dot:nth-child(3){background:#27CA40}
+.faq-topbar-title{margin-left:12px;font-size:12px;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.5px}
+.faq-list{padding:8px 0}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.04);padding:0}
+.faq-item summary{list-style:none;cursor:pointer;padding:24px 28px;display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-size:16px;font-weight:500;letter-spacing:-.01em;color:rgba(255,255,255,.65);transition:all .3s}
+.faq-item summary:hover{color:#fff;background:rgba(255,255,255,.02)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::before{content:none}
+.faq-item summary::after{content:'▸';font-size:13px;color:rgba(255,255,255,.15);flex-shrink:0;transition:transform .3s}
+.faq-item[open] summary{color:#fff;background:rgba(0,113,227,.06)}
+.faq-item[open] summary::after{transform:rotate(90deg);color:var(--blue)}
+.faq-item p{padding:0 28px 24px 28px;color:var(--dim);font-size:14px;line-height:1.6;max-width:700px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой срок изготовления и поставки?", "acceptedAnswer": {"@type": "Answer", "text": "Серийные модели — от 3 рабочих дней, под индивидуальную конфигурацию — до 2–3 недель. Точные сроки фиксируем в коммерческом предложении в зависимости от модели и объёма."}}, {"@type": "Question", "name": "Работаете по 44-ФЗ и 223-ФЗ?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Оборудование включено в реестр российской промышленной продукции Минпромторга, поставляем по госконтрактам, помогаем корректно составить техническое задание."}}, {"@type": "Question", "name": "Какая гарантия и поддержка?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия до 3 лет, сервис 24/7, выездное обслуживание и обменный фонд устройств — оборудование не простаивает."}}, {"@type": "Question", "name": "Возможна ли индивидуальная разработка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Дорабатываем корпус, цвет, конфигурацию и программное обеспечение под вашу задачу, наносим брендирование."}}, {"@type": "Question", "name": "Есть ли лизинг или рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да, работаем с лизинговыми компаниями и предлагаем гибкие схемы оплаты для бизнеса и госучреждений."}}, {"@type": "Question", "name": "Какое программное обеспечение входит?", "acceptedAnswer": {"@type": "Answer", "text": "Собственные решения Pelcom Навигация, Pelcom Очередь и Pelcom Мониторинг, а также интеграции с 1С, CRM, AD/LDAP и платёжными системами."}}, {"@type": "Question", "name": "Делаете монтаж и обучение?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка, пусконаладка, монтаж и обучение персонала в 47 регионах России."}}]}</script>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ══ HEADER ══════════════════════════════════════════ -->
+<header class="hd" id="hd">
+  <div class="hd-i">
+    <a href="pelcom-landing.html" class="logo">
+      <svg class="lm" viewBox="0 0 352 333" fill="#0071e3" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+      <span class="ln">pelcom</span>
+    </a>
+    <nav class="hd-nav">
+      <a href="#products">Оборудование</a>
+      <a href="#industries">Отрасли</a>
+      <a href="#software">Программы</a>
+      <a href="pelcom-about.html">О компании</a>
+      <a href="pelcom-service.html">Сервис</a>
+    <a href="contacts.html">Контакты</a></nav>
+    <div class="hd-r">
+      <a href="tel:+74951234567" class="hd-ph">+7 (495) 123-45-67</a>
+      <button class="hd-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Связаться</button>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ══ HERO ════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <canvas id="heroCanvas"></canvas>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-i">
+    <div class="hero-kicker"><span>Российское производство · В реестре Минпромторга</span></div>
+    <h1>
+      <span class="w1">Интерактивное</span>
+      <span class="w2">оборудование</span>
+      <span class="w3">для бизнеса</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Проектируем, производим и обслуживаем сенсорные киоски, интерактивные панели и системы самообслуживания. 12 лет на рынке, 800+ объектов.</p>
+      <div class="hero-ctas">
+        <button class="btn-p" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Каталог</button>
+        <button class="btn-s" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Запросить КП</button>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arr"></div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══════════════════════════════════════════ -->
+<div class="mq">
+  <div class="mq-track" id="mqTrack"></div>
+</div>
+
+<!-- ══ РЕЕСТР ══════════════════════════════════════════ -->
+<div class="reg fi">
+  <div class="reg-i">
+    <div class="reg-left">
+      <div class="reg-eyebrow">Статус поставщика</div>
+      <h2 class="reg-h">Оборудование<br/>в реестре<br/><em>Минпромторга</em></h2>
+      <p class="reg-sub">Наши устройства включены в реестр российской промышленной продукции. Это открывает доступ к государственным и корпоративным тендерам без ограничений — предоставим полный пакет документов в течение дня.</p>
+      <div class="reg-badges">
+        <div class="reg-badge"><span class="reg-badge-dot"></span>Федеральный закон 44-ФЗ</div>
+        <div class="reg-badge"><span class="reg-badge-dot"></span>Федеральный закон 223-ФЗ</div>
+        <div class="reg-badge"><span class="reg-badge-dot"></span>Сертификат ФСТЭК</div>
+        <div class="reg-badge"><span class="reg-badge-dot"></span>Приказ Минпромторга № 3024</div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- ══ PRODUCTS ══════════════════════════════════════════ -->
+<section class="s cat-bg">
+  <div class="s-i">
+    <div class="s-head dark fi" id="products">
+      <div><div class="s-tag">Каталог</div><h2 class="s-title">Линейка оборудования</h2></div>
+      <p class="s-sub dark">12 продуктовых линеек — от панелей до доступной среды</p>
+    </div>
+
+    <div class="prod-grid fi">
+      <a href="pelcom-panels.html" class="prod-card"><img src="img/renders/panels.jpg" alt="Интерактивные панели Pelcom" class="prod-card-img" loading="lazy" style="object-fit:contain;padding:20%;background:#f5f5f7"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">1</div><div class="prod-card-name">Панели<span class="stock-badge">300+</span></div><div class="prod-card-price">от 64 000 ₽</div></div></a>
+      <a href="pelcom-kiosk.html" class="prod-card"><img src="img/renders/kiosk.jpg" alt="Инфокиоски Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">2</div><div class="prod-card-name">Инфокиоски<span class="stock-badge">В наличии</span></div><div class="prod-card-price">от 89 000 ₽</div></div></a>
+      <a href="pelcom-payment.html" class="prod-card"><img src="img/renders/payment.jpg" alt="Терминалы оплаты Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">3</div><div class="prod-card-name">Терминалы оплаты</div><div class="prod-card-price">от 195 000 ₽</div></div></a>
+      <a href="pelcom-tables.html" class="prod-card"><img src="img/renders/tables.jpg" alt="Интерактивные столы Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">4</div><div class="prod-card-name">Интерактивные столы</div><div class="prod-card-price">от 210 000 ₽</div></div></a>
+      <a href="pelcom-queue.html" class="prod-card"><img src="img/renders/queue.jpg" alt="Электронная очередь Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">5</div><div class="prod-card-name">Эл. очередь</div><div class="prod-card-price">от 75 000 ₽</div></div></a>
+      <a href="pelcom-pylon.html" class="prod-card"><img src="img/renders/pylon.jpg" alt="Видеопилоны Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">6</div><div class="prod-card-name">Видеопилоны</div><div class="prod-card-price">от 95 000 ₽</div></div></a>
+      <a href="pelcom-nav.html" class="prod-card"><img src="img/renders/nav.jpg" alt="Навигационные системы Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">07</div><div class="prod-card-name">Навигация</div><div class="prod-card-price">от 120 000 ₽</div></div></a>
+      <a href="pelcom-outdoor.html" class="prod-card"><img src="img/renders/outdoor.jpg" alt="Уличные киоски Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">08</div><div class="prod-card-name">Уличные киоски</div><div class="prod-card-price">от 250 000 ₽</div></div></a>
+      <a href="pelcom-lectern.html" class="prod-card"><img src="img/renders/lectern.jpg" alt="Интерактивные трибуны Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">09</div><div class="prod-card-name">Трибуны</div><div class="prod-card-price">от 180 000 ₽</div></div></a>
+      <a href="pelcom-holo.html" class="prod-card"><img src="img/renders/holo.jpg" alt="Голографические системы Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">10</div><div class="prod-card-name">Голограммы</div><div class="prod-card-price">от 160 000 ₽</div></div></a>
+      <a href="pelcom-kids.html" class="prod-card"><img src="img/renders/kids.jpg" alt="Детское оборудование Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">11</div><div class="prod-card-name">Детское оборудование</div><div class="prod-card-price">от 130 000 ₽</div></div></a>
+      <a href="pelcom-accessible.html" class="prod-card"><img src="img/renders/accessible.jpg" alt="Доступная среда Pelcom" class="prod-card-img" loading="lazy"><div class="prod-card-overlay"></div><div class="prod-card-body"><div class="prod-card-tag">12</div><div class="prod-card-name">Доступная среда</div><div class="prod-card-price">от 165 000 ₽</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATEMENT ════════════════════════════════════════ -->
+<div class="stmt fi">
+  <div class="stmt-i">
+    <div class="stmt-left">
+      <div class="stmt-kicker">Российское производство</div>
+      <h2 class="stmt-h">Производим.<br/>Внедряем.<br/><em>Обслуживаем.</em></h2>
+      <p class="stmt-p">Полный цикл — от разработки технического задания до выезда инженера на объект. Весь стек собственный: корпуса, ПО, монтаж, поддержка 24/7.</p>
+    </div>
+    <div class="stmt-right">
+      <div class="stmt-card">
+        <div class="stmt-card-num"><span class="count-up" data-count="3">0</span><sub>года</sub></div>
+        <div class="stmt-card-label">Расширенная гарантия на всё оборудование с обменным фондом</div>
+      </div>
+      <div class="stmt-card">
+        <div class="stmt-card-num"><span class="count-up" data-count="14">0</span><sub>дней</sub></div>
+        <div class="stmt-card-label">Срок полного внедрения «под ключ» с обучением персонала</div>
+      </div>
+      <div class="stmt-card">
+        <div class="stmt-card-num"><span class="count-up" data-count="4">0</span><sub>часа</sub></div>
+        <div class="stmt-card-label">Время выезда инженера по Москве и области при аварии</div>
+      </div>
+      <div class="stmt-card">
+        <div class="stmt-card-num"><span class="count-up" data-count="15">0</span><sub>%+</sub></div>
+        <div class="stmt-card-label">Скидка партнёрам-интеграторам, совместные тендеры 44-ФЗ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ INDUSTRIES ════════════════════════════════════════ -->
+<section class="s" id="industries">
+  <div class="s-i">
+    <div class="s-head dark fi" style="">
+      <div><div class="s-tag">Вертикали</div><h2 class="s-title">Решения по отраслям</h2></div>
+    </div>
+    <div class="fi">
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="6" width="24" height="28" rx="2"/><line x1="12" y1="14" x2="28" y2="14"/><line x1="12" y1="20" x2="28" y2="20"/><line x1="12" y1="26" x2="28" y2="26"/></svg></div><div class="ind-body"><div class="ind-name">Банки и МФЦ</div> <div class="ind-desc">Электронная очередь, терминалы, навигация по отделению</div></div></div>
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="3" width="20" height="10" rx="1"/><rect x="10" y="15" width="20" height="22" rx="1"/><line x1="16" y1="21" x2="24" y2="21"/><line x1="20" y1="21" x2="20" y2="31"/></svg></div><div class="ind-body"><div class="ind-name">Медицина</div> <div class="ind-desc">Запись к врачу, инфокиоски, управление потоком в поликлинике</div></div></div>
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="12" r="6"/><rect x="8" y="20" width="24" height="16" rx="1"/><line x1="8" y1="26" x2="32" y2="26"/></svg></div><div class="ind-body"><div class="ind-name">Государство</div> <div class="ind-desc">Реестр Минпромторга, 44-ФЗ и 223-ФЗ, интеграция с Госуслугами</div></div></div>
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 30 L20 10 L32 30 Z"/><rect x="14" y="26" width="12" height="6" rx="1"/></svg></div><div class="ind-body"><div class="ind-name">Образование</div> <div class="ind-desc">Интерактивные панели, цифровые доски, системы контроля доступа</div></div></div>
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="5" width="10" height="10" rx="1"/><rect x="18" y="5" width="16" height="10" rx="1"/><rect x="6" y="17" width="10" height="18" rx="1"/><rect x="18" y="17" width="16" height="18" rx="1"/></svg></div><div class="ind-body"><div class="ind-name">Ритейл и ТЦ</div> <div class="ind-desc">Навигационные киоски, меню-борды, терминалы самовыкупа</div></div></div>
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="18" r="8"/><circle cx="12" cy="14" r="3"/><circle cx="28" cy="14" r="3"/><circle cx="8" cy="26" r="3"/><circle cx="20" cy="30" r="3"/><circle cx="32" cy="26" r="3"/></svg></div><div class="ind-body"><div class="ind-name">Промышленность</div> <div class="ind-desc">Защищённые терминалы IP65, мониторинг оборудования</div></div></div>
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="12" width="28" height="20" rx="1"/><rect x="10" y="16" width="4" height="4" rx="0.5"/><rect x="16" y="16" width="4" height="4" rx="0.5"/><rect x="22" y="16" width="4" height="4" rx="0.5"/><line x1="14" y1="26" x2="26" y2="26"/></svg></div><div class="ind-body"><div class="ind-name">Гостиницы и БЦ</div> <div class="ind-desc">Ресепшн-киоски, навигация, видеостены в холлах</div></div></div>
+      <div class="ind-card"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="10" width="28" height="24" rx="2"/><circle cx="20" cy="22" r="6"/><line x1="12" y1="6" x2="16" y2="12"/><line x1="28" y1="6" x2="24" y2="12"/></svg></div><div class="ind-body"><div class="ind-name">Музеи и культура</div> <div class="ind-desc">Интерактивные экспозиции, аудиогиды, мультимедиа</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOFTWARE ══════════════════════════════════════════ -->
+<section class="s sw-bg" id="software">
+  <div class="s-i">
+    <div class="s-head dark fi" style="">
+      <div><div class="s-tag">Разработка</div><h2 class="s-title">Собственное ПО</h2></div>
+      <p class="s-sub dark" style="border-left:2px solid var(--blue);padding-left:20px;color:rgba(255,255,255,.65);font-size:16px">Весь стек от UI до облачного мониторинга — разрабатываем in-house</p>
+    </div>
+    <div class="sw-grid fi">
+      <div class="sw-card">
+        <div class="sw-n">Навигационные системы</div>
+        <h3 class="sw-name">Pelcom Навигация</h3>
+        <p class="sw-desc">Интерактивная навигация для зданий и территорий любой сложности. Визуальный редактор схем без программирования, мультиязычность, синхронизация с 1С, работа офлайн.</p>
+        <a href="#contact" class="sw-more">Подробнее</a>
+      </div>
+      <div class="sw-card">
+        <div class="sw-n">Электронная очередь</div>
+        <h3 class="sw-name">Pelcom Очередь</h3>
+        <p class="sw-desc">Система управления электронной очередью с аналитикой нагрузки, SMS- и Push-уведомлениями для клиентов, интеграцией в CRM-системы и корпоративные порталы заказчика.</p>
+        <a href="#contact" class="sw-more">Подробнее</a>
+      </div>
+      <div class="sw-card">
+        <div class="sw-n">Облачный мониторинг</div>
+        <h3 class="sw-name">Pelcom Мониторинг</h3>
+        <p class="sw-desc">Облачный мониторинг всего парка устройств в режиме реального времени. Удалённое управление контентом, автообновление ПО, алерты о сбоях, подробные отчёты по инцидентам.</p>
+        <a href="#contact" class="sw-more">Подробнее</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADVANTAGES ════════════════════════════════════════ -->
+<section class="s adv-bg" id="advantages">
+  <div class="s-i">
+    <div class="s-head light fi">
+      <div><div class="s-tag" style="color:var(--blue)">Почему Pelcom</div><h2 class="s-title" style="color:var(--ink)">Шесть причин</h2></div>
+      <p class="s-sub light">Проверено на 800+ объектах по всей России</p>
+    </div>
+    <div class="adv-grid fi">
+      <div class="adv-item"><div class="adv-n">1</div><h4 class="adv-h">Собственное производство</h4><p class="adv-p">Проектируем и производим в России. Полный контроль качества, сертификаты ФСТЭК и ФСБ по запросу. В реестре Минпромторга.</p></div>
+      <div class="adv-item"><div class="adv-n">2</div><h4 class="adv-h">Гарантия 3 года</h4><p class="adv-p">Расширенная гарантия на всё оборудование. Обменный фонд устройств для минимизации простоев на объекте заказчика.</p></div>
+      <div class="adv-item"><div class="adv-n">3</div><h4 class="adv-h">Внедрение за 14 дней</h4><p class="adv-p">Доставка, монтаж, настройка ПО, обучение персонала — полный цикл от подписания договора до сдачи объекта.</p></div>
+      <div class="adv-item"><div class="adv-n">4</div><h4 class="adv-h">Поддержка 24/7/365</h4><p class="adv-p">Выделенный менеджер, горячая линия, выезд инженера по Москве в течение 4 часов. Удалённая диагностика.</p></div>
+      <div class="adv-item"><div class="adv-n">5</div><h4 class="adv-h">Индивидуальная разработка</h4><p class="adv-p">Нестандартные корпуса, кастомное ПО, интеграции с АИС заказчика. Опыт с Росатом, РЖД, Газпромом.</p></div>
+      <div class="adv-item"><div class="adv-n">6</div><h4 class="adv-h">Партнёрская программа</h4><p class="adv-p">Скидки от 15% для интеграторов и дилеров, совместное участие в тендерах по 44-ФЗ и 223-ФЗ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLIENTS ═══════════════════════════════════════════ -->
+<section class="s" id="clients">
+  <div class="s-i">
+    <div class="s-head dark fi" style="">
+      <div><div class="s-tag">Клиенты</div><h2 class="s-title">Нам доверяют</h2></div>
+    </div>
+    <div class="cl-grid fi">
+      <div class="cl-item">Сбербанк</div><div class="cl-item">РЖД</div><div class="cl-item">Ростелеком</div><div class="cl-item">Газпром</div><div class="cl-item">МТС</div>
+      <div class="cl-item">Росатом</div><div class="cl-item">ВТБ</div><div class="cl-item">Почта России</div><div class="cl-item">Лукойл</div><div class="cl-item">М.Видео</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ КЕЙСЫ ══════════════════════════════════════════════ -->
+<section class="s cases-bg" id="cases">
+  <div class="s-i">
+    <div class="s-head dark fi" style="">
+      <div><div class="s-tag">Портфолио</div><h2 class="s-title">Реализованные проекты</h2></div>
+      <p class="s-sub dark">800+ объектов по всей России — от МФЦ до промышленных предприятий</p>
+    </div>
+    <div class="cases-track fi" id="casesTrack">
+
+      <!-- Case 1 -->
+      <div class="case-card">
+        <div class="case-thumb">
+          <div class="case-thumb-inner">
+            <!-- Abstract MFC building SVG -->
+            <svg width="100%" height="260" viewBox="0 0 480 260" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="480" height="260" fill="#111120"/>
+              <rect x="60" y="40" width="160" height="180" fill="#1A1A30"/>
+              <rect x="60" y="40" width="160" height="4" fill="#0071e3"/>
+              <rect x="80" y="60" width="36" height="48" fill="#1F2040"/><rect x="80" y="60" width="36" height="48" fill="none" stroke="#0071e3" stroke-width=".5" stroke-opacity=".4"/>
+              <rect x="126" y="60" width="36" height="48" fill="#1F2040"/><rect x="126" y="60" width="36" height="48" fill="none" stroke="#0071e3" stroke-width=".5" stroke-opacity=".4"/>
+              <rect x="172" y="60" width="36" height="48" fill="#1F2040"/><rect x="172" y="60" width="36" height="48" fill="none" stroke="#0071e3" stroke-width=".5" stroke-opacity=".4"/>
+              <rect x="80" y="120" width="36" height="48" fill="#1F2040"/><rect x="126" y="120" width="36" height="48" fill="#2A3060"/><rect x="172" y="120" width="36" height="48" fill="#1F2040"/>
+              <rect x="126" y="120" width="36" height="48" fill="none" stroke="#0071e3" stroke-width="1" stroke-opacity=".6"/>
+              <!-- Kiosk in front -->
+              <rect x="280" y="80" width="40" height="110" rx="3" fill="#1A1A30" stroke="#0071e3" stroke-width="1"/>
+              <rect x="288" y="90" width="24" height="36" fill="#0A0A1A" stroke="#0071e3" stroke-width=".5" stroke-opacity=".6"/>
+              <rect x="330" y="90" width="40" height="110" rx="3" fill="#1A1A30" stroke="#0071e3" stroke-width="1"/>
+              <rect x="338" y="100" width="24" height="36" fill="#0A0A1A" stroke="#0071e3" stroke-width=".5" stroke-opacity=".6"/>
+              <rect x="380" y="100" width="40" height="100" rx="3" fill="#1A1A30" stroke="#0071e3" stroke-width="1"/>
+              <!-- Ground line -->
+              <line x1="40" y1="220" x2="440" y2="220" stroke="#0071e3" stroke-opacity=".2" stroke-width="1"/>
+              <!-- Queue number glow -->
+              <text x="298" y="115" font-family="Inter,sans-serif" font-weight="900" font-size="14" fill="#0071e3" fill-opacity=".8" text-anchor="middle">42</text>
+            </svg>
+          </div>
+          <div class="case-overlay"></div>
+        </div>
+        <div class="case-body">
+          <div class="case-tag">МФЦ · Москва</div>
+          <div class="case-name">МФЦ «Мои документы», Хорошёво</div>
+          <div class="case-meta">Электронная очередь + 4 инфокиоска + навигация</div>
+          <div class="case-stats">
+            <div><div class="case-stat-val">4</div><div class="case-stat-label">Рабочих окна</div></div>
+            <div><div class="case-stat-val">1 200</div><div class="case-stat-label">Посетителей/день</div></div>
+            <div><div class="case-stat-val">14</div><div class="case-stat-label">Дней внедрения</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card">
+        <div class="case-thumb">
+          <div class="case-thumb-inner">
+            <svg width="100%" height="260" viewBox="0 0 480 260" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="480" height="260" fill="#0A1018"/>
+              <!-- Factory / industrial -->
+              <rect x="0" y="100" width="480" height="160" fill="#0D1520"/>
+              <rect x="30" y="60" width="100" height="160" fill="#111825"/>
+              <rect x="30" y="60" width="100" height="3" fill="#0071e3"/>
+              <rect x="160" y="40" width="160" height="180" fill="#111825"/>
+              <rect x="160" y="40" width="160" height="3" fill="#0071e3"/>
+              <rect x="350" y="70" width="100" height="150" fill="#111825"/>
+              <rect x="350" y="70" width="100" height="3" fill="#0071e3"/>
+              <!-- Windows/ventilation -->
+              <rect x="50" y="90" width="20" height="14" fill="#0071e3" fill-opacity=".15" stroke="#0071e3" stroke-width=".5" stroke-opacity=".4"/>
+              <rect x="80" y="90" width="20" height="14" fill="#0071e3" fill-opacity=".15" stroke="#0071e3" stroke-width=".5" stroke-opacity=".4"/>
+              <rect x="185" y="70" width="30" height="22" fill="#0071e3" fill-opacity=".2" stroke="#0071e3" stroke-width=".7" stroke-opacity=".5"/>
+              <rect x="230" y="70" width="30" height="22" fill="#0071e3" fill-opacity=".2" stroke="#0071e3" stroke-width=".7" stroke-opacity=".5"/>
+              <rect x="275" y="70" width="30" height="22" fill="#0071e3" fill-opacity=".2" stroke="#0071e3" stroke-width=".7" stroke-opacity=".5"/>
+              <!-- Ground terminal -->
+              <rect x="195" y="150" width="90" height="70" rx="3" fill="#1A2030" stroke="#0071e3" stroke-width="1.2"/>
+              <rect x="205" y="158" width="70" height="46" fill="#0A1020" stroke="#0071e3" stroke-width=".5" stroke-opacity=".5"/>
+              <text x="240" y="186" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#0071e3" fill-opacity=".7" text-anchor="middle">IP65</text>
+              <line x1="0" y1="220" x2="480" y2="220" stroke="#0071e3" stroke-opacity=".15"/>
+              <!-- smoke stacks subtle -->
+              <rect x="55" y="10" width="8" height="50" fill="#111825"/>
+              <rect x="80" y="20" width="8" height="40" fill="#111825"/>
+            </svg>
+          </div>
+          <div class="case-overlay"></div>
+        </div>
+        <div class="case-body">
+          <div class="case-tag">Промышленность · Челябинск</div>
+          <div class="case-name">Металлургический комбинат ЧМК</div>
+          <div class="case-meta">12 терминалов IP65 + мониторинг + система оповещения</div>
+          <div class="case-stats">
+            <div><div class="case-stat-val">12</div><div class="case-stat-label">Терминалов</div></div>
+            <div><div class="case-stat-val">3 500</div><div class="case-stat-label">Сотрудников</div></div>
+            <div><div class="case-stat-val">8</div><div class="case-stat-label">Дней внедрения</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card">
+        <div class="case-thumb">
+          <div class="case-thumb-inner">
+            <svg width="100%" height="260" viewBox="0 0 480 260" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="480" height="260" fill="#08080E"/>
+              <!-- Mall / retail interior -->
+              <rect x="0" y="0" width="480" height="260" fill="#0D0D1A"/>
+              <!-- Floor perspective lines -->
+              <line x1="240" y1="130" x2="0" y2="260" stroke="#0071e3" stroke-opacity=".06"/>
+              <line x1="240" y1="130" x2="480" y2="260" stroke="#0071e3" stroke-opacity=".06"/>
+              <line x1="240" y1="130" x2="100" y2="260" stroke="#0071e3" stroke-opacity=".04"/>
+              <line x1="240" y1="130" x2="380" y2="260" stroke="#0071e3" stroke-opacity=".04"/>
+              <!-- Ceiling lights -->
+              <circle cx="120" cy="20" r="4" fill="#0071e3" fill-opacity=".6"/>
+              <circle cx="240" cy="20" r="4" fill="#0071e3" fill-opacity=".6"/>
+              <circle cx="360" cy="20" r="4" fill="#0071e3" fill-opacity=".6"/>
+              <line x1="120" y1="24" x2="120" y2="260" stroke="#0071e3" stroke-opacity=".05"/>
+              <line x1="240" y1="24" x2="240" y2="260" stroke="#0071e3" stroke-opacity=".05"/>
+              <line x1="360" y1="24" x2="360" y2="260" stroke="#0071e3" stroke-opacity=".05"/>
+              <!-- Navigation kiosk tall -->
+              <rect x="190" y="60" width="100" height="180" rx="4" fill="#141428" stroke="#0071e3" stroke-width="1.2"/>
+              <rect x="202" y="72" width="76" height="110" fill="#0A0A1A" stroke="#0071e3" stroke-width=".5" stroke-opacity=".5"/>
+              <!-- floor plan on screen -->
+              <rect x="210" y="80" width="60" height="44" fill="none" stroke="#0071e3" stroke-width=".6" stroke-opacity=".4"/>
+              <line x1="210" y1="100" x2="250" y2="100" stroke="#0071e3" stroke-opacity=".3" stroke-width=".6"/>
+              <line x1="230" y1="80" x2="230" y2="124" stroke="#0071e3" stroke-opacity=".3" stroke-width=".6"/>
+              <circle cx="220" cy="90" r="3" fill="#0071e3" fill-opacity=".8"/>
+              <circle cx="248" cy="112" r="3" fill="#1FAF6A" fill-opacity=".8"/>
+              <path d="M220 90 L220 100 L230 100 L248 100 L248 112" stroke="#0071e3" stroke-width="1.2" stroke-dasharray="3 2" fill="none"/>
+              <!-- LED screen top -->
+              <rect x="40" y="30" width="140" height="70" rx="2" fill="#141428" stroke="#0071e3" stroke-width=".8"/>
+              <rect x="300" y="30" width="140" height="70" rx="2" fill="#141428" stroke="#0071e3" stroke-width=".8"/>
+            </svg>
+          </div>
+          <div class="case-overlay"></div>
+        </div>
+        <div class="case-body">
+          <div class="case-tag">Ритейл · Санкт-Петербург</div>
+          <div class="case-name">ТРЦ «Галерея», 5 этажей</div>
+          <div class="case-meta">Навигационные киоски + 2 LED-экрана + система аренды</div>
+          <div class="case-stats">
+            <div><div class="case-stat-val">8</div><div class="case-stat-label">Киосков</div></div>
+            <div><div class="case-stat-val">40 000</div><div class="case-stat-label">Посетителей/день</div></div>
+            <div><div class="case-stat-val">21</div><div class="case-stat-label">День внедрения</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    </div>
+    <div class="cases-nav">
+      <button class="cases-arrow" id="casesPrev" aria-label="Previous">‹</button>
+      <div class="cases-dots" id="casesDots">
+        <button class="cases-dot active" data-index="0"></button>
+        <button class="cases-dot" data-index="1"></button>
+        <button class="cases-dot" data-index="2"></button>
+      </div>
+      <button class="cases-arrow" id="casesNext" aria-label="Next">›</button>
+    </div>
+
+<!-- ══ ОТЗЫВЫ ══════════════════════════════════════════ -->
+<section class="s rev-bg">
+  <div class="s-i">
+    <div class="s-head light fi">
+      <div><div class="s-tag" style="color:var(--blue)">Отзывы</div><h2 class="s-title" style="color:var(--ink)">Говорят заказчики</h2></div>
+      <p class="s-sub light">Работаем с заказчиками долго — средний срок сотрудничества 4 года</p>
+    </div>
+    <div class="rev-track fi" id="revTrack">
+
+      <div class="rev-card">
+        <div class="rev-quote">
+          <p>Pelcom закрыл задачу полностью — от проектирования до пуска за 12 дней. Терминалы работают без сбоев уже второй год. Особо отмечу оперативность поддержки: инженер приехал через 3 часа после звонка.</p>
+        </div>
+        <div class="rev-person">
+          <div class="rev-avatar">АК</div>
+          <div>
+            <div class="rev-name">Андрей Козлов</div>
+            <div class="rev-pos">Директор по цифровизации</div>
+            <div class="rev-company">ПАО Ростелеком</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-quote">
+          <p>Поставили 6 навигационных киосков в наш центр. Редактор схем настолько простой, что сотрудники сами обновляют карты без программистов. Экономим порядка 80 000 ₽ в год на доработках.</p>
+        </div>
+        <div class="rev-person">
+          <div class="rev-avatar">ЕВ</div>
+          <div>
+            <div class="rev-name">Елена Волкова</div>
+            <div class="rev-pos">Руководитель ИТ-отдела</div>
+            <div class="rev-company">МФЦ Московская область</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-quote">
+          <p>Выбрали Pelcom по реестру Минпромторга — нам важна возможность 44-ФЗ. Прошли все согласования без проблем. Оборудование соответствует техническому заданию буква в букву.</p>
+        </div>
+        <div class="rev-person">
+          <div class="rev-avatar">ИС</div>
+          <div>
+            <div class="rev-name">Игорь Семёнов</div>
+            <div class="rev-pos">Начальник отдела закупок</div>
+            <div class="rev-company">Государственный заказчик</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    </div>
+    <div class="rev-nav">
+      <button class="rev-arrow" id="revPrev" aria-label="Previous">‹</button>
+      <div class="rev-dots" id="revDots">
+        <button class="rev-dot active" data-index="0"></button>
+        <button class="rev-dot" data-index="1"></button>
+        <button class="rev-dot" data-index="2"></button>
+      </div>
+      <button class="rev-arrow" id="revNext" aria-label="Next">›</button>
+    </div>
+
+<!-- ══ CTA BAND ══════════════════════════════════════════ -->
+<div class="band fi">
+  <div class="band-i">
+    <div><div class="band-h">Оборудование из Реестра Минпромторга</div><div class="band-p">Наши устройства подходят для госзакупок по 44-ФЗ и 223-ФЗ. Предоставим полный пакет документов.</div></div>
+    <button class="btn-band" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Запросить документы</button>
+  </div>
+</div>
+
+<!-- ══ CONTACT ════════════════════════════════════════════ -->
+<!-- ══ FAQ ════════════════════════════════════════════ -->
+<section class="s faq-bg" id="faq">
+  <div class="s-i">
+    <div class="s-head dark">
+      <div><div class="s-tag">Вопросы и ответы</div><h2 class="s-title">Частые вопросы</h2></div>
+    </div>
+    <div class="faq-terminal"><div class="faq-topbar"><span class="faq-topbar-dot"></span><span class="faq-topbar-dot"></span><span class="faq-topbar-dot"></span><span class="faq-topbar-title">Pelcom Kiosk</span></div><div class="faq-list">
+        <details class="faq-item fi"><summary>Какой срок изготовления и поставки?</summary><p>Серийные модели — от 3 рабочих дней, под индивидуальную конфигурацию — до 2–3 недель. Точные сроки фиксируем в коммерческом предложении в зависимости от модели и объёма.</p></details>
+        <details class="faq-item fi"><summary>Работаете по 44-ФЗ и 223-ФЗ?</summary><p>Да. Оборудование включено в реестр российской промышленной продукции Минпромторга, поставляем по госконтрактам, помогаем корректно составить техническое задание.</p></details>
+        <details class="faq-item fi"><summary>Какая гарантия и поддержка?</summary><p>Гарантия до 3 лет, сервис 24/7, выездное обслуживание и обменный фонд устройств — оборудование не простаивает.</p></details>
+        <details class="faq-item fi"><summary>Возможна ли индивидуальная разработка?</summary><p>Да. Дорабатываем корпус, цвет, конфигурацию и программное обеспечение под вашу задачу, наносим брендирование.</p></details>
+        <details class="faq-item fi"><summary>Есть ли лизинг или рассрочка?</summary><p>Да, работаем с лизинговыми компаниями и предлагаем гибкие схемы оплаты для бизнеса и госучреждений.</p></details>
+        <details class="faq-item fi"><summary>Какое программное обеспечение входит?</summary><p>Собственные решения Pelcom Навигация, Pelcom Очередь и Pelcom Мониторинг, а также интеграции с 1С, CRM, AD/LDAP и платёжными системами.</p></details>
+        <details class="faq-item fi"><summary>Делаете монтаж и обучение?</summary><p>Да. Доставка, пусконаладка, монтаж и обучение персонала в 47 регионах России.</p></details>
+    </div></div>
+  </div>
+</section>
+
+<section class="s ct-bg" id="contact">
+  <div class="s-i">
+    <div class="ct-grid">
+      <div class="fi">
+        <h2 class="ct-h">Обсудим<br/>ваш <em>проект</em></h2>
+        <p class="ct-sub">Расскажите о задаче — подберём оборудование, рассчитаем стоимость и сроки. Ответим в течение рабочего дня.</p>
+        <div class="ct-row"><span class="ct-lbl">Телефон</span><div class="ct-val"><strong>+7 (495) 123-45-67</strong><span>Пн–Пт, 9:00–18:00 МСК</span></div></div>
+        <div class="ct-row"><span class="ct-lbl">E-mail</span><div class="ct-val"><strong>info@pelcom.ru</strong><span>Ответим в течение 2 часов</span></div></div>
+        <div class="ct-row"><span class="ct-lbl">Адрес</span><div class="ct-val"><strong>Москва, ул. Технологическая, 1</strong><span>Демозал — запись по телефону</span></div></div>
+      </div>
+      <div class="fi">
+        <div style="margin-bottom:36px"><div class="s-tag">Коммерческое предложение</div><div style="font-size:22px;font-weight:800;letter-spacing:-.5px;margin-top:8px">Получить расчёт стоимости</div></div>
+        <form data-lead data-ok="leadOk" novalidate><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
+          <div class="fl">
+            <div class="ff"><label>Имя</label><input name="name" type="text" required placeholder="Иван Петров"/></div>
+            <div class="ff"><label>Телефон</label><input name="phone" type="tel" required placeholder="+7 (___) ___-__-__"/></div>
+          </div>
+          <div class="ff"><label>Компания</label><input name="company" type="text" placeholder="ООО «Ваша компания»"/></div>
+          <div class="ff"><label>Оборудование</label>
+            <select name="category" required><option value="">Выберите категорию</option><option>Информационные киоски</option><option>Интерактивные панели</option><option>Терминалы оплаты</option><option>Электронная очередь</option><option>Навигационные системы</option><option>Светодиодные экраны</option><option>Индивидуальная разработка</option></select>
+          </div>
+          <div class="ff"><label>Комментарий</label><textarea name="message" placeholder="Количество, место установки, особые требования..."></textarea></div>
+          <label class="consent"><input type="checkbox" name="consent" required/><span>Я согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+          <button class="btn-form" type="submit">Отправить заявку</button>
+        </form>
+        <div class="form-ok" id="leadOk">Заявка отправлена. Мы свяжемся с вами в течение рабочего дня.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════ -->
+<footer>
+  <div class="ft-i">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="pelcom-landing.html" class="logo">
+          <svg class="lm" viewBox="0 0 352 333" fill="#0071e3" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+          <span class="ln">pelcom</span>
+        </a>
+        <p>Производитель и поставщик интерактивного оборудования. В реестре российской промышленной продукции Минпромторга.</p>
+      </div>
+      <div class="ft-col" style="column-count:2;column-gap:24px"><h5 style="column-span:all">Оборудование</h5><a href="pelcom-kiosk.html">Инфокиоски</a><a href="pelcom-panels.html">Интерактивные панели</a><a href="pelcom-tables.html">Интерактивные столы</a><a href="pelcom-terminals.html">Сенсорные терминалы</a><a href="pelcom-payment.html">Терминалы оплаты</a><a href="pelcom-outdoor.html">Уличные киоски</a><a href="pelcom-lectern.html">Интерактивные трибуны</a><a href="pelcom-kids.html">Детское оборудование</a><a href="pelcom-holo.html">Голограммы</a><a href="pelcom-pylon.html">Видеопилоны</a><a href="pelcom-led.html">LED-экраны</a><a href="pelcom-accessible.html">Доступная среда</a><a href="pelcom-queue.html">Электронная очередь</a><a href="pelcom-nav.html">Навигация</a></div>
+      <div class="ft-col"><h5>Компания</h5><a href="pelcom-about.html">О нас</a><a href="pelcom-about.html">Реестр Минпромторга</a><a href="pelcom-partners.html">Партнёрам</a><a href="privacy.html">Политика</a><a href="privacy.html#requisites">Реквизиты</a></div>
+      <div class="ft-col"><h5>Поддержка</h5><a href="pelcom-service.html">Сервис 24/7</a><a href="contacts.html">Контакты</a><a href="tel:+74951234567">+7 (495) 123-45-67</a></div>
+    </div>
+    <div class="ft-bot"><span class="ft-copy">© 2026 Pelcom</span></div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const hd = document.getElementById('hd');
+window.addEventListener('scroll', () => hd.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+
+// Marquee populate
+const items = ['Российское производство','В реестре Минпромторга','12 лет на рынке','800+ реализованных проектов','Поддержка 24/7','Гарантия 3 года','Внедрение за 14 дней','50+ отраслевых решений'];
+const track = document.getElementById('mqTrack');
+const html = items.map(t => `<span class="mq-item">${t} <span class="mq-dot">◆</span></span>`).join('');
+track.innerHTML = html + html; // duplicate for seamless loop
+
+// Intersection observer
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+  });
+}, {threshold: 0.08, rootMargin: '0px 0px -32px 0px'});
+
+// Stagger children
+document.querySelectorAll('.sw-grid, .adv-grid').forEach(g => {
+  [...g.children].forEach((c, i) => c.style.transitionDelay = `${i * 80}ms`);
+});
+
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+
+<script>
+// Animated counters
+(function(){var p=document.querySelector('.stmt-right');if(!p)return;var done=false;new IntersectionObserver(function(entries){if(!entries[0].isIntersecting||done)return;done=true;var els=p.querySelectorAll('.count-up');els.forEach(function(el){var t=parseInt(el.dataset.count),c=0,s=Math.max(30,Math.floor(1200/t));var iv=setInterval(function(){c++;el.textContent=c;if(c>=t){clearInterval(iv);el.textContent=t}},s)})},{threshold:.2}).observe(p)})();
+</script>
+
+
+
+<script>
+// Progress bar
+(function(){var b=document.getElementById('progressBar');if(!b)return;window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var p=h>0?Math.min(window.scrollY/h,1):0;b.style.width=(p*100)+'%'},{passive:true})})();
+
+// Parallax hero
+(function(){var bg=document.querySelector('.hero-bg img');if(!bg)return;var raf;window.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){var s=window.scrollY*.06;bg.style.transform='translateY('+s+'px)'})},{passive:true})})();
+</script>
+
+<script>(function(){var t=document.getElementById("revTrack");if(!t)return;var d=document.querySelectorAll(".rev-dot"),p=document.getElementById("revPrev"),n=document.getElementById("revNext"),r=null,s=false,v=false;function g(i){var c=t.children[i];if(c)t.scrollLeft=c.offsetLeft;d.forEach(function(x,j){x.classList.toggle("active",j===i)})}function cur(){return Math.round(t.scrollLeft/t.children[0].offsetWidth)}function adv(){if(s||!v)return;g((cur()+1)%d.length)}function start(){clearInterval(r);r=setInterval(adv,5000)}function stop(){clearInterval(r)}function pause(){s=true;clearTimeout(s);setTimeout(function(){s=false},8000)}new IntersectionObserver(function(e){v=e[0].isIntersecting;v?start():stop()},{threshold:.1}).observe(t.parentElement);p.addEventListener("click",function(){pause();g(Math.max(0,cur()-1))});n.addEventListener("click",function(){pause();g(Math.min(d.length-1,cur()+1))});d.forEach(function(x){x.addEventListener("click",function(){pause();g(parseInt(x.dataset.index))})});t.addEventListener("scroll",function(){var i=cur();d.forEach(function(x,j){x.classList.toggle("active",j===i)})},{passive:true})})();</script>
+<script>(function(){var t=document.getElementById("casesTrack");if(!t)return;var d=document.querySelectorAll(".cases-dot"),p=document.getElementById("casesPrev"),n=document.getElementById("casesNext"),r=null,s=false,v=false;function g(i){var c=t.children[i];if(c)t.scrollLeft=c.offsetLeft;d.forEach(function(x,j){x.classList.toggle("active",j===i)})}function cur(){return Math.round(t.scrollLeft/t.children[0].offsetWidth)}function adv(){if(s||!v)return;g((cur()+1)%d.length)}function start(){clearInterval(r);r=setInterval(adv,5000)}function stop(){clearInterval(r)}function pause(){s=true;clearTimeout(s);setTimeout(function(){s=false},8000)}new IntersectionObserver(function(e){v=e[0].isIntersecting;v?start():stop()},{threshold:.1}).observe(t.parentElement);p.addEventListener("click",function(){pause();g(Math.max(0,cur()-1))});n.addEventListener("click",function(){pause();g(Math.min(d.length-1,cur()+1))});d.forEach(function(x){x.addEventListener("click",function(){pause();g(parseInt(x.dataset.index))})});t.addEventListener("scroll",function(){var i=cur();d.forEach(function(x,j){x.classList.toggle("active",j===i)})},{passive:true})})();</script>
+<script src="lead.js" defer></script>
+<!-- floating contact (плейсхолдер-ссылки, заменить на боевые) -->
+<div class="fab">
+<a class="tg" href="https://t.me/pelcom" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.6-3.4-2.2 2.1c-.3.3-.5.4-.9.4l.3-4.7L18 6.5c.4-.3-.1-.5-.6-.2L7.1 13l-4.5-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.5.2 1.3 1.5z"/></svg></a>
+<a class="wa" href="https://wa.me/74951234567" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4c-.2 0-.5 0-.7.4-.3.4-1 .9-1 2.2s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7s1.6-.6 1.8-1.3c.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.5-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.2-1.4-.5-.6-.9-1.2-1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+<a class="ph" href="tel:+74951234567" aria-label="Позвонить"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+</div>
+<div class="cookie" id="cookieBar"><span>Мы используем cookie для работы сайта и аналитики. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span><button type="button">Принять</button></div>
+<script>(function(){var b=document.getElementById('cookieBar');if(!b)return;if(localStorage.getItem('pelcom_cookie')){b.remove();return}b.style.display='flex';b.querySelector('button').onclick=function(){localStorage.setItem('pelcom_cookie','1');b.remove()}})();</script>
+</body>
+</html>

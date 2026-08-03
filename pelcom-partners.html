@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Дилерам и партнёрам — Pelcom</title>
+  <meta name="description" content="Партнёрская программа Pelcom: скидки до 25%, обучение и маркетинговая поддержка. Станьте дилером производителя интерактивного оборудования."/>
+  <link rel="canonical" href="https://pelcom.ru/pelcom-partners.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Pelcom"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:title" content="Дилерам и партнёрам — Pelcom"/>
+  <meta property="og:description" content="Партнёрская программа Pelcom: скидки до 25%, обучение и маркетинговая поддержка. Станьте дилером производителя интерактивного оборудования."/>
+  <meta property="og:url" content="https://pelcom.ru/pelcom-partners.html"/>
+  <meta property="og:image" content="https://pelcom.ru/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Дилерам и партнёрам — Pelcom"/>
+  <meta name="twitter:description" content="Партнёрская программа Pelcom: скидки до 25%, обучение и маркетинговая поддержка. Станьте дилером производителя интерактивного оборудования."/>
+  <meta name="twitter:image" content="https://pelcom.ru/og-image.png"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="common.css">
+<style>
+    /* ══ ПРЕИМУЩЕСТВА ══ */
+    .adv-bg{background:var(--cream);color:var(--ink)}
+    .adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .adv-item{background:#fff;padding:44px 40px;border-top:2px solid transparent;transition:border-color .3s;border-radius:var(--r)}
+    .adv-item:hover{border-top-color:var(--blue)}
+    .adv-n{font-size:56px;font-weight:800;letter-spacing:-2px;line-height:1;color:rgba(0,113,227,.18);margin-bottom:20px;font-variant-numeric:tabular-nums}
+    .adv-h{font-size:16px;font-weight:600;letter-spacing:-.2px;color:var(--ink);margin-bottom:10px;font-family:'Unbounded',system-ui,sans-serif}
+    .adv-p{font-size:13px;color:var(--ink-2);line-height:1.8}
+
+    /* ══ УРОВНИ ══ */
+    .levels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .lvl-card{background:var(--mid);padding:44px 36px;border-top:3px solid transparent;transition:all .3s;border-radius:var(--r);position:relative}
+    .lvl-card.featured{background:#0e1f32;border-top-color:var(--blue)}
+    .lvl-card:hover:not(.featured){border-top-color:rgba(0,113,227,.35)}
+    .lvl-badge{position:absolute;top:20px;right:20px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;background:var(--blue);color:#fff;padding:5px 12px;border-radius:var(--r)}
+    .lvl-n{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+    .lvl-name{font-size:28px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+    .lvl-sub{font-size:13px;color:var(--dim);margin-bottom:32px;line-height:1.6}
+    .lvl-discount{font-size:clamp(40px,5vw,64px);font-weight:800;letter-spacing:-2px;color:#fff;line-height:1;font-family:'Unbounded',system-ui,sans-serif}
+    .lvl-discount span{font-size:16px;font-weight:400;color:var(--dim);letter-spacing:0}
+    .lvl-divider{height:1px;background:var(--rule);margin:28px 0}
+    .lvl-features{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .lvl-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--dim);line-height:1.5}
+    .lvl-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0;margin-top:1px}
+    .lvl-features li.dim::before{content:'—';color:rgba(255,255,255,.2)}
+    .lvl-features li.dim{color:rgba(255,255,255,.2)}
+    .btn-lvl{margin-top:32px;width:100%;padding:14px;background:transparent;border:1px solid var(--faint);color:var(--dim);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:all .2s;border-radius:var(--r)}
+    .btn-lvl:hover{border-color:rgba(255,255,255,.3);color:#fff}
+    .lvl-card.featured .btn-lvl{background:var(--blue);border-color:var(--blue);color:#fff}
+    .lvl-card.featured .btn-lvl:hover{background:var(--blue-hover)}
+
+    /* ══ КАК СТАТЬ ══ */
+    .steps-bg{background:var(--cream);color:var(--ink)}
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+    .steps-grid::before{content:'';position:absolute;top:40px;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,rgba(0,113,227,.3),rgba(0,113,227,.3),transparent)}
+    .step-card{background:#fff;padding:36px 28px;border-radius:var(--r)}
+    .step-n{font-size:48px;font-weight:800;letter-spacing:-2px;line-height:1;color:rgba(0,113,227,.2);margin-bottom:20px;font-variant-numeric:tabular-nums}
+    .step-h{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;font-family:'Unbounded',system-ui,sans-serif}
+    .step-p{font-size:12px;color:var(--ink-2);line-height:1.75}
+
+    /* ══ ФОРМА ЗАЯВКИ ══ */
+    .form-bg{background:var(--dark)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+    .form-left-h{font-size:clamp(36px,4.5vw,56px);font-weight:800;letter-spacing:-2px;line-height:.96;margin-bottom:20px;font-family:'Unbounded',system-ui,sans-serif}
+    .form-left-h em{font-style:normal;color:var(--blue)}
+    .form-left-p{font-size:14px;color:var(--dim);line-height:1.85;margin-bottom:40px}
+    .contacts-list{display:flex;flex-direction:column;gap:0}
+    .ct-row{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+    .ct-row:last-of-type{border-bottom:none}
+    .ct-lbl{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);width:72px;flex-shrink:0;padding-top:3px}
+    .ct-val strong{display:block;font-size:14px;font-weight:600}
+    .ct-val span{font-size:12px;color:var(--dim)}
+    .ff{margin-bottom:16px}
+    .ff label{display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px}
+    .ff input,.ff select,.ff textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--faint);padding:13px 16px;font-size:14px;color:#fff;font-family:inherit;outline:none;transition:border-color .2s;border-radius:var(--r)}
+    .ff input::placeholder,.ff textarea::placeholder{color:rgba(255,255,255,.2)}
+    .ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--blue)}
+    .ff select option{background:#171724}
+    .ff textarea{resize:vertical;min-height:96px}
+    .fl{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .btn-form{width:100%;padding:15px;background:var(--blue);border:none;color:#fff;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:background .2s;margin-top:4px;border-radius:var(--r)}
+    .btn-form:hover{background:var(--blue-hover)}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin:6px 0 16px;cursor:pointer;font-size:12px;line-height:1.5;color:rgba(255,255,255,.55)}
+    .consent input{width:16px;height:16px;flex-shrink:0;margin-top:1px;accent-color:var(--blue);cursor:pointer}
+    .consent a{color:var(--blue)}
+    .form-ok{padding:28px;border:1px solid rgba(0,113,227,.4);background:rgba(0,113,227,.08);border-radius:var(--r);font-size:15px;color:#fff;line-height:1.6}
+    .form-legal{font-size:11px;color:rgba(255,255,255,.25);text-align:center;margin-top:12px}
+    .form-legal a{color:rgba(255,255,255,.4);text-decoration:underline}
+
+    /* ══ FOOTER ══ */
+    footer{background:var(--black);padding:72px 48px 36px;border-top:1px solid var(--rule)}
+    .ft-i{max-width:1320px;margin:0 auto}
+    .ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:64px;padding-bottom:56px;border-bottom:1px solid var(--rule);margin-bottom:32px}
+    .ft-brand p{font-size:13px;color:var(--dim);margin-top:18px;line-height:1.75;max-width:200px}
+    .ft-col h5{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px}
+    .ft-col a{display:block;font-size:13px;color:var(--dim);margin-bottom:12px;transition:color .2s}
+    .ft-col a:hover{color:#fff}
+    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+    .ft-links{display:flex;gap:24px}
+    .ft-links a{font-size:12px;color:rgba(255,255,255,.2);transition:color .2s}
+    .ft-links a:hover{color:rgba(255,255,255,.55)}
+
+    /* ══ UTILS ══ */
+    .fi{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .fi.in{opacity:1;transform:none}
+
+    @media(max-width:1024px){
+      .hd-i{gap:14px;justify-content:space-between}
+      .burger{display:flex}
+      .hd-ph{display:none}
+      .hd-r{display:none}
+      .hd-nav{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:#0c0c16;border-bottom:1px solid rgba(255,255,255,.08);padding:4px 24px 14px;display:none}
+      .hd.open .hd-nav{display:flex}
+      .hd-nav a{padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+      .pg-hero-i{grid-template-columns:1fr}
+      .pg-hero-stat{display:none}
+      .adv-grid{grid-template-columns:repeat(2,1fr)}
+      .levels-grid{grid-template-columns:1fr}
+      .steps-grid{grid-template-columns:repeat(2,1fr)}
+      .steps-grid::before{display:none}
+      .form-grid{grid-template-columns:1fr;gap:48px}
+      .ft-top{grid-template-columns:1fr 1fr;gap:40px}
+    }
+    @media(max-width:640px){
+      .s{padding:72px 20px}
+      .pg-hero{padding:120px 20px 72px}
+      .hd-i,.ft-i{padding-left:20px;padding-right:20px}
+      .adv-grid{grid-template-columns:1fr}
+      .steps-grid{grid-template-columns:1fr}
+      .fl{grid-template-columns:1fr}
+      .ft-top{grid-template-columns:1fr}
+      .pg-h{font-size:52px;letter-spacing:-2px}
+    }
+  </style>
+<style>
+.fab{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.fab a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.fab a:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab .tg{background:#229ED9}.fab .wa{background:#25D366}.fab .ph{background:#0071e3}
+@media(max-width:640px){.fab a{width:46px;height:46px}.fab svg{width:23px;height:23px}}
+</style>
+<style>
+.cookie{position:fixed;left:18px;bottom:18px;z-index:300;max-width:520px;background:#12121c;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:16px 20px;display:flex;gap:16px;align-items:center;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
+.cookie a{color:var(--blue)}
+.cookie button{flex-shrink:0;padding:10px 20px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit}
+@media(max-width:560px){.cookie{flex-direction:column;align-items:flex-start;left:12px;right:84px;max-width:none;bottom:12px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd" id="hd">
+  <div class="hd-i">
+    <a href="pelcom-landing.html" class="logo">
+      <svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+      <span class="ln">pelcom</span>
+    </a>
+    <nav class="hd-nav">
+      <a href="pelcom-landing.html#products">Оборудование</a>
+      <a href="pelcom-landing.html#industries">Отрасли</a>
+      <a href="pelcom-landing.html#software">Программы</a>
+      <a href="pelcom-about.html">О компании</a>
+      <a href="pelcom-service.html">Сервис</a>
+    <a href="contacts.html">Контакты</a></nav>
+    <div class="hd-r">
+      <a href="tel:+74951234567" class="hd-ph">+7 (495) 123-45-67</a>
+      <button class="hd-btn" onclick="document.getElementById('partner-form').scrollIntoView({behavior:'smooth'})">Стать партнёром</button>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="pg-hero">
+  <div class="pg-hero-grid"></div>
+  <div class="pg-hero-line"></div>
+  <div class="pg-hero-i">
+    <div>
+      <div class="pg-eyebrow">Партнёрская программа</div>
+      <h1 class="pg-h">Дилерам<br/>и<br/><em>партнёрам</em></h1>
+      <p class="pg-desc">Становитесь авторизованным партнёром Pelcom и получайте скидки от 15%, защиту проектов и полную техническую поддержку. Зарабатывайте вместе с нами на государственных и коммерческих тендерах.</p>
+    </div>
+    <div class="pg-hero-stat">
+      <div class="hero-stat-val">15%</div>
+      <div class="hero-stat-label">скидка для партнёров<br/>от первого заказа</div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРЕИМУЩЕСТВА -->
+<section class="s adv-bg">
+  <div class="s-i">
+    <div class="s-head light fi">
+      <div><div class="s-tag" style="color:var(--blue)">Программа</div><h2 class="s-title" style="color:var(--ink)">Что вы получаете</h2></div>
+      <p class="s-sub light">Всё необходимое для успешных продаж — с первого дня</p>
+    </div>
+    <div class="adv-grid fi">
+      <div class="adv-item">
+        <div class="adv-n">01</div>
+        <h4 class="adv-h">Скидки от 15%</h4>
+        <p class="adv-p">Фиксированная дилерская скидка от первого заказа. Повышается до 25% при достижении квартального плана. Прозрачная прайс-матрица без скрытых условий.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-n">02</div>
+        <h4 class="adv-h">Защита проектов</h4>
+        <p class="adv-p">Регистрация проекта у вашего менеджера защищает его от конкуренции внутри партнёрской сети. Вы ведёте клиента — вы получаете маржу.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-n">03</div>
+        <h4 class="adv-h">Совместные тендеры</h4>
+        <p class="adv-p">Участвуем в тендерах по 44-ФЗ и 223-ФЗ совместно. Предоставляем все необходимые документы: реестровые письма, сертификаты, технические паспорта.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-n">04</div>
+        <h4 class="adv-h">Техническая поддержка</h4>
+        <p class="adv-p">Личный инженер поддержки, доступ к базе знаний и технической документации. Выезд на пресейл в регион по запросу. Совместные демонстрации у клиента.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-n">05</div>
+        <h4 class="adv-h">Маркетинговые материалы</h4>
+        <p class="adv-p">Готовые презентации, каталоги, КП-шаблоны в фирменном стиле. Брендбук для использования логотипа партнёра на вашем сайте и в материалах.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-n">06</div>
+        <h4 class="adv-h">Гибкие условия оплаты</h4>
+        <p class="adv-p">Отсрочка платежа до 30 дней для авторизованных партнёров. Лизинговые схемы для оборудования при крупных контрактах. Рассрочка для конечного клиента.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- УРОВНИ -->
+<section class="s">
+  <div class="s-i">
+    <div class="s-head dark fi">
+      <div><div class="s-tag">Уровни</div><h2 class="s-title">Три уровня<br/>партнёрства</h2></div>
+      <p class="s-sub dark">Начните с базового уровня — растите вместе с объёмами</p>
+    </div>
+    <div class="levels-grid fi">
+
+      <div class="lvl-card">
+        <div class="lvl-n">Уровень 01</div>
+        <div class="lvl-name">Авторизованный<br/>дилер</div>
+        <div class="lvl-sub">Для компаний, начинающих работу с Pelcom</div>
+        <div class="lvl-discount">15%<span> скидка</span></div>
+        <div class="lvl-divider"></div>
+        <ul class="lvl-features">
+          <li>Фиксированная скидка 15% на весь каталог</li>
+          <li>Доступ к дилерскому прайс-листу</li>
+          <li>Базовые маркетинговые материалы</li>
+          <li>E-mail поддержка в рабочее время</li>
+          <li class="dim">Защита проектов</li>
+          <li class="dim">Совместные тендеры</li>
+          <li class="dim">Личный менеджер</li>
+        </ul>
+        <button class="btn-lvl" onclick="document.getElementById('partner-form').scrollIntoView({behavior:'smooth'})">Подать заявку</button>
+      </div>
+
+      <div class="lvl-card featured">
+        <div class="lvl-badge">Популярный</div>
+        <div class="lvl-n">Уровень 02</div>
+        <div class="lvl-name">Официальный<br/>партнёр</div>
+        <div class="lvl-sub">Для активных региональных интеграторов</div>
+        <div class="lvl-discount">20%<span> скидка</span></div>
+        <div class="lvl-divider"></div>
+        <ul class="lvl-features">
+          <li>Скидка 20% + бонус 3% за квартальный план</li>
+          <li>Защита зарегистрированных проектов</li>
+          <li>Личный менеджер и выделенный инженер</li>
+          <li>Совместное участие в тендерах</li>
+          <li>Приоритетное изготовление и поставка</li>
+          <li>Отсрочка платежа 14 дней</li>
+          <li class="dim">Статус «Стратегический партнёр»</li>
+        </ul>
+        <button class="btn-lvl" onclick="document.getElementById('partner-form').scrollIntoView({behavior:'smooth'})">Подать заявку</button>
+      </div>
+
+      <div class="lvl-card">
+        <div class="lvl-n">Уровень 03</div>
+        <div class="lvl-name">Стратегический<br/>партнёр</div>
+        <div class="lvl-sub">Для крупных системных интеграторов</div>
+        <div class="lvl-discount">25%<span>+ скидка</span></div>
+        <div class="lvl-divider"></div>
+        <ul class="lvl-features">
+          <li>Максимальная скидка + индивидуальная матрица</li>
+          <li>Совместный маркетинг и co-branding</li>
+          <li>Эксклюзив по отраслям или регионам</li>
+          <li>Отсрочка платежа до 30 дней</li>
+          <li>Доступ к ранним релизам продуктов</li>
+          <li>Персональный аккаунт на партнёрском портале</li>
+          <li>Лизинг и рассрочка для клиентов</li>
+        </ul>
+        <button class="btn-lvl" onclick="document.getElementById('partner-form').scrollIntoView({behavior:'smooth'})">Подать заявку</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- КАК СТАТЬ ПАРТНЁРОМ -->
+<section class="s steps-bg">
+  <div class="s-i">
+    <div class="s-head light fi">
+      <div><div class="s-tag" style="color:var(--blue)">Процесс</div><h2 class="s-title" style="color:var(--ink)">Как стать<br/>партнёром</h2></div>
+      <p class="s-sub light">От заявки до первого заказа — 3 рабочих дня</p>
+    </div>
+    <div class="steps-grid fi">
+      <div class="step-card">
+        <div class="step-n">01</div>
+        <div class="step-h">Заполните заявку</div>
+        <p class="step-p">Укажите название компании, регион работы, целевые отрасли и предполагаемый объём. Форма ниже или звонок менеджеру.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">02</div>
+        <div class="step-h">Встреча и NDA</div>
+        <p class="step-p">Онлайн-встреча с менеджером по партнёрству. Подписываем соглашение о конфиденциальности и открываем доступ к дилерским ценам.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">03</div>
+        <div class="step-h">Партнёрский договор</div>
+        <p class="step-p">Подписание договора дистрибуции с указанием уровня, территории и условий. Электронный документооборот через Диадок или СБИС.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">04</div>
+        <div class="step-h">Первый заказ</div>
+        <p class="step-p">Получаете дилерский прайс, доступ к партнёрскому кабинету и стартовый комплект маркетинговых материалов. Первый заказ — со скидкой.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФОРМА -->
+<section class="s form-bg" id="partner-form">
+  <div class="s-i">
+    <div class="form-grid">
+      <div class="fi">
+        <div class="s-tag">Заявка</div>
+        <h2 class="form-left-h">Стать<br/><em>партнёром</em></h2>
+        <p class="form-left-p">Заполните форму — ваш менеджер свяжется в течение рабочего дня, ответит на вопросы и назначит онлайн-встречу.</p>
+        <div class="contacts-list">
+          <div class="ct-row"><span class="ct-lbl">Телефон</span><div class="ct-val"><strong>+7 (495) 123-45-67</strong><span>Пн–Пт, 9:00–18:00 МСК</span></div></div>
+          <div class="ct-row"><span class="ct-lbl">E-mail</span><div class="ct-val"><strong>partners@pelcom.ru</strong><span>Отдел работы с партнёрами</span></div></div>
+        </div>
+      </div>
+      <div class="fi">
+        <form data-lead data-ok="partnerOk" novalidate>
+          <div class="fl">
+            <div class="ff"><label>Имя и фамилия</label><input name="name" type="text" required placeholder="Иван Петров"/></div>
+            <div class="ff"><label>Телефон</label><input name="phone" type="tel" required placeholder="+7 (___) ___-__-__"/></div>
+          </div>
+          <div class="ff"><label>Компания</label><input name="company" type="text" required placeholder="ООО «Ваша компания»"/></div>
+          <div class="ff"><label>E-mail</label><input name="email" type="email" placeholder="ivan@company.ru"/></div>
+          <div class="ff"><label>Регион работы</label><input name="region" type="text" placeholder="Москва, Московская область..."/></div>
+          <div class="ff"><label>Целевые отрасли</label>
+            <select name="industry"><option value="">Выберите основную отрасль</option><option>Банки и МФЦ</option><option>Медицина и здравоохранение</option><option>Государство и госзакупки</option><option>Образование</option><option>Ритейл и торговые центры</option><option>Промышленность</option><option>Гостиницы и деловые центры</option><option>Музеи и культура</option><option>Несколько отраслей</option></select>
+          </div>
+          <div class="ff"><label>Комментарий</label><textarea name="message" placeholder="Расскажите о вашей компании, опыте, планируемом объёме..."></textarea></div>
+          <label class="consent"><input type="checkbox" name="consent" required/><span>Я согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+          <button class="btn-form" type="submit">Отправить заявку</button>
+        </form>
+        <div class="form-ok" id="partnerOk" hidden>Заявка отправлена. Менеджер свяжется с вами в течение рабочего дня.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-i">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="pelcom-landing.html" class="logo">
+          <svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg>
+          <span class="ln">pelcom</span>
+        </a>
+        <p>Производитель и поставщик интерактивного оборудования. В реестре Минпромторга.</p>
+      </div>
+      <div class="ft-col" style="column-count:2;column-gap:24px"><h5 style="column-span:all">Оборудование</h5><a href="pelcom-kiosk.html">Инфокиоски</a><a href="pelcom-panels.html">Интерактивные панели</a><a href="pelcom-tables.html">Интерактивные столы</a><a href="pelcom-terminals.html">Сенсорные терминалы</a><a href="pelcom-payment.html">Терминалы оплаты</a><a href="pelcom-outdoor.html">Уличные киоски</a><a href="pelcom-lectern.html">Интерактивные трибуны</a><a href="pelcom-kids.html">Детское оборудование</a><a href="pelcom-holo.html">Голограммы</a><a href="pelcom-pylon.html">Видеопилоны</a><a href="pelcom-led.html">LED-экраны</a><a href="pelcom-accessible.html">Доступная среда</a><a href="pelcom-queue.html">Электронная очередь</a><a href="pelcom-nav.html">Навигация</a></div>
+      <div class="ft-col"><h5>Компания</h5><a href="pelcom-about.html">О нас</a><a href="pelcom-about.html">Реестр Минпромторга</a><a href="pelcom-partners.html">Партнёрам</a></div>
+      <div class="ft-col"><h5>Поддержка</h5><a href="pelcom-service.html">Сервис 24/7</a><a href="contacts.html">Контакты</a><a href="tel:+74951234567">+7 (495) 123-45-67</a></div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">© 2026 Pelcom. Все права защищены.</span>
+      <div class="ft-links"><a href="privacy.html">Политика конфиденциальности</a><a href="privacy.html#requisites">Реквизиты</a><a href="sitemap.xml">Карта сайта</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hd = document.getElementById('hd');
+window.addEventListener('scroll', () => hd.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target); });
+}, {threshold: 0.08, rootMargin: '0px 0px -32px 0px'});
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+<script>
+(function(){
+  function submitLead(e){
+    e.preventDefault();
+    var f=e.currentTarget;
+    if(!f.checkValidity()){f.reportValidity();return;}
+    // TODO(backend): подключить реальную отправку заявки клиента, например:
+    // fetch('/api/lead',{method:'POST',body:new FormData(f)}).then(function(){/*ok*/});
+    var ok=document.getElementById(f.getAttribute('data-ok'));
+    f.style.display='none';
+    if(ok){ok.hidden=false;ok.scrollIntoView({behavior:'smooth',block:'center'});}
+  }
+  document.querySelectorAll('form[data-lead]').forEach(function(f){f.addEventListener('submit',submitLead);});
+})();
+</script>
+
+<!-- floating contact -->
+<div class="fab">
+<a class="tg" href="https://t.me/pelcom" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.6-3.4-2.2 2.1c-.3.3-.5.4-.9.4l.3-4.7L18 6.5c.4-.3-.1-.5-.6-.2L7.1 13l-4.5-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.5.2 1.3 1.5z"/></svg></a>
+<a class="wa" href="https://wa.me/74951234567" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4c-.2 0-.5 0-.7.4-.3.4-1 .9-1 2.2s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7s1.6-.6 1.8-1.3c.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.5-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.2-1.4-.5-.6-.9-1.2-1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+<a class="ph" href="tel:+74951234567" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+</div>
+
+<div class="cookie" id="cookieBar" hidden><span>Мы используем cookie для работы сайта и аналитики. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span><button type="button">Принять</button></div>
+<script>(function(){var b=document.getElementById('cookieBar');if(!b)return;try{if(!localStorage.getItem('pelcom_cookie'))b.hidden=false;}catch(e){b.hidden=false;}b.querySelector('button').addEventListener('click',function(){try{localStorage.setItem('pelcom_cookie','1');}catch(e){}b.hidden=true;});})();</script>
+
+</body>
+</html>

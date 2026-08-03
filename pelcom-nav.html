@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Навигационные системы — Pelcom</title>
+  <meta name="description" content="Интерактивная навигация Pelcom для ТЦ, БЦ и учреждений: поиск по зданию, построение маршрутов, интеграция с 1С, AD и LDAP."/>
+  <link rel="canonical" href="https://pelcom.ru/pelcom-nav.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Pelcom"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:title" content="Навигационные системы — Pelcom"/>
+  <meta property="og:description" content="Интерактивная навигация Pelcom для ТЦ, БЦ и учреждений: поиск по зданию, построение маршрутов, интеграция с 1С, AD и LDAP."/>
+  <meta property="og:url" content="https://pelcom.ru/pelcom-nav.html"/>
+  <meta property="og:image" content="https://pelcom.ru/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Навигационные системы — Pelcom"/>
+  <meta name="twitter:description" content="Интерактивная навигация Pelcom для ТЦ, БЦ и учреждений: поиск по зданию, построение маршрутов, интеграция с 1С, AD и LDAP."/>
+  <meta name="twitter:image" content="https://pelcom.ru/og-image.png"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="common.css">
+<style>
+.specs-section{background:var(--cream)}
+.specs-section .s-label{color:var(--blue)}
+.specs-section .s-title{color:var(--ink)}
+.specs-section .s-sub{color:var(--ink-2)}
+.specs-header{margin-bottom:56px}
+.specs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.spec-card{background:#fff;border:1px solid var(--rule-l);border-radius:var(--r);padding:32px 28px;transition:box-shadow .25s,transform .25s}
+.spec-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+.spec-val{font-family:'Manrope',sans-serif;font-size:36px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:8px}
+.spec-val span{font-size:20px;font-weight:600;color:var(--blue)}
+.spec-label{font-size:14px;font-weight:500;color:var(--ink-2)}
+.spec-icon{width:40px;height:40px;background:rgba(0,113,227,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.models-section{background:var(--mid)}
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:36px 28px;position:relative;transition:border-color .25s,transform .25s}
+.model-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+.model-card.featured{border-color:var(--blue);background:rgba(0,113,227,.06)}
+.model-card.featured::before{content:'Популярный';position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px}
+.model-name{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:600;margin-bottom:6px}
+.model-price{font-size:14px;color:var(--dim);margin-bottom:24px}
+.model-price strong{font-size:24px;font-weight:600;color:#fff}
+.model-specs{list-style:none;display:flex;flex-direction:column;gap:10px}
+.model-specs li{font-size:14px;color:var(--dim);display:flex;align-items:flex-start;gap:10px}
+.model-specs li::before{content:'›';color:var(--blue);font-weight:600;flex-shrink:0;line-height:1.4}
+.model-cta{margin-top:28px;width:100%}
+.ind-section{background:var(--black)}
+    .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin-top:56px}
+
+.ind-row{background:var(--dark);padding:56px;transition:background .4s}
+.ind-row:hover{background:var(--mid)}
+.ind-num{display:none}
+.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:12px;font-family:'Unbounded',sans-serif}
+.ind-desc{font-size:15px;color:var(--dim);line-height:1.5}
+.sw-section{background:var(--dark)}
+.sw-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:56px}
+.sw-card{background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:36px 32px;transition:border-color .25s,transform .25s;max-width:600px}
+.sw-card:hover{border-color:rgba(0,113,227,.4);transform:translateY(-3px)}
+.sw-card-top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.sw-icon{width:48px;height:48px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sw-name{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:600}
+.sw-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:24px}
+.sw-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.sw-features li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
+.sw-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
+.cta-band{background:var(--blue);padding:80px 40px;text-align:center}
+.cta-band h2{font-family:'Unbounded',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.cta-band p{font-size:17px;opacity:.85;margin-bottom:36px}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);font-weight:600}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:#fff}
+footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(--rule)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px}
+.footer-brand p{font-size:14px;color:var(--dim);line-height:1.7;margin-top:16px;max-width:260px}
+.footer-col h4{font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--rule);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--dim)}
+.fi{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fi.vis{opacity:1;transform:none}
+.fi-d1{transition-delay:.1s}.fi-d2{transition-delay:.2s}.fi-d3{transition-delay:.3s}.fi-d4{transition-delay:.4s}
+@media(max-width:1024px){
+  header{padding:0 24px}
+  header .burger{display:flex}
+  .h-right{display:none}
+  nav{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#0c0c16;border-bottom:1px solid var(--rule);padding:4px 24px 14px;display:none}
+  header.open nav{display:flex}
+  nav a{padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+  .hero{padding:100px 24px 80px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-svg{order:-1}
+  section{padding:72px 24px}
+  .specs-grid{grid-template-columns:repeat(2,1fr)}
+  .models-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .hero-vline{left:60px}
+}
+@media(max-width:640px){
+  header{padding:0 16px}
+  nav{display:none}
+  .h-phone{display:none}
+  .hero{padding:90px 16px 60px}
+  .hero h1{font-size:36px}
+  section{padding:56px 16px}
+  .specs-grid{grid-template-columns:1fr 1fr}
+  .models-grid{grid-template-columns:1fr}
+  .ind-row{padding:36px 40px;gap:24px}
+  
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .cta-band{padding:60px 16px}
+  .hero-vline{display:none}
+  .hero-grid{opacity:.3}
+}
+</style>
+<style>
+.fab{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.fab a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);transition:transform .2s}
+.fab a:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab .tg{background:#229ED9}.fab .wa{background:#25D366}.fab .ph{background:#0071e3}
+@media(max-width:640px){.fab a{width:46px;height:46px}.fab svg{width:23px;height:23px}}
+</style>
+<style>
+.cookie{position:fixed;left:18px;bottom:18px;z-index:300;max-width:520px;background:#12121c;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:16px 20px;display:flex;gap:16px;align-items:center;box-shadow:0 10px 40px rgba(0,0,0,.45);font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
+.cookie a{color:var(--blue)}
+.cookie button{flex-shrink:0;padding:10px 20px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:inherit}
+@media(max-width:560px){.cookie{flex-direction:column;align-items:flex-start;left:12px;right:84px;max-width:none;bottom:12px}}
+</style>
+<style>
+.crumbs{display:block;position:absolute;top:86px;left:0;right:0;z-index:3}
+.crumbs-i{max-width:1200px;margin:0 auto;padding:0 40px;font-size:13px;color:var(--dim);text-align:left}
+.crumbs-i a{color:var(--dim);text-decoration:none;transition:color .2s}
+.crumbs-i a:hover{color:#fff}
+.crumbs-i b{color:rgba(255,255,255,.3);margin:0 8px;font-weight:400}
+@media(max-width:1024px){.crumbs-i{padding:0 24px}}
+@media(max-width:640px){.crumbs{top:80px}.crumbs-i{padding:0 16px;font-size:12px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Навигационные системы Pelcom", "description": "Интерактивная навигация Pelcom для ТЦ, БЦ и учреждений: поиск по зданию, построение маршрутов, интеграция с 1С, AD и LDAP.", "image": "https://pelcom.ru/og-image.png", "brand": {"@type": "Brand", "name": "Pelcom"}, "manufacturer": {"@type": "Organization", "name": "Pelcom", "url": "https://pelcom.ru/"}, "category": "Интерактивное оборудование", "offers": {"@type": "AggregateOffer", "priceCurrency": "RUB", "lowPrice": 120000, "availability": "https://schema.org/InStock", "seller": {"@type": "Organization", "name": "Pelcom", "url": "https://pelcom.ru/"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://pelcom.ru/"}, {"@type": "ListItem", "position": 2, "name": "Навигационные системы Pelcom", "item": "https://pelcom.ru/pelcom-nav.html"}]}</script>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="pelcom-landing.html" class="h-logo"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span>pelcom</span></a>
+  <nav>
+    <a href="pelcom-landing.html#products" class="active">Оборудование</a>
+    <a href="pelcom-landing.html#industries">Отрасли</a>
+    <a href="pelcom-landing.html#software">Программы</a>
+    <a href="pelcom-about.html">О компании</a>
+    <a href="pelcom-service.html">Сервис</a>
+  <a href="contacts.html">Контакты</a></nav>
+  <div class="h-right">
+    <a href="tel:+78001234567" class="h-phone">8 800 123-45-67</a>
+    <a href="pelcom-landing.html#contact" class="btn btn-blue btn-sm">Связаться</a>
+  </div>
+  <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <nav class="crumbs" aria-label="Хлебные крошки"><div class="crumbs-i"><a href="pelcom-landing.html">Главная</a><b>/</b><a href="pelcom-landing.html#products">Оборудование</a><b>/</b>Навигационные системы</div></nav>
+  <div class="hero-grid"></div>
+  <div class="hero-vline"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L11 6 6 11 1 6z" stroke="#007CC2" stroke-width="1.5" fill="none"/><circle cx="6" cy="6" r="1.5" fill="#007CC2"/></svg>
+        Навигационные системы
+      </div>
+      <h1>Навигационные<br>системы Pelcom</h1>
+      <div class="hero-price">от <strong>120 000 ₽</strong></div>
+      <p class="hero-desc">Интерактивная навигация для зданий любого масштаба: от небольшого офиса до многоэтажного ТЦ. Поддержка до 12 языков, интеграция с 1С и Active Directory, работа в офлайн-режиме.</p>
+      <div class="hero-actions">
+        <a href="pelcom-landing.html#contact" class="btn btn-blue">Запросить КП</a>
+        <a href="specs/pelcom-nav.pdf" class="btn btn-ghost" download>Скачать паспорт</a>
+      </div>
+    </div>
+    <div class="hero-svg">
+      <svg viewBox="0 0 440 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Building floor plan -->
+        <rect x="60" y="60" width="320" height="280" rx="8" stroke="#007CC2" stroke-width="1.5" fill="rgba(0,113,227,0.03)"/>
+        <!-- Floor dividers -->
+        <line x1="60" y1="153" x2="380" y2="153" stroke="#007CC2" stroke-width="1" stroke-opacity=".25"/>
+        <line x1="60" y1="246" x2="380" y2="246" stroke="#007CC2" stroke-width="1" stroke-opacity=".25"/>
+        <!-- Floor labels -->
+        <rect x="68" y="68" width="48" height="16" rx="3" fill="rgba(0,113,227,0.15)"/>
+        <rect x="68" y="161" width="48" height="16" rx="3" fill="rgba(0,113,227,0.08)"/>
+        <rect x="68" y="254" width="48" height="16" rx="3" fill="rgba(0,113,227,0.08)"/>
+        <!-- Rooms floor 1 -->
+        <rect x="140" y="68" width="64" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <rect x="216" y="68" width="64" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <rect x="292" y="68" width="76" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <!-- Rooms floor 2 (highlighted) -->
+        <rect x="140" y="161" width="64" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <rect x="216" y="161" width="64" height="68" rx="4" stroke="#007CC2" stroke-width="2" fill="rgba(0,113,227,0.18)"/>
+        <rect x="292" y="161" width="76" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <!-- Rooms floor 3 -->
+        <rect x="140" y="254" width="64" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <rect x="216" y="254" width="64" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <rect x="292" y="254" width="76" height="68" rx="4" stroke="#007CC2" stroke-width="1" stroke-opacity=".3" fill="rgba(0,113,227,0.05)"/>
+        <!-- Route path -->
+        <path d="M100 340 L100 195 L216 195" stroke="#007CC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" fill="none"/>
+        <!-- Start point -->
+        <circle cx="100" cy="340" r="7" fill="#007CC2" fill-opacity=".8"/>
+        <circle cx="100" cy="340" r="3" fill="#fff"/>
+        <!-- End point (highlighted room) -->
+        <circle cx="248" cy="195" r="7" fill="#007CC2"/>
+        <circle cx="248" cy="195" r="3" fill="#fff"/>
+        <!-- Destination pulse -->
+        <circle cx="248" cy="195" r="14" stroke="#007CC2" stroke-width="1.5" stroke-opacity=".4"/>
+        <circle cx="248" cy="195" r="22" stroke="#007CC2" stroke-width="1" stroke-opacity=".2"/>
+        <!-- Arrow indicator -->
+        <path d="M100 310 L100 300 M96 304 L100 300 L104 304" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <!-- Decorative -->
+        <circle cx="30" cy="200" r="30" stroke="#007CC2" stroke-width="1" stroke-opacity=".1" stroke-dasharray="4 4"/>
+        <circle cx="410" cy="200" r="25" stroke="#007CC2" stroke-width="1" stroke-opacity=".1" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs-section">
+  <div class="container">
+    <div class="specs-header fi">
+      <div class="s-label">Ключевые характеристики</div>
+      <h2 class="s-title">Технические параметры</h2>
+      <p class="s-sub">Система Pelcom Навигация разработана для объектов с высокой посещаемостью и сложной структурой помещений — торговых центров, больниц и бизнес-кварталов.</p>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-card fi fi-d1">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="2" stroke="#007CC2" stroke-width="1.5"/><line x1="2" y1="8" x2="18" y2="8" stroke="#007CC2" stroke-width="1"/><line x1="2" y1="14" x2="18" y2="14" stroke="#007CC2" stroke-width="1"/></svg>
+        </div>
+        <div class="spec-val" style="font-size:22px">Без<span style="display:block;font-size:16px">ограничений</span></div>
+        <div class="spec-label">Количество этажей</div>
+      </div>
+      <div class="spec-card fi fi-d2">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#007CC2" stroke-width="1.5"/><path d="M5 10 Q8 7 10 10 Q12 13 15 10" stroke="#007CC2" stroke-width="1.5" fill="none"/></svg>
+        </div>
+        <div class="spec-val">до <span>12</span></div>
+        <div class="spec-label">Языков интерфейса</div>
+      </div>
+      <div class="spec-card fi fi-d3">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#007CC2" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="spec-val" style="font-size:22px">1С<span style="display:block;font-size:16px">/ AD</span></div>
+        <div class="spec-label">Интеграция</div>
+      </div>
+      <div class="spec-card fi fi-d4">
+        <div class="spec-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 1014 0 7 7 0 00-14 0z" stroke="#007CC2" stroke-width="1.5"/><line x1="10" y1="3" x2="10" y2="2" stroke="#007CC2" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="18" x2="10" y2="17" stroke="#007CC2" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="10" x2="2" y2="10" stroke="#007CC2" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="10" x2="17" y2="10" stroke="#007CC2" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="spec-val" style="font-size:22px">Off<span>-line</span></div>
+        <div class="spec-label">Работа без сети</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="models-section">
+  <div class="container">
+    <div class="fi">
+      <div class="s-label">Лицензии</div>
+      <h2 class="s-title">Масштаб под ваш объект</h2>
+      <p class="s-sub">Три редакции Pelcom Навигация — от базового навигатора для небольшого офиса до корпоративной платформы с интеграцией в IT-инфраструктуру предприятия.</p>
+    </div>
+    <div class="models-grid">
+      <div class="model-card fi fi-d1">
+        <div class="model-name">Basic</div>
+        <div class="model-price">от <strong>120 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>До 5 этажей</li>
+          <li>Визуальный редактор планов</li>
+          <li>Русский и английский языки</li>
+          <li>Маршрутизация пешком</li>
+          <li>Без внешних интеграций</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card featured fi fi-d2">
+        <div class="model-name">Pro</div>
+        <div class="model-price">от <strong>185 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>Без ограничений по этажам</li>
+          <li>Интеграция с 1С: арендаторы</li>
+          <li>До 3 языков интерфейса</li>
+          <li>Аналитика посещаемости зон</li>
+          <li>Расписание арендаторов</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-blue model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d3">
+        <div class="model-name">Enterprise</div>
+        <div class="model-price">от <strong>290 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>Без ограничений этажей/строений</li>
+          <li>До 12 языков, AD/LDAP</li>
+          <li>REST API для интеграций</li>
+          <li>QR-маршрут в мобильный</li>
+          <li>White-label брендирование</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind-section">
+  <div class="container">
+    <div class="fi">
+      <div class="s-label">Сферы применения</div>
+      <h2 class="s-title">Где работает<br>навигация Pelcom</h2>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-row fi">
+        <div class="ind-num">01</div>
+        <div class="ind-name">Торговые центры</div>
+        <div class="ind-desc">Навигация по магазинам, фудкорту, парковке и сервисным точкам. Автоматическое обновление арендаторов через 1С. Маршрут от входа до конкретного магазина.</div>
+      </div>
+      <div class="ind-row fi fi-d1">
+        <div class="ind-num">02</div>
+        <div class="ind-name">Бизнес-центры</div>
+        <div class="ind-desc">Навигация по офисам арендаторов с синхронизацией из Active Directory. Бронирование переговорных прямо с терминала, расписание мероприятий.</div>
+      </div>
+      <div class="ind-row fi fi-d2">
+        <div class="ind-num">03</div>
+        <div class="ind-name">Больницы и клиники</div>
+        <div class="ind-desc">Маршруты до кабинетов, аптек, кафе и выходов. Поддержка маломобильных посетителей — маршрут только по доступным зонам. Обновление расписания врачей.</div>
+      </div>
+      <div class="ind-row fi fi-d3">
+        <div class="ind-num">04</div>
+        <div class="ind-name">Музеи и выставки</div>
+        <div class="ind-desc">Тематические маршруты по экспозиции, аудиогид с привязкой к точке, инфо-карточки экспонатов. Поддержка временных выставок.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section class="sw-section">
+  <div class="container">
+    <div class="fi">
+      <div class="s-label">Программное обеспечение</div>
+      <h2 class="s-title">Pelcom Навигация — ядро<br>навигационной системы</h2>
+      <p class="s-sub">Навигационные терминалы Pelcom работают на собственном ПО Pelcom Навигация, разработанном с учётом опыта более 200 проектов.</p>
+    </div>
+    <div class="sw-grid">
+      <div class="sw-card fi fi-d1">
+        <div class="sw-card-top">
+          <div class="sw-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#007CC2" stroke-width="1.5"/><polyline points="9,22 9,12 15,12 15,22" stroke="#007CC2" stroke-width="1.5"/></svg>
+          </div>
+          <div>
+            <div class="sw-tag">Навигация</div>
+            <div class="sw-name">Pelcom Навигация</div>
+          </div>
+        </div>
+        <p class="sw-desc">Платформа интерактивной навигации: редактор планов этажей в браузере, алгоритм построения маршрутов, мультиязычный публичный интерфейс и аналитика посещаемости.</p>
+        <ul class="sw-features">
+          <li>Drag-and-drop редактор планов без кода</li>
+          <li>Алгоритм кратчайшего маршрута (Dijkstra)</li>
+          <li>Поиск по названию, категории и арендатору</li>
+          <li>Экспорт маршрута в QR для смартфона</li>
+          <li>Аналитика популярных запросов и зон</li>
+          <li>Автообновление из 1С и AD/LDAP</li>
+        </ul>
+        <a href="pelcom-landing.html#software" class="btn btn-ghost btn-sm">Подробнее о Pelcom Навигация</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Навигация за 4 недели под ключ</h2>
+  <p>Загрузим планы этажей, настроим маршруты, обучим администратора и запустим систему</p>
+  <div class="cta-actions">
+    <a href="pelcom-landing.html#contact" class="btn" style="background:#fff;color:var(--blue);font-weight:600">Запросить КП</a>
+    <a href="pelcom-service.html" class="btn btn-outline-white">Сервис и монтаж</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="pelcom-landing.html" class="h-logo"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span>pelcom</span></a>
+        <p>Производитель интерактивного оборудования для бизнеса и государственных учреждений. На рынке с 2008 года.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Оборудование</h4>
+        <a href="pelcom-kiosk.html">Инфокиоски</a>
+        <a href="pelcom-panels.html">Интерактивные панели</a>
+        <a href="pelcom-tables.html">Интерактивные столы</a>
+        <a href="pelcom-terminals.html">Сенсорные терминалы</a>
+        <a href="pelcom-payment.html">Терминалы оплаты</a>
+        <a href="pelcom-outdoor.html">Уличные киоски</a>
+        <a href="pelcom-lectern.html">Интерактивные трибуны</a>
+        <a href="pelcom-kids.html">Детское оборудование</a>
+        <a href="pelcom-holo.html">Голограммы</a>
+        <a href="pelcom-pylon.html">Видеопилоны</a>
+        <a href="pelcom-led.html">LED-экраны</a>
+        <a href="pelcom-accessible.html">Доступная среда</a>
+        <a href="pelcom-queue.html">Электронная очередь</a>
+        <a href="pelcom-nav.html">Навигация</a>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <a href="pelcom-about.html">О компании</a>
+        <a href="pelcom-partners.html">Партнёрам</a>
+        <a href="pelcom-landing.html#cases">Проекты</a>
+        
+      </div>
+      <div class="footer-col">
+        <h4>Поддержка</h4>
+        <a href="pelcom-service.html">Сервис и монтаж</a>
+        <a href="pelcom-service.html">Гарантия</a>
+        <a href="pelcom-service.html">Документация</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2008–2026 Pelcom. Все права защищены.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="privacy.html#requisites">Реквизиты</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>40)},{passive:true});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+</script>
+
+<!-- floating contact -->
+<div class="fab">
+<a class="tg" href="https://t.me/pelcom" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.6-3.4-2.2 2.1c-.3.3-.5.4-.9.4l.3-4.7L18 6.5c.4-.3-.1-.5-.6-.2L7.1 13l-4.5-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.5.2 1.3 1.5z"/></svg></a>
+<a class="wa" href="https://wa.me/74951234567" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4c-.2 0-.5 0-.7.4-.3.4-1 .9-1 2.2s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7s1.6-.6 1.8-1.3c.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.5-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.6-2.2-1.4-.5-.6-.9-1.2-1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+<a class="ph" href="tel:+74951234567" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+</div>
+
+<div class="cookie" id="cookieBar" hidden><span>Мы используем cookie для работы сайта и аналитики. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span><button type="button">Принять</button></div>
+<script>(function(){var b=document.getElementById('cookieBar');if(!b)return;try{if(!localStorage.getItem('pelcom_cookie'))b.hidden=false;}catch(e){b.hidden=false;}b.querySelector('button').addEventListener('click',function(){try{localStorage.setItem('pelcom_cookie','1');}catch(e){}b.hidden=true;});})();</script>
+
+</body>
+</html>
