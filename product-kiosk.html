@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сенсорный киоск — Пелком | производство «под ключ»</title>
+<meta name="description" content="Сенсорные информационные киоски от завода «Пелком». Напольные и настенные, антивандальный корпус, интеграция с любым ПО. Производство в Дубне.">
+<meta property="og:image" content="assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pelcom-common.css">
+<style>
+  .detail-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,56px);align-items:center;padding:clamp(30px,5vw,60px) 0 clamp(40px,6vw,70px)}
+  .detail-hero__img{border-radius:var(--r-l);overflow:hidden;background:var(--stage);box-shadow:0 0 0 1px rgba(130,185,235,.2),0 40px 70px -30px rgba(0,124,194,.45)}
+  .detail-hero__img img{width:100%;height:auto;display:block;object-fit:contain;padding:20px}
+  .detail-hero h1{font-size:clamp(28px,4vw,46px);line-height:1.06;font-weight:800;letter-spacing:-.035em;color:var(--ink);margin-bottom:14px}
+  .detail-hero p{font-size:clamp(15px,1.4vw,18px);color:var(--steel-2);line-height:1.58;margin-bottom:18px}
+  .detail-hero__chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .detail-hero__chips span{font-family:'IBM Plex Mono',monospace;font-size:var(--fs-xs);letter-spacing:.06em;text-transform:uppercase;background:rgba(0,124,194,.14);color:var(--blue-l);border:1px solid rgba(56,169,234,.25);border-radius:6px;padding:6px 14px}
+  .specs{padding:clamp(40px,6vw,80px) 0}
+  .specs h2{font-size:var(--fs-lg);font-weight:800;color:var(--ink);margin-bottom:24px;letter-spacing:-.02em}
+  .specs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .spec-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+  .spec-item b{display:block;font-family:'IBM Plex Mono',monospace;font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--blue-l);margin-bottom:6px}
+  .spec-item span{font-size:var(--fs-base);color:var(--ink);font-weight:600}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  .feat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-l);padding:26px;text-align:center;transition:border-color .3s ease,transform .3s var(--e)}
+  .feat:hover{border-color:var(--blue-l);transform:translateY(-2px)}
+  .feat svg{margin-bottom:16px}
+  .feat h4{font-size:var(--fs-base);font-weight:700;color:var(--ink);margin-bottom:6px}
+  .feat p{font-size:var(--fs-sm);color:var(--steel);line-height:1.45}
+  .gallery-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+  .gallery-row img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);border:1px solid var(--line);background:var(--stage);transition:border-color .3s}
+  .gallery-row img:hover{border-color:var(--blue-l)}
+  .back-link{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-sm);font-weight:600;color:var(--steel);transition:color .2s;margin-bottom:8px}
+  .back-link:hover{color:var(--ice)}
+  .back-link svg{transition:transform .2s}
+  .back-link:hover svg{transform:translateX(-3px)}
+  @media(max-width:768px){
+    .detail-hero{grid-template-columns:1fr;gap:20px}
+    .specs-grid{grid-template-columns:1fr}
+    .features-grid{grid-template-columns:1fr}
+    .gallery-row{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<svg display="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="pcmlogo" viewBox="0 0 115 30"><rect width="115" height="30" rx="4" fill="#007CC2"/><text x="8" y="21" font-family="Manrope,sans-serif" font-weight="800" font-size="16" fill="#fff">ПЕЛКОМ</text></symbol>
+</svg>
+
+<header class="header" style="position:relative">
+  <div class="header__in">
+    <a href="index.html" aria-label="Пелком — на главную"><svg class="logo" role="img" aria-label="Пелком"><use href="#pcmlogo"></use></svg></a>
+    <nav class="nav" role="navigation" aria-label="Основная навигация">
+      <a href="products.html" style="color:var(--ice)">Продукция</a>
+      <a href="solutions.html">Решения</a>
+      <a href="software.html">ПО</a>
+      <a href="index.html#production">Производство</a>
+    </nav>
+    <a class="header__phone" href="tel:+74957770741">+7 (495)&nbsp;777-07-41</a>
+    <button class="btn btn--primary btn--sm" data-open-modal>Рассчитать стоимость</button>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mmenu"><span></span></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Меню">
+  <div class="mmenu__top">
+    <svg class="logo" role="img" aria-label="Пелком"><use href="#pcmlogo"></use></svg>
+    <button class="mmenu__close" id="mclose" aria-label="Закрыть">&times;</button>
+  </div>
+  <a href="products.html" style="color:var(--blue-x)">Продукция</a>
+  <a href="solutions.html">Решения</a>
+  <a href="software.html">ПО</a>
+  <a href="index.html#production">Производство</a>
+  <button class="btn btn--primary btn--lg" data-open-modal>Рассчитать стоимость</button>
+  <a class="mmenu__contact" href="tel:+74957770741">+7 (495) 777-07-41</a>
+</div>
+
+<main>
+  <section style="background:var(--bg)">
+    <div class="wrap">
+      <a href="products.html" class="back-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m7-7-7 7 7 7"/></svg> В каталог</a>
+      <div class="detail-hero">
+        <div class="detail-hero__img"><img src="assets/p-blue-front-0.jpg" alt="Сенсорный киоск Пелком" style="width:100%;height:auto"></div>
+        <div>
+          <div class="detail-hero__chips"><span>Навигация</span><span>Информирование</span><span>24/7</span></div>
+          <h1>Сенсорный <span class="accent">информационный</span> киоск</h1>
+          <p>Навигационные, справочные и рекламные киоски в антивандальном корпусе из металла. Напольное и настенное исполнение, интеграция с любым программным обеспечением и внешними системами.</p>
+          <p>Корпус, сборка и покраска — собственное производство в Дубне. Поддерживаем любые диагонали экранов, встраивание периферии (принтеры, сканеры, считыватели карт).</p>
+          <button class="btn btn--primary btn--lg" data-open-modal>Рассчитать киоск под задачу</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- specs -->
+  <section class="wrap specs">
+    <h2>Технические характеристики</h2>
+    <div class="specs-grid">
+      <div class="spec-item"><b>Тип корпуса</b><span>Металлический, антивандальный (сталь / нержавейка)</span></div>
+      <div class="spec-item"><b>Исполнение</b><span>Напольное, настенное, встраиваемое</span></div>
+      <div class="spec-item"><b>Экран</b><span>От 21,5″ до 55″, сенсорный (ИК-рамка / проекционно-ёмкостный)</span></div>
+      <div class="spec-item"><b>Покрытие</b><span>Порошковая покраска RAL на выбор</span></div>
+      <div class="spec-item"><b>Периферия</b><span>Принтер чеков, сканер QR/штрихкода, считыватель карт, купюроприёмник</span></div>
+      <div class="spec-item"><b>ПО</b><span>Windows / Linux / Android. Административная панель, удалённое обновление</span></div>
+      <div class="spec-item"><b>Сеть</b><span>Ethernet, Wi-Fi, опционально 4G-модем</span></div>
+      <div class="spec-item"><b>Гарантия</b><span>2 года, сервисное сопровождение</span></div>
+    </div>
+  </section>
+
+  <!-- features -->
+  <section style="background:var(--bg);padding:clamp(40px,6vw,80px) 0">
+    <div class="wrap">
+      <h2 style="font-size:var(--fs-lg);font-weight:800;color:var(--ink);margin-bottom:6px;letter-spacing:-.02em">Ключевые <span class="accent">преимущества</span></h2>
+      <div class="features-grid">
+        <div class="feat">
+          <svg width="40" height="40" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" stroke="#007CC2" stroke-width="2.2"/><path d="M10 16h12M16 10v12" stroke="#007CC2" stroke-width="2" stroke-linecap="round"/></svg>
+          <h4>Защита 24/7</h4>
+          <p>Антивандальный корпус из стали или нержавейки. Рассчитан на интенсивную круглосуточную эксплуатацию.</p>
+        </div>
+        <div class="feat">
+          <svg width="40" height="40" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="6" stroke="#007CC2" stroke-width="2.2"/><path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <h4>Под ваш дизайн</h4>
+          <p>Корпус любой конфигурации и цвета по RAL. Брендирование, наклейки, подсветка.</p>
+        </div>
+        <div class="feat">
+          <svg width="40" height="40" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="16" rx="3" stroke="#007CC2" stroke-width="2.2"/><path d="M12 24v4M20 24v4M8 28h16" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <h4>Любая диагональ</h4>
+          <p>Экраны от 21,5″ до 55″. Сенсорная рамка или проекционно-ёмкостный тачскрин.</p>
+        </div>
+        <div class="feat">
+          <svg width="40" height="40" viewBox="0 0 32 32" fill="none"><path d="M4 20V6h10l2 2 2-2h10v14" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h24l-3 8H7l-3-8z" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h4>Интеграция с системами</h4>
+          <p>СКУД, 1С, платёжные системы, базы данных. API для разработчиков.</p>
+        </div>
+        <div class="feat">
+          <svg width="40" height="40" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="8" stroke="#007CC2" stroke-width="2.2"/><path d="M16 12v4l3 2" stroke="#007CC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h4>Быстрое изготовление</h4>
+          <p>Собственный цех — от 3 недель на типовой проект. Срочные заказы обсуждаемы.</p>
+        </div>
+        <div class="feat">
+          <svg width="40" height="40" viewBox="0 0 32 32" fill="none"><path d="M12 6h8l4 8-4 8h-8l-4-8 4-8z" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="14" r="3" stroke="#007CC2" stroke-width="2"/></svg>
+          <h4>Удалённое управление</h4>
+          <p>Обновление контента и ПО без выезда на объект. Мониторинг состояния устройств.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- gallery -->
+  <section class="wrap specs">
+    <h2>Примеры <span class="accent">исполнения</span></h2>
+    <div class="gallery-row">
+      <img src="assets/p-metal-front-0.jpg" alt="Киоск в металлическом корпусе" loading="lazy">
+      <img src="assets/p-white-front-0.jpg" alt="Киоск в белом корпусе" loading="lazy">
+      <img src="assets/p-metal-front-3.jpg" alt="Киоск в интерьере" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-dark" style="text-align:center">
+    <div class="cta__in" style="align-items:center;text-align:center">
+      <div>
+        <h2 class="h2" style="margin-bottom:14px">Нужен киоск под вашу задачу?</h2>
+        <p class="lead" style="margin-bottom:28px;max-width:540px">Рассчитаем стоимость, подберём конфигурацию и изготовим «под ключ».</p>
+        <button class="btn btn--primary btn--lg" data-open-modal>Получить расчёт</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <svg class="logo" role="img" aria-label="Пелком" style="height:30px;width:115px;margin-bottom:14px"><use href="#pcmlogo"></use></svg>
+      <p style="font-size:var(--fs-sm);color:var(--steel);max-width:340px">Машиностроительный завод полного цикла. Проектируем и производим интерактивное оборудование «под ключ» с 2013 года.</p>
+    </div>
+    <div>
+      <b style="display:block;font-size:var(--fs-sm);margin-bottom:10px">Продукция</b>
+      <a href="products.html">Сенсорные киоски</a>
+      <a href="products.html">Терминалы</a>
+      <a href="products.html">Интерактивные столы</a>
+      <a href="products.html">Панели и трибуны</a>
+    </div>
+    <div>
+      <b style="display:block;font-size:var(--fs-sm);margin-bottom:10px">Компания</b>
+      <a href="index.html#production">Производство</a>
+      <a href="index.html#process">Как работаем</a>
+      <a href="solutions.html">Решения</a>
+      <a href="software.html">Программное обеспечение</a>
+    </div>
+    <div>
+      <b style="display:block;font-size:var(--fs-sm);margin-bottom:10px">Контакты</b>
+      <p style="font-size:var(--fs-sm);color:var(--steel-2);margin-bottom:4px">г. Дубна, Московская обл.</p>
+      <a href="tel:+74957770741" style="font-size:var(--fs-md);font-weight:700;color:#fff">+7 (495) 777-07-41</a>
+      <a href="mailto:info@pelcom.ru" style="font-size:var(--fs-sm);color:var(--blue-x)">info@pelcom.ru</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2013–2026 Пелком</span>
+    <a href="index.html">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Заявка на расчёт">
+  <div class="modal__box">
+    <button class="modal__close" id="mclose2" aria-label="Закрыть">&times;</button>
+    <h3 style="font-size:var(--fs-lg);font-weight:800;color:var(--ink);margin-bottom:6px">Рассчитать стоимость</h3>
+    <p style="font-size:var(--fs-sm);color:var(--steel);margin-bottom:22px">Опишите задачу — менеджер свяжется и подготовит расчёт.</p>
+    <form class="quiz__form" novalidate>
+      <div class="quiz__row"><div><label class="field">Ваше имя</label><input class="input" name="name" placeholder="Как к вам обращаться" required></div><div><label class="field">Телефон</label><input class="input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required></div></div>
+      <label class="field">Комментарий</label>
+      <textarea class="input" name="task" rows="3" placeholder="Что хотите изготовить или какую задачу решить"></textarea>
+      <button type="submit" class="btn btn--primary btn--md" style="width:100%;margin-top:8px">Получить расчёт</button>
+      <p class="modal__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu'), mclose = document.getElementById('mclose');
+  function toggle(){ var open = mmenu.classList.toggle('open'); burger.classList.toggle('open',open); burger.setAttribute('aria-expanded',open); }
+  burger.addEventListener('click',toggle); mclose.addEventListener('click',toggle);
+  document.querySelectorAll('[data-mlink]').forEach(function(a){ a.addEventListener('click',toggle); });
+})();
+(function(){
+  var modal = document.getElementById('modal'), mclose2 = document.getElementById('mclose2');
+  function openM(){ modal.classList.add('open'); } function closeM(){ modal.classList.remove('open'); }
+  document.querySelectorAll('[data-open-modal]').forEach(function(b){ b.addEventListener('click',openM); });
+  mclose2.addEventListener('click',closeM);
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeM(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeM(); });
+})();
+</script>
+</body>
+</html>

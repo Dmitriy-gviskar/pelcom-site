@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Программное обеспечение — Пелком | ПО для интерактивного оборудования</title>
+<meta name="description" content="Программное обеспечение для сенсорных киосков, терминалов и интерактивных панелей. Административная панель, интеграция с внешними системами, удалённое обновление контента.">
+<meta property="og:image" content="assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pelcom-common.css">
+<style>
+  .soft-hero{padding:clamp(34px,5vw,60px) 0 clamp(40px,6vw,70px);text-align:center}
+  .soft-hero h1{font-size:var(--fs-xl);line-height:1.04;font-weight:800;letter-spacing:-.035em;color:var(--ink);margin-bottom:16px}
+  .soft-hero p{font-size:clamp(16px,1.5vw,19px);color:var(--steel-2);max-width:660px;margin:0 auto}
+  .soft-section{padding:clamp(30px,5vw,60px) 0}
+  .soft-section h2{font-size:var(--fs-lg);font-weight:800;color:var(--ink);margin-bottom:6px;letter-spacing:-.02em}
+  .soft-section .sub{font-size:var(--fs-sm);color:var(--steel);margin-bottom:28px}
+  .dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .dir-card{border-radius:var(--r-l);background:var(--panel);border:1px solid var(--line);padding:28px;transition:border-color .3s ease,transform .3s var(--e);text-align:center}
+  .dir-card:hover{border-color:var(--blue-l);transform:translateY(-2px)}
+  .dir-card__icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,rgba(0,124,194,.14),rgba(56,169,234,.06));border:1px solid rgba(120,168,214,.18);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .dir-card h4{font-size:var(--fs-base);font-weight:700;color:var(--ink);margin-bottom:4px}
+  .dir-card p{font-size:var(--fs-sm);color:var(--steel);line-height:1.45}
+  .feat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+  .feat-pill{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;text-align:center}
+  .feat-pill svg{margin-bottom:10px}
+  .feat-pill span{display:block;font-size:var(--fs-sm);font-weight:600;color:var(--steel-2)}
+  .back-link{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-sm);font-weight:600;color:var(--steel);transition:color .2s;margin-bottom:8px}
+  .back-link:hover{color:var(--ice)}
+  .back-link svg{transition:transform .2s}
+  .back-link:hover svg{transform:translateX(-3px)}
+  @media(max-width:800px){.dir-grid{grid-template-columns:1fr 1fr}.feat-strip{grid-template-columns:1fr 1fr}}
+  @media(max-width:500px){.dir-grid{grid-template-columns:1fr}.feat-strip{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg display="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="pcmlogo" viewBox="0 0 115 30"><rect width="115" height="30" rx="4" fill="#007CC2"/><text x="8" y="21" font-family="Manrope,sans-serif" font-weight="800" font-size="16" fill="#fff">ПЕЛКОМ</text></symbol>
+</svg>
+
+<header class="header" style="position:relative">
+  <div class="header__in">
+    <a href="index.html" aria-label="Пелком — на главную"><svg class="logo" role="img" aria-label="Пелком"><use href="#pcmlogo"></use></svg></a>
+    <nav class="nav" role="navigation" aria-label="Основная навигация">
+      <a href="products.html">Продукция</a>
+      <a href="solutions.html">Решения</a>
+      <a href="software.html" style="color:var(--ice)">ПО</a>
+      <a href="index.html#production">Производство</a>
+    </nav>
+    <a class="header__phone" href="tel:+74957770741">+7 (495)&nbsp;777-07-41</a>
+    <button class="btn btn--primary btn--sm" data-open-modal>Рассчитать стоимость</button>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mmenu"><span></span></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Меню">
+  <div class="mmenu__top">
+    <svg class="logo" role="img" aria-label="Пелком"><use href="#pcmlogo"></use></svg>
+    <button class="mmenu__close" id="mclose" aria-label="Закрыть">&times;</button>
+  </div>
+  <a href="products.html">Продукция</a>
+  <a href="solutions.html">Решения</a>
+  <a href="software.html" style="color:var(--blue-x)">ПО</a>
+  <a href="index.html#production">Производство</a>
+  <button class="btn btn--primary btn--lg" data-open-modal>Рассчитать стоимость</button>
+  <a class="mmenu__contact" href="tel:+74957770741">+7 (495) 777-07-41</a>
+</div>
+
+<main>
+  <section class="soft-hero" style="background:var(--bg)">
+    <div class="wrap">
+      <a href="index.html" class="back-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m7-7-7 7 7 7"/></svg> На главную</a>
+      <h1>Программное <span class="accent">обеспечение</span></h1>
+      <p>Поставляем оборудование с настроенным ПО — удобной и безопасной средой для работы интерактивного устройства. Интегрируем нужный софт и внешние системы или работаем с вашим ПО.</p>
+    </div>
+  </section>
+
+  <!-- key features -->
+  <section class="wrap soft-section">
+    <h2 style="text-align:center">Ключевые <span class="accent">возможности</span></h2>
+    <p class="sub" style="text-align:center;max-width:560px;margin-left:auto;margin-right:auto">Наше ПО — это готовая платформа, которую мы адаптируем под конкретные задачи заказчика</p>
+    <div class="feat-strip">
+      <div class="feat-pill">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="3" stroke="#007CC2" stroke-width="2.2"/><path d="M8 14h16M8 19h10" stroke="#007CC2" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Административная панель</span>
+      </div>
+      <div class="feat-pill">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#007CC2" stroke-width="2.2"/><path d="M16 6v4M16 22v4M6 16h4M22 16h4" stroke="#007CC2" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Удалённое обновление</span>
+      </div>
+      <div class="feat-pill">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none"><path d="M4 20V6h10l2 2 2-2h10v14" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h24l-3 8H7l-3-8z" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>Интеграция с 1С/СКУД</span>
+      </div>
+      <div class="feat-pill">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" stroke="#007CC2" stroke-width="2.2"/><path d="M12 16l3 3 5-5" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Безопасный режим</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- directions -->
+  <section style="background:var(--bg)">
+    <div class="wrap soft-section">
+      <h2 style="text-align:center">ПО <span class="accent">по направлениям</span></h2>
+      <p class="sub" style="text-align:center;max-width:560px;margin-left:auto;margin-right:auto">Программные решения, адаптированные под специфику каждой отрасли</p>
+      <div class="dir-grid">
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path d="M4 28h24M6 28V14l10-6 10 6v14M12 28v-6h8v6" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Для госучреждений</h4>
+          <p>Навигация по услугам, электронная очередь, запись на приём, интеграция с порталом Госуслуг.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect x="8" y="4" width="16" height="24" rx="4" stroke="#007CC2" stroke-width="2.2"/><path d="M12 14h3l2-4 3 10 2-6h3" stroke="#007CC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Для медицины</h4>
+          <p>Запись к врачу, электронная медкарта, маршрутизация, санитарный контроль доступа.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path d="M4 6h10l2 2 2-2h10v18H16l-2-2-2 2H4V6z" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Для образования</h4>
+          <p>Расписание, учебные материалы, тестирование, интерактивные занятия на сенсорных столах.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path d="M4 14v14h24V14M3 10l13-7 13 7" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Для ритейла</h4>
+          <p>Электронный каталог товаров, самостоятельное оформление заказа, программа лояльности, оплата.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect x="5" y="6" width="22" height="20" rx="3" stroke="#007CC2" stroke-width="2.2"/><circle cx="16" cy="16" r="4" stroke="#007CC2" stroke-width="2"/></svg></div>
+          <h4>Для музеев</h4>
+          <p>Аудиогиды, интерактивные карты, виртуальные экспозиции, дополненная реальность.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="5" stroke="#007CC2" stroke-width="2.2"/><path d="M16 4v3M16 25v3M4 16h3M25 16h3" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+          <h4>Для производств</h4>
+          <p>Учёт рабочего времени, контроль доступа, производственные дашборды, уведомления.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="16" rx="3" stroke="#007CC2" stroke-width="2.2"/><path d="M12 24v4M20 24v4M8 28h16" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+          <h4>Digital Signage</h4>
+          <p>Централизованное управление контентом на сетке экранов: расписание, медиа, объявления.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="10" cy="8" r="5" stroke="#007CC2" stroke-width="2.2"/><circle cx="22" cy="8" r="5" stroke="#007CC2" stroke-width="2.2"/><circle cx="10" cy="22" r="5" stroke="#007CC2" stroke-width="2.2"/><circle cx="22" cy="22" r="5" stroke="#007CC2" stroke-width="2.2"/></svg></div>
+          <h4>Для банков</h4>
+          <p>Терминалы самообслуживания, электронная очередь, информирование о продуктах.</p>
+        </div>
+        <div class="dir-card">
+          <div class="dir-card__icon"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path d="M14 4h4v6h-4zM4 10h24v4H4zM4 18h24v4H4zM14 26h4v2h-4z" stroke="#007CC2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Для транспорта</h4>
+          <p>Табло рейсов, навигация по терминалам, справочные киоски, киоски регистрации.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- integration detail -->
+  <section class="wrap soft-section">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);align-items:center">
+      <div>
+        <span class="eyebrow" style="margin-bottom:14px">Интеграция</span>
+        <h2 style="font-size:var(--fs-lg);font-weight:800;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em">Работаем с вашей ИТ-инфраструктурой</h2>
+        <p style="font-size:var(--fs-base);color:var(--steel);line-height:1.6;margin-bottom:16px">Наше ПО интегрируется с уже работающими у вас системами. Если у вас есть свой софт — адаптируем оборудование под него.</p>
+        <ul style="list-style:none;padding:0;font-size:var(--fs-sm);color:var(--steel-2);line-height:1.9">
+          <li style="display:flex;align-items:center;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FA85A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> API для интеграции с внешними сервисами</li>
+          <li style="display:flex;align-items:center;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FA85A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Поддержка СКУД, 1С, платёжных шлюзов</li>
+          <li style="display:flex;align-items:center;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FA85A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Работа с базами данных заказчика</li>
+          <li style="display:flex;align-items:center;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FA85A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Безопасный контур (изоляция от основной сети)</li>
+        </ul>
+      </div>
+      <div class="img-slot" style="aspect-ratio:4/3;border-radius:var(--r-l);border:1px solid var(--line)">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="8" y="8" width="48" height="48" rx="8" stroke="#007CC2" stroke-width="2" opacity=".5"/><rect x="16" y="16" width="14" height="14" rx="3" stroke="#007CC2" stroke-width="2"/><rect x="34" y="16" width="14" height="14" rx="3" stroke="#007CC2" stroke-width="2"/><rect x="16" y="34" width="14" height="14" rx="3" stroke="#007CC2" stroke-width="2"/><rect x="34" y="34" width="14" height="14" rx="3" stroke="#007CC2" stroke-width="2"/><path d="M30 23h4M23 30v4M41 30v4M30 41h4" stroke="#007CC2" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span style="font-size:var(--fs-sm);color:var(--steel)">Схема интеграции</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-dark" style="text-align:center">
+    <div class="cta__in" style="align-items:center;text-align:center">
+      <div>
+        <h2 class="h2" style="margin-bottom:14px">Нужна консультация по ПО?</h2>
+        <p class="lead" style="margin-bottom:28px;max-width:540px">Расскажите о вашей задаче — подберём готовое решение или разработаем софт под ваши требования.</p>
+        <button class="btn btn--primary btn--lg" data-open-modal>Обсудить ПО</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <svg class="logo" role="img" aria-label="Пелком" style="height:30px;width:115px;margin-bottom:14px"><use href="#pcmlogo"></use></svg>
+      <p style="font-size:var(--fs-sm);color:var(--steel);max-width:340px">Машиностроительный завод полного цикла. Проектируем и производим интерактивное оборудование «под ключ» с 2013 года.</p>
+    </div>
+    <div>
+      <b style="display:block;font-size:var(--fs-sm);margin-bottom:10px">Продукция</b>
+      <a href="products.html">Сенсорные киоски</a><a href="products.html">Терминалы</a><a href="products.html">Интерактивные столы</a><a href="products.html">Панели и трибуны</a>
+    </div>
+    <div>
+      <b style="display:block;font-size:var(--fs-sm);margin-bottom:10px">Компания</b>
+      <a href="index.html#production">Производство</a><a href="index.html#process">Как работаем</a><a href="solutions.html">Решения</a><a href="software.html">Программное обеспечение</a>
+    </div>
+    <div>
+      <b style="display:block;font-size:var(--fs-sm);margin-bottom:10px">Контакты</b>
+      <p style="font-size:var(--fs-sm);color:var(--steel-2);margin-bottom:4px">г. Дубна, Московская обл.</p>
+      <a href="tel:+74957770741" style="font-size:var(--fs-md);font-weight:700;color:#fff">+7 (495) 777-07-41</a>
+      <a href="mailto:info@pelcom.ru" style="font-size:var(--fs-sm);color:var(--blue-x)">info@pelcom.ru</a>
+    </div>
+  </div>
+  <div class="footer__bottom"><span>© 2013–2026 Пелком</span><a href="index.html">Политика конфиденциальности</a></div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Заявка на расчёт">
+  <div class="modal__box">
+    <button class="modal__close" id="mclose2" aria-label="Закрыть">&times;</button>
+    <h3 style="font-size:var(--fs-lg);font-weight:800;color:var(--ink);margin-bottom:6px">Рассчитать стоимость</h3>
+    <p style="font-size:var(--fs-sm);color:var(--steel);margin-bottom:22px">Опишите задачу — менеджер свяжется и подготовит расчёт.</p>
+    <form class="quiz__form" novalidate>
+      <div class="quiz__row"><div><label class="field">Ваше имя</label><input class="input" name="name" placeholder="Как к вам обращаться" required></div><div><label class="field">Телефон</label><input class="input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required></div></div>
+      <label class="field">Комментарий</label>
+      <textarea class="input" name="task" rows="3" placeholder="Что хотите изготовить или какую задачу решить"></textarea>
+      <button type="submit" class="btn btn--primary btn--md" style="width:100%;margin-top:8px">Получить расчёт</button>
+      <p class="modal__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu'), mclose = document.getElementById('mclose');
+  function toggle(){ var open = mmenu.classList.toggle('open'); burger.classList.toggle('open',open); burger.setAttribute('aria-expanded',open); }
+  burger.addEventListener('click',toggle); mclose.addEventListener('click',toggle);
+  document.querySelectorAll('[data-mlink]').forEach(function(a){ a.addEventListener('click',toggle); });
+})();
+(function(){
+  var modal = document.getElementById('modal'), mclose2 = document.getElementById('mclose2');
+  function openM(){ modal.classList.add('open'); } function closeM(){ modal.classList.remove('open'); }
+  document.querySelectorAll('[data-open-modal]').forEach(function(b){ b.addEventListener('click',openM); });
+  mclose2.addEventListener('click',closeM);
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeM(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeM(); });
+})();
+</script>
+</body>
+</html>
