@@ -169,3 +169,8 @@ footer{background:#000;border-top:1px solid var(--rule);padding:56px 56px 32px}
 .cta-band .btn-white{background:#fff;color:var(--blue);font-weight:600}
 .cta-band .btn-white:hover{background:rgba(255,255,255,.9)}
 .cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.st{width:100%;border-collapse:collapse;margin:32px 0}
+.st td{padding:14px 18px;border-bottom:1px solid var(--rule);font-size:14px}
+.st td:first-child{color:var(--dim);width:40%;font-weight:500}
+.st td:last-child{color:#fff;font-weight:600}
