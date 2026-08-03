@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Оборудование — Pelcom</title>
-<meta name="description" content="Каталог интерактивного оборудования Pelcom: сенсорные киоски, терминалы, столы, панели, трибуны, уличные киоски и другое. Производство РФ.">
+<meta name="description" content="Каталог интерактивного оборудования Pelcom: сенсорные киоски, терминалы, столы, панели, трибуны, уличные киоски. Производство РФ, от 89 000 ₽.">
 <link rel="canonical" href="https://pelcom.ru/products.html"/>
 <meta property="og:title" content="Оборудование — Pelcom"/>
-<meta property="og:description" content="Каталог интерактивного оборудования Pelcom: сенсорные киоски, терминалы, столы, панели, трибуны, уличные киоски и другое."/>
+<meta property="og:description" content="Каталог интерактивного оборудования Pelcom: киоски, терминалы, столы, панели, трибуны, уличные. От 89 000 ₽."/>
 <meta property="og:url" content="https://pelcom.ru/products.html"/>
 <meta property="og:image" content="https://pelcom.ru/og-image.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -19,21 +19,26 @@
 <style>
   h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;letter-spacing:-.04em}
   .cat-section{background:var(--black);padding:100px 56px}
-  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin-top:56px}
-  .cat-card{background:var(--dark);padding:48px 32px;transition:background .4s;text-decoration:none;color:#fff;display:flex;flex-direction:column}
-  .cat-card:hover{background:var(--mid)}
-  .cat-card h3{font-size:18px;font-weight:600;margin-bottom:6px}
-  .cat-card p{font-size:13px;color:var(--dim);line-height:1.6;flex:1}
-  .cat-card .cat-arrow{font-size:13px;color:var(--blue);margin-top:16px;font-weight:500;display:flex;align-items:center;gap:6px}
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px}
+  .cat-card{background:var(--dark);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;transition:border-color .3s,transform .3s;text-decoration:none;color:#fff;display:flex;flex-direction:column}
+  .cat-card:hover{border-color:rgba(0,113,227,.5);transform:translateY(-4px)}
+  .cat-card__img{width:100%;aspect-ratio:4/3;object-fit:contain;display:block;background:#eeeeec;padding:20px}
+  .cat-card__body{padding:28px 24px 32px;flex:1;display:flex;flex-direction:column}
+  .cat-card__body h3{font-size:18px;font-weight:600;margin-bottom:4px}
+  .cat-card__body .cat-price{font-size:14px;color:var(--dim);margin-bottom:14px}
+  .cat-card__body .cat-price strong{font-size:20px;font-weight:600;color:#fff}
+  .cat-card__specs{list-style:none;display:flex;flex-direction:column;gap:6px;flex:1;margin-bottom:18px}
+  .cat-card__specs li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
+  .cat-card__specs li::before{content:'›';color:var(--blue);font-weight:600;font-size:15px;flex-shrink:0;line-height:1}
+  .cat-card .cat-arrow{font-size:13px;color:var(--blue);font-weight:500;display:flex;align-items:center;gap:6px;margin-top:auto}
   .cat-card .cat-arrow svg{transition:transform .3s}
   .cat-card:hover .cat-arrow svg{transform:translateX(4px)}
-  @media(max-width:1024px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:640px){.cat-section{padding:80px 16px}.cat-grid{grid-template-columns:1fr}.cat-card{padding:32px 24px}}
+  @media(max-width:1024px){.cat-grid{grid-template-columns:repeat(2,1fr);gap:24px}}
+  @media(max-width:640px){.cat-section{padding:80px 16px}.cat-grid{grid-template-columns:1fr;gap:20px}}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header id="hdr">
   <a href="pelcom-landing.html" class="h-logo"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span>pelcom</span></a>
   <nav>
@@ -51,7 +56,6 @@
   <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <nav class="crumbs" aria-label="Хлебные крошки"><div class="crumbs-i"><a href="pelcom-landing.html">Главная</a><b>/</b>Оборудование</div></nav>
   <div class="hero-grid"></div>
@@ -59,105 +63,240 @@
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>
-        Каталог
-      </div>
+      <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>Каталог</div>
       <h1>Оборудование<br>Pelcom</h1>
-      <p class="hero-desc">Сенсорные киоски, терминалы, интерактивные столы, панели и трибуны — проектируем и производим на собственном заводе. Индивидуальные корпуса, ПО под задачу, интеграция.</p>
-      <div class="hero-actions">
-        <a href="pelcom-landing.html#contact" class="btn btn-blue">Запросить КП</a>
-      </div>
+      <p class="hero-desc">Сенсорные киоски, терминалы, столы и панели — проектируем и производим на заводе в Дубне. Индивидуальные корпуса, ПО под задачу, интеграция.</p>
+      <div class="hero-actions"><a href="pelcom-landing.html#contact" class="btn btn-blue">Запросить КП</a></div>
     </div>
   </div>
 </section>
 
-<!-- CATALOG -->
 <section class="cat-section">
   <div class="container">
     <div class="s-label">Линейка</div>
     <h2 class="s-title">Всё оборудование</h2>
+
     <div class="cat-grid">
+
       <a href="pelcom-kiosk.html" class="cat-card">
-        <h3>Инфокиоски</h3>
-        <p>Напольные и настенные информационные киоски. Антивандальный корпус, 24/7, принтер и эквайринг по запросу.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/kiosk.jpg" alt="Сенсорные киоски" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Инфокиоски</h3>
+          <div class="cat-price">от <strong>89 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>3 модели: Standart, Pro, Maxi</li>
+            <li>Экраны 21–55″, Full HD / 4K</li>
+            <li>Android / Windows</li>
+            <li>Принтер, сканер, эквайринг — опции</li>
+          </ul>
+          <span class="cat-arrow">3 модели <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-terminals.html" class="cat-card">
-        <h3>Терминалы самообслуживания</h3>
-        <p>Электронные кассиры, терминалы оплаты и выдачи документов. Снижают нагрузку на персонал.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/kiosk.jpg" alt="Терминалы" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Терминалы самообслуживания</h3>
+          <div class="cat-price">от <strong>120 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Электронные кассиры и киоски оплаты</li>
+            <li>Купюроприёмник, принтер чеков</li>
+            <li>Интеграция с 1С и банками</li>
+            <li>Антивандальный корпус 24/7</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-tables.html" class="cat-card">
-        <h3>Интерактивные столы</h3>
-        <p>Сенсорные поверхности для презентаций, шоурумов и музеев. Multi-touch, встраивание в мебель.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/tables.jpg" alt="Интерактивные столы" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Интерактивные столы</h3>
+          <div class="cat-price">от <strong>145 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Диагонали 24–65″, Multi-touch</li>
+            <li>Горизонтальное и наклонное исполнение</li>
+            <li>Встраивание в мебель и стойки</li>
+            <li>Для музеев, школ, шоурумов</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-panels.html" class="cat-card">
-        <h3>Интерактивные панели</h3>
-        <p>Информационные и защищённые панели для агрессивных сред. Оформление под интерьер.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/panels.jpg" alt="Интерактивные панели" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Интерактивные панели</h3>
+          <div class="cat-price">от <strong>95 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>21,5–98″, Full HD / 4K</li>
+            <li>Настенное и мобильное исполнение</li>
+            <li>Защита от пыли и влаги</li>
+            <li>Индукционная петля — опция</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
-      <a href="pelcom-lectern.html" class="cat-card">
-        <h3>Интерактивные трибуны</h3>
-        <p>Для лекций и презентаций с несколькими рабочими поверхностями. Управление с одной консоли.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
-      </a>
-      <a href="pelcom-kids.html" class="cat-card">
-        <h3>Оборудование для детей</h3>
-        <p>Безопасные интерактивные комплексы для детских садов, школ и образовательных пространств.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
-      </a>
+
       <a href="pelcom-outdoor.html" class="cat-card">
-        <h3>Уличные всепогодные киоски</h3>
-        <p>Защита IP65, подогрев, яркий дисплей. Работают при –40 до +50 °C, режим 24/7.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/outdoor.jpg" alt="Уличные киоски" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Уличные всепогодные киоски</h3>
+          <div class="cat-price">от <strong>385 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Защита IP65, –40 до +50 °C</li>
+            <li>Яркий дисплей 32–86″</li>
+            <li>Подогрев и климат-контроль</li>
+            <li>Антивандальный корпус</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
+      <a href="pelcom-lectern.html" class="cat-card">
+        <img class="cat-card__img" src="img/renders/lectern.jpg" alt="Трибуны" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Интерактивные трибуны</h3>
+          <div class="cat-price">от <strong>110 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Дисплей 21,5–27″</li>
+            <li>Корпус: металл / МДФ</li>
+            <li>Док-камера и микрофон — опции</li>
+            <li>Для лекций, конференций, защит</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="pelcom-kids.html" class="cat-card">
+        <img class="cat-card__img" src="img/renders/kids.jpg" alt="Детское оборудование" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Оборудование для детей</h3>
+          <div class="cat-price">от <strong>99 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Безопасные материалы и углы</li>
+            <li>Интерактивные столы и панели</li>
+            <li>Логопедические зеркала</li>
+            <li>Для садов, школ, игровых комнат</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
       <a href="pelcom-payment.html" class="cat-card">
-        <h3>Платёжные терминалы</h3>
-        <p>Приём наличных и безналичных платежей, печать чеков. Интеграция с банковскими шлюзами.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/payment.jpg" alt="Платёжные терминалы" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Платёжные терминалы</h3>
+          <div class="cat-price">от <strong>150 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Приём наличных и карт</li>
+            <li>Купюроприёмник, монетоприёмник</li>
+            <li>Печать чеков, фискальный накопитель</li>
+            <li>54-ФЗ, интеграция с 1С</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-nav.html" class="cat-card">
-        <h3>Навигация</h3>
-        <p>Интерактивные карты и указатели для ТЦ, аэропортов, больниц. Построение маршрутов.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/nav.jpg" alt="Навигация" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Навигация</h3>
+          <div class="cat-price">от <strong>130 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Интерактивные карты этажей</li>
+            <li>Поиск и построение маршрутов</li>
+            <li>Для ТЦ, аэропортов, больниц</li>
+            <li>Интеграция с мобильным приложением</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-queue.html" class="cat-card">
-        <h3>Электронная очередь</h3>
-        <p>Терминалы выдачи талонов, табло вызова, пульты оператора. Снижение времени ожидания.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/queue.jpg" alt="Электронная очередь" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Электронная очередь</h3>
+          <div class="cat-price">от <strong>90 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Терминалы выдачи талонов</li>
+            <li>Табло вызова и пульты оператора</li>
+            <li>Статистика и аналитика нагрузки</li>
+            <li>Для МФЦ, банков, поликлиник</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-pylon.html" class="cat-card">
-        <h3>Информационные пилоны</h3>
-        <p>Вертикальные стелы с сенсорным экраном. Навигация, афиша, расписание — в фойе и холлах.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/pylon.jpg" alt="Пилоны" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Информационные пилоны</h3>
+          <div class="cat-price">от <strong>100 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Вертикальные сенсорные стелы</li>
+            <li>32–55″, яркий дисплей</li>
+            <li>Для фойе, холлов, выставок</li>
+            <li>Навигация, афиша, расписание</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-led.html" class="cat-card">
-        <h3>LED-экраны</h3>
-        <p>Информационные и рекламные LED-панели для indoor и outdoor. Любые размеры и конфигурации.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/led.jpg" alt="LED-экраны" loading="lazy">
+        <div class="cat-card__body">
+          <h3>LED-экраны</h3>
+          <div class="cat-price">от <strong>190 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Indoor и outdoor исполнение</li>
+            <li>Любые размеры и конфигурации</li>
+            <li>Шаг пикселя от 2,5 мм</li>
+            <li>Централизованное управление</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-holo.html" class="cat-card">
-        <h3>Голографические решения</h3>
-        <p>3D-голограммы для презентаций и выставок. Привлекают внимание и повышают вовлечённость.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/holo.jpg" alt="Голограммы" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Голографические решения</h3>
+          <div class="cat-price">от <strong>180 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>3D-голограммы 24–32″</li>
+            <li>Пирамиды и кубы</li>
+            <li>Сенсорное управление — опция</li>
+            <li>Для презентаций и выставок</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
       <a href="pelcom-accessible.html" class="cat-card">
-        <h3>Доступная среда</h3>
-        <p>Оборудование, адаптированное для людей с ограниченными возможностями. Соответствие ГОСТ.</p>
-        <span class="cat-arrow">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        <img class="cat-card__img" src="img/renders/accessible.jpg" alt="Доступная среда" loading="lazy">
+        <div class="cat-card__body">
+          <h3>Доступная среда</h3>
+          <div class="cat-price">от <strong>110 000 ₽</strong></div>
+          <ul class="cat-card__specs">
+            <li>Индукционная петля для слабослышащих</li>
+            <li>Регулировка высоты экрана</li>
+            <li>Контрастный интерфейс</li>
+            <li>Соответствие ГОСТ Р 52872</li>
+          </ul>
+          <span class="cat-arrow">Смотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
       </a>
+
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-i">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="pelcom-landing.html" class="h-logo" style="margin-bottom:12px"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span style="color:#fff">pelcom</span></a>
+        <a href="pelcom-landing.html" class="h-logo" style="margin-bottom:12px"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span style="color:#fff">pelcom</span></a>
         <p style="font-size:13px;color:rgba(255,255,255,.2);margin-top:12px;max-width:220px">Российский производитель интерактивного оборудования. В реестре Минпромторга.</p>
       </div>
       <div class="footer-col"><h4>Оборудование</h4>
@@ -170,28 +309,15 @@
         <a href="tel:+78001234567">8 800 123-45-67</a><a href="mailto:info@pelcom.ru">info@pelcom.ru</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© Pelcom 2024–2026</span>
-      <div class="footer-links"><a href="privacy.html">Политика конфиденциальности</a></div>
-    </div>
+    <div class="footer-bottom"><span class="footer-copy">© Pelcom 2024–2026</span><div class="footer-links"><a href="privacy.html">Политика конфиденциальности</a></div></div>
   </div>
 </footer>
 
-<!-- FAB -->
 <div class="fab">
   <a href="https://t.me/pelcom" class="tg" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.49 8.22l-1.83 8.63c-.14.61-.5.76-1.01.47l-2.78-2.05-1.34 1.29c-.15.15-.28.28-.57.28l.2-2.83 5.16-4.66c.22-.2-.05-.31-.34-.11l-6.38 4.02-2.75-.86c-.6-.19-.61-.6.13-.89l10.75-4.14c.5-.19.93.12.76.88z"/></svg></a>
   <a href="https://wa.me/78001234567" class="wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.32-.16-1.88-.93-2.17-1.04-.29-.1-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.89-1.78-2.21-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.34-.26-.61-.52-.53-.71-.54-.18-.01-.39-.02-.6-.02-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.76.75.32 1.34.52 1.8.66.75.24 1.44.2 1.98.12.6-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37zM12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 22c-5.52 0-10-4.48-10-10S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/></svg></a>
 </div>
-
-<!-- COOKIE -->
-<div class="cookie" id="cookie">
-  <span>Мы используем файлы cookie. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span>
-  <button onclick="document.getElementById('cookie').remove()">Принять</button>
-</div>
-
-<!-- SCROLL HEADER -->
-<script>
-window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>50)});
-</script>
+<div class="cookie" id="cookie"><span>Мы используем файлы cookie. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</span><button onclick="document.getElementById('cookie').remove()">Принять</button></div>
+<script>window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>50)});</script>
 </body>
 </html>
