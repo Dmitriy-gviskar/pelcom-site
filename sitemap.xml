@@ -1,23 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pelcom.ru/</loc><priority>1.0</priority></url>
+  <url><loc>https://pelcom.ru/products.html</loc><priority>0.9</priority></url>
+  <url><loc>https://pelcom.ru/solutions.html</loc><priority>0.9</priority></url>
+  <url><loc>https://pelcom.ru/software.html</loc><priority>0.9</priority></url>
   <url><loc>https://pelcom.ru/pelcom-kiosk.html</loc><priority>0.8</priority></url>
-  <url><loc>https://pelcom.ru/pelcom-panels.html</loc><priority>0.8</priority></url>
-  <url><loc>https://pelcom.ru/pelcom-tables.html</loc><priority>0.8</priority></url>
   <url><loc>https://pelcom.ru/pelcom-terminals.html</loc><priority>0.8</priority></url>
-  <url><loc>https://pelcom.ru/pelcom-payment.html</loc><priority>0.8</priority></url>
-  <url><loc>https://pelcom.ru/pelcom-outdoor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels.html</loc><priority>0.8</priority></url>
   <url><loc>https://pelcom.ru/pelcom-lectern.html</loc><priority>0.8</priority></url>
   <url><loc>https://pelcom.ru/pelcom-kids.html</loc><priority>0.8</priority></url>
-  <url><loc>https://pelcom.ru/pelcom-holo.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment.html</loc><priority>0.8</priority></url>
   <url><loc>https://pelcom.ru/pelcom-pylon.html</loc><priority>0.8</priority></url>
-  <url><loc>https://pelcom.ru/pelcom-led.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-holo.html</loc><priority>0.8</priority></url>
   <url><loc>https://pelcom.ru/pelcom-accessible.html</loc><priority>0.8</priority></url>
-  <url><loc>https://pelcom.ru/pelcom-queue.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-led.html</loc><priority>0.8</priority></url>
   <url><loc>https://pelcom.ru/pelcom-nav.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-queue.html</loc><priority>0.8</priority></url>
   <url><loc>https://pelcom.ru/pelcom-about.html</loc><priority>0.6</priority></url>
   <url><loc>https://pelcom.ru/pelcom-partners.html</loc><priority>0.6</priority></url>
   <url><loc>https://pelcom.ru/pelcom-service.html</loc><priority>0.6</priority></url>
   <url><loc>https://pelcom.ru/contacts.html</loc><priority>0.5</priority></url>
   <url><loc>https://pelcom.ru/privacy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-accessible-access-kiosk.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-accessible-access-panel.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-accessible-access-table.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-holo-holo-cube.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-holo-holo-piramida.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-holo-holo-rtx.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-holo-holo-sensor.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-bee.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-complex.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-draw.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-mirror.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-music.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-panel.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-sandbox.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-sport.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-table.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kids-kids-world.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-aurora.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-duo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-genesis.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-genius.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-glass-max.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-glass.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-glassplus.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-helper.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-lite.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-maxi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-neo-glass.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-neo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-pro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-standart.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-kiosk-wall.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-ad.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-key.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-m.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-pro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-s.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-sound.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-white.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-lectern-lectern-wood.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-led-led-indoor.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-led-led-outdoor.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-nav-nav-basic.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-nav-nav-enterprise.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-nav-nav-pro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-duo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-glass.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-l.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-legend.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-m.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-s.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-vert.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-outdoor-street-xl.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-aurora.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-glass.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-intellect.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-l.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-m.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-neo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-rail.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-s.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-stark.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-storm.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-xl.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-panels-panel-xxl.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-desk.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-l.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-m.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-multi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-s.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-scan.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-street.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-payment-pay-wall.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-pylon-pylon-led.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-pylon-pylon-s.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-queue-queue-basic.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-queue-queue-enterprise.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-queue-queue-pro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-atom.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-book.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-cosmos.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-desk.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-glass.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-kids.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-l.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-m.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-s.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-snake.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-wall.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-xl.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-tables-table-xxl.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa-drive.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa-lite.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa-max.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa-multi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa-pro.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa-scan.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa-wall.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pelcom.ru/pelcom-terminals-kassa.html</loc><priority>0.7</priority></url>
 </urlset>
