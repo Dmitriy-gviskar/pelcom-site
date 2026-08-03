@@ -39,18 +39,18 @@
 
 /* MODELS */
 .models-section{background:var(--mid)}
-.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:20px 18px;position:relative;transition:border-color .25s,transform .25s}
+.models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:12px 10px;position:relative;transition:border-color .25s,transform .25s}
 .model-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
 .model-card.featured{border-color:var(--blue);background:rgba(0,113,227,.06)}
 .model-card.featured::before{content:'Популярный';position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px}
-.model-name{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
-.model-price{font-size:14px;color:var(--dim);margin-bottom:12px}
-.model-price strong{font-size:18px;font-weight:600;color:#fff}
-.model-specs{list-style:none;display:flex;flex-direction:column;gap:5px}
-.model-specs li{font-size:12px;color:var(--dim);display:flex;align-items:flex-start;gap:5px}
+.model-name{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:600;margin-bottom:2px}
+.model-price{font-size:14px;color:var(--dim);margin-bottom:6px}
+.model-price strong{font-size:16px;font-weight:600;color:#fff}
+.model-specs{list-style:none;display:flex;flex-direction:column;gap:3px}
+.model-specs li{font-size:11px;color:var(--dim);display:flex;align-items:flex-start;gap:3px}
 .model-specs li::before{content:'›';color:var(--blue);font-weight:600;flex-shrink:0;line-height:1.4}
-.model-cta{margin-top:14px;width:100%}
+.model-cta{margin-top:8px;width:100%}
 
 /* INDUSTRIES */
 .ind-section{background:var(--black)}
@@ -59,7 +59,7 @@
 .ind-row{background:var(--dark);padding:56px;transition:background .4s}
 .ind-row:hover{background:var(--mid)}
 .ind-num{display:none}
-.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:12px;font-family:'Unbounded',sans-serif}
+.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:6px;font-family:'Unbounded',sans-serif}
 .ind-desc{font-size:15px;color:var(--dim);line-height:1.5}
 
 /* SOFTWARE */
@@ -71,7 +71,7 @@
 .sw-icon{width:48px;height:48px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sw-name{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:600}
 .sw-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:12px}
+.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:6px}
 .sw-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
 .sw-features li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
 .sw-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
@@ -236,13 +236,11 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <img class="model-img" src="img/renders/lectern.jpg" alt="Lectern S" loading="lazy"/>
         <div class="model-name">Lectern S</div>
         <div class="model-price">от <strong>110 000 ₽</strong></div>
-        <p class="model-desc">Компактная трибуна для небольших залов и аудиторий.</p>
         <ul class="model-specs">
           <li>Дисплей 21.5″, Full HD</li>
           <li>Корпус металл, наклонная столешница</li>
           <li>ОС Android 11, 4 ГБ ОЗУ</li>
           <li>2 USB 2.0, встроенный микрофон</li>
-          <li>Регулировка высоты стойки</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
@@ -250,97 +248,83 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <img class="model-img" src="img/renders/lectern.jpg" alt="Lectern M" loading="lazy"/>
         <div class="model-name">Lectern M</div>
         <div class="model-price">от <strong>160 000 ₽</strong></div>
-        <p class="model-desc">Трибуна для конференций с док-камерой.</p>
         <ul class="model-specs">
           <li>Дисплей 27″, Full HD</li>
           <li>Корпус металл, матовая столешница</li>
           <li>ОС Android 13, 8 ГБ ОЗУ</li>
           <li>3 USB 3.0, Ethernet, Wi-Fi</li>
-          <li>Док-камера Full HD — опция</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-blue model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d3">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Lectern Pro</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Lectern Pro</div>
         <div class="model-name">Lectern Pro</div>
         <div class="model-price">от <strong>230 000 ₽</strong></div>
-        <p class="model-desc">Премиум-трибуна: 4K, Windows, док-камера в комплекте.</p>
         <ul class="model-specs">
           <li>Дисплей 27″, 4K UHD</li>
           <li>Корпус металл + закалённое стекло</li>
           <li>ОС Windows 11 Pro, 16 ГБ ОЗУ, SSD 256 ГБ</li>
           <li>4 USB 3.0, Ethernet, Wi-Fi 6</li>
-          <li>Док-камера 4K + конденсаторный микрофон</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d4">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Lectern Wood</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Lectern Wood</div>
         <div class="model-name">Lectern Wood</div>
         <div class="model-price">от <strong>185 000 ₽</strong></div>
-        <p class="model-desc">Трибуна в корпусе из МДФ — тёплый классический дизайн.</p>
         <ul class="model-specs">
           <li>Дисплей 27″, Full HD</li>
           <li>Корпус МДФ, отделка шпон</li>
           <li>ОС Android 13, 8 ГБ ОЗУ</li>
           <li>3 USB 3.0, Wi-Fi, Bluetooth</li>
-          <li>Дизайнерское исполнение под интерьер</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d5">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Lectern Sound</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Lectern Sound</div>
         <div class="model-name">Lectern Sound</div>
         <div class="model-price">от <strong>210 000 ₽</strong></div>
-        <p class="model-desc">Трибуна со встроенным микшером и колонками.</p>
         <ul class="model-specs">
           <li>Дисплей 27″, Full HD</li>
           <li>Корпус металл, акустическая подготовка</li>
           <li>ОС Windows 11 Pro, 8 ГБ ОЗУ</li>
           <li>Встроенный микшер 4 канала</li>
-          <li>Колонки 2×30 Вт, 2 радиомикрофона</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d6">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Lectern Key</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Lectern Key</div>
         <div class="model-name">Lectern Key</div>
         <div class="model-price">от <strong>195 000 ₽</strong></div>
-        <p class="model-desc">Трибуна с антивандальной клавиатурой для экзаменов.</p>
         <ul class="model-specs">
           <li>Дисплей 21.5″, Full HD</li>
           <li>Корпус металл, антивандальный</li>
           <li>ОС Android 13, 4 ГБ ОЗУ</li>
           <li>Антивандальная клавиатура IP65</li>
-          <li>Для защит диссертаций и экзаменов</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d7">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Lectern White</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Lectern White</div>
         <div class="model-name">Lectern White</div>
         <div class="model-price">от <strong>170 000 ₽</strong></div>
-        <p class="model-desc">Белая трибуна в корпусе МДФ — для современных интерьеров.</p>
         <ul class="model-specs">
           <li>Дисплей 27″, Full HD</li>
           <li>Корпус МДФ, белый матовый</li>
           <li>ОС Android 13, 8 ГБ ОЗУ</li>
           <li>3 USB 3.0, Wi-Fi, Bluetooth</li>
-          <li>Дизайнерское белое исполнение</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d8">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Lectern Ad</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Lectern Ad</div>
         <div class="model-name">Lectern Ad</div>
         <div class="model-price">от <strong>140 000 ₽</strong></div>
-        <p class="model-desc">Трибуна с рекламным дисплеем сзади.</p>
         <ul class="model-specs">
           <li>Дисплей 21.5″ Full HD (спереди)</li>
           <li>+ рекламный дисплей 21.5″ сзади</li>
           <li>ОС Android 11, 4 ГБ ОЗУ</li>
           <li>Одновременный показ на двух экранах</li>
-          <li>Корпус металл</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>

@@ -39,18 +39,18 @@
 
 /* MODELS */
 .models-section{background:var(--mid)}
-.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:20px 18px;position:relative;transition:border-color .25s,transform .25s}
+.models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:12px 10px;position:relative;transition:border-color .25s,transform .25s}
 .model-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
 .model-card.featured{border-color:var(--blue);background:rgba(0,113,227,.06)}
 .model-card.featured::before{content:'Популярный';position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px}
-.model-name{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
-.model-price{font-size:14px;color:var(--dim);margin-bottom:12px}
-.model-price strong{font-size:18px;font-weight:600;color:#fff}
-.model-specs{list-style:none;display:flex;flex-direction:column;gap:5px}
-.model-specs li{font-size:12px;color:var(--dim);display:flex;align-items:flex-start;gap:5px}
+.model-name{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:600;margin-bottom:2px}
+.model-price{font-size:14px;color:var(--dim);margin-bottom:6px}
+.model-price strong{font-size:16px;font-weight:600;color:#fff}
+.model-specs{list-style:none;display:flex;flex-direction:column;gap:3px}
+.model-specs li{font-size:11px;color:var(--dim);display:flex;align-items:flex-start;gap:3px}
 .model-specs li::before{content:'›';color:var(--blue);font-weight:600;flex-shrink:0;line-height:1.4}
-.model-cta{margin-top:14px;width:100%}
+.model-cta{margin-top:8px;width:100%}
 
 /* INDUSTRIES */
 .ind-section{background:var(--black)}
@@ -59,7 +59,7 @@
 .ind-row{background:var(--dark);padding:56px;transition:background .4s}
 .ind-row:hover{background:var(--mid)}
 .ind-num{display:none}
-.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:12px;font-family:'Unbounded',sans-serif}
+.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:6px;font-family:'Unbounded',sans-serif}
 .ind-desc{font-size:15px;color:var(--dim);line-height:1.5}
 
 /* SOFTWARE */
@@ -71,7 +71,7 @@
 .sw-icon{width:48px;height:48px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sw-name{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:600}
 .sw-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:12px}
+.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:6px}
 .sw-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
 .sw-features li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
 .sw-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
@@ -166,7 +166,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
 </style>
 <style>
 .hero-svg img.hero-render{width:100%;max-width:420px;height:auto;border-radius:18px;background:#eeeeec;box-shadow:0 24px 64px rgba(0,0,0,.35)}
-.model-card img.model-img{display:block;width:100%;height:120px;object-fit:contain;border-radius:var(--r);background:#eeeeec;margin-bottom:14px}
+.model-card img.model-img{display:block;width:100%;height:90px;object-fit:contain;border-radius:var(--r);background:#eeeeec;margin-bottom:8px}
 </style><style>
 .color-view{position:relative;width:100%;max-width:460px;margin:0 auto}
 .color-view .color-img{width:100%;height:auto;border-radius:18px;background:#eeeeec;box-shadow:0 24px 64px rgba(0,0,0,.35);display:block;transition:opacity .2s}
@@ -181,7 +181,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
 
 
 .hero-media{width:100%;max-width:460px;margin:0 auto}
-.media-tabs{display:flex;gap:6px;justify-content:center;margin-bottom:14px}
+.media-tabs{display:flex;gap:6px;justify-content:center;margin-bottom:8px}
 .mt{font:600 11px/1 Manrope,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--dim,#9aa);background:transparent;border:1px solid rgba(0,0,0,.12);border-radius:100px;padding:8px 18px;cursor:pointer;transition:.2s}
 .mt:hover{border-color:#0071e3;color:#0071e3}
 .mt.active{background:#0071e3;border-color:#0071e3;color:#fff}
@@ -252,13 +252,11 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <img class="model-img" src="img/renders/outdoor.jpg" alt="Street S" loading="lazy"/>
         <div class="model-name">Street S</div>
         <div class="model-price">от <strong>385 000 ₽</strong></div>
-        <p class="model-desc">Компактный уличный киоск 32″ с подогревом и защитой IP65.</p>
         <ul class="model-specs">
           <li>Дисплей 32″, Full HD, 2500 нит</li>
           <li>Защита IP65, диапазон -40..+50°C</li>
           <li>Антивандальный стальной корпус</li>
           <li>Встроенный обогрев дисплея</li>
-          <li>Автоматическая регулировка яркости</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
@@ -266,97 +264,83 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <img class="model-img" src="img/renders/outdoor.jpg" alt="Street M" loading="lazy"/>
         <div class="model-name">Street M</div>
         <div class="model-price">от <strong>480 000 ₽</strong></div>
-        <p class="model-desc">Уличный киоск 43″ с климат-контролем.</p>
         <ul class="model-specs">
           <li>Дисплей 43″, Full HD, 2500 нит</li>
           <li>Защита IP65, -40..+50°C</li>
           <li>Антивандальный корпус 2 мм сталь</li>
           <li>Климат-контроль: обогрев + охлаждение</li>
-          <li>Защита от осадков и прямого солнца</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-blue model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d3">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Street L</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Street L</div>
         <div class="model-name">Street L</div>
         <div class="model-price">от <strong>620 000 ₽</strong></div>
-        <p class="model-desc">Большой уличный киоск 55″ 4K.</p>
         <ul class="model-specs">
           <li>Дисплей 55″, 4K UHD, 3000 нит</li>
           <li>Защита IP65, -40..+50°C</li>
           <li>Антивандальный корпус</li>
           <li>Климат-контроль</li>
-          <li>Ударопрочное стекло 10 мм</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d4">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Street XL</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Street XL</div>
         <div class="model-name">Street XL</div>
         <div class="model-price">от <strong>850 000 ₽</strong></div>
-        <p class="model-desc">Максимальный уличный киоск 65″.</p>
         <ul class="model-specs">
           <li>Дисплей 65″, 4K UHD, 3000 нит</li>
           <li>Защита IP65, -40..+50°C</li>
           <li>Усиленный антивандальный корпус</li>
           <li>Климат-контроль + обогрев стёкол</li>
-          <li>Премиум-исполнение для площадей</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d5">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Street Duo</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Street Duo</div>
         <div class="model-name">Street Duo</div>
         <div class="model-price">от <strong>720 000 ₽</strong></div>
-        <p class="model-desc">Двусторонний уличный киоск — охват двух направлений.</p>
         <ul class="model-specs">
           <li>Два дисплея по 43″, Full HD</li>
           <li>Защита IP65, двусторонний</li>
           <li>Климат-контроль</li>
           <li>Одновременный показ с двух сторон</li>
-          <li>Идеален для перекрёстков и аллей</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d6">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Street Glass</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Street Glass</div>
         <div class="model-name">Street Glass</div>
         <div class="model-price">от <strong>550 000 ₽</strong></div>
-        <p class="model-desc">Уличный киоск в стеклянном корпусе премиум-класса.</p>
         <ul class="model-specs">
           <li>Дисплей 43″, Full HD, 2500 нит</li>
           <li>Защита IP65, стеклянный корпус</li>
           <li>Антивандальное стекло 8 мм</li>
           <li>Подогрев стёкол</li>
-          <li>Премиум-дизайн для городской среды</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d7">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Street Vert</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Street Vert</div>
         <div class="model-name">Street Vert</div>
         <div class="model-price">от <strong>440 000 ₽</strong></div>
-        <p class="model-desc">Вертикальный уличный киоск для афиш и меню.</p>
         <ul class="model-specs">
           <li>Дисплей 55″, Full HD, портрет</li>
           <li>Защита IP65, вертикальный</li>
           <li>Климат-контроль</li>
           <li>Оптимизирован для афиш и расписаний</li>
-          <li>Узкий корпус, экономия места</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d8">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Street Legend</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">Street Legend</div>
         <div class="model-name">Street Legend</div>
         <div class="model-price">от <strong>950 000 ₽</strong></div>
-        <p class="model-desc">Флагманский уличный киоск с двумя 55″ 4K-дисплеями.</p>
         <ul class="model-specs">
           <li>Два дисплея 55″, 4K UHD</li>
           <li>Защита IP65, -40..+50°C</li>
           <li>Усиленный корпус 3 мм сталь</li>
           <li>Климат-контроль + обогрев</li>
-          <li>Флагманская модель для главных площадей</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>

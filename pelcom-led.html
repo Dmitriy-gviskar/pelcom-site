@@ -36,25 +36,25 @@
 .spec-label{font-size:14px;font-weight:500;color:var(--ink-2)}
 .spec-icon{width:40px;height:40px;background:rgba(0,113,227,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .models-section{background:var(--mid)}
-.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:20px 18px;position:relative;transition:border-color .25s,transform .25s}
+.models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:12px 10px;position:relative;transition:border-color .25s,transform .25s}
 .model-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
 .model-card.featured{border-color:var(--blue);background:rgba(0,113,227,.06)}
 .model-card.featured::before{content:'Популярный';position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px}
-.model-name{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
-.model-price{font-size:14px;color:var(--dim);margin-bottom:12px}
-.model-price strong{font-size:18px;font-weight:600;color:#fff}
-.model-specs{list-style:none;display:flex;flex-direction:column;gap:5px}
-.model-specs li{font-size:12px;color:var(--dim);display:flex;align-items:flex-start;gap:5px}
+.model-name{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:600;margin-bottom:2px}
+.model-price{font-size:14px;color:var(--dim);margin-bottom:6px}
+.model-price strong{font-size:16px;font-weight:600;color:#fff}
+.model-specs{list-style:none;display:flex;flex-direction:column;gap:3px}
+.model-specs li{font-size:11px;color:var(--dim);display:flex;align-items:flex-start;gap:3px}
 .model-specs li::before{content:'›';color:var(--blue);font-weight:600;flex-shrink:0;line-height:1.4}
-.model-cta{margin-top:14px;width:100%}
+.model-cta{margin-top:8px;width:100%}
 .ind-section{background:var(--black)}
     .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin-top:56px}
 
 .ind-row{background:var(--dark);padding:56px;transition:background .4s}
 .ind-row:hover{background:var(--mid)}
 .ind-num{display:none}
-.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:12px;font-family:'Unbounded',sans-serif}
+.ind-name{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:6px;font-family:'Unbounded',sans-serif}
 .ind-desc{font-size:15px;color:var(--dim);line-height:1.5}
 .sw-section{background:var(--dark)}
 .sw-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:56px}
@@ -64,7 +64,7 @@
 .sw-icon{width:48px;height:48px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sw-name{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:600}
 .sw-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:12px}
+.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:6px}
 .sw-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
 .sw-features li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
 .sw-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
@@ -333,27 +333,23 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <img class="model-img" src="img/renders/led.jpg" alt="LED Indoor" loading="lazy"/>
         <div class="model-name">LED Indoor</div>
         <div class="model-price">от <strong>190 000 ₽</strong></div>
-        <p class="model-desc">Модульный LED-экран для помещений.</p>
         <ul class="model-specs">
           <li>Шаг пикселя 2.5 мм</li>
           <li>Яркость 1500 нит</li>
           <li>Модульная конструкция</li>
           <li>Управление по LAN</li>
-          <li>Для конференц-залов и ТЦ</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d2">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">LED Outdoor</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:90px;border-radius:var(--r)">LED Outdoor</div>
         <div class="model-name">LED Outdoor</div>
         <div class="model-price">от <strong>350 000 ₽</strong></div>
-        <p class="model-desc">Всепогодный уличный LED-экран.</p>
         <ul class="model-specs">
           <li>Шаг пикселя 4 мм</li>
           <li>Яркость 5000 нит</li>
           <li>Защита IP65</li>
           <li>Модульная конструкция</li>
-          <li>Для фасадов и городских экранов</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
