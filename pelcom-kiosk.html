@@ -287,119 +287,199 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
     </div>
     <div class="models-grid">
       <div class="model-card fi fi-d1">
-        <img class="model-img" src="img/renders/kiosk/standart.jpg" alt="Информационный киоск Pelcom — модель 1" loading="lazy"/>
+        <img class="model-img" src="img/renders/kiosk/standart.jpg" alt="Standart" loading="lazy"/>
         <div class="model-name">Standart</div>
         <div class="model-price">от <strong>89 000 ₽</strong></div>
         <ul class="model-specs">
-          <li>Экран 21", Full HD</li>
-          <li>Напольный монтаж</li>
+          <li>21.5 Full HD</li>
+          <li>Напольный</li>
           <li>Android 11</li>
-          <li>1 USB-порт</li>
-          <li>Сенсорный экран 10 касаний</li>
+          <li>1 USB</li>
+          <li>Сенсор 10</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card featured fi fi-d2">
-        <img class="model-img" src="img/renders/kiosk/pro.jpg" alt="Информационный киоск Pelcom — модель 2" loading="lazy"/>
+        <img class="model-img" src="img/renders/kiosk/pro.jpg" alt="Pro" loading="lazy"/>
         <div class="model-name">Pro</div>
         <div class="model-price">от <strong>135 000 ₽</strong></div>
         <ul class="model-specs">
-          <li>Экран 32", Full HD</li>
-          <li>Напольный / настенный</li>
+          <li>32 Full HD</li>
+          <li>Напольный/настенный</li>
           <li>Android 13</li>
-          <li>2 USB-порта</li>
-          <li>Принтер чеков — опция</li>
+          <li>2 USB</li>
+          <li>Принтер опция</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-blue model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d3">
-        <img class="model-img" src="img/renders/kiosk/maxi.jpg" alt="Информационный киоск Pelcom — модель 3" loading="lazy"/>
+        <img class="model-img" src="img/renders/kiosk/maxi.jpg" alt="Maxi" loading="lazy"/>
         <div class="model-name">Maxi</div>
         <div class="model-price">от <strong>210 000 ₽</strong></div>
         <ul class="model-specs">
-          <li>Экран 55", 4K</li>
-          <li>Напольный монтаж</li>
+          <li>55 4K</li>
+          <li>Напольный</li>
           <li>Windows 11</li>
-          <li>4 USB-порта</li>
-          <li>Принтер + сканер + эквайринг — опции</li>
+          <li>4 USB</li>
+          <li>Принтер+сканер+pay</li>
         </ul>
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
-    </div>
-    <style>
-    .model-showcase{margin-top:64px}
-    .showcase-head{font:700 13px/1 Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--dim,#9aa);text-align:center;margin-bottom:24px}
-    .showcase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:720px;margin:0 auto}
-    .sc-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:20px;transition:border-color .25s,transform .25s}
-    .sc-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
-    .sc-spin{position:relative;width:100%;aspect-ratio:1/1;border-radius:14px;background:#eeeeec;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none}
-    .sc-spin:active{cursor:grabbing}
-    .sc-spin img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
-    .sc-badge{position:absolute;top:10px;right:10px;font:600 11px/1 Manrope,sans-serif;letter-spacing:.06em;color:#fff;background:rgba(0,113,227,.9);padding:6px 11px;border-radius:100px;pointer-events:none;transition:opacity .3s}
-    .sc-spin.on .sc-badge{opacity:0}
-    .sc-name{font:700 18px/1.2 Manrope,sans-serif;margin-top:16px;color:#fff}
-    .sc-desc{font-size:13px;color:var(--dim,#9aa);margin-top:5px}
-    @media(max-width:640px){.showcase-grid{grid-template-columns:1fr}}
-    </style>
-    <div class="model-showcase fi">
-      <div class="showcase-head">3D-обзор моделей — наведите или тяните</div>
-      <div class="showcase-grid">
-        <div class="sc-card">
-          <div class="sc-spin" data-frames="24" data-path="img/360/blackglass/" data-ext="jpg"><img src="img/360/blackglass/01.jpg" draggable="false" alt="Киоск Black Glass — 360°"/><div class="sc-badge">360°</div></div>
-          <div class="sc-name">Black Glass</div>
-          <div class="sc-desc">Напольная стела с термопринтером</div>
-        </div>
-        <div class="sc-card">
-          <div class="sc-spin" data-frames="24" data-path="img/360/blackglass-noprinter/" data-ext="jpg"><img src="img/360/blackglass-noprinter/01.jpg" draggable="false" alt="Киоск Black Glass без принтера — 360°"/><div class="sc-badge">360°</div></div>
-          <div class="sc-name">Black Glass — без принтера</div>
-          <div class="sc-desc">Та же стела, комплектация без термопринтера</div>
-        </div>
+      <div class="model-card fi fi-d4">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Lite</div>
+        <div class="model-name">Lite</div>
+        <div class="model-price">от <strong>65 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>15.6 HD</li>
+          <li>Настольный</li>
+          <li>Android 11</li>
+          <li>1 USB</li>
+          <li>Сенсор 10</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
-    </div>
-    <script>(function(){
-    function initSC(el){if(el.dataset.on)return;el.dataset.on='1';el.classList.add('on');
-    var n=+el.dataset.frames,path=el.dataset.path,ext=el.dataset.ext||'jpg';
-    var img=el.querySelector('img'),frames=[],cur=0,loaded=0,auto=null;
-    function nm(i){var s=String(i+1);return s.length<2?'0'+s:s;}
-    function startAuto(){if(!auto)auto=setInterval(function(){show(cur+1);},150);}
-    for(var i=0;i<n;i++){(function(im,j){im.onload=function(){if(++loaded===n)startAuto();};im.src=path+nm(j)+'.'+ext;})(frames[i]=new Image(),i);}
-    function show(i){cur=((i%n)+n)%n;if(frames[cur].complete)img.src=frames[cur].src;}
-    var drag=false,lastX=0,acc=0;
-    el.addEventListener('pointerdown',function(e){drag=true;lastX=e.clientX;if(auto){clearInterval(auto);auto=null;}try{el.setPointerCapture(e.pointerId)}catch(_){}});
-    el.addEventListener('pointermove',function(e){if(!drag)return;acc+=e.clientX-lastX;var st=Math.round(acc/14);if(st){show(cur-st);acc-=st*14;}lastX=e.clientX;});
-    function end(){drag=false;}el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);}
-    document.querySelectorAll('.sc-spin').forEach(function(el){el.addEventListener('pointerenter',function(){initSC(el);});el.addEventListener('click',function(){initSC(el);});});
-    })();</script>
-  </div>
-</section>
-
-<!-- INDUSTRIES -->
-<section class="ind-section">
-  <div class="container">
-    <div class="fi">
-      <div class="s-label">Сферы применения</div>
-      <h2 class="s-title">Где работают<br>наши киоски</h2>
-    </div>
-    <div class="ind-grid">
-      <div class="ind-row fi">
-        <div class="ind-num">01</div>
-        <div class="ind-name">МФЦ и госуслуги</div>
-        <div class="ind-desc">Терминалы самозаписи, получения талонов, оплаты государственных пошлин и предоставления информации об услугах. Поддержка Госуслуг и ЕПГУ.</div>
+      <div class="model-card fi fi-d5">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Wall</div>
+        <div class="model-name">Wall</div>
+        <div class="model-price">от <strong>78 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>21.5 Full HD</li>
+          <li>Настенный</li>
+          <li>Android 13</li>
+          <li>2 USB</li>
+          <li>Динамик</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
-      <div class="ind-row fi fi-d1">
-        <div class="ind-num">02</div>
-        <div class="ind-name">Банки и финансы</div>
-        <div class="ind-desc">Информационные терминалы в отделениях банков, пунктах обмена валют и страховых компаниях. Интеграция с АБС через API.</div>
+      <div class="model-card fi fi-d6">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Glass</div>
+        <div class="model-name">Glass</div>
+        <div class="model-price">от <strong>155 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>32 Full HD</li>
+          <li>Напольная стела</li>
+          <li>Android 13</li>
+          <li>Принтер</li>
+          <li>Стекло</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
-      <div class="ind-row fi fi-d2">
-        <div class="ind-num">03</div>
-        <div class="ind-name">Гостиницы и бизнес-центры</div>
-        <div class="ind-desc">Система самостоятельной регистрации гостей (check-in / check-out), навигация по территории, бронирование переговорных комнат.</div>
+      <div class="model-card fi fi-d7">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Glass+</div>
+        <div class="model-name">Glass+</div>
+        <div class="model-price">от <strong>185 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>43 4K</li>
+          <li>Напольная стела</li>
+          <li>Windows 11</li>
+          <li>Принтер+сканер</li>
+          <li>Стекло</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
-      <div class="ind-row fi fi-d3">
-        <div class="ind-num">04</div>
-        <div class="ind-name">Медицина</div>
-        <div class="ind-desc">Запись к врачу, получение талонов в регистратуре, оплата медицинских услуг. Соответствие требованиям 152-ФЗ о персональных данных.</div>
+      <div class="model-card fi fi-d8">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Glass Max</div>
+        <div class="model-name">Glass Max</div>
+        <div class="model-price">от <strong>250 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>55 4K</li>
+          <li>Напольная стела</li>
+          <li>Windows 11</li>
+          <li>Принтер+сканер+pay</li>
+          <li>Антиблик</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d9">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Duo</div>
+        <div class="model-name">Duo</div>
+        <div class="model-price">от <strong>320 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>2x32 Full HD</li>
+          <li>Двусторонний</li>
+          <li>Android 13</li>
+          <li>4 USB</li>
+          <li>Реклама 2 стороны</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d10">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Neo</div>
+        <div class="model-name">Neo</div>
+        <div class="model-price">от <strong>98 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>27 Full HD</li>
+          <li>Настенный slim</li>
+          <li>Android 13</li>
+          <li>2 USB</li>
+          <li>45 мм</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d11">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Neo Glass</div>
+        <div class="model-name">Neo Glass</div>
+        <div class="model-price">от <strong>175 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>43 4K</li>
+          <li>Настенный</li>
+          <li>Windows 11</li>
+          <li>Принтер опция</li>
+          <li>Стекло</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d12">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Genius</div>
+        <div class="model-name">Genius</div>
+        <div class="model-price">от <strong>195 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>32 Full HD</li>
+          <li>Напольный</li>
+          <li>Windows 10</li>
+          <li>3 USB</li>
+          <li>Отпечатки+камера</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d13">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Genesis</div>
+        <div class="model-name">Genesis</div>
+        <div class="model-price">от <strong>230 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>43 4K</li>
+          <li>Напольный</li>
+          <li>Windows 11</li>
+          <li>4 USB</li>
+          <li>Биометрия+принтер</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d14">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Aurora</div>
+        <div class="model-name">Aurora</div>
+        <div class="model-price">от <strong>280 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>55 4K</li>
+          <li>Напольный</li>
+          <li>Windows 11</li>
+          <li>4 USB</li>
+          <li>Индукц.петля+pay</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
+      </div>
+      <div class="model-card fi fi-d15">
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Helper</div>
+        <div class="model-name">Helper</div>
+        <div class="model-price">от <strong>170 000 ₽</strong></div>
+        <ul class="model-specs">
+          <li>32 Full HD</li>
+          <li>Напольный</li>
+          <li>Android 13</li>
+          <li>2 USB</li>
+          <li>Доступная высота</li>
+        </ul>
+        <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
     </div>
   </div>
