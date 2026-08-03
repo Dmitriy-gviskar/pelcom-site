@@ -37,17 +37,17 @@
 .spec-icon{width:40px;height:40px;background:rgba(0,113,227,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .models-section{background:var(--mid)}
 .models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:36px 28px;position:relative;transition:border-color .25s,transform .25s}
+.model-card{background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:20px 18px;position:relative;transition:border-color .25s,transform .25s}
 .model-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
 .model-card.featured{border-color:var(--blue);background:rgba(0,113,227,.06)}
 .model-card.featured::before{content:'Популярный';position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px}
-.model-name{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:600;margin-bottom:6px}
-.model-price{font-size:14px;color:var(--dim);margin-bottom:24px}
-.model-price strong{font-size:24px;font-weight:600;color:#fff}
-.model-specs{list-style:none;display:flex;flex-direction:column;gap:10px}
-.model-specs li{font-size:14px;color:var(--dim);display:flex;align-items:flex-start;gap:10px}
+.model-name{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
+.model-price{font-size:14px;color:var(--dim);margin-bottom:12px}
+.model-price strong{font-size:18px;font-weight:600;color:#fff}
+.model-specs{list-style:none;display:flex;flex-direction:column;gap:5px}
+.model-specs li{font-size:12px;color:var(--dim);display:flex;align-items:flex-start;gap:5px}
 .model-specs li::before{content:'›';color:var(--blue);font-weight:600;flex-shrink:0;line-height:1.4}
-.model-cta{margin-top:28px;width:100%}
+.model-cta{margin-top:14px;width:100%}
 .ind-section{background:var(--black)}
     .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin-top:56px}
 
@@ -64,7 +64,7 @@
 .sw-icon{width:48px;height:48px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sw-name{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:600}
 .sw-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:24px}
+.sw-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:12px}
 .sw-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
 .sw-features li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
 .sw-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
@@ -291,7 +291,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-blue model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d3">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel L</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel L</div>
         <div class="model-name">Panel L</div>
         <div class="model-price">от <strong>220 000 ₽</strong></div>
         <ul class="model-specs">
@@ -304,7 +304,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d4">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel XL</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel XL</div>
         <div class="model-name">Panel XL</div>
         <div class="model-price">от <strong>380 000 ₽</strong></div>
         <ul class="model-specs">
@@ -317,7 +317,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d5">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel XXL</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel XXL</div>
         <div class="model-name">Panel XXL</div>
         <div class="model-price">от <strong>580 000 ₽</strong></div>
         <ul class="model-specs">
@@ -330,7 +330,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d6">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel Rail</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel Rail</div>
         <div class="model-name">Panel Rail</div>
         <div class="model-price">от <strong>195 000 ₽</strong></div>
         <ul class="model-specs">
@@ -343,7 +343,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d7">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel Storm</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel Storm</div>
         <div class="model-name">Panel Storm</div>
         <div class="model-price">от <strong>165 000 ₽</strong></div>
         <ul class="model-specs">
@@ -356,7 +356,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d8">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel Glass</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel Glass</div>
         <div class="model-name">Panel Glass</div>
         <div class="model-price">от <strong>260 000 ₽</strong></div>
         <ul class="model-specs">
@@ -369,7 +369,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d9">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel Neo</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel Neo</div>
         <div class="model-name">Panel Neo</div>
         <div class="model-price">от <strong>130 000 ₽</strong></div>
         <ul class="model-specs">
@@ -382,7 +382,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d10">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel Aurora</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel Aurora</div>
         <div class="model-name">Panel Aurora</div>
         <div class="model-price">от <strong>310 000 ₽</strong></div>
         <ul class="model-specs">
@@ -395,7 +395,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d11">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel Intellect</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel Intellect</div>
         <div class="model-name">Panel Intellect</div>
         <div class="model-price">от <strong>175 000 ₽</strong></div>
         <ul class="model-specs">
@@ -408,7 +408,7 @@ footer{background:var(--black);padding:80px 40px 40px;border-top:1px solid var(-
         <a href="pelcom-landing.html#contact" class="btn btn-ghost model-cta">Запросить КП</a>
       </div>
       <div class="model-card fi fi-d12">
-        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:180px;border-radius:var(--r)">Panel Stark</div>
+        <div class="model-img" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:14px;height:120px;border-radius:var(--r)">Panel Stark</div>
         <div class="model-name">Panel Stark</div>
         <div class="model-price">от <strong>210 000 ₽</strong></div>
         <ul class="model-specs">
