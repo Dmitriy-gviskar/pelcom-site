@@ -22,22 +22,22 @@
 <style>
   h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;letter-spacing:-.04em}
   .sol-section{background:var(--black);padding:100px 56px}
-  .sol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--rule);margin-top:56px}
-  .sol-row{background:var(--dark);padding:72px 56px;transition:background .4s;display:flex;gap:32px}
-  .sol-row:hover{background:var(--mid)}
-  .sol-num{font-family:'Unbounded',sans-serif;font-size:48px;font-weight:800;color:var(--blue);line-height:1;flex-shrink:0;width:60px}
-  .sol-content{flex:1}
-  .sol-name{font-size:24px;font-weight:600;margin-bottom:10px}
-  .sol-desc{font-size:15px;color:var(--dim);line-height:1.8;margin-bottom:18px}
+  .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .sol-card{background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:40px 32px;text-decoration:none;color:inherit;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
+  .sol-card:hover{border-color:rgba(0,113,227,.4);transform:translateY(-4px)}
+  .sol-icon{width:56px;height:56px;background:rgba(0,113,227,.12);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+  .sol-name{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:600;margin-bottom:10px}
+  .sol-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:18px;flex:1}
   .sol-tags{display:flex;flex-wrap:wrap;gap:6px}
-  .sol-tag{font-size:11px;font-weight:500;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--dim);letter-spacing:.02em}
-  @media(max-width:900px){.sol-grid{grid-template-columns:1fr}.sol-row{padding:36px 28px}}
-  @media(max-width:640px){.sol-section{padding:80px 16px}.sol-num{font-size:32px;width:40px}}
+  .sol-tag{font-size:10px;font-weight:500;padding:4px 10px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)}
+  .sol-arrow{font-size:12px;color:var(--blue);font-weight:500;display:inline-flex;align-items:center;gap:4px;margin-top:auto}
+  .sol-arrow::after{content:'→'}
+  @media(max-width:900px){.sol-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.sol-section{padding:80px 16px}.sol-grid{grid-template-columns:1fr}.sol-card{padding:28px 22px}}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header id="hdr">
   <a href="pelcom-landing.html" class="h-logo"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span>pelcom</span></a>
   <nav>
@@ -50,12 +50,11 @@
   </nav>
   <div class="h-right">
     <a href="tel:+74957770741" class="h-phone">+7 (495) 777-07-41</a>
-    <a href="pelcom-landing.html#contact" class="btn btn-blue btn-sm">Связаться</a>
+    <a href="pelcom-landing.html" class="btn btn-blue btn-sm">Связаться</a>
   </div>
   <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <nav class="crumbs" aria-label="Хлебные крошки"><div class="crumbs-i"><a href="pelcom-landing.html">Главная</a><b>/</b>Решения</div></nav>
   <div class="hero-grid"></div>
@@ -63,140 +62,113 @@
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>
-        По отраслям
-      </div>
+      <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>По отраслям</div>
       <h1>Отраслевые<br>решения</h1>
-      <p class="hero-desc">Интерактивное оборудование Pelcom работает в десятках отраслей. Под каждую задачу разрабатываем решение с нуля: корпус, ПО, интеграция.</p>
-      <div class="hero-actions">
-        <a href="pelcom-landing.html#contact" class="btn btn-blue">Обсудить задачу</a>
-      </div>
+      <p class="hero-desc">Интерактивное оборудование Pelcom для любой отрасли. Подбираем, проектируем, внедряем — от киоска до комплексной системы.</p>
+      <div class="hero-actions"><a href="pelcom-landing.html" class="btn btn-blue">Обсудить задачу</a></div>
     </div>
   </div>
 </section>
 
-<!-- INDUSTRIES GRID -->
 <section class="sol-section">
   <div class="container">
-    <div class="s-label">Вертикали</div>
-    <h2 class="s-title">Где работает оборудование</h2>
+    <div class="s-label">Отрасли</div>
+    <h2 class="s-title">Готовые решения для бизнеса и государства</h2>
     <div class="sol-grid">
-      <div class="sol-row">
-        <div class="sol-num">01</div>
-        <div class="sol-content">
-          <div class="sol-name">Госучреждения</div>
-          <p class="sol-desc">МФЦ, администрации, ведомства. Навигация по услугам, электронная очередь, запись на приём, оплата пошлин через терминал.</p>
-          <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Эл. очередь</span><span class="sol-tag">Терминалы оплаты</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">02</div>
-        <div class="sol-content">
-          <div class="sol-name">Медицина</div>
-          <p class="sol-desc">Поликлиники, больницы, медцентры. Запись к врачу, маршрутизация, электронная очередь, санитарные киоски с измерением температуры.</p>
-          <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Навигация</span><span class="sol-tag">Эл. очередь</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">03</div>
-        <div class="sol-content">
-          <div class="sol-name">Образование</div>
-          <p class="sol-desc">ВУЗы, школы, детские сады. Расписание, навигация по кампусу, интерактивные столы для групповой работы, детские безопасные комплексы.</p>
-          <div class="sol-tags"><span class="sol-tag">Столы</span><span class="sol-tag">Панели</span><span class="sol-tag">Детское</span><span class="sol-tag">Навигация</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">04</div>
-        <div class="sol-content">
-          <div class="sol-name">Ритейл и ТЦ</div>
-          <p class="sol-desc">Торговые центры, магазины, бутики. Навигация по этажам, электронный каталог, терминалы самообслуживания, программа лояльности.</p>
-          <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">Терминалы</span><span class="sol-tag">Пилоны</span><span class="sol-tag">LED</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">05</div>
-        <div class="sol-content">
-          <div class="sol-name">Производство</div>
-          <p class="sol-desc">Заводы, фабрики, склады. Учёт рабочего времени, контроль доступа, санитарно-пропускные киоски, производственные дашборды.</p>
-          <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Панели</span><span class="sol-tag">Доступная среда</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">06</div>
-        <div class="sol-content">
-          <div class="sol-name">Банки и финансы</div>
-          <p class="sol-desc">Отделения банков, страховые компании. Терминалы самообслуживания, электронная очередь, информирование о продуктах, интеграция с CRM.</p>
-          <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Эл. очередь</span><span class="sol-tag">Панели</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">07</div>
-        <div class="sol-content">
-          <div class="sol-name">Транспорт</div>
-          <p class="sol-desc">Аэропорты, вокзалы, метро. Навигация по терминалам, табло рейсов, справочные киоски, терминалы регистрации и печати билетов.</p>
-          <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Уличные</span><span class="sol-tag">LED</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">08</div>
-        <div class="sol-content">
-          <div class="sol-name">Культура и музеи</div>
-          <p class="sol-desc">Музеи, галереи, выставочные залы. Интерактивные экспонаты, аудиогиды, сенсорные витрины, виртуальные экспозиции, дополненная реальность.</p>
-          <div class="sol-tags"><span class="sol-tag">Столы</span><span class="sol-tag">Панели</span><span class="sol-tag">Голограммы</span><span class="sol-tag">Инфокиоски</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">09</div>
-        <div class="sol-content">
-          <div class="sol-name">Гостиницы и рестораны</div>
-          <p class="sol-desc">Отели, рестораны, кафе. Стойки регистрации, интерактивное меню, киоски заказа, информационные панели для гостей.</p>
-          <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Панели</span><span class="sol-tag">Терминалы</span></div>
-        </div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-num">10</div>
-        <div class="sol-content">
-          <div class="sol-name">Спорт и мероприятия</div>
-          <p class="sol-desc">Стадионы, арены, концертные залы. Навигация, информирование, билетные киоски, интерактивные развлечения для болельщиков.</p>
-          <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">LED</span><span class="sol-tag">Уличные</span><span class="sol-tag">Инфокиоски</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- READY SOLUTIONS -->
-<section style="background:var(--dark);padding:100px 56px">
-  <div class="container">
-    <div class="s-label">Готовые решения</div>
-    <h2 class="s-title">Комплексные проекты под ключ</h2>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px">
-      <a href="pelcom-kiosk.html" style="background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:36px 32px;text-decoration:none;color:inherit;transition:border-color .25s,transform .25s" onmouseover="this.style.borderColor='rgba(0,113,227,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-        <div style="font-family:Unbounded,sans-serif;font-size:18px;font-weight:600;margin-bottom:10px">Умный МФЦ</div>
-        <p style="font-size:14px;color:var(--dim);line-height:1.6">Инфокиоски + электронная очередь + терминалы оплаты. Полный цикл обслуживания посетителей от входа до результата.</p>
-        <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap"><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Инфокиоски</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Эл. очередь</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Терминалы оплаты</span></div>
+      <a href="pelcom-kiosk.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="4" y="4" width="20" height="20" rx="3"/><line x1="4" y1="11" x2="24" y2="11"/><line x1="14" y1="11" x2="14" y2="24"/></svg></div>
+        <div class="sol-name">Госучреждения</div>
+        <div class="sol-desc">МФЦ, администрации, ведомства. Навигация по услугам, электронная очередь, оплата пошлин, запись на приём.</div>
+        <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Эл. очередь</span><span class="sol-tag">Терминалы</span></div>
       </a>
-      <a href="pelcom-nav.html" style="background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:36px 32px;text-decoration:none;color:inherit;transition:border-color .25s,transform .25s" onmouseover="this.style.borderColor='rgba(0,113,227,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-        <div style="font-family:Unbounded,sans-serif;font-size:18px;font-weight:600;margin-bottom:10px">Современная поликлиника</div>
-        <p style="font-size:14px;color:var(--dim);line-height:1.6">Навигация по корпусам + запись к врачу + электронная очередь. Сокращение времени ожидания, прозрачность процессов.</p>
-        <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap"><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Навигация</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Инфокиоски</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Эл. очередь</span></div>
+      <a href="pelcom-kiosk.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="3" width="22" height="22" rx="5"/><path d="M9 14h10M14 9v10"/></svg></div>
+        <div class="sol-name">Медицина</div>
+        <div class="sol-desc">Поликлиники, больницы, медцентры. Запись к врачу, маршрутизация, электронная очередь, санитарные киоски.</div>
+        <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Навигация</span><span class="sol-tag">Эл. очередь</span></div>
       </a>
-      <a href="pelcom-pylon.html" style="background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:36px 32px;text-decoration:none;color:inherit;transition:border-color .25s,transform .25s" onmouseover="this.style.borderColor='rgba(0,113,227,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-        <div style="font-family:Unbounded,sans-serif;font-size:18px;font-weight:600;margin-bottom:10px">Торговый центр</div>
-        <p style="font-size:14px;color:var(--dim);line-height:1.6">Навигация по этажам + информационные пилоны + LED-экраны. Увеличение времени пребывания и среднего чека.</p>
-        <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap"><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Навигация</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Пилоны</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">LED</span></div>
+      <a href="pelcom-tables.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M5 23.5A2.5 2.5 0 0 1 7.5 21H24"/><path d="M7.5 3H24v23H7.5A2.5 2.5 0 0 1 5 23.5v-18A2.5 2.5 0 0 1 7.5 3z"/></svg></div>
+        <div class="sol-name">Образование</div>
+        <div class="sol-desc">ВУЗы, школы, детские сады. Расписание, навигация по кампусу, интерактивные столы, детские комплексы.</div>
+        <div class="sol-tags"><span class="sol-tag">Столы</span><span class="sol-tag">Панели</span><span class="sol-tag">Детское</span></div>
       </a>
-      <a href="pelcom-terminals.html" style="background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:36px 32px;text-decoration:none;color:inherit;transition:border-color .25s,transform .25s" onmouseover="this.style.borderColor='rgba(0,113,227,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-        <div style="font-family:Unbounded,sans-serif;font-size:18px;font-weight:600;margin-bottom:10px">Умный завод</div>
-        <p style="font-size:14px;color:var(--dim);line-height:1.6">Терминалы учёта + панели дашбордов + СКУД. Контроль доступа, времени и производственных показателей.</p>
-        <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap"><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Терминалы</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Панели</span><span style="font-size:11px;padding:4px 12px;border:1px solid var(--rule);border-radius:100px;color:var(--blue)">Доступная среда</span></div>
+      <a href="pelcom-nav.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M7 3l-4 4v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7l-4-4z"/></svg></div>
+        <div class="sol-name">Ритейл и ТЦ</div>
+        <div class="sol-desc">Торговые центры, магазины. Навигация по этажам, электронный каталог, программа лояльности.</div>
+        <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">Терминалы</span><span class="sol-tag">Пилоны</span></div>
+      </a>
+      <a href="pelcom-terminals.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="3" width="22" height="22" rx="5"/><rect x="8" y="9" width="12" height="6" rx="1"/><rect x="9" y="17" width="4" height="2" rx=".5"/><rect x="15" y="17" width="4" height="2" rx=".5"/></svg></div>
+        <div class="sol-name">Производство</div>
+        <div class="sol-desc">Заводы, склады, фабрики. Учёт рабочего времени, СКУД, дашборды, санитарно-пропускные киоски.</div>
+        <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Панели</span><span class="sol-tag">СКУД</span></div>
+      </a>
+      <a href="pelcom-terminals.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><line x1="14" y1="3" x2="14" y2="25"/><path d="M19 6H11a4 4 0 0 0 0 8h6a4 4 0 0 1 0 8H7"/></svg></div>
+        <div class="sol-name">Банки и финансы</div>
+        <div class="sol-desc">Отделения банков, страховые. Терминалы самообслуживания, электронная очередь, информирование.</div>
+        <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Эл. очередь</span><span class="sol-tag">Панели</span></div>
+      </a>
+      <a href="pelcom-nav.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><polyline points="7 14 14 7 21 14"/></svg></div>
+        <div class="sol-name">Транспорт</div>
+        <div class="sol-desc">Аэропорты, вокзалы, метро. Навигация по терминалам, табло рейсов, справочные киоски, регистрация.</div>
+        <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">Инфокиоски</span><span class="sol-tag">LED</span></div>
+      </a>
+      <a href="pelcom-holo.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><path d="M9 16s2 3 5 3 5-3 5-3"/><line x1="10" y1="10" x2="10.01" y2="10"/><line x1="18" y1="10" x2="18.01" y2="10"/></svg></div>
+        <div class="sol-name">Культура и музеи</div>
+        <div class="sol-desc">Музеи, галереи, выставки. Интерактивные экспонаты, аудиогиды, виртуальные экспозиции, голограммы.</div>
+        <div class="sol-tags"><span class="sol-tag">Столы</span><span class="sol-tag">Голограммы</span><span class="sol-tag">Инфокиоски</span></div>
+      </a>
+      <a href="pelcom-kiosk.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M4 25h20"/><path d="M4 9v16M9 9v16M19 9v16M24 9v16"/></svg></div>
+        <div class="sol-name">Гостиницы и рестораны</div>
+        <div class="sol-desc">Отели, рестораны, кафе. Стойки регистрации, интерактивное меню, киоски заказа, инфопанели.</div>
+        <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Панели</span><span class="sol-tag">Терминалы</span></div>
+      </a>
+      <a href="pelcom-outdoor.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><line x1="14" y1="3" x2="14" y2="25"/><line x1="3" y1="14" x2="25" y2="14"/></svg></div>
+        <div class="sol-name">Спорт и мероприятия</div>
+        <div class="sol-desc">Стадионы, арены, концертные залы. Навигация, билетные киоски, интерактивные развлечения.</div>
+        <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">LED</span><span class="sol-tag">Уличные</span></div>
+      </a>
+      <a href="pelcom-kids.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><circle cx="10" cy="10" r="2"/><circle cx="18" cy="10" r="2"/><path d="M9 17c1.5 2.5 4.5 5 5 5s3.5-2.5 5-5"/></svg></div>
+        <div class="sol-name">Детские учреждения</div>
+        <div class="sol-desc">Детские сады, центры развития. Интерактивные песочницы, развивающие столы, безопасные киоски.</div>
+        <div class="sol-tags"><span class="sol-tag">Детское</span><span class="sol-tag">Столы</span><span class="sol-tag">Панели</span></div>
+      </a>
+      <a href="pelcom-accessible.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M23 6.5a5.5 5.5 0 0 0-10-3.5C10.5 3 8 6.5 8 11c0 1 .2 2 .4 3H6l2 4 2-4h-1.2c-.3-1-.5-2-.5-3 0-2.5 1.5-5 3.5-5s3.5 2.5 3.5 5c0 2-1 3.5-1.5 4.5"/></svg></div>
+        <div class="sol-name">Доступная среда</div>
+        <div class="sol-desc">Для маломобильных граждан. Индукционная петля, регулировка высоты, ГОСТ Р 52872.</div>
+        <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Панели</span><span class="sol-tag">Столы</span></div>
+      </a>
+      <a href="pelcom-outdoor.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M12 3c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9z"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="12" y1="6" x2="12" y2="18"/></svg></div>
+        <div class="sol-name">Городские пространства</div>
+        <div class="sol-desc">Парки, улицы, площади. Уличные киоски, информационные стелы, LED-экраны. Антивандальное исполнение.</div>
+        <div class="sol-tags"><span class="sol-tag">Уличные</span><span class="sol-tag">Пилоны</span><span class="sol-tag">LED</span></div>
+      </a>
+      <a href="pelcom-payment.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="5" width="22" height="16" rx="2"/><line x1="3" y1="11" x2="25" y2="11"/></svg></div>
+        <div class="sol-name">Платёжные системы</div>
+        <div class="sol-desc">Терминалы оплаты, эквайринг, СБП. Для МФЦ, банков, транспорта. Соответствие 54-ФЗ.</div>
+        <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Эквайринг</span><span class="sol-tag">54-ФЗ</span></div>
+      </a>
+      <a href="pelcom-led.html" class="sol-card">
+        <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="3" width="22" height="22" rx="3"/><line x1="14" y1="3" x2="14" y2="25"/><line x1="3" y1="14" x2="25" y2="14"/></svg></div>
+        <div class="sol-name">Digital Signage</div>
+        <div class="sol-desc">LED-экраны, видеостены, информационные табло. Indoor и outdoor. Любые размеры и конфигурации.</div>
+        <div class="sol-tags"><span class="sol-tag">LED</span><span class="sol-tag">Видеостены</span><span class="sol-tag">Табло</span></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- HOW WE WORK -->
 <section style="background:var(--dark);padding:100px 56px">
   <div class="container">
     <div class="s-label">Процесс</div>
@@ -205,37 +177,33 @@
       <div style="background:var(--mid);padding:40px 32px">
         <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">01</div>
         <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Анализ задачи</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Изучаем ваши процессы, считаем потоки посетителей, определяем точки касания. Формируем техническое задание.</p>
+        <p style="font-size:13px;color:var(--dim);line-height:1.7">Изучаем ваши процессы, считаем потоки посетителей, определяем точки касания. Формируем ТЗ.</p>
       </div>
       <div style="background:var(--mid);padding:40px 32px">
         <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">02</div>
         <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Проектирование</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Подбираем оборудование, проектируем интерфейсы, разрабатываем схему интеграции. Согласовываем с вами каждый этап.</p>
+        <p style="font-size:13px;color:var(--dim);line-height:1.7">Подбираем оборудование, проектируем интерфейсы, разрабатываем схему интеграции.</p>
       </div>
       <div style="background:var(--mid);padding:40px 32px">
         <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">03</div>
         <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Производство и ПО</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Изготавливаем корпуса на своём заводе, устанавливаем ПО. Тестируем каждый киоск перед отгрузкой — 47 регионов доставки.</p>
+        <p style="font-size:13px;color:var(--dim);line-height:1.7">Изготавливаем корпуса, устанавливаем ПО. Тестируем каждый киоск перед отгрузкой.</p>
       </div>
       <div style="background:var(--mid);padding:40px 32px">
         <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">04</div>
         <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Запуск и поддержка</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Монтаж, пусконаладка, обучение персонала. Сервис 24/7 с выездом — ваше оборудование не простаивает.</p>
+        <p style="font-size:13px;color:var(--dim);line-height:1.7">Монтаж, пусконаладка, обучение. Сервис 24/7 — ваше оборудование не простаивает.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-band">
   <h2>Нет вашей отрасли?</h2>
   <p>Разработаем решение под любую задачу. Отправьте заявку — подберём оборудование и подготовим расчёт.</p>
-  <div class="cta-actions">
-    <a href="pelcom-landing.html#contact" class="btn btn-white">Обсудить задачу</a>
-  </div>
+  <div class="cta-actions"><a href="pelcom-landing.html" class="btn btn-white">Обсудить задачу</a></div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-i">
     <div class="footer-grid">
