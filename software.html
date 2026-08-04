@@ -22,24 +22,36 @@
 <style>
   h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;letter-spacing:-.04em}
   .sw-section{background:var(--dark);padding:100px 56px}
-  .sw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:56px}
-  .sw-card{background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:48px 40px;transition:border-color .25s,transform .25s}
-  .sw-card:hover{border-color:rgba(0,113,227,.4);transform:translateY(-3px)}
-  .sw-card-top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-  .sw-icon{width:48px;height:48px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .sw-name{font-size:20px;font-weight:600}
-  .sw-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-  .sw-desc{font-size:14px;color:#fff;line-height:1.7;margin-bottom:24px}
-  .sw-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
-  .sw-features li{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
-  .sw-features li::before{content:'✓';color:var(--blue);font-weight:600;flex-shrink:0}
-  .feat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
-  .feat-item{background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:28px 22px;text-align:center}
-  .feat-item .feat-icon{width:44px;height:44px;background:rgba(0,113,227,.12);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-  .feat-item h4{font-size:15px;font-weight:600;margin-bottom:6px}
-  .feat-item p{font-size:13px;color:var(--dim);line-height:1.5}
-  @media(max-width:900px){.sw-grid{grid-template-columns:1fr}.feat-strip{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:640px){.sw-section{padding:80px 16px}.feat-strip{grid-template-columns:1fr}}
+  .sw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .sw-card{background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:36px 28px;transition:border-color .25s,transform .25s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+  .sw-card:hover{border-color:rgba(0,113,227,.4);transform:translateY(-4px)}
+  .sw-card.hidden{display:none}
+  .sw-icon{width:48px;height:48px;background:rgba(0,113,227,.12);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:20px}
+  .sw-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+  .sw-title{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:600;margin-bottom:10px}
+  .sw-desc{font-size:14px;color:#fff;line-height:1.6;flex:1;margin-bottom:16px}
+  .sw-features{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .sw-features li{font-size:12px;color:var(--dim);display:flex;align-items:center;gap:6px}
+  .sw-features li::before{content:'›';color:var(--blue);font-weight:700;font-size:15px;flex-shrink:0;line-height:1}
+
+  /* FILTERS */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+  .filter-btn{font-size:11px;font-weight:500;padding:8px 16px;border:1px solid var(--rule);border-radius:100px;background:transparent;color:var(--dim);cursor:pointer;transition:all .25s;font-family:inherit;letter-spacing:.02em}
+  .filter-btn:hover,.filter-btn.active{border-color:var(--blue);color:#fff;background:rgba(0,113,227,.1)}
+
+  /* BRANDED */
+  .branded-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+  .branded-card{background:var(--faint);border:1px solid var(--rule);border-radius:var(--r);padding:44px 36px;text-decoration:none;color:inherit;transition:border-color .3s,transform .3s;display:flex;flex-direction:column;align-items:flex-start}
+  .branded-card:hover{border-color:var(--blue);transform:translateY(-4px)}
+  .branded-icon{width:56px;height:56px;background:rgba(0,113,227,.15);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+  .branded-name{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:700;margin-bottom:12px}
+  .branded-desc{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:20px;flex:1}
+  .branded-arrow{font-size:13px;color:var(--blue);font-weight:500;display:inline-flex;align-items:center;gap:6px}
+  .branded-arrow::after{content:'→';transition:transform .3s}
+  .branded-card:hover .branded-arrow::after{transform:translateX(4px)}
+
+  @media(max-width:900px){.sw-grid,.branded-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.sw-section{padding:80px 16px}.sw-grid,.branded-grid{grid-template-columns:1fr}.sw-card,.branded-card{padding:28px 22px}}
 </style>
 </head>
 <body>
@@ -57,7 +69,7 @@
   </nav>
   <div class="h-right">
     <a href="tel:+74957770741" class="h-phone">+7 (495) 777-07-41</a>
-    <a href="pelcom-landing.html#contact" class="btn btn-blue btn-sm">Связаться</a>
+    <a href="pelcom-landing.html" class="btn btn-blue btn-sm">Связаться</a>
   </div>
   <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
 </header>
@@ -70,151 +82,184 @@
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>
-        Софт
-      </div>
+      <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>Программное обеспечение</div>
       <h1>Программное<br>обеспечение</h1>
-      <p class="hero-desc">Поставляем оборудование с настроенным ПО — удобной и безопасной средой для работы интерактивного устройства. Интегрируем нужный софт или работаем с вашим.</p>
+      <p class="hero-desc">Собственные программные продукты для сенсорных киосков и систем самообслуживания. Администрирование, интеграция, мониторинг.</p>
       <div class="hero-actions">
-        <a href="pelcom-landing.html#contact" class="btn btn-blue">Обсудить ПО</a>
+        <a href="pelcom-landing.html" class="btn btn-blue">Обсудить задачу</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KEY FEATURES -->
+<!-- BRANDED PRODUCTS -->
 <section style="background:var(--black);padding:100px 56px">
   <div class="container">
-    <div class="s-label">Возможности</div>
-    <h2 class="s-title">Ключевые функции</h2>
-    <div class="feat-strip">
-      <div class="feat-item">
-        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h4>Админ-панель</h4>
-        <p>Управление контентом, пользователями и настройками через веб-интерфейс</p>
-      </div>
-      <div class="feat-item">
-        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h4>Удалённое обновление</h4>
-        <p>Обновление контента и ПО на всех устройствах без выезда на объект</p>
-      </div>
-      <div class="feat-item">
-        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <h4>Интеграция</h4>
-        <p>Подключение к 1С, CRM, СКУД, платёжным шлюзам и внешним API</p>
-      </div>
-      <div class="feat-item">
-        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <h4>Безопасный режим</h4>
-        <p>Изоляция от основной сети, киоск-режим, разграничение прав доступа</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOFTWARE BY CATEGORY -->
-<section class="sw-section">
-  <div class="container">
-    <div class="s-label">По направлениям</div>
-    <h2 class="s-title">Программные решения</h2>
-    <div class="sw-grid">
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div><div class="sw-name">Для госучреждений</div><div class="sw-tag">МФЦ, администрации</div></div>
-        </div>
-        <p class="sw-desc">Навигация по услугам, электронная очередь, запись на приём, интеграция с порталом Госуслуг.</p>
-        <ul class="sw-features"><li>Маршрутизация посетителей</li><li>Печать талонов и документов</li><li>Виджеты госуслуг</li></ul>
-      </div>
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <div><div class="sw-name">Для медицины</div><div class="sw-tag">Поликлиники, больницы</div></div>
-        </div>
-        <p class="sw-desc">Запись к врачу, электронная медкарта, маршрутизация по корпусам, санитарный контроль.</p>
-        <ul class="sw-features"><li>Интеграция с МИС</li><li>Расписание врачей</li><li>Термометрия на входе</li></ul>
-      </div>
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-          <div><div class="sw-name">Для образования</div><div class="sw-tag">Школы, ВУЗы</div></div>
-        </div>
-        <p class="sw-desc">Расписание занятий, учебные материалы, тестирование, интерактивные занятия на сенсорных столах.</p>
-        <ul class="sw-features"><li>Конструктор тестов</li><li>Электронный дневник</li><li>Групповая работа</li></ul>
-      </div>
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-          <div><div class="sw-name">Для ритейла</div><div class="sw-tag">Магазины, ТЦ</div></div>
-        </div>
-        <p class="sw-desc">Электронный каталог, самостоятельное оформление заказа, программа лояльности, оплата на месте.</p>
-        <ul class="sw-features"><li>Интеграция с 1С</li><li>Платёжный модуль</li><li>Персональные скидки</li></ul>
-      </div>
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-          <div><div class="sw-name">Для производств</div><div class="sw-tag">Заводы, склады</div></div>
-        </div>
-        <p class="sw-desc">Учёт рабочего времени, контроль доступа, производственные дашборды, уведомления о нарушениях.</p>
-        <ul class="sw-features"><li>СКУД интеграция</li><li>Отчёты и статистика</li><li>Промышленный режим 24/7</li></ul>
-      </div>
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
-          <div><div class="sw-name">Для музеев</div><div class="sw-tag">Галереи, выставки</div></div>
-        </div>
-        <p class="sw-desc">Аудиогиды, интерактивные карты, виртуальные экспозиции, дополненная реальность, QR-квесты.</p>
-        <ul class="sw-features"><li>AR-слои экспонатов</li><li>Мультиязычность</li><li>Статистика посещений</li></ul>
-      </div>
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <div><div class="sw-name">Digital Signage</div><div class="sw-tag">Управление контентом</div></div>
-        </div>
-        <p class="sw-desc">Централизованное управление контентом на сетке экранов: расписание, реклама, объявления, медиа.</p>
-        <ul class="sw-features"><li>Плейлисты и сетка вещания</li><li>Удалённое управление</li><li>Аналитика показов</li></ul>
-      </div>
-      <div class="sw-card">
-        <div class="sw-card-top">
-          <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-          <div><div class="sw-name">Кастомная разработка</div><div class="sw-tag">Под заказ</div></div>
-        </div>
-        <p class="sw-desc">Разработаем ПО под вашу уникальную задачу. Интеграция с любыми внешними системами, брендирование интерфейса.</p>
-        <ul class="sw-features"><li>UX/UI под задачу</li><li>API для интеграции</li><li>Техподдержка 24/7</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="sw-section" style="background:var(--black)">
-  <div class="container">
     <div class="s-label">Продукты</div>
-    <h2 class="s-title">Программные продукты Pelcom</h2>
-    <div class="sw-grid" style="margin-top:40px">
-      <a href="pelcom-software-nav.html" class="sw-card" style="text-decoration:none;color:inherit">
-        <div class="sw-card-top"><div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10"/><path d="M2 12h20"/></svg></div><div><div class="sw-name">Pelcom Навигация</div><div class="sw-tag">Интерактивные карты</div></div></div>
-        <p class="sw-desc">Навигация для зданий и территорий. Визуальный редактор схем, мультиязычность, синхронизация с 1С, офлайн-режим.</p>
+    <h2 class="s-title">Фирменные решения Pelcom</h2>
+    <div class="branded-grid">
+      <a href="pelcom-software-nav.html" class="branded-card">
+        <div class="branded-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><path d="M14 3a11 11 0 0 1 8.5 18.5"/><path d="M3 14h22"/></svg></div>
+        <div class="branded-name">Pelcom Навигация</div>
+        <div class="branded-desc">Интерактивная навигация для зданий и территорий. Визуальный редактор схем, мультиязычность, синхронизация с 1С, офлайн-режим.</div>
+        <span class="branded-arrow">Подробнее</span>
       </a>
-      <a href="pelcom-software-queue.html" class="sw-card" style="text-decoration:none;color:inherit">
-        <div class="sw-card-top"><div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><div class="sw-name">Pelcom Очередь</div><div class="sw-tag">Электронная очередь</div></div></div>
-        <p class="sw-desc">Управление очередью с аналитикой, SMS-уведомлениями, интеграцией в CRM. Для МФЦ, банков, поликлиник.</p>
+      <a href="pelcom-software-queue.html" class="branded-card">
+        <div class="branded-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M19 24v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="8" r="4"/><path d="M26 24v-2a4 4 0 0 0-3-4.3"/><path d="M18 4.3a4 4 0 0 1 0 7.8"/></svg></div>
+        <div class="branded-name">Pelcom Очередь</div>
+        <div class="branded-desc">Система управления очередью с аналитикой, SMS-уведомлениями и интеграцией в CRM. Для МФЦ, банков, поликлиник.</div>
+        <span class="branded-arrow">Подробнее</span>
       </a>
-      <a href="pelcom-software-kiosk.html" class="sw-card" style="text-decoration:none;color:inherit">
-        <div class="sw-card-top"><div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><div class="sw-name">Pelcom Инфокиоск</div><div class="sw-tag">ПО для терминалов</div></div></div>
-        <p class="sw-desc">Оболочка для сенсорных киосков. Админ-панель, управление контентом, киоск-режим 24/7, удалённое обновление.</p>
+      <a href="pelcom-software-kiosk.html" class="branded-card">
+        <div class="branded-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="4" width="22" height="15" rx="2"/><line x1="9" y1="24" x2="19" y2="24"/><line x1="14" y1="19" x2="14" y2="24"/></svg></div>
+        <div class="branded-name">Pelcom Инфокиоск</div>
+        <div class="branded-desc">Оболочка для сенсорных киосков. Админ-панель, киоск-режим 24/7, удалённое обновление, интеграция с 1С и CRM.</div>
+        <span class="branded-arrow">Подробнее</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY SOLUTIONS -->
+<section style="background:var(--dark);padding:100px 56px">
+  <div class="container">
+    <div class="s-label">Отрасли</div>
+    <h2 class="s-title">Решения по направлениям</h2>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="gos">Госучреждения</button>
+      <button class="filter-btn" data-filter="med">Медицина</button>
+      <button class="filter-btn" data-filter="edu">Образование</button>
+      <button class="filter-btn" data-filter="retail">Ритейл и ТЦ</button>
+      <button class="filter-btn" data-filter="mfg">Производство</button>
+      <button class="filter-btn" data-filter="bank">Банки</button>
+      <button class="filter-btn" data-filter="culture">Культура</button>
+      <button class="filter-btn" data-filter="hotel">Гостиницы</button>
+    </div>
+    <div class="sw-grid" id="swGrid">
+      <div class="sw-card" data-cat="gos">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
+        <div class="sw-tag">МФЦ, администрации</div>
+        <div class="sw-title">Госучреждения</div>
+        <div class="sw-desc">Навигация по услугам, электронная очередь, запись на приём, интеграция с порталом Госуслуг.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Электронная очередь</li><li>Терминалы оплаты</li></ul>
+      </div>
+      <div class="sw-card" data-cat="med">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <div class="sw-tag">Поликлиники, больницы</div>
+        <div class="sw-title">Медицина</div>
+        <div class="sw-desc">Запись к врачу, электронная медкарта, маршрутизация по корпусам, санитарный контроль.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Навигация</li><li>Эл. очередь</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="sw-tag">Школы, ВУЗы</div>
+        <div class="sw-title">Образование</div>
+        <div class="sw-desc">Расписание занятий, учебные материалы, тестирование, интерактивные занятия на сенсорных столах.</div>
+        <ul class="sw-features"><li>Столы</li><li>Панели</li><li>Детское</li></ul>
+      </div>
+      <div class="sw-card" data-cat="retail">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+        <div class="sw-tag">Магазины, ТЦ</div>
+        <div class="sw-title">Ритейл и ТЦ</div>
+        <div class="sw-desc">Электронный каталог, навигация по этажам, самостоятельное оформление заказа, программа лояльности.</div>
+        <ul class="sw-features"><li>Навигация</li><li>Терминалы</li><li>Пилоны</li></ul>
+      </div>
+      <div class="sw-card" data-cat="mfg">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M7 7h4v4H7zM13 7h4v4h-4zM7 13h4v4H7zM13 13h4v4h-4z"/></svg></div>
+        <div class="sw-tag">Заводы, склады</div>
+        <div class="sw-title">Производство</div>
+        <div class="sw-desc">Учёт рабочего времени, контроль доступа, производственные дашборды, уведомления о нарушениях.</div>
+        <ul class="sw-features"><li>Терминалы</li><li>Панели</li><li>СКУД</li></ul>
+      </div>
+      <div class="sw-card" data-cat="bank">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="sw-tag">Банки, страховые</div>
+        <div class="sw-title">Банки и финансы</div>
+        <div class="sw-desc">Терминалы самообслуживания, электронная очередь, информирование, интеграция с CRM.</div>
+        <ul class="sw-features"><li>Терминалы</li><li>Эл. очередь</li><li>Панели</li></ul>
+      </div>
+      <div class="sw-card" data-cat="culture">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="sw-tag">Музеи, галереи</div>
+        <div class="sw-title">Культура и музеи</div>
+        <div class="sw-desc">Интерактивные экспонаты, аудиогиды, виртуальные экспозиции, дополненная реальность.</div>
+        <ul class="sw-features"><li>Столы</li><li>Голограммы</li><li>Инфокиоски</li></ul>
+      </div>
+      <div class="sw-card" data-cat="hotel">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M3 21h18"/><path d="M3 7v14M7 7v14M17 7v14M21 7v14"/></svg></div>
+        <div class="sw-tag">Отели, рестораны</div>
+        <div class="sw-title">Гостиницы и рестораны</div>
+        <div class="sw-desc">Стойки регистрации, интерактивное меню, киоски заказа, информационные панели для гостей.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Панели</li><li>Терминалы</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <div class="sw-tag">Детские сады</div>
+        <div class="sw-title">Для детских садов</div>
+        <div class="sw-desc">Интерактивные песочницы, развивающие столы, безопасные киоски с обучающими программами.</div>
+        <ul class="sw-features"><li>Детское</li><li>Столы</li><li>Панели</li></ul>
+      </div>
+      <div class="sw-card" data-cat="culture">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="12" y1="6" x2="12" y2="6.01"/><circle cx="12" cy="14" r="4"/></svg></div>
+        <div class="sw-tag">Парки, улицы, ТЦ</div>
+        <div class="sw-title">Для городских пространств</div>
+        <div class="sw-desc">Уличные киоски, информационные стелы, LED-экраны. Погодозащита, антивандальное исполнение.</div>
+        <ul class="sw-features"><li>Уличные</li><li>Пилоны</li><li>LED</li></ul>
+      </div>
+      <div class="sw-card" data-cat="retail">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="sw-tag">Digital Signage</div>
+        <div class="sw-title">Управление контентом</div>
+        <div class="sw-desc">Централизованное управление контентом на сетке экранов: расписания, реклама, объявления.</div>
+        <ul class="sw-features"><li>Плейлисты</li><li>Удалённое упр.</li><li>Аналитика</li></ul>
+      </div>
+      <div class="sw-card" data-cat="med">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="sw-tag">Доступная среда</div>
+        <div class="sw-title">Для маломобильных</div>
+        <div class="sw-desc">Индукционная петля, регулировка высоты, контрастный интерфейс. ГОСТ Р 52872.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Панели</li><li>Столы</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:var(--black);padding:100px 56px">
+  <div class="container">
+    <div class="s-label">Сравнение</div>
+    <h2 class="s-title">Возможности продуктов</h2>
+    <div style="overflow-x:auto;margin-top:40px">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead><tr style="border-bottom:2px solid var(--rule)">
+          <th style="text-align:left;padding:14px 16px;color:var(--dim);font-weight:500;font-size:12px;letter-spacing:1px;text-transform:uppercase">Функция</th>
+          <th style="text-align:center;padding:14px 16px;color:var(--blue);font-weight:600;font-size:13px">Навигация</th>
+          <th style="text-align:center;padding:14px 16px;color:var(--blue);font-weight:600;font-size:13px">Очередь</th>
+          <th style="text-align:center;padding:14px 16px;color:var(--blue);font-weight:600;font-size:13px">Инфокиоск</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Интерактивные карты</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Электронная очередь</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Киоск-режим 24/7</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Интеграция с 1С</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">SMS / Push-уведомления</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Мультиязычность</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Админ-панель</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Офлайн-режим</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
+          <tr><td style="padding:12px 16px;color:var(--dim)">Мониторинг устройств</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-band">
-  <h2>Нужна консультация по ПО?</h2>
-  <p>Расскажите о вашей задаче — подберём готовое решение или разработаем софт под требования.</p>
+  <h2>Обсудим ваш проект?</h2>
+  <p>Подберём готовое ПО или разработаем под ваши требования. Оставьте заявку — ответим в течение 2 часов.</p>
   <div class="cta-actions">
-    <a href="pelcom-landing.html" class="btn btn-white">Обсудить ПО</a>
+    <a href="pelcom-landing.html" class="btn btn-white">Оставить заявку</a>
   </div>
 </section>
 
@@ -253,6 +298,26 @@
   <button onclick="document.getElementById('cookie').remove()">Принять</button>
 </div>
 
-<script>window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>50)});</script>
+<script>
+window.addEventListener('scroll',function(){document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>50)});
+
+// Фильтрация карточек
+(function(){
+  var btns=document.querySelectorAll('#filterBar .filter-btn');
+  var cards=document.querySelectorAll('#swGrid .sw-card');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      var cat=b.dataset.filter;
+      cards.forEach(function(c){
+        if(cat==='all'||c.dataset.cat===cat) c.classList.remove('hidden');
+        else c.classList.add('hidden');
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
