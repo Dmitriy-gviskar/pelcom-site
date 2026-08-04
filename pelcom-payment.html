@@ -28,7 +28,7 @@
 .specs-section .s-title{color:var(--ink)}
 .specs-section .s-sub{color:var(--ink-2)}
 .specs-header{margin-bottom:56px}
-.specs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px};gap:24px}
+.specs-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));gap:24px}
 .spec-card{background:#fff;border:1px solid var(--rule-l);border-radius:var(--r);padding:32px 28px;transition:box-shadow .25s,transform .25s}
 .spec-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
 .spec-val{font-family:'Manrope',sans-serif;font-size:36px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:8px}
@@ -36,7 +36,7 @@
 .spec-label{font-size:14px;font-weight:500;color:var(--ink-2)}
 .spec-icon{width:40px;height:40px;background:rgba(0,113,227,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .models-section{padding:40px 0;background:var(--mid)}
-.models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.models-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));gap:12px;margin-top:16px}
 .model-card,a.model-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;cursor:pointer;background:rgba(255,255,255,.04);border:1px solid var(--rule);border-radius:var(--r);padding:8px 6px;position:relative;transition:border-color .25s,transform .25s}
 .model-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
 .model-card.featured{border-color:var(--blue);background:rgba(0,113,227,.06)}
