@@ -135,6 +135,8 @@
       <button class="filter-btn" data-filter="bank">Банки</button>
       <button class="filter-btn" data-filter="culture">Культура</button>
       <button class="filter-btn" data-filter="hotel">Гостиницы</button>
+      <button class="filter-btn" data-filter="transport">Транспорт</button>
+      <button class="filter-btn" data-filter="sport">Спорт</button>
     </div>
     <div class="sw-grid" id="swGrid">
       <div class="sw-card" data-cat="gos">
@@ -220,6 +222,139 @@
         <div class="sw-title">Для маломобильных</div>
         <div class="sw-desc">Индукционная петля, регулировка высоты, контрастный интерфейс. ГОСТ Р 52872.</div>
         <ul class="sw-features"><li>Инфокиоски</li><li>Панели</li><li>Столы</li></ul>
+      </div>
+      <div class="sw-card" data-cat="transport">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 2 20 12 12 22"/></svg></div>
+        <div class="sw-tag">Аэропорты, вокзалы</div>
+        <div class="sw-title">Транспорт</div>
+        <div class="sw-desc">Навигация по терминалам, табло рейсов, справочные киоски, терминалы регистрации и печати билетов.</div>
+        <ul class="sw-features"><li>Навигация</li><li>Инфокиоски</li><li>LED</li></ul>
+      </div>
+      <div class="sw-card" data-cat="sport">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+        <div class="sw-tag">Стадионы, арены</div>
+        <div class="sw-title">Спорт и мероприятия</div>
+        <div class="sw-desc">Навигация по секторам, информирование, билетные киоски, интерактивные развлечения для болельщиков.</div>
+        <ul class="sw-features"><li>Навигация</li><li>LED</li><li>Инфокиоски</li></ul>
+      </div>
+      <div class="sw-card" data-cat="culture">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="sw-tag">Музей ВОВ</div>
+        <div class="sw-title">Интерактивный музей</div>
+        <div class="sw-desc">Виртуальные экспозиции, Книга Памяти, хроника событий. Интерактивные киоски и столы для музеев.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Столы</li><li>Голограммы</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="sw-tag">Школы</div>
+        <div class="sw-title">Финансовая грамотность</div>
+        <div class="sw-desc">Интерактивные уроки по финансовой грамотности для школ. Бюджетирование, инвестиции, налоги.</div>
+        <ul class="sw-features"><li>Панели</li><li>Столы</li><li>Инфокиоски</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="sw-tag">Школы, ВУЗы</div>
+        <div class="sw-title">Электронное расписание</div>
+        <div class="sw-desc">Отображение расписания занятий, аудиторий и преподавателей. Синхронизация с 1С:Университет.</div>
+        <ul class="sw-features"><li>Панели</li><li>Инфокиоски</li><li>LED</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div class="sw-tag">Школы</div>
+        <div class="sw-title">Английский язык</div>
+        <div class="sw-desc">Интерактивные уроки английского языка: грамматика, лексика, аудирование. Для начальной и средней школы.</div>
+        <ul class="sw-features"><li>Панели</li><li>Столы</li><li>Инфокиоски</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="sw-tag">Школы</div>
+        <div class="sw-title">Окружающий мир</div>
+        <div class="sw-desc">Интерактивные уроки по природоведению, географии и биологии. Карты, атласы, 3D-модели животных и растений.</div>
+        <ul class="sw-features"><li>Панели</li><li>Столы</li><li>Инфокиоски</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="sw-tag">Школы</div>
+        <div class="sw-title">Профориентация</div>
+        <div class="sw-desc">Интерактивное тестирование для выбора профессии. Каталог специальностей, вузов и колледжей.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Панели</li><li>Столы</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        <div class="sw-tag">Детские сады</div>
+        <div class="sw-title">Развитие речи</div>
+        <div class="sw-desc">Логопедические игры и упражнения. Звукоподражание, артикуляция, расширение словарного запаса.</div>
+        <ul class="sw-features"><li>Столы</li><li>Панели</li><li>Детское</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/></svg></div>
+        <div class="sw-tag">Детские сады</div>
+        <div class="sw-title">Игротека для ДОУ</div>
+        <div class="sw-desc">Комплект развивающих игр: математика, чтение, логика, творчество. Адаптировано под ФГОС ДО.</div>
+        <ul class="sw-features"><li>Столы</li><li>Панели</li><li>Детское</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div class="sw-tag">Школы</div>
+        <div class="sw-title">Инженерная школа</div>
+        <div class="sw-desc">Основы робототехники, 3D-моделирования и программирования. Интерактивные симуляторы и виртуальные лаборатории.</div>
+        <ul class="sw-features"><li>Панели</li><li>Столы</li><li>Инфокиоски</li></ul>
+      </div>
+      <div class="sw-card" data-cat="gos">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="sw-tag">Госучреждения</div>
+        <div class="sw-title">Безопасность</div>
+        <div class="sw-desc">Системы контроля доступа, видеонаблюдение, тревожные кнопки. Интеграция с СКУД и биометрией.</div>
+        <ul class="sw-features"><li>Терминалы</li><li>Панели</li><li>СКУД</li></ul>
+      </div>
+      <div class="sw-card" data-cat="mfg">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="sw-tag">Заводы, склады</div>
+        <div class="sw-title">Мониторинг 24</div>
+        <div class="sw-desc">Отслеживание состояния оборудования в реальном времени: онлайн, загрузка ЦП, температура, ошибки.</div>
+        <ul class="sw-features"><li>Мониторинг</li><li>Алерты</li><li>Дашборды</li></ul>
+      </div>
+      <div class="sw-card" data-cat="retail">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></div>
+        <div class="sw-tag">Digital Signage</div>
+        <div class="sw-title">Pelcom Digital</div>
+        <div class="sw-desc">Платформа для управления контентом на любых экранах: видео, изображения, виджеты. Расписание показов и аналитика.</div>
+        <ul class="sw-features"><li>Видеостены</li><li>Плейлисты</li><li>API</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+        <div class="sw-tag">Школы</div>
+        <div class="sw-title">Патриотическое воспитание</div>
+        <div class="sw-desc">Интерактивные уроки по истории России, виртуальные экскурсии по музеям и местам боевой славы.</div>
+        <ul class="sw-features"><li>Панели</li><li>Столы</li><li>Инфокиоски</li></ul>
+      </div>
+      <div class="sw-card" data-cat="culture">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="8 14 12 10 16 14"/></svg></div>
+        <div class="sw-tag">Музеи, ТЦ</div>
+        <div class="sw-title">Интерактивный квест</div>
+        <div class="sw-desc">Квесты по зданию или территории с сенсорными точками. Навигация, задания, рейтинг участников.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Пилоны</li><li>Навигация</li></ul>
+      </div>
+      <div class="sw-card" data-cat="edu">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 0-14h8.5a4.5 4.5 0 1 1 0 9H9a2 2 0 0 1 0-4h8"/></svg></div>
+        <div class="sw-tag">Детские сады</div>
+        <div class="sw-title">Метеостанция</div>
+        <div class="sw-desc">Интерактивная метеостанция: температура, влажность, давление. Дневник наблюдений и графики.</div>
+        <ul class="sw-features"><li>Панели</li><li>Детское</li><li>Столы</li></ul>
+      </div>
+      <div class="sw-card" data-cat="culture">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M2 12h20"/></svg></div>
+        <div class="sw-tag">Парки, пляжи</div>
+        <div class="sw-title">Навигация для территорий</div>
+        <div class="sw-desc">Навигация по паркам, пляжам и открытым пространствам. Погодозащищённые киоски с картами и маршрутами.</div>
+        <ul class="sw-features"><li>Уличные</li><li>Навигация</li><li>Пилоны</li></ul>
+      </div>
+      <div class="sw-card" data-cat="retail">
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="sw-tag">ТЦ, бизнес-центры</div>
+        <div class="sw-title">Личный кабинет арендатора</div>
+        <div class="sw-desc">Портал для арендаторов: оплата, заявки, документы, новости. Интеграция с 1С и CRM.</div>
+        <ul class="sw-features"><li>Инфокиоски</li><li>Панели</li><li>Веб-портал</li></ul>
       </div>
     </div>
   </div>
