@@ -36,6 +36,7 @@ h1,h2,h3,.display,.s-title,.pg-h{font-family:'Unbounded',system-ui,sans-serif;le
 .hd-btn:hover{background:var(--blue-hover)}
 
 header{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 56px;height:56px;display:flex;align-items:center;justify-content:space-between;transition:background .6s;border-bottom:1px solid transparent}
+.hero{padding-top:56px}
 header.scrolled{background:var(--glass);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border-bottom-color:var(--rule)}
 .h-logo{font-weight:600;font-size:18px;color:#fff;text-decoration:none;letter-spacing:-.04em;display:inline-flex;align-items:center;gap:10px}
 .h-logo .lm{width:24px;height:23px;flex-shrink:0;display:block}
