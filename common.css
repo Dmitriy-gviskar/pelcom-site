@@ -174,3 +174,6 @@ footer{background:var(--black);border-top:1px solid var(--rule);padding:56px 56p
 .st td{padding:14px 18px;border-bottom:1px solid var(--rule);font-size:14px}
 .st td:first-child{color:var(--dim);width:40%;font-weight:500}
 .st td:last-child{color:#fff;font-weight:600}
+
+/* model cards */
+.model-img{display:block;width:100%;height:180px;object-fit:contain;border-radius:var(--r);background:#eeeeec;margin-bottom:8px}

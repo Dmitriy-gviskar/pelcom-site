@@ -5,7 +5,7 @@
    Пока LEAD_ENDPOINT пуст — форма работает в демо-режиме (валидация и UX есть, отправки нет). */
 (function(){
   "use strict";
-  var LEAD_ENDPOINT = ""; // <-- пусто = демо-режим. Заполнить, когда заказчик укажет канал.
+  var LEAD_ENDPOINT = ""; // ← ВПИСАТЬ URL своей ручки (POST JSON). Пока пусто = демо-режим: валидация работает, отправки нет.
 
   function sendLead(payload){
     if(!LEAD_ENDPOINT){
