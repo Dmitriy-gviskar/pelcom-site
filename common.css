@@ -4,7 +4,7 @@ html,body{overflow-x:hidden}
 html{scroll-behavior:smooth;background:var(--black)}
 
 :root{
-  --black:#0E0E14;--dark:#16161E;--mid:#1E1E28;
+  --black:#1A1A2E;--dark:#222238;--mid:#2C2C46;
   --blue:#0071e3;--blue-hover:#0077ED;
   --blue-dim:rgba(0,113,227,.06);--white:#fff;
   --cream:#F5F5F7;--cream-2:#E8E8ED;--ink:#1D1D1F;--ink-2:#6E6E73;
