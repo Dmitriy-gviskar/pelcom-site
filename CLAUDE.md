@@ -29,7 +29,7 @@
 ## Деплой
 
 Статический хостинг (nginx, Cloudflare Pages, Netlify). `pelcom-landing.html` → индекс сайта.
-Домен: `pelcom.ru`. Чек-лист в `DEPLOY.md`.
+Основной домен: `pelcom-tech.ru` (подключение после выбора хостинга). Чек-лист в `DEPLOY.md`.
 
 ## Контакты
 

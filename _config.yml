@@ -1,0 +1,9 @@
+# GitHub Pages is a static preview. PHP source and development tools are not published.
+exclude:
+  - bitrix
+  - .codewhale
+  - CLAUDE.md
+  - BACKLOG.md
+  - DEPLOY.md
+  - README.md
+  - docs

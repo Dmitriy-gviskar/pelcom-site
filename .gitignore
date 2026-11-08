@@ -1,3 +1,10 @@
 .DS_Store
 Desktop
 *.save
+
+# Local credentials, runtime state and deployment backups
+.env
+.env.*
+!.env.example
+*.sql
+*.sql.gz
