@@ -82,3 +82,8 @@ body .fab.pelcom-contact a svg{width:20px;height:20px;flex-shrink:0}
  body .cookie{font-size:13px;line-height:1.6}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}body .mq-track{animation:none!important}*,*:before,*:after{scroll-behavior:auto!important}}
+
+/* Keep in-page destinations below the fixed header and Bitrix toolbar. */
+#products,#contact,#cases,#faq,#software,#industries,#advantages,#clients,#group{scroll-margin-top:calc(96px + var(--pelcom-admin-offset,0px))}
+
+@media(max-width:640px){body h1{overflow-wrap:anywhere}body .pg-h{font-size:clamp(28px,8.5vw,48px);line-height:1.12}body.pelcom-page-privacy h1{font-size:clamp(22px,7vw,30px);line-height:1.2}}
