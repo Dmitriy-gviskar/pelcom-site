@@ -40,6 +40,7 @@ for filename in files:
 links['index.html']='/'
 pattern=re.compile('|'.join(re.escape(s) for s in sorted(links,key=len,reverse=True)))
 def rewrite(s):
+ s=s.replace("info@pelcom.ru","info@pelcom-tech.ru")
  s=pattern.sub(lambda m:links[m[0]],s)
  s=re.sub(r'https?://(?:www\.)?(?:pelcom\.ru|pelcom-tech\.ru)(?=/|[\"\'\s<>]|$)',lambda m:a.origin,s)
  s=s.replace(a.origin+'//',a.origin+'/')
@@ -112,6 +113,7 @@ $APPLICATION->SetPageProperty('description', {q(description)});
 {content}
 require $_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php';
 '''
+ if filename in model_files: entry="<?php require $_SERVER['DOCUMENT_ROOT'].'/local/tools/pelcom_route.php';\n"
  write('index.php' if url=='/' else url.strip('/')+'/index.php',entry)
  route_manifest.append(dict(source=filename,url=url,title=text(doc.title),kind='model' if filename in model_files else 'category' if category else 'page',category=category['code'] if category else model_files.get(filename,{}).get('category')))
  # Old URLs are server-side redirects, not static duplicates.
@@ -132,13 +134,19 @@ for route in route_manifest:
 write('sitemap.xml',tostring(sitemap,encoding='unicode'))
 canonical_rules=''
 if a.mode=='production':
- canonical_rules='RewriteCond %{HTTP_HOST} !^'+re.escape(origin_parts.netloc)+'$ [NC,OR]\nRewriteCond %{HTTPS} !=on\nRewriteRule ^ '+a.origin+'%{REQUEST_URI} [R=301,L]\n'
+ canonical_rules='RewriteCond %{HTTP_HOST} !^'+re.escape(origin_parts.netloc)+'$ [NC,OR]\nRewriteCond %{SERVER_PORT} !^443$\nRewriteRule ^ '+a.origin+'%{REQUEST_URI} [R=301,L]\n'
 write('.htaccess', '''Options -Indexes
 DirectoryIndex index.php
 ErrorDocument 404 /404/index.php
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule ^sitemap\\.xml$ /local/tools/pelcom_sitemap.php [L]
 '''+canonical_rules+'''RewriteRule ^(?:index|pelcom-landing)\\.html$ / [R=301,L]
-'''+''.join(f'RewriteRule ^{re.escape(old)}$ {url} [R=301,L]\n' for old,url in links.items() if old not in ['index.html','pelcom-landing.html'])+'''</IfModule>
+'''+''.join(f'RewriteRule ^{re.escape(old)}$ {url} [R=301,L]\n' for old,url in links.items() if old not in ['index.html','pelcom-landing.html'])+'''RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /bitrix/urlrewrite.php [L]
+</IfModule>
 ''')
 print(f'Built {len(route_manifest)} CMS pages; {len(categories)} categories; {len(models)} models')
+
+write('urlrewrite.php', "<?php\n$arUrlRewrite = [['CONDITION'=>'#^/#','RULE'=>'','ID'=>'','PATH'=>'/local/tools/pelcom_route.php']];\n")

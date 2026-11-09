@@ -1,11 +1,7 @@
-/* Pelcom — обработка заявок с форм (лендинг + контакты).
-   Канал доставки выбирает заказчик. Чтобы включить отправку:
-   1) Formspree / serverless / своя ручка: впишите URL в LEAD_ENDPOINT — заявка уйдёт POST JSON.
-   2) Telegram-бот: замените тело sendLead() запросом к api.telegram.org (sendMessage с токеном и chat_id).
-   Пока LEAD_ENDPOINT пуст — форма работает в демо-режиме (валидация и UX есть, отправки нет). */
+/* Pelcom: отправка заявок через серверный обработчик сайта. */
 (function(){
   "use strict";
-  var LEAD_ENDPOINT = ""; // ← ВПИСАТЬ URL своей ручки (POST JSON). Пока пусто = демо-режим: валидация работает, отправки нет.
+  var LEAD_ENDPOINT = "/local/tools/pelcom_lead.php";
 
   function sendLead(payload){
     if(!LEAD_ENDPOINT){
@@ -16,12 +12,12 @@
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(payload)
-    }).then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); });
+    }).then(function(r){ return r.json().then(function(data){ if(!r.ok || !data.ok) throw new Error(data.message || "Не удалось отправить заявку"); }); });
   }
 
   function collect(f){
     var d={};
-    new FormData(f).forEach(function(v,k){ if(k!=="_gotcha") d[k]=v; });
+    new FormData(f).forEach(function(v,k){ d[k]=v; });
     d.page=location.pathname;
     return d;
   }
@@ -35,23 +31,39 @@
   function submitLead(e){
     e.preventDefault();
     var f=e.currentTarget;
+    if(f.dataset.pending) return;
     var hp=f.querySelector('input[name="_gotcha"]');
     if(hp && hp.value) return;                       // honeypot: бот заполнил — молча игнор
-    if(!f.checkValidity()){ f.reportValidity(); return; }
+    var phone=f.querySelector('[name="phone"]'), name=f.querySelector('[name="name"]');
+    if(phone) phone.setCustomValidity(phone.value.replace(/\D/g,"").length<7 ? "Укажите телефон: не менее 7 цифр" : "");
+    if(name) name.setCustomValidity(!name.value.trim() ? "Укажите имя" : "");
+    if(!f.checkValidity()){ var invalid=f.querySelector(":invalid"); showErr(f,invalid.validationMessage); f.reportValidity(); return; }
     var btn=f.querySelector('[type="submit"]'), label=btn?btn.textContent:"";
+    f.dataset.pending="1";
+    if(btn) btn.dataset.originalLabel=label;
     if(btn){ btn.disabled=true; btn.textContent="Отправляем…"; }
     var err=f.querySelector(".form-err"); if(err) err.hidden=true;
     sendLead(collect(f)).then(function(){
       var ok=document.getElementById(f.getAttribute("data-ok"));
       f.style.display="none";
       if(ok){ ok.hidden=false; ok.style.display="block"; ok.scrollIntoView({behavior:"smooth",block:"center"}); }
-    }).catch(function(){
+    }).catch(function(error){
+      delete f.dataset.pending;
       if(btn){ btn.disabled=false; btn.textContent=label; }
-      showErr(f,"Не удалось отправить заявку. Позвоните нам или попробуйте позже.");
+      showErr(f,error.message === "Failed to fetch" ? "Нет связи с сервером. Проверьте интернет и попробуйте снова." : error.message);
     });
   }
 
   function init(){
+    document.addEventListener("click",function(e){
+      if(!e.target.closest('[onclick*="openLeadPopup"]'))return;
+      var f=document.getElementById("lpForm");
+      if(!f || f.style.display!=="none")return;
+      f.reset();delete f.dataset.pending;f.style.display="";
+      var ok=document.getElementById(f.getAttribute("data-ok"));if(ok){ok.hidden=true;ok.style.display="none";}
+      var btn=f.querySelector('[type="submit"]');if(btn){btn.disabled=false;btn.textContent=btn.dataset.originalLabel || "Отправить заявку";}
+      var err=f.querySelector(".form-err");if(err)err.hidden=true;
+    },true);
     if(!document.querySelector(".form-err-style")){
       var s=document.createElement("style");
       s.className="form-err-style";
@@ -61,6 +73,7 @@
     document.querySelectorAll("form[data-lead]").forEach(function(f){
       var ok=document.getElementById(f.getAttribute('data-ok'));
       if(ok){ok.hidden=true;ok.style.display='none';}
+      f.addEventListener("input",function(e){if(e.target.setCustomValidity)e.target.setCustomValidity("");});
       f.addEventListener("submit",submitLead);
     });
   }

@@ -23,7 +23,7 @@ foreach ($manifest['categories'] as $category) {
     }
     foreach ($manifest['models'] as $m) {
         if ($m['category']!==$category['code']) continue;
-        $existing=CIBlockElement::GetList([],['IBLOCK_ID'=>$id,'=CODE'=>$m['code']],false,false,['ID'])->Fetch();
+        $existing=CIBlockElement::GetList([],['IBLOCK_ID'=>$id,['LOGIC'=>'OR',['=CODE'=>$m['code']],['=PROPERTY_SOURCE_FILE'=>$m['source']]]],false,false,['ID'])->Fetch();
         if ($existing) { $preserved++;continue; }
         $fields=['IBLOCK_ID'=>$id,'ACTIVE'=>'Y','NAME'=>$m['name'],'CODE'=>$m['code'],'SORT'=>$m['sort'],'PREVIEW_TEXT'=>$m['description'],'PREVIEW_TEXT_TYPE'=>'text'];
         $values=['PRICE_FROM'=>$m['price'],'CARD_SPECS'=>json_encode($m['card_specs'],JSON_UNESCAPED_UNICODE),'SPECS_JSON'=>json_encode($m['specs'],JSON_UNESCAPED_UNICODE),'CARD_IMAGE'=>$m['card_image']?'/'.$m['card_image']:'','DETAIL_IMAGE'=>$m['detail_image']?'/'.$m['detail_image']:'','FEATURED'=>$m['featured']?'Y':'N','SOURCE_FILE'=>$m['source'],'CARD_LINES'=>$m['card_specs']];

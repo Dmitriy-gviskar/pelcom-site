@@ -9,8 +9,11 @@ foreach ($original as $row) {
     $value=$code ? ($p[$code]['~VALUE'] ?? '') : '';
     if ($value!=='') $specs[]=[$row[0],$value];
 }
+foreach ($manifest['spec_codes'] as $label=>$code) {
+    if (!in_array($label,array_column($specs,0),true) && ($p[$code]['~VALUE'] ?? '')!=='') $specs[]=[$label,$p[$code]['~VALUE']];
+}
 $source=basename($p['SOURCE_FILE']['VALUE'] ?? '');
-if (!preg_match('/^pelcom-[a-z0-9-]+\.html$/D',$source)) { ShowError('Не найден шаблон модели'); return; }
+if (!in_array($source,array_column($manifest['models'],'source'),true)) { require __DIR__.'/generic.php'; return; }
 $view=$_SERVER['DOCUMENT_ROOT'].'/local/model_views/'.substr($source,0,-5).'.php';
 if (!is_file($view)) { ShowError('Не найден шаблон модели'); return; }
 require $view;
