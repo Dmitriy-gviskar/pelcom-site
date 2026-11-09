@@ -2,4 +2,4 @@
 global $pelcomPage;
 $page = preg_match('/^[a-z0-9-]+$/D', $pelcomPage ?? '') ? $pelcomPage : 'pelcom-landing';
 require __DIR__.'/parts/'.$page.'-footer.php';
-?></body></html>
+?><script src="/ui-polish.js?v=20261109-3" defer></script></body></html>

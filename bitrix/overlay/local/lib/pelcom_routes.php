@@ -50,6 +50,12 @@ function pelcomRewriteLinks(&$html): void {
         return preg_replace('~(href\s*=\s*)/(?=[\s>])~i','$1/#contact',$anchor);
     },$html);
     $html=preg_replace('~(<script\b[^>]*src=["\']?)/lead\.js(?:\?[^"\' >]*)?~i','$1/lead.js?v=20261109-3',$html);
+    // Hide only unfilled photo galleries; preserve sections with real media.
+    $html=preg_replace_callback('~<section\b[^>]*>.*?</section>~is',static function($m) {
+        $hasGallery=preg_match('~<div\b[^>]*class=["\'][^"\']*\bgl\b~i',$m[0]);
+        $hasMedia=preg_match('~<(?:img|video|iframe|picture|object)\b~i',$m[0]);
+        return $hasGallery && !$hasMedia ? '' : $m[0];
+    },$html);
     $config=require $_SERVER['DOCUMENT_ROOT'].'/local/config/pelcom.php';$map=[];
     foreach(pelcomPagePaths() as $source=>$current) foreach(pelcomManifest()['routes'] as $r) if($r['source']===$source) $map[$r['url']]=$current;
     if(\Bitrix\Main\Loader::includeModule('iblock')) foreach((json_decode(COption::GetOptionString('main','pelcom_product_redirects','{}'),true) ?: []) as $old=>$id) {

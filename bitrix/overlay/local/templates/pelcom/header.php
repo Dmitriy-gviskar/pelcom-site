@@ -41,6 +41,7 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 .hero-media .spin360-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#182139d9;color:#fff;border-radius:20px;padding:7px 16px;white-space:nowrap}
 @media(max-width:900px){.hero-inner:has(.hero-media){grid-template-columns:minmax(0,1fr)}.hero:has(.hero-media){padding-top:210px!important}}
 </style>
+<link rel="stylesheet" href="/ui-polish.css?v=20261109-3">
 </head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 <script>(function(){var p=document.getElementById('panel');if(!p)return;function sync(){document.documentElement.style.setProperty('--pelcom-admin-offset',Math.max(0,(document.getElementById('bx-panel')||p).getBoundingClientRect().bottom)+'px')}sync();window.addEventListener('scroll',sync,{passive:true});if(window.ResizeObserver)new ResizeObserver(sync).observe(p)})();</script>
 <?php require __DIR__.'/parts/'.$page.'-header.php'; ?>
