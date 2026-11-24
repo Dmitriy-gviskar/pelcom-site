@@ -17,7 +17,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap">
 <link rel="stylesheet" href="common.css">
 <style>
   h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;letter-spacing:-.04em}
@@ -35,133 +35,146 @@
   @media(max-width:900px){.sol-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:640px){.sol-section{padding:80px 16px}.sol-grid{grid-template-columns:1fr}.sol-card{padding:28px 22px}}
 </style>
+<link rel="stylesheet" href="/solutions-redesign.css?v=20261124">
 </head>
 <body>
 
-<header id="hdr">
-  <a href="pelcom-landing.html" class="h-logo"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2" aria-hidden="true"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span>pelcom</span></a>
-  <nav>
-    <a href="products.html">Оборудование</a>
-    <a href="solutions.html" class="active">Решения</a>
-    <a href="software.html">Программы</a>
-    <a href="pelcom-about.html">О компании</a>
-    <a href="pelcom-service.html">Сервис</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
-  <div class="h-right">
-    <a href="tel:+74957770741" class="h-phone">+7 (495) 777-07-41</a>
-    <a href="pelcom-landing.html" class="btn btn-blue btn-sm">Связаться</a>
+<header id="hdr" class="solution-header">
+  <div class="solution-header__inner">
+    <a class="solution-brand" href="pelcom-landing.html" aria-label="PELCOM — главная"><img src="/img/home-redesign/pelcom-logo.webp" width="585" height="138" alt="PELCOM"></a>
+    <nav class="solution-header__nav" id="pelcom-main-navigation" aria-label="Основная навигация">
+      <a href="products.html">Оборудование</a>
+      <a href="solutions.html" aria-current="page">Решения</a>
+      <a href="software.html">Программное обеспечение</a>
+      <a href="pelcom-landing.html#engineering">Инжиниринг</a>
+      <a href="pelcom-landing.html#group">Группа компаний</a>
+      <a href="pelcom-about.html">О компании</a>
+      <a href="pelcom-service.html">Сервис</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="solution-header__right">
+      <a class="solution-phone" href="tel:+74955483103">+7 (495) 548-31-03</a>
+      <a class="solution-button" href="pelcom-landing.html#contact">Обсудить проект</a>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" aria-controls="pelcom-main-navigation" aria-expanded="false" onclick="this.setAttribute('aria-expanded', String(this.closest('header').classList.toggle('open')))"><span></span><span></span><span></span></button>
   </div>
-  <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
 </header>
 
-<section class="hero">
-  <nav class="crumbs" aria-label="Хлебные крошки"><div class="crumbs-i"><a href="pelcom-landing.html">Главная</a><b>/</b>Решения</div></nav>
-  <div class="hero-grid"></div>
-  <div class="hero-vline"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#007CC2" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="#007CC2"/></svg>По отраслям</div>
-      <h1>Отраслевые<br>решения</h1>
-      <p class="hero-desc">Интерактивное оборудование Pelcom для любой отрасли. Подбираем, проектируем, внедряем — от киоска до комплексной системы.</p>
-      <div class="hero-actions"><a href="pelcom-landing.html" class="btn btn-blue">Обсудить задачу</a></div>
+<main class="solutions-main" id="main-content">
+<section class="solution-hero" aria-labelledby="solution-title">
+  <div class="solution-hero__inner">
+    <nav class="solution-crumbs" aria-label="Хлебные крошки"><a href="pelcom-landing.html">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Решения</span></nav>
+    <div class="solution-hero__grid">
+      <div>
+        <h1 class="solution-hero__title" id="solution-title">Отраслевые решения</h1>
+        <p class="solution-hero__description">Интерактивное оборудование Pelcom для любой отрасли. Подбираем, проектируем, внедряем — от киоска до комплексной системы.</p>
+        <div class="solution-hero__actions"><a class="solution-button" href="pelcom-landing.html#contact">Обсудить задачу <span aria-hidden="true">→</span></a><a class="solution-button solution-button--outline" href="#industries">Смотреть отрасли</a></div>
+      </div>
+      <div class="solution-hero__media solution-hero__media--overview" aria-hidden="true"><img src="/img/home-redesign/industry-government.webp" width="484" height="332" alt="" decoding="async"><img src="/img/home-redesign/industry-education.webp" width="484" height="332" alt="" decoding="async"><img src="/img/home-redesign/industry-retail.webp" width="484" height="332" alt="" decoding="async"></div>
     </div>
   </div>
 </section>
 
-<section class="sol-section">
+<section class="solution-section sol-section" id="industries">
   <div class="container">
     <div class="s-label">Отрасли</div>
     <h2 class="s-title">Готовые решения для бизнеса и государства</h2>
     <div class="sol-grid">
       <a href="pelcom-solution-gos.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="4" y="4" width="20" height="20" rx="3"/><line x1="4" y1="11" x2="24" y2="11"/><line x1="14" y1="11" x2="14" y2="24"/></svg></div>
-        <div class="sol-name">Госучреждения</div>
+        <h3 class="sol-name">Госучреждения</h3>
         <div class="sol-desc">МФЦ, администрации, ведомства. Навигация по услугам, электронная очередь, оплата пошлин, запись на приём.</div>
         <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Эл. очередь</span><span class="sol-tag">Терминалы</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-solution-med.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="3" width="22" height="22" rx="5"/><path d="M9 14h10M14 9v10"/></svg></div>
-        <div class="sol-name">Медицина</div>
+        <h3 class="sol-name">Медицина</h3>
         <div class="sol-desc">Поликлиники, больницы, медцентры. Запись к врачу, маршрутизация, электронная очередь, санитарные киоски.</div>
         <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Навигация</span><span class="sol-tag">Эл. очередь</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-solution-edu.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M5 23.5A2.5 2.5 0 0 1 7.5 21H24"/><path d="M7.5 3H24v23H7.5A2.5 2.5 0 0 1 5 23.5v-18A2.5 2.5 0 0 1 7.5 3z"/></svg></div>
-        <div class="sol-name">Образование</div>
+        <h3 class="sol-name">Образование</h3>
         <div class="sol-desc">ВУЗы, школы, детские сады. Расписание, навигация по кампусу, интерактивные столы, детские комплексы.</div>
         <div class="sol-tags"><span class="sol-tag">Столы</span><span class="sol-tag">Панели</span><span class="sol-tag">Детское</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-solution-retail.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M7 3l-4 4v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7l-4-4z"/></svg></div>
-        <div class="sol-name">Ритейл и ТЦ</div>
+        <h3 class="sol-name">Ритейл и ТЦ</h3>
         <div class="sol-desc">Торговые центры, магазины. Навигация по этажам, электронный каталог, программа лояльности.</div>
         <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">Терминалы</span><span class="sol-tag">Пилоны</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-solution-mfg.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="3" width="22" height="22" rx="5"/><rect x="8" y="9" width="12" height="6" rx="1"/><rect x="9" y="17" width="4" height="2" rx=".5"/><rect x="15" y="17" width="4" height="2" rx=".5"/></svg></div>
-        <div class="sol-name">Производство</div>
+        <h3 class="sol-name">Производство</h3>
         <div class="sol-desc">Заводы, склады, фабрики. Учёт рабочего времени, СКУД, дашборды, санитарно-пропускные киоски.</div>
         <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Панели</span><span class="sol-tag">СКУД</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-solution-bank.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><line x1="14" y1="3" x2="14" y2="25"/><path d="M19 6H11a4 4 0 0 0 0 8h6a4 4 0 0 1 0 8H7"/></svg></div>
-        <div class="sol-name">Банки и финансы</div>
+        <h3 class="sol-name">Банки и финансы</h3>
         <div class="sol-desc">Отделения банков, страховые. Терминалы самообслуживания, электронная очередь, информирование.</div>
         <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Эл. очередь</span><span class="sol-tag">Панели</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-solution-transport.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><polyline points="7 14 14 7 21 14"/></svg></div>
-        <div class="sol-name">Транспорт</div>
+        <h3 class="sol-name">Транспорт</h3>
         <div class="sol-desc">Аэропорты, вокзалы, метро. Навигация по терминалам, табло рейсов, справочные киоски, регистрация.</div>
         <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">Инфокиоски</span><span class="sol-tag">LED</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-solution-museum.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><path d="M9 16s2 3 5 3 5-3 5-3"/><line x1="10" y1="10" x2="10.01" y2="10"/><line x1="18" y1="10" x2="18.01" y2="10"/></svg></div>
-        <div class="sol-name">Культура и музеи</div>
+        <h3 class="sol-name">Культура и музеи</h3>
         <div class="sol-desc">Музеи, галереи, выставки. Интерактивные экспонаты, аудиогиды, виртуальные экспозиции, голограммы.</div>
         <div class="sol-tags"><span class="sol-tag">Столы</span><span class="sol-tag">Голограммы</span><span class="sol-tag">Инфокиоски</span></div>
+        <span class="solution-more">Подробнее <span aria-hidden="true">→</span></span>
       </a>
       <a href="pelcom-kiosk.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M4 25h20"/><path d="M4 9v16M9 9v16M19 9v16M24 9v16"/></svg></div>
-        <div class="sol-name">Гостиницы и рестораны</div>
+        <h3 class="sol-name">Гостиницы и рестораны</h3>
         <div class="sol-desc">Отели, рестораны, кафе. Стойки регистрации, интерактивное меню, киоски заказа, инфопанели.</div>
         <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Панели</span><span class="sol-tag">Терминалы</span></div>
       </a>
       <a href="pelcom-outdoor.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><line x1="14" y1="3" x2="14" y2="25"/><line x1="3" y1="14" x2="25" y2="14"/></svg></div>
-        <div class="sol-name">Спорт и мероприятия</div>
+        <h3 class="sol-name">Спорт и мероприятия</h3>
         <div class="sol-desc">Стадионы, арены, концертные залы. Навигация, билетные киоски, интерактивные развлечения.</div>
         <div class="sol-tags"><span class="sol-tag">Навигация</span><span class="sol-tag">LED</span><span class="sol-tag">Уличные</span></div>
       </a>
       <a href="pelcom-kids.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><circle cx="14" cy="14" r="11"/><circle cx="10" cy="10" r="2"/><circle cx="18" cy="10" r="2"/><path d="M9 17c1.5 2.5 4.5 5 5 5s3.5-2.5 5-5"/></svg></div>
-        <div class="sol-name">Детские учреждения</div>
+        <h3 class="sol-name">Детские учреждения</h3>
         <div class="sol-desc">Детские сады, центры развития. Интерактивные песочницы, развивающие столы, безопасные киоски.</div>
         <div class="sol-tags"><span class="sol-tag">Детское</span><span class="sol-tag">Столы</span><span class="sol-tag">Панели</span></div>
       </a>
       <a href="pelcom-accessible.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M23 6.5a5.5 5.5 0 0 0-10-3.5C10.5 3 8 6.5 8 11c0 1 .2 2 .4 3H6l2 4 2-4h-1.2c-.3-1-.5-2-.5-3 0-2.5 1.5-5 3.5-5s3.5 2.5 3.5 5c0 2-1 3.5-1.5 4.5"/></svg></div>
-        <div class="sol-name">Доступная среда</div>
+        <h3 class="sol-name">Доступная среда</h3>
         <div class="sol-desc">Для маломобильных граждан. Индукционная петля, регулировка высоты, ГОСТ Р 52872.</div>
         <div class="sol-tags"><span class="sol-tag">Инфокиоски</span><span class="sol-tag">Панели</span><span class="sol-tag">Столы</span></div>
       </a>
       <a href="pelcom-outdoor.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><path d="M12 3c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9z"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="12" y1="6" x2="12" y2="18"/></svg></div>
-        <div class="sol-name">Городские пространства</div>
+        <h3 class="sol-name">Городские пространства</h3>
         <div class="sol-desc">Парки, улицы, площади. Уличные киоски, информационные стелы, LED-экраны. Антивандальное исполнение.</div>
         <div class="sol-tags"><span class="sol-tag">Уличные</span><span class="sol-tag">Пилоны</span><span class="sol-tag">LED</span></div>
       </a>
       <a href="pelcom-payment.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="5" width="22" height="16" rx="2"/><line x1="3" y1="11" x2="25" y2="11"/></svg></div>
-        <div class="sol-name">Платёжные системы</div>
+        <h3 class="sol-name">Платёжные системы</h3>
         <div class="sol-desc">Терминалы оплаты, эквайринг, СБП. Для МФЦ, банков, транспорта. Соответствие 54-ФЗ.</div>
         <div class="sol-tags"><span class="sol-tag">Терминалы</span><span class="sol-tag">Эквайринг</span><span class="sol-tag">54-ФЗ</span></div>
       </a>
       <a href="pelcom-led.html" class="sol-card">
         <div class="sol-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#007CC2" stroke-width="1.8"><rect x="3" y="3" width="22" height="22" rx="3"/><line x1="14" y1="3" x2="14" y2="25"/><line x1="3" y1="14" x2="25" y2="14"/></svg></div>
-        <div class="sol-name">Digital Signage</div>
+        <h3 class="sol-name">Digital Signage</h3>
         <div class="sol-desc">LED-экраны, видеостены, информационные табло. Indoor и outdoor. Любые размеры и конфигурации.</div>
         <div class="sol-tags"><span class="sol-tag">LED</span><span class="sol-tag">Видеостены</span><span class="sol-tag">Табло</span></div>
       </a>
@@ -169,48 +182,34 @@
   </div>
 </section>
 
-<section style="background:var(--dark);padding:100px 56px">
+<section class="solution-section solution-section--accent">
   <div class="container">
-    <div class="s-label">Процесс</div>
-    <h2 class="s-title">Как мы работаем</h2>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:var(--r);overflow:hidden">
-      <div style="background:var(--mid);padding:40px 32px">
-        <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">01</div>
-        <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Анализ задачи</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Изучаем ваши процессы, считаем потоки посетителей, определяем точки касания. Формируем ТЗ.</p>
-      </div>
-      <div style="background:var(--mid);padding:40px 32px">
-        <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">02</div>
-        <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Проектирование</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Подбираем оборудование, проектируем интерфейсы, разрабатываем схему интеграции.</p>
-      </div>
-      <div style="background:var(--mid);padding:40px 32px">
-        <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">03</div>
-        <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Производство и ПО</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Изготавливаем корпуса, устанавливаем ПО. Тестируем каждый киоск перед отгрузкой.</p>
-      </div>
-      <div style="background:var(--mid);padding:40px 32px">
-        <div style="font-family:Unbounded,sans-serif;font-size:40px;font-weight:800;color:var(--blue);margin-bottom:16px">04</div>
-        <h4 style="font-size:16px;font-weight:600;margin-bottom:8px">Запуск и поддержка</h4>
-        <p style="font-size:13px;color:var(--dim);line-height:1.7">Монтаж, пусконаладка, обучение. Сервис 24/7 — ваше оборудование не простаивает.</p>
-      </div>
-    </div>
+    <div class="s-label">Процесс</div><h2 class="s-title">Как мы работаем</h2>
+    <ol class="solution-process-grid">
+      <li><span class="solution-step" aria-hidden="true">01</span><h3>Анализ задачи</h3><p>Изучаем ваши процессы, считаем потоки посетителей, определяем точки касания. Формируем ТЗ.</p></li>
+      <li><span class="solution-step" aria-hidden="true">02</span><h3>Проектирование</h3><p>Подбираем оборудование, проектируем интерфейсы, разрабатываем схему интеграции.</p></li>
+      <li><span class="solution-step" aria-hidden="true">03</span><h3>Производство и ПО</h3><p>Изготавливаем корпуса, устанавливаем ПО. Тестируем каждый киоск перед отгрузкой.</p></li>
+      <li><span class="solution-step" aria-hidden="true">04</span><h3>Запуск и поддержка</h3><p>Монтаж, пусконаладка, обучение. Сервис 24/7 — ваше оборудование не простаивает.</p></li>
+    </ol>
   </div>
 </section>
 
 <section class="cta-band">
-  <h2>Нет вашей отрасли?</h2>
-  <p>Разработаем решение под любую задачу. Отправьте заявку — подберём оборудование и подготовим расчёт.</p>
-  <div class="cta-actions"><a href="pelcom-landing.html" class="btn btn-white">Обсудить задачу</a></div>
+  <div class="container">
+    <h2>Нет вашей отрасли?</h2>
+    <p>Разработаем решение под любую задачу. Отправьте заявку — подберём оборудование и подготовим расчёт.</p>
+    <div class="cta-actions"><a class="solution-button" href="pelcom-landing.html#contact">Обсудить задачу <span aria-hidden="true">→</span></a></div>
+  </div>
 </section>
+</main>
 
-<footer>
+<footer class="solution-footer">
   <div class="footer-i">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="pelcom-landing.html" class="h-logo" style="margin-bottom:12px"><svg class="lm" viewBox="0 0 352 333" fill="#007CC2"><rect x="88" width="88" height="36"/><rect x="264" width="88" height="36"/><rect x="88" y="87" width="88" height="36"/><rect x="264" y="87" width="88" height="36"/><rect x="88" y="175" width="88" height="35"/><rect x="264" y="175" width="88" height="35"/><rect x="88" y="262" width="88" height="35"/><rect x="264" y="262" width="88" height="35"/><rect y="36" width="88" height="35"/><rect x="176" y="36" width="88" height="35"/><rect y="123" width="88" height="35"/><rect x="176" y="123" width="88" height="35"/><rect y="209" width="88" height="37"/><rect x="176" y="209" width="88" height="37"/><rect y="297" width="88" height="36"/><rect x="176" y="297" width="88" height="36"/></svg><span style="color:#fff">pelcom</span></a>
-        <p style="font-size:13px;color:rgba(255,255,255,.2);margin-top:12px;max-width:220px">Российский производитель интерактивного оборудования. В реестре Минпромторга.</p>
-      </div>
+<a class="solution-brand" href="pelcom-landing.html" aria-label="PELCOM — главная"><img src="/img/home-redesign/pelcom-logo.webp" width="585" height="138" alt="PELCOM"></a>
+<p>Российский производитель интерактивного оборудования. В реестре Минпромторга.</p>
+</div>
       <div class="footer-col"><h4>Оборудование</h4>
         <a href="pelcom-kiosk.html">Инфокиоски</a><a href="pelcom-terminals.html">Терминалы</a><a href="pelcom-tables.html">Столы</a><a href="pelcom-panels.html">Панели</a><a href="pelcom-outdoor.html">Уличные</a>
       </div>
@@ -218,7 +217,7 @@
         <a href="pelcom-about.html">О компании</a><a href="pelcom-service.html">Сервис</a><a href="pelcom-partners.html">Дилерам</a><a href="contacts.html">Контакты</a>
       </div>
       <div class="footer-col"><h4>Контакты</h4>
-        <a href="tel:+74957770741">+7 (495) 777-07-41</a><a href="mailto:info@pelcom.ru">info@pelcom.ru</a>
+        <a href="tel:+74955483103">+7 (495) 548-31-03</a><a href="mailto:info@pelcom-tech.ru">info@pelcom-tech.ru</a>
       </div>
     </div>
     <div class="footer-bottom">
