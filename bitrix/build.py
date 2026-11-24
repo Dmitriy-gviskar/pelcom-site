@@ -68,6 +68,10 @@ for filename,raw in files.items():
  write(f'local/templates/pelcom/parts/{key}-head.php',rewrite(head))
  write(f'local/templates/pelcom/parts/{key}-header.php',rewrite(header.group() if header else ''))
  write(f'local/templates/pelcom/parts/{key}-footer.php',rewrite(footer.group() if footer else ''))
+ if key=='pelcom-landing':
+  dialogs=[doc.find('dialog',id=f'dialog-{company}') for company in ('pelcom','intersense','astra')]
+  assert all(dialogs), 'Missing homepage company dialog'
+  write('local/templates/pelcom/parts/png-company-dialogs.php',rewrite('\n'.join(map(str,dialogs))))
  category=next((c for c in categories if c['source']==filename),None)
  description=doc.find('meta',attrs={'name':'description'});description=description.get('content','') if description else ''
  if filename in model_files:
