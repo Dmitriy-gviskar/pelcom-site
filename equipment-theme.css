@@ -1,0 +1,152 @@
+.pelcom-equipment-theme {
+  --interior-wrap: min(92%, 1420px);
+  --interior-navy: #08234a;
+  --interior-muted: #334e70;
+  --interior-blue: #0759aa;
+  --interior-card: linear-gradient(145deg,#f9fbff,#e6f1fd);
+  --interior-border: #dbe9f9;
+  --interior-shadow: 0 6px 18px #244d7d16;
+}
+.pelcom-equipment-theme .pelcom-content > .hero,
+.pelcom-equipment-theme .solutions-main > .solution-hero {
+  background: linear-gradient(133deg,#f5faff 12%,#e9f3fe 67%,#dcebfc);
+  padding: 0 0 clamp(24px,3.5vw,52px) !important;
+}
+.pelcom-equipment-theme .pelcom-content > .hero::before,
+.pelcom-equipment-theme .solutions-main > .solution-hero::before {
+  background: linear-gradient(138deg,transparent 65%,#dbeeff80 65% 70%,#c5e1fbad 70% 78%,transparent 78%);
+}
+.pelcom-equipment-theme .pelcom-content > .hero > .crumbs {
+  position: relative; inset: auto; padding: 18px 0 0; margin: 0 auto 20px;
+  width: var(--interior-wrap);
+}
+.pelcom-equipment-theme .pelcom-content > .hero .crumbs-i { width: auto; max-width: none; padding: 0; margin: 0; }
+.pelcom-equipment-theme .pelcom-content .hero-inner,
+.pelcom-equipment-theme .solutions-main .solution-hero__inner,
+.pelcom-equipment-theme .solutions-main .container { width: var(--interior-wrap); max-width: none; margin-inline: auto; }
+.pelcom-equipment-theme .pelcom-content .hero-inner,
+.pelcom-equipment-theme .solution-hero__grid { grid-template-columns: minmax(0,1fr) minmax(0,.94fr); gap: clamp(22px,5vw,85px); }
+.pelcom-equipment-theme .pelcom-content .hero-inner { padding: 0; align-items:center; }
+.pelcom-equipment-theme .pelcom-content .hero h1,
+.pelcom-equipment-theme .solution-hero .solution-hero__title {
+  color: var(--interior-navy); font-size: clamp(34px,4.15vw,62px); line-height: 1.04; letter-spacing:-.055em;
+}
+.pelcom-equipment-theme .pelcom-content .hero-desc,
+.pelcom-equipment-theme .solution-hero__description { color: var(--interior-muted); }
+.pelcom-equipment-theme :is(.hero-actions,.solution-hero__actions,.cta-actions) :is(.btn-blue,.solution-button:not(.solution-button--outline)) {
+  background: linear-gradient(105deg,#0869d0,#0051a4); color: #fff;
+}
+.pelcom-equipment-theme :is(.btn-ghost,.solution-button--outline) { border-color: #79abdb; }
+.pelcom-equipment-theme .interior-cover,
+.pelcom-equipment-theme .solution-hero__media:not(.solution-hero__media--overview) {
+  display:block; min-width:0; overflow: hidden; border: 1px solid #dceafa; border-radius:16px;
+  box-shadow: var(--interior-shadow); background: #e5eef8; margin:0;
+}
+.pelcom-equipment-theme .interior-cover img,
+.pelcom-equipment-theme .solution-hero__media:not(.solution-hero__media--overview) img {
+  display:block; width:100%; max-width:none; height:auto; aspect-ratio: 16/9;
+  object-fit:cover; border:0; border-radius:0; box-shadow:none;
+}
+.pelcom-equipment-theme .solution-hero__media--overview {gap: clamp(5px,1vw,15px);}
+.pelcom-equipment-theme .solution-hero__media--overview img {
+  width: calc((100% - 30px) / 3); max-width:none; aspect-ratio:1.05;
+  border:1px solid #dae9f7; border-radius:12px; box-shadow:var(--interior-shadow);
+}
+.pelcom-equipment-theme .solution-hero__media--overview img:nth-child(2) {transform:none;}
+.pelcom-equipment-theme .pelcom-content.equipment-detail > .hero { background:#f3f8fd; }
+.pelcom-equipment-theme .pelcom-content.equipment-detail > .hero::before { background:none; }
+.pelcom-equipment-theme .pelcom-content .hero-svg:not(:has(.hero-media)) {
+  width:100%; padding:0; border:0; background:none; box-shadow:none;
+}
+.pelcom-equipment-theme .pelcom-content .hero-svg > img {
+  display:block; width:auto!important; height:auto; max-width:100%!important; max-height:clamp(240px,28vw,440px);
+  margin-inline:auto; object-fit:contain; border:0; border-radius:12px!important; background:none; box-shadow:none;
+}
+.pelcom-equipment-theme .pelcom-content .hero-media :is(.color-img,.spin360) { border-radius:12px; box-shadow:none; }
+.pelcom-equipment-theme .pelcom-content .hero-media .media-tabs { justify-content:center; }
+.pelcom-equipment-theme .pelcom-content .hero-media .mt { text-transform:none; letter-spacing:0; }
+
+.pelcom-equipment-theme .pelcom-content :is(.cat-grid,.models-grid),
+.pelcom-equipment-theme .solutions-main .sol-grid {
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(10px,1.2vw,18px); width:100%;
+}
+.pelcom-equipment-theme .pelcom-content :is(.cat-grid,.models-grid,.cat-grid-wrap,.models-inner,.specs-inner),
+.pelcom-equipment-theme .pelcom-content :is(.cat-i,.models-i,.s-i) {max-width:none;}
+.pelcom-equipment-theme .pelcom-content :is(.cat-card,.model-card),
+.pelcom-equipment-theme .solutions-main :is(.sol-card,.feat-card,.solution-process-grid li) {
+  background:var(--interior-card); color:var(--interior-navy); border:1px solid var(--interior-border);
+  box-shadow:var(--interior-shadow); border-radius:14px; text-align:left;
+}
+.pelcom-equipment-theme .pelcom-content :is(.cat-card,.model-card),
+.pelcom-equipment-theme .solutions-main .sol-card {
+  display:flex; flex-direction:column; align-items:stretch; min-height:0; padding: 8px;
+  overflow:hidden;
+}
+.pelcom-equipment-theme .pelcom-content .model-card.featured { background:linear-gradient(140deg,#f4faff,#dcecff); }
+.pelcom-equipment-theme .pelcom-content .model-card.featured::before {top:8px;left:auto;right:8px;transform:none;z-index:1;}
+.pelcom-equipment-theme :is(.cat-card__img,.model-img,.interior-solution-photo,.interior-solution-icon) {
+  display:block; margin:0; width:100%; height:auto; aspect-ratio:4/3; border-radius:9px;
+  object-fit:contain; background:#e7f0fa;
+}
+.pelcom-equipment-theme .pelcom-content :is(.cat-card__img,.model-img) {
+  background:#edf5ff; height:auto; mix-blend-mode:multiply; object-fit:contain; border:0;
+}
+.pelcom-equipment-theme .interior-solution-photo { object-fit:cover; aspect-ratio:16/9; }
+.pelcom-equipment-theme .interior-solution-icon { display:grid; place-items:center; aspect-ratio:16/9; background:linear-gradient(145deg,#eaf4ff,#ccE1f8); }
+.pelcom-equipment-theme .interior-solution-icon .sol-icon {display:grid; place-items:center; margin:0; background:transparent; width:auto; height:auto;}
+.pelcom-equipment-theme .interior-solution-icon svg {width:42px;height:42px;}
+.pelcom-equipment-theme .interior-solution-icon svg * {stroke:#0565be;}
+.pelcom-equipment-theme .interior-card-copy {
+  display:flex; flex:1; flex-direction: column; align-items:flex-start; gap: 7px; padding:10px 6px 4px; min-width:0;
+}
+.pelcom-equipment-theme .interior-card-copy :is(h3,.model-name) {font:700 clamp(14px,1.3vw,20px)/1.18 Montserrat,Inter,sans-serif;letter-spacing:-.035em; color:var(--interior-navy); margin:0; overflow-wrap:anywhere; }
+.pelcom-equipment-theme .interior-card-copy .sol-desc {flex:initial;color:var(--interior-muted);font-size:13px;line-height:1.38;margin:0;}
+.pelcom-equipment-theme .interior-card-copy :is(.cat-price,.model-price) {
+  color: var(--interior-muted); margin:0; font-size:13px; line-height:1.2; white-space:normal;
+}
+.pelcom-equipment-theme .pelcom-content :is(.cat-price,.model-price) strong {
+  color:var(--interior-navy)!important; font:700 clamp(14px,1.4vw,20px)/1.18 Montserrat,Inter,sans-serif; white-space:nowrap;
+}
+.pelcom-equipment-theme .interior-card-copy :is(.cat-arrow,.solution-more,.interior-more) {
+  display:flex; justify-content:space-between; align-items:center; gap:5px; align-self:stretch;
+  margin:auto 0 0; padding:7px 0 0; border-top:1px solid #cfdef2; color:var(--interior-blue); font-size:12px; line-height:1.25; font-weight:650;
+}
+.pelcom-equipment-theme .interior-card-copy .solution-more svg {flex:none;}
+.pelcom-equipment-theme .solutions-main .solution-section,
+.pelcom-equipment-theme .pelcom-content :is(.models-section,.catalog-section,.cat-section,.specs-section,.st-section) {
+  background:linear-gradient(130deg,#f5faff,#eef6ff); padding-block:clamp(26px,3.2vw,46px);
+}
+.pelcom-equipment-theme .solutions-main :is(.s-title,.solution-section h2),
+.pelcom-equipment-theme .pelcom-content :is(.section-title,.s-title,.models-heading) {
+  color:var(--interior-navy); font-family:Montserrat,Inter,sans-serif; letter-spacing:-.055em;
+}
+.pelcom-equipment-theme .solutions-main .solution-section--accent {background:linear-gradient(135deg,#e8f3ff,#f3f9ff);}
+.pelcom-equipment-theme :is(.pelcom-content,.solutions-main) .st {border-color:var(--interior-border);box-shadow:var(--interior-shadow);}
+.pelcom-equipment-theme :is(.pelcom-content,.solutions-main) .st tr:nth-child(even) {background:#edf5fe;}
+.pelcom-equipment-theme :is(.solutions-main,.pelcom-content) .cta-band {background:linear-gradient(120deg,#031c36,#063258);}
+.pelcom-equipment-theme .interior-subheading {margin:25px 0 10px;color:var(--interior-navy);font:700 clamp(17px,1.9vw,26px)/1.14 Montserrat,Inter,sans-serif;letter-spacing:-.041em;}
+@media(max-width:1000px){
+  .pelcom-equipment-theme .pelcom-content :is(.cat-grid,.models-grid),.pelcom-equipment-theme .solutions-main .sol-grid {grid-template-columns: repeat(3,minmax(0,1fr));}
+}
+@media(max-width:680px) {
+  .pelcom-equipment-theme { --interior-wrap:calc(100% - 32px); }
+  .pelcom-equipment-theme .pelcom-content .hero-inner,.pelcom-equipment-theme .solution-hero__grid { grid-template-columns:minmax(0,1fr); gap:16px; }
+  .pelcom-equipment-theme .pelcom-content > .hero > .crumbs { padding-top:12px; margin-bottom:14px; }
+  .pelcom-equipment-theme .solution-crumbs { padding:12px 0 14px;}
+  .pelcom-equipment-theme .pelcom-content .hero h1,.pelcom-equipment-theme .solution-hero .solution-hero__title {font-size:clamp(29px,8.2vw,40px);}
+  .pelcom-equipment-theme .pelcom-content > .hero .hero-badge {margin-bottom:7px;}
+  .pelcom-equipment-theme .pelcom-content > .hero :is(.hero-price,.hero-desc) {margin-bottom:10px;}
+  .pelcom-equipment-theme .pelcom-content .hero-inner .hero-content {width:auto;}
+  .pelcom-equipment-theme .equipment-detail .hero-inner .hero-content {display:contents;}
+  .pelcom-equipment-theme .equipment-detail .hero-inner {gap:8px;}
+  .pelcom-equipment-theme .equipment-detail .hero-inner .hero-badge {justify-self:start;}
+  .pelcom-equipment-theme .equipment-detail .hero-inner h1 {margin-bottom:0;}
+  .pelcom-equipment-theme .equipment-detail .hero-inner .hero-svg {grid-row:4; margin-bottom:5px; }
+  .pelcom-equipment-theme .equipment-detail .hero-inner .hero-svg > img {max-height:230px;}
+  .pelcom-equipment-theme .pelcom-content :is(.cat-grid,.models-grid),.pelcom-equipment-theme .solutions-main .sol-grid {grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px;}
+  .pelcom-equipment-theme .pelcom-content :is(.cat-card,.model-card),.pelcom-equipment-theme .solutions-main .sol-card {padding:5px;border-radius:10px;}
+  .pelcom-equipment-theme .interior-card-copy {padding:7px 3px 4px;gap:5px;}
+  .pelcom-equipment-theme .interior-card-copy .sol-desc {font-size:11px;}
+  .pelcom-equipment-theme .interior-card-copy :is(.cat-arrow,.solution-more,.interior-more) {font-size:11px;}
+  .pelcom-equipment-theme .solution-hero__media--overview img {width:calc((100% - 16px)/3.05);aspect-ratio:1.42;}
+}

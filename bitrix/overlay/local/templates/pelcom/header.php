@@ -4,6 +4,9 @@ $page = preg_match('/^[a-z0-9-]+$/D', $pelcomPage ?? '') ? $pelcomPage : 'pelcom
 require_once __DIR__.'/site-refresh.php';
 $pelcomInterior = pelcomUsesInteriorTheme($page);
 $pelcomPngShell = $page !== 'pelcom-landing';
+$equipmentTheme = $page === 'products' || !empty($pelcomModel)
+    || $page === 'solutions' || str_starts_with($page, 'pelcom-solution-')
+    || preg_match('~^/catalog(?:/|$)~', parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
 if ($pelcomPngShell) {
     require_once __DIR__.'/png-shell.php';
 }
@@ -56,7 +59,10 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 <?php if ($pelcomPngShell): ?>
 <link rel="stylesheet" href="/png-shell.css?v=20261124">
 <?php endif; ?>
-</head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?><?= $pelcomInterior ? ' pelcom-refresh' : '' ?><?= $pelcomPngShell ? ' pelcom-png-shell' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
+<?php if ($equipmentTheme): ?>
+<link rel="stylesheet" href="/equipment-theme.css?v=20261124">
+<?php endif; ?>
+</head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?><?= $pelcomInterior ? ' pelcom-refresh' : '' ?><?= $pelcomPngShell ? ' pelcom-png-shell' : '' ?><?= $equipmentTheme ? ' pelcom-equipment-theme' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 <script>(function(){var p=document.getElementById('panel');if(!p)return;function sync(){document.documentElement.style.setProperty('--pelcom-admin-offset',Math.max(0,(document.getElementById('bx-panel')||p).getBoundingClientRect().bottom)+'px')}sync();window.addEventListener('scroll',sync,{passive:true});if(window.ResizeObserver)new ResizeObserver(sync).observe(p)})();</script>
 <?php
 if ($pelcomPngShell) {
@@ -67,6 +73,6 @@ if ($pelcomPngShell) {
     require __DIR__.'/parts/'.$page.'-header.php';
 }
 if ($pelcomInterior) {
-    echo '<div class="pelcom-content">';
+    echo '<div class="pelcom-content'.(!empty($pelcomModel) ? ' equipment-detail' : '').'">';
 }
 ?>

@@ -3,6 +3,7 @@
 import argparse, hashlib, html, json, re, shutil
 from pathlib import Path
 from bs4 import BeautifulSoup
+from equipment_theme import catalog_category, catalog_overview, solutions_overview, solution_illustration
 p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--overwrite-content',action='store_true');p.add_argument('--origin');p.add_argument('--mode',choices=['development','production'],default='development');a=p.parse_args()
 config=json.loads((Path(__file__).parent/'site.json').read_text())
 a.origin=(a.origin or config['production_origin' if a.mode=='production' else 'local_origin']).rstrip('/')
@@ -105,7 +106,16 @@ for filename,raw in files.items():
    component=f"<?php $APPLICATION->IncludeComponent('pelcom:kiosks', '', ['CATEGORY'=>{q(category['code'])},'WRAP'=>'N']); ?>"
    for match in reversed(matches):
     body=body[:match.start()]+(component if match==matches[0] else '')+body[match.end():]
-  write(f'local/content/{key}.php',rewrite(body))
+  body=rewrite(body)
+  if category:
+   body=catalog_category(body,category['code'])
+  elif key=='products':
+   body=catalog_overview(body)
+  elif key=='solutions':
+   body=solutions_overview(body)
+  elif key in ('pelcom-solution-museum','pelcom-solution-transport'):
+   body=solution_illustration(body,key.removeprefix('pelcom-solution-'))
+  write(f'local/content/{key}.php',body)
   content=f"$APPLICATION->IncludeComponent('bitrix:main.include', '', ['AREA_FILE_SHOW'=>'file','PATH'=>'/local/content/{key}.php','EDIT_TEMPLATE'=>'']);"
  status="http_response_code(404);\n" if filename=='404.html' else ''
  if filename in model_files:status+="$pelcomModel = true;\n"
