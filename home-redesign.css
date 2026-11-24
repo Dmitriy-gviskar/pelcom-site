@@ -98,7 +98,20 @@ body header#hd.home-hd .burger span {background:var(--home-navy)}
 .home-refresh .sw-bg .s-i {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) minmax(0,1fr);gap:clamp(18px,2.8vw,34px);align-items:center}
 .home-refresh .sw-bg .s-head {display:block;margin:0}
 .home-refresh .sw-bg .s-head p {margin:12px 0;color:var(--home-muted)}
-.home-software-image {display:block;width:100%;height:auto;border-radius:var(--home-radius)}
+/* Scalable illustration for navigation and queue management. */
+.home-software-visual {position:relative;isolation:isolate;min-width:0;aspect-ratio:1.45;padding:8% 8% 11% 2%;align-content:center}
+.home-software-visual::before {content:"";position:absolute;inset:9% 0 3%;z-index:-1;border-radius:50%;background:radial-gradient(ellipse,#cadff7 4%,#dcecff 36%,transparent 70%)}
+.home-software-display {position:relative;display:grid;grid-template:13% minmax(0,1fr)/ 3fr 1fr;gap:4%;width:100%;aspect-ratio:1.68;padding:4%;border:clamp(4px,.55vw,8px) solid #102945;border-radius:12px;background:#f7fbff;box-shadow:0 13px 22px #15417227}
+.home-software-display::after {content:"";position:absolute;top:100%;left:38%;width:24%;height:16%;background:#102945;clip-path:polygon(25% 0,75% 0,82% 75%,100% 80%,100% 100%,0 100%,0 80%,18% 75%)}
+.home-software-toolbar {grid-column:1/-1;border-radius:4px;background:linear-gradient(90deg,#1475d0 28%,#e4eef9 28%)}
+.home-software-map {position:relative;display:flex;align-items:center;justify-content:center;gap:8%;padding:9%;overflow:hidden;border-radius:5px;background:linear-gradient(33deg,#d2e3f6 0 28%,#f8fbff 28% 39%,#dae8f7 39% 70%,#f8fbff 70% 79%,#dae8f7 79%)}
+.home-software-map i {z-index:1;flex:1;height:42%;border:1px solid #70a9dc;border-radius:3px;background:#a8d3f5;box-shadow:0 1px 2px #295b9325}
+.home-software-map i:nth-child(2) {align-self:flex-start;background:#81b9ed}
+.home-software-map i:nth-child(3) {align-self:flex-end}
+.home-software-sidebar,.home-software-terminal {display:flex;flex-direction:column;justify-content:center;gap:9%}
+.home-software-sidebar i,.home-software-terminal i {display:block;height:17%;min-height:5px;border-radius:3px;background:linear-gradient(90deg,#3183cb 18%,#d9e8f8 18%)}
+.home-software-terminal {position:absolute;inset:auto 1% 5% auto;width:24%;aspect-ratio:.63;padding:4%;border:clamp(3px,.42vw,6px) solid #102945;border-radius:11px;background:#f7fbff;box-shadow:0 7px 16px #15417233}
+.home-software-terminal i:first-child {height:25%;background:#1873c9}
 .home-refresh .sw-grid {display:grid;grid-template-columns:1fr;gap:8px;background:transparent}
 .home-refresh .sw-card,.home-refresh .sw-card:hover {border:1px solid var(--home-border);background:#ffffffc9;border-radius:10px;padding:12px 14px}
 .home-refresh .sw-card::after {display:none}
@@ -118,7 +131,9 @@ body header#hd.home-hd .burger span {background:var(--home-navy)}
 .home-refresh .stmt {padding:0;background:#eaf3fd;border:0}
 .home-refresh .stmt::before {display:none}
 .home-refresh .stmt-i {width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:0;max-width:1600px}
-.home-production-image {width:100%;height:100%;min-height:255px;object-fit:cover;display:block}
+.home-production-visual {position:relative;min-height:255px;overflow:hidden;background:#d8e5f0}
+.home-production-image {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 54%;display:block}
+.home-production-visual figcaption {position:absolute;right:12px;bottom:10px;padding:3px 8px;border-radius:5px;background:#0b243bd9;color:#fff;font-size:11px;letter-spacing:.01em}
 .home-refresh .stmt-left {padding:clamp(24px,5vw,65px) var(--home-inset);align-self:center}
 .home-refresh .stmt-kicker {margin-bottom:8px}
 .home-refresh .stmt-h {margin-bottom:12px}
@@ -226,9 +241,9 @@ body:has(.home-refresh) .lp-box .ff :is(input,textarea)::placeholder {color:#697
   .home-steps li:nth-child(2)::after {display:none}
   .home-refresh .prod-grid {grid-auto-columns:calc((100% - 22px) / 2.2);gap:10px}
   .home-refresh .sw-bg .s-i,.home-refresh .sw-grid {grid-template-columns:1fr}
-  .home-software-image {max-width:350px;margin-inline:auto}
+  .home-software-visual {width:min(100%,380px);margin-inline:auto}
   .home-refresh .stmt-i {grid-template-columns:1fr}
-  .home-production-image {min-height:0;max-height:230px;aspect-ratio:2.3/1}
+  .home-production-visual {min-height:0;aspect-ratio:2/1}
   .home-refresh .stmt-right {grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
   .home-refresh .s-head {align-items:flex-start;flex-wrap:wrap}
   .home-refresh .s-head .btn {align-self:flex-start!important}

@@ -402,7 +402,7 @@
 @media(max-width:480px){.lp-box{padding:28px 20px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой срок изготовления и поставки?", "acceptedAnswer": {"@type": "Answer", "text": "Серийные модели — от 3 рабочих дней, под индивидуальную конфигурацию — до 2–3 недель. Точные сроки фиксируем в коммерческом предложении в зависимости от модели и объёма."}}, {"@type": "Question", "name": "Работаете по 44-ФЗ и 223-ФЗ?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Оборудование включено в реестр российской промышленной продукции Минпромторга, поставляем по госконтрактам, помогаем корректно составить техническое задание."}}, {"@type": "Question", "name": "Какая гарантия и поддержка?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия 1 год, сервис 24/7, выездное обслуживание и обменный фонд устройств — оборудование не простаивает."}}, {"@type": "Question", "name": "Возможна ли индивидуальная разработка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Дорабатываем корпус, цвет, конфигурацию и программное обеспечение под вашу задачу, наносим брендирование."}}, {"@type": "Question", "name": "Есть ли лизинг или рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да, работаем с лизинговыми компаниями и предлагаем гибкие схемы оплаты для бизнеса и госучреждений."}}, {"@type": "Question", "name": "Какое программное обеспечение входит?", "acceptedAnswer": {"@type": "Answer", "text": "Собственные решения Pelcom Навигация, Pelcom Очередь и Pelcom Мониторинг, а также интеграции с 1С, CRM, AD/LDAP и платёжными системами."}}, {"@type": "Question", "name": "Делаете монтаж и обучение?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка, пусконаладка, монтаж и обучение персонала в 47 регионах России."}}]}</script>
-<link rel="stylesheet" href="/home-redesign.css?v=20261124-2">
+<link rel="stylesheet" href="/home-redesign.css?v=20261124-3">
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
@@ -547,7 +547,14 @@
 
     </div>
 
-    <img class="home-software-image" src="/img/home-redesign/software.webp" alt="" loading="lazy" decoding="async">
+    <div class="home-software-visual" aria-hidden="true">
+      <div class="home-software-display">
+        <div class="home-software-toolbar"></div>
+        <div class="home-software-map"><i></i><i></i><i></i></div>
+        <div class="home-software-sidebar"><i></i><i></i><i></i></div>
+      </div>
+      <div class="home-software-terminal"><i></i><i></i><i></i></div>
+    </div>
     <div class="sw-grid fi">
       <div class="sw-card">
         <div class="sw-n">Навигационные системы</div>
@@ -578,16 +585,16 @@
       <a href="solutions.html" class="btn btn-blue" style="flex-shrink:0;align-self:flex-end">Все решения →</a>
     </div>
     <div class="home-industry-grid fi">
-      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/business.webp" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="6" width="24" height="28" rx="2"/><line x1="12" y1="14" x2="28" y2="14"/><line x1="12" y1="20" x2="28" y2="20"/><line x1="12" y1="26" x2="28" y2="26"/></svg></div><div class="ind-body"><div class="ind-name">Банки и МФЦ</div> <div class="ind-desc">Электронная очередь, терминалы, навигация по отделению</div></div></div>
-      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/culture.webp" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="3" width="20" height="10" rx="1"/><rect x="10" y="15" width="20" height="22" rx="1"/><line x1="16" y1="21" x2="24" y2="21"/><line x1="20" y1="21" x2="20" y2="31"/></svg></div><div class="ind-body"><div class="ind-name">Медицина</div> <div class="ind-desc">Запись к врачу, инфокиоски, управление потоком в поликлинике</div></div></div>
-      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/government.webp" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="12" r="6"/><rect x="8" y="20" width="24" height="16" rx="1"/><line x1="8" y1="26" x2="32" y2="26"/></svg></div><div class="ind-body"><div class="ind-name">Государство</div> <div class="ind-desc">Реестр Минпромторга, 44-ФЗ и 223-ФЗ, интеграция с Госуслугами</div></div></div>
-      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/education.webp" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 30 L20 10 L32 30 Z"/><rect x="14" y="26" width="12" height="6" rx="1"/></svg></div><div class="ind-body"><div class="ind-name">Образование</div> <div class="ind-desc">Интерактивные панели, цифровые доски, системы контроля доступа</div></div></div>
+      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/industry-business.webp" width="484" height="332" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="6" width="24" height="28" rx="2"/><line x1="12" y1="14" x2="28" y2="14"/><line x1="12" y1="20" x2="28" y2="20"/><line x1="12" y1="26" x2="28" y2="26"/></svg></div><div class="ind-body"><div class="ind-name">Банки и МФЦ</div> <div class="ind-desc">Электронная очередь, терминалы, навигация по отделению</div></div></div>
+      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/industry-clinic.webp" width="484" height="332" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="3" width="20" height="10" rx="1"/><rect x="10" y="15" width="20" height="22" rx="1"/><line x1="16" y1="21" x2="24" y2="21"/><line x1="20" y1="21" x2="20" y2="31"/></svg></div><div class="ind-body"><div class="ind-name">Медицина</div> <div class="ind-desc">Запись к врачу, инфокиоски, управление потоком в поликлинике</div></div></div>
+      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/industry-government.webp" width="484" height="332" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="12" r="6"/><rect x="8" y="20" width="24" height="16" rx="1"/><line x1="8" y1="26" x2="32" y2="26"/></svg></div><div class="ind-body"><div class="ind-name">Государство</div> <div class="ind-desc">Реестр Минпромторга, 44-ФЗ и 223-ФЗ, интеграция с Госуслугами</div></div></div>
+      <div class="ind-card"><img class="home-industry-image" src="/img/home-redesign/industry-education.webp" width="484" height="332" alt="" loading="lazy" decoding="async"><div class="ind-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 30 L20 10 L32 30 Z"/><rect x="14" y="26" width="12" height="6" rx="1"/></svg></div><div class="ind-body"><div class="ind-name">Образование</div> <div class="ind-desc">Интерактивные панели, цифровые доски, системы контроля доступа</div></div></div>
       <a class="ind-card" href="pelcom-solution-retail.html">
-        <img class="home-industry-image" src="/img/home-redesign/retail.webp" alt="" loading="lazy" decoding="async">
+        <img class="home-industry-image" src="/img/home-redesign/industry-retail.webp" width="484" height="332" alt="" loading="lazy" decoding="async">
         <div class="ind-body"><div class="ind-name">Торговые пространства</div><div class="ind-desc">Навигация и информационные киоски для посетителей</div></div>
       </a>
       <a class="ind-card" href="pelcom-solution-mfg.html">
-        <img class="home-industry-image" src="/img/home-redesign/manufacturing.webp" alt="" loading="lazy" decoding="async">
+        <img class="home-industry-image" src="/img/home-redesign/industry-manufacturing.webp" width="484" height="332" alt="" loading="lazy" decoding="async">
         <div class="ind-body"><div class="ind-name">Промышленность</div><div class="ind-desc">Информационные терминалы и решения для производства</div></div>
       </a>
     </div>
@@ -596,7 +603,13 @@
 
 <div class="stmt fi" id="production">
   <div class="stmt-i">
-    <img class="home-production-image" src="/img/home-redesign/production.webp" alt="" loading="lazy" decoding="async">
+    <figure class="home-production-visual">
+      <img class="home-production-image" src="/img/home-redesign/production-detail.webp"
+        srcset="/img/home-redesign/production-detail-836.webp 836w, /img/home-redesign/production-detail.webp 1672w"
+        sizes="(max-width: 620px) 100vw, (max-width: 1600px) 50vw, 800px"
+        width="1672" height="941" alt="" loading="lazy" decoding="async">
+      <figcaption>Иллюстрация</figcaption>
+    </figure>
     <div class="stmt-left">
       <div class="stmt-kicker">Российское производство</div>
       <h2 class="stmt-h">Производим.<br/>Внедряем.<br/><em>Обслуживаем.</em></h2>
