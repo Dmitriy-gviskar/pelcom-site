@@ -1,4 +1,4 @@
-:root:has(.solutions-main) {
+:root:has(.solutions-main,.pelcom-refresh) {
   --solutions-navy:#092442;
   --solutions-text:#193754;
   --solutions-muted:#4b637c;
@@ -11,7 +11,7 @@
   background:var(--solutions-page);
 }
 body:has(.solutions-main) {background:var(--solutions-page);color:var(--solutions-text);font:400 16px/1.55 Inter,system-ui,sans-serif;letter-spacing:0}
-body header#hdr.solution-header {height:68px!important;min-height:68px;display:block!important;padding:0!important;background:#f7fbfff5!important;border-color:var(--solutions-border)!important;backdrop-filter:blur(16px);z-index:300}
+body header:is(#hdr,#hd).solution-header {height:68px!important;min-height:68px;display:block!important;padding:0!important;background:#f7fbfff5!important;border-color:var(--solutions-border)!important;backdrop-filter:blur(16px);z-index:300}
 .solution-header__inner {width:min(100% - 2 * var(--solutions-inset),1320px);height:68px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(14px,2vw,28px)}
 .solution-brand {display:inline-flex;align-items:center;flex:none;width:fit-content}
 .solution-brand img {display:block;width:clamp(118px,13vw,182px);height:auto}
@@ -21,7 +21,7 @@ body header#hdr.solution-header {height:68px!important;min-height:68px;display:b
 .solution-header__nav a:is(:hover,[aria-current]) {color:var(--solutions-blue)}
 .solution-header__right {display:flex;align-items:center;gap:14px;white-space:nowrap}
 .solution-header__right .solution-button {min-height:37px;padding:9px 15px;font-size:12px}
-body header#hdr.solution-header .burger {display:none!important;margin:0;align-items:center}
+body header:is(#hdr,#hd).solution-header .burger {display:none!important;margin:0;align-items:center}
 .solution-header .burger span {background:var(--solutions-navy)}
 .solution-button {display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;width:fit-content;padding:10px 18px;border:1px solid transparent;border-radius:50px;background:var(--solutions-blue);color:#fff;font:600 13px/1.35 Inter,system-ui,sans-serif;text-align:center}
 .solution-button:hover {background:#084c91;color:#fff}
@@ -88,7 +88,7 @@ body:has(.solutions-main) .cookie a {color:var(--solutions-blue)}
   .solution-header__right .solution-phone {display:none}
 }
 @media(max-width:1100px) {
-  body header#hdr.solution-header .burger {display:flex!important}
+  body header:is(#hdr,#hd).solution-header .burger {display:flex!important}
   .solution-header__nav,.solution-header__right {display:none}
   .solution-header.open .solution-header__nav {display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px var(--solutions-inset) 18px;background:#f7fbff;box-shadow:0 10px 20px #08284c1f;max-height:calc(100dvh - 68px);overflow:auto}
   .solution-header.open .solution-header__nav a {font-size:15px;padding:11px 0}

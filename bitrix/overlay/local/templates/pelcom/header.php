@@ -1,6 +1,8 @@
 <?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
-global $pelcomPage, $pelcomModel;
+global $pelcomPage, $pelcomModel, $pelcomInterior;
 $page = preg_match('/^[a-z0-9-]+$/D', $pelcomPage ?? '') ? $pelcomPage : 'pelcom-landing';
+require_once __DIR__.'/site-refresh.php';
+$pelcomInterior = pelcomUsesInteriorTheme($page);
 $siteConfig=require $_SERVER['DOCUMENT_ROOT'].'/local/config/pelcom.php';
 $origin=$siteConfig['origin'];
 $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
@@ -42,6 +44,20 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 @media(max-width:900px){.hero-inner:has(.hero-media){grid-template-columns:minmax(0,1fr)}.hero:has(.hero-media){padding-top:210px!important}}
 </style>
 <link rel="stylesheet" href="/ui-polish.css?v=20261109-6">
-</head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
+<?php if ($pelcomInterior): ?>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="/solutions-redesign.css?v=20261124-chrome">
+<link rel="stylesheet" href="/site-refresh.css?v=20261124">
+<?php endif; ?>
+</head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?><?= $pelcomInterior ? ' pelcom-refresh' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 <script>(function(){var p=document.getElementById('panel');if(!p)return;function sync(){document.documentElement.style.setProperty('--pelcom-admin-offset',Math.max(0,(document.getElementById('bx-panel')||p).getBoundingClientRect().bottom)+'px')}sync();window.addEventListener('scroll',sync,{passive:true});if(window.ResizeObserver)new ResizeObserver(sync).observe(p)})();</script>
-<?php require __DIR__.'/parts/'.$page.'-header.php'; ?>
+<?php
+if ($pelcomInterior) {
+    ob_start();
+    require __DIR__.'/parts/'.$page.'-header.php';
+    pelcomInteriorHeader($page, ob_get_clean());
+    echo '<div class="pelcom-content">';
+} else {
+    require __DIR__.'/parts/'.$page.'-header.php';
+}
+?>
