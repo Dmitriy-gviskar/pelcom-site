@@ -10,7 +10,12 @@ a.origin=(a.origin or config['production_origin' if a.mode=='production' else 'l
 from urllib.parse import urlsplit
 origin_parts=urlsplit(a.origin)
 if origin_parts.scheme not in ['http','https'] or not origin_parts.netloc or origin_parts.path or origin_parts.query or origin_parts.fragment:raise SystemExit('Origin must be an HTTP(S) origin without path')
-src,out=a.source,a.out;out.mkdir(parents=True,exist_ok=True)
+src,out=a.source,a.out
+if a.mode=='production':
+ from check_images import check_images
+ if not check_images(source=src.resolve()):
+  raise SystemExit('Боевая сборка остановлена. Исправьте указанные изображения.')
+out.mkdir(parents=True,exist_ok=True)
 files={f.name:f.read_text() for f in sorted(src.glob('*.html')) if f.name!='index.html'}
 docs={f:BeautifulSoup(s,'html.parser') for f,s in files.items()}
 labels={'kiosk':'Инфокиоски','panels':'Интерактивные панели','tables':'Интерактивные столы','payment':'Терминалы оплаты','terminals':'Сенсорные терминалы','outdoor':'Уличные киоски','lectern':'Интерактивные трибуны','kids':'Детское оборудование','holo':'Голографические системы','accessible':'Доступная среда','led':'Светодиодные экраны','pylon':'Видеопилоны','queue':'Электронная очередь','nav':'Навигационные системы'}

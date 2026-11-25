@@ -1,4 +1,4 @@
-:root{--hero-image:url("/img/home-redesign/kiosk-lobby.webp")}
+:root{--hero-image:url("/img/home-redesign/kiosk-lobby-presentation.jpg")}
 :root {
   --u: calc(100vw / 752);
   --navy:#08234a;
@@ -45,7 +45,6 @@ p {font-size:calc(11 * var(--u));line-height:1.38}
 .png-hero {height:calc(390 * var(--u));position:relative;isolation:isolate;background:#122d44;overflow:hidden}
 .png-hero::before {content:"";position:absolute;z-index:-3;inset:0;background:var(--hero-image) center 34%/cover no-repeat}
 .png-hero::after {content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#061b30c4 0%,#071c2e4f 43%,transparent 65%),linear-gradient(0deg,#dfedfc 0%,transparent 12%);pointer-events:none}
-.png-hero-right {position:absolute;z-index:-2;top:0;right:0;width:calc(395 * var(--u));mask-image:linear-gradient(to right,transparent,#000 13%);height:auto}
 .png-hero-copy {padding-top:calc(48 * var(--u));color:#fff}
 .png-hero-kicker {font-size:calc(7 * var(--u));font-weight:600;letter-spacing:.025em;width:max-content;position:relative;line-height:1.2;padding-bottom:calc(7 * var(--u));margin-bottom:calc(12 * var(--u))}
 .png-hero-kicker:after {content:"";position:absolute;left:0;bottom:0;width:calc(54 * var(--u));height:calc(1 * var(--u));background:#ff8e45}
@@ -140,7 +139,7 @@ p {font-size:calc(11 * var(--u));line-height:1.38}
   .menu {display:block;padding:8px;border:0;background:transparent;color:var(--navy);font-size:24px;line-height:1}
   .header nav.open {position:absolute;top:62px;left:0;right:0;display:grid;gap:0;background:#f4f9ff;box-shadow:0 9px 24px #143b6b25;padding:6px 16px 12px}
   .header nav a {font-size:14px;padding:10px 0}
-  .png-hero {height:auto;min-height:415px}.png-hero::before {background-position:58% center}.png-hero-right {display:none}
+  .png-hero {height:auto;min-height:415px}.png-hero::before {background-position:58% center}
   .png-hero::after {background:linear-gradient(90deg,#041a30db,#061b2cae 48%,#061b3055),linear-gradient(0deg,#dcecff,transparent 10%)}
   .png-hero-copy {padding:51px 0 78px}.png-hero h1 {font-size:clamp(26px,7.1vw,38px);max-width:17ch}
   .png-hero-kicker {font-size:8px;max-width:26ch;width:auto}.png-hero-description {max-width:30ch;font-size:13px}
@@ -193,3 +192,139 @@ p {font-size:calc(11 * var(--u));line-height:1.38}
 .cookie[hidden] {display:none}
 .cookie a {color:#065ab0;text-decoration:underline}
 .cookie button {flex:none;padding:7px 11px;border:0;border-radius:999px;background:#0565c5;color:#fff;font:600 13px/1.2 Inter,Arial,sans-serif}
+
+/* The product assets have different native aspect ratios. */
+.product-card .crop img {
+  object-fit: contain;
+  background: #e7eef7;
+}
+
+/* Keep the interface illustration sharp at every pixel density. */
+.software-devices {
+  position: relative;
+  container-type: inline-size;
+  isolation: isolate;
+  aspect-ratio: 293 / 137;
+  mix-blend-mode: normal;
+}
+
+.software-device {
+  position: absolute;
+  padding: 1.05cqw;
+  border-radius: 2cqw;
+  background: #142437;
+  box-shadow: 0 1.3cqw 2.4cqw #143b655c;
+}
+
+.software-device--desktop {
+  inset: 2% 12% 18% 31%;
+}
+
+.software-device--desktop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 29%;
+  width: 42%;
+  height: 21%;
+  z-index: -1;
+  background: linear-gradient(#738493, #9baab7 84%, #5f7285 84%);
+  clip-path: polygon(38% 0, 62% 0, 67% 73%, 100% 87%, 100% 100%, 0 100%, 0 87%, 33% 73%);
+}
+
+.software-device--tablet {
+  inset: 30% 60% 5% 3%;
+  transform: rotate(-7deg);
+}
+
+.software-device--phone {
+  inset: 53% 3% 5% 83%;
+  padding: .7cqw;
+  border-radius: 1.45cqw;
+}
+
+.software-device-screen {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border-radius: 1cqw;
+  background: #f7fbff;
+}
+
+.software-device-bar {
+  padding: .8cqw 1.1cqw;
+  color: #fff;
+  background: #136bc1;
+  font-size: 1.6cqw;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.software-device-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 23%;
+  gap: .85cqw;
+  padding: 1cqw;
+}
+
+.software-device-dashboard span,
+.software-device-tickets span {
+  border: 1px solid #c5d9ee;
+  border-radius: .45cqw;
+  background: repeating-linear-gradient(#d6e5f5 0 1px, #f7fbff 1px 2cqw);
+}
+
+.software-device-dashboard span:last-child {
+  background: repeating-linear-gradient(#136bc1 0 2.4cqw, #3186d7 2.4cqw 2.55cqw);
+}
+
+.software-device-map {
+  position: relative;
+  margin: 1cqw;
+  background:
+    linear-gradient(120deg, transparent 35%, #fafcff 35% 42%, transparent 42% 70%, #fafcff 70% 76%, transparent 76%),
+    repeating-linear-gradient(24deg, #cadff7 0 2.2cqw, #f8fbff 2.2cqw 2.6cqw, #91bbeb 2.6cqw 4.3cqw);
+}
+
+.software-device-map span {
+  position: absolute;
+  left: 20%;
+  top: 28%;
+  width: 2.3cqw;
+  height: 2.3cqw;
+  border-radius: 50%;
+  background: #1269c6;
+  box-shadow: 0 0 0 .45cqw #fff;
+}
+
+.software-device-map span:nth-child(2) {
+  top: 58%;
+  left: 60%;
+}
+
+.software-device-map span:nth-child(3) {
+  top: 24%;
+  left: 79%;
+}
+
+.software-device-tickets {
+  display: grid;
+  gap: .5cqw;
+  padding: .8cqw;
+}
+
+@media (min-width: 681px) {
+  .png-hero {
+    background: var(--hero-image) center 34% / cover no-repeat #122d44;
+  }
+  .png-hero::before {
+    inset: calc(-1.5 * var(--u)) -4.5% 0 15.5%;
+    background-position: left top;
+    background-size: 100% auto;
+    mask-image: linear-gradient(90deg, transparent, #000 20%),
+      linear-gradient(180deg, #000 93%, transparent 96.2%);
+    mask-composite: intersect;
+  }
+}

@@ -15,4 +15,13 @@ if ($pelcomPngShell ?? false) {
 } else {
     require __DIR__.'/parts/'.$page.'-footer.php';
 }
-?><script src="/ui-polish.js?v=20261109-3" defer></script></body></html>
+?>
+<aside class="pelcom-analytics-choice" id="pelcom-analytics-choice" data-counter="114278572" aria-label="Настройки аналитики" hidden>
+    <p>Разрешить Яндекс Метрику для анализа посещаемости сайта? <a href="/privacy/#analytics">Подробнее в политике обработки данных</a>.</p>
+    <div class="pelcom-analytics-actions">
+        <button type="button" data-analytics-choice="declined">Отказаться</button>
+        <button type="button" data-analytics-choice="accepted">Разрешить аналитику</button>
+    </div>
+</aside>
+<script src="/pelcom-analytics.js?v=2" defer></script>
+<script src="/ui-polish.js?v=20261109-3" defer></script></body></html>

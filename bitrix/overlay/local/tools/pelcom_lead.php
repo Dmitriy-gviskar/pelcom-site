@@ -11,7 +11,8 @@ foreach($data as $value) if(!is_scalar($value) && $value!==null) leadReply(400,'
 if(!empty($data['_gotcha'])) leadReply(400,'Не удалось отправить заявку');
 $name=trim((string)($data['name'] ?? ''));$phone=trim((string)($data['phone'] ?? ''));
 if($name==='' || mb_strlen($name)>150 || strlen(preg_replace('/\D/','',$phone))<7 || mb_strlen($phone)>80) leadReply(422,'Укажите имя и корректный телефон');
-if(!in_array((string)($data['consent'] ?? ''),['on','yes','1','true'],true)) leadReply(422,'Нужно согласие на обработку данных');
+$consent=(string)($data['consent'] ?? '');
+if(!in_array($consent,['pelcom-leads-v1','on','yes','1','true'],true)) leadReply(422,'Нужно согласие на обработку данных');
 if(!empty($data['email']) && !filter_var($data['email'],FILTER_VALIDATE_EMAIL)) leadReply(422,'Проверьте email');
 $rateDir=dirname($_SERVER['DOCUMENT_ROOT'],2).'/bin-tmp/pelcom-lead-rate';
 if(!is_dir($rateDir) && !mkdir($rateDir,0700,true)) leadReply(503,'Попробуйте позже');
@@ -23,6 +24,8 @@ $body="Заявка с сайта pelcom-tech.ru\n\n";
 foreach($labels as $key=>$label) if(isset($data[$key]) && trim((string)$data[$key])!=='') {
  $value=trim((string)$data[$key]);if(mb_strlen($value)>4000) leadReply(422,'Слишком длинное сообщение');$body.=$label.': '.$value."\n";
 }
+$body.="\nСогласие: ".($consent==='pelcom-leads-v1' ? 'редакция 1.0 (pelcom-leads-v1)' : 'предыдущая форма')."\n";
+$body.='Получено сервером (UTC): '.gmdate('c')."\n";
 $subject='=?UTF-8?B?'.base64_encode('Заявка с сайта Pelcom').'?=';
 $headers="From: Pelcom <webmaster@pelcom-tech.ru>\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\n";
 if(!empty($data['email'])) $headers.='Reply-To: '.$data['email']."\r\n";

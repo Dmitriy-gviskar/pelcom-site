@@ -1,0 +1,101 @@
+/* Legacy notifications are still present in some editable page bodies. */
+#cookieBar,
+.cookie {
+  display: none !important;
+}
+
+.pelcom-analytics-choice {
+  position: fixed;
+  z-index: 1000;
+  inset: auto auto 18px 18px;
+  box-sizing: border-box;
+  width: min(480px, calc(100% - 36px));
+  padding: 16px;
+  border: 1px solid #49628a;
+  border-radius: 16px;
+  background: #18243a;
+  color: #fff;
+  font: 500 14px/1.5 Manrope, system-ui, sans-serif;
+}
+
+.pelcom-analytics-choice[hidden] {
+  display: none;
+}
+
+.pelcom-analytics-choice p {
+  margin: 0 0 12px;
+}
+
+.pelcom-analytics-choice a {
+  color: #c3dbff;
+  text-decoration: underline;
+}
+
+.pelcom-analytics-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pelcom-analytics-actions button,
+.pelcom-analytics-settings {
+  padding: 8px 14px;
+  border: 1px solid #7c9fcc;
+  border-radius: 8px;
+  background: #243753;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pelcom-analytics-actions button[data-analytics-choice="accepted"] {
+  background: #1c5593;
+}
+
+@media (max-width: 560px) {
+  .pelcom-analytics-choice {
+    inset: auto auto 12px 12px;
+    width: calc(100% - 24px);
+  }
+}
+
+.form-privacy-link {
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+.form-privacy-link a {
+  text-decoration: underline;
+}
+
+.cmap.pelcom-analytics-map:has(iframe[data-analytics-map]) {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.cmap.pelcom-analytics-map:has(iframe[hidden]) {
+  grid-template-rows: 1fr;
+}
+
+.pelcom-map-link {
+  margin: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #243753;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.cmap.pelcom-analytics-map iframe[data-analytics-map] {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+}
+
+.cmap.pelcom-analytics-map iframe[hidden] {
+  display: none !important;
+}

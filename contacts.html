@@ -207,13 +207,20 @@
 <div class="ccard"><div class="lbl">Адрес</div><div class="val">г. Дубна, Московская обл.</div><div class="sub">Производство и демозал — запись по телефону</div></div>
 <div class="ccard"><div class="lbl">Мессенджеры</div><div class="cmsg"><a href="https://t.me/pelcom" target="_blank" rel="noopener">Telegram</a><a href="https://wa.me/74957770741" target="_blank" rel="noopener">WhatsApp</a></div></div>
 </div>
-<div class="cmap"><iframe src="https://yandex.ru/map-widget/v1/?ll=37.150%2C56.750&z=13&pt=37.150,56.750,pm2rdm" width="100%" height="400" frameborder="0" style="border-radius:var(--r);max-width:800px" allowfullscreen></iframe></div>
+<div class="cmap pelcom-analytics-map">
+<a class="pelcom-map-link" href="https://yandex.ru/maps/?ll=37.150%2C56.750&amp;z=13&amp;pt=37.150,56.750,pm2rdm" target="_blank" rel="noopener noreferrer">Открыть карту в Яндексе</a>
+<iframe data-analytics-map="https://yandex.ru/map-widget/v1/?ll=37.150%2C56.750&amp;z=13&amp;pt=37.150,56.750,pm2rdm" title="Расположение PELCOM на карте" width="800" height="400" allowfullscreen hidden></iframe>
+</div>
 <h2 style="margin-top:48px">Оставить заявку</h2>
-<form data-lead data-ok="contactOk" novalidate style="margin-top:16px;max-width:560px"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
-<div class="ff" style="margin-bottom:16px"><label style="display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Имя</label><input name="name" type="text" required placeholder="Иван Петров"/></div>
-<div class="ff" style="margin-bottom:16px"><label style="display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Телефон</label><input name="phone" type="tel" required placeholder="+7 (___) ___-__-__"/></div>
-<div class="ff" style="margin-bottom:16px"><label style="display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Сообщение</label><textarea name="message" placeholder="Опишите задачу"></textarea></div>
-<label class="consent"><input type="checkbox" name="consent" required/><span>Я согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+<form class="ym-hide-content" data-lead data-ok="contactOk" novalidate style="margin-top:16px;max-width:560px"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
+<div class="ff" style="margin-bottom:16px"><label style="display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Имя</label><input class="ym-disable-keys" name="name" type="text" required placeholder="Иван Петров"/></div>
+<div class="ff" style="margin-bottom:16px"><label style="display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Телефон</label><input class="ym-disable-keys" name="phone" type="tel" required placeholder="+7 (___) ___-__-__"/></div>
+<div class="ff" style="margin-bottom:16px"><label style="display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Сообщение</label><textarea class="ym-disable-keys" name="message" placeholder="Опишите задачу"></textarea></div>
+<label class="consent">
+<input name="consent" value="pelcom-leads-v1" required type="checkbox"/>
+<span>Я даю <a href="consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a> для рассмотрения моей заявки.</span>
+</label>
+<p class="form-privacy-link"><a href="privacy.html" target="_blank" rel="noopener">Политика обработки персональных данных</a></p>
 <button class="btn-form" type="submit">Отправить заявку</button>
 </form>
 <div class="form-ok" id="contactOk" hidden>Заявка отправлена. Мы свяжемся с вами в течение рабочего дня.</div>

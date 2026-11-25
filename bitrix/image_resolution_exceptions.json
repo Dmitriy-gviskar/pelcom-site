@@ -1,0 +1,92 @@
+{
+  "/": {
+    "/img/home-png/astra-logo.webp": {
+      "sha256": "efb76e5561223dfc21bc079a7f18e8eea5f75a0b22e4f56153f896b72923e512",
+      "max_pixels": {"1710": [410, 108], "390": [213, 57]}
+    },
+    "/img/home-png/engineering-building.webp": {
+      "sha256": "c9c2bfc6d4cc5763d0d7b60960997b1b181958e0d19a4f712ae4175b530502fb",
+      "max_pixels": {"1710": [373, 696], "390": [194, 362]}
+    },
+    "/img/home-png/intersense-logo.webp": {
+      "sha256": "d0fd46fdb4920aa1375b90694bb8d2cce35cca6d704a152aa47c153ada99a0dc",
+      "max_pixels": {"1710": [546, 100], "390": [284, 52]}
+    },
+    "/img/home-png/project-emblem.webp": {
+      "sha256": "fa275c1dd4dbadc9bdb63ef8583621a5b80885aced49bb9d982f76fb63e0cddb",
+      "max_pixels": {"1710": [751, 453], "390": [218, 132]}
+    },
+    "/img/home-png/project-kiosk.webp": {
+      "sha256": "78fece9df8938aafb3968a6994559b8813fbe3bc69bdd13c558a8d105dc22437",
+      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
+    },
+    "/img/home-png/project-public-kiosk.webp": {
+      "sha256": "ff03b08e4eb911222b2e3017baa56e8731f7b014a5bca9317a5c458307336411",
+      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
+    },
+    "/img/home-png/project-table.webp": {
+      "sha256": "0a719055142808eaaad849aab3b2c9c411231fc582cb4603cf0559cc7a3dc069",
+      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
+    },
+    "/img/home-png/project-video-wall.webp": {
+      "sha256": "7f075465e2af604289c7f19974ef50a5bb8573fa5a935be2768464d7af963e4e",
+      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
+    },
+    "/img/home-redesign/engineering-icon.webp": {
+      "sha256": "a0a7d53c95497cbae5ccd9fc93b30a9f7427bec38f7580deecea67b86af99e41",
+      "max_pixels": {"1710": [119, 119]}
+    },
+    "/img/home-redesign/industry-business.webp": {
+      "sha256": "613020b37f8868f31752c7f283cd8416346e5a0271157718708504ab6e041317",
+      "max_pixels": {"1710": [530, 363]}
+    },
+    "/img/home-redesign/industry-education.webp": {
+      "sha256": "4976c4e7c687e50944419ca76f6c04a1958bc2a5dff04a8b53537f90e1396785",
+      "max_pixels": {"1710": [530, 363]}
+    },
+    "/img/home-redesign/industry-government.webp": {
+      "sha256": "7f0718dc32b4b5e112e6be8a6067152ccea1884216ad7bf7060d2b6e15f600ea",
+      "max_pixels": {"1710": [530, 363]}
+    },
+    "/img/home-redesign/industry-manufacturing.webp": {
+      "sha256": "c648d22c384e55b6dcee6e4d35baa30c5a2217321b6582d0964410c499b6944f",
+      "max_pixels": {"1710": [530, 364]}
+    },
+    "/img/home-redesign/industry-retail.webp": {
+      "sha256": "015b1503ef7927ed9f311a1b79adec103b093cabaf56b23acd524353c62177d0",
+      "max_pixels": {"1710": [530, 363]}
+    },
+    "/img/home-redesign/manufacture-icon.webp": {
+      "sha256": "31e230bfec928a114002817476b13bf86e3ea32647076cd5cbd3dc197aaec7ee",
+      "max_pixels": {"1710": [119, 119]}
+    },
+    "/img/home-redesign/service-icon.webp": {
+      "sha256": "1a7222f64984cfb2f68ae5a7ddd63e6ae75bc14b7b78ec353b1f4e9821817574",
+      "max_pixels": {"1710": [119, 119]}
+    },
+    "/img/home-redesign/software-icon.webp": {
+      "sha256": "a7ae98e0ba7bed55932d07a677a2765ea333d1a6ded8e9211de9e4b4fd55a3c1",
+      "max_pixels": {"1710": [119, 119]}
+    }
+  },
+  "shared_footer": {
+    "/img/home-png/pelcom-footer-logo.webp": {
+      "sha256": "17de4a0cd937b2e48bd3f2cba4d13468d4c4c4ca5d169dd86eee17e510932f88",
+      "max_pixels": {"1710": [642, 153], "390": [333, 80]}
+    },
+    "/img/home-png/footer-social-icons.webp": {
+      "sha256": "a5936e1444cc6d607f63ab9a7a235acfa0ae509bb4d8bc072b93ff77c44d6cb5",
+      "max_pixels": {"1710": [260, 105], "390": [135, 55]}
+    }
+  },
+  "/catalog/": {
+    "/img/home-redesign/kiosk-lobby.webp": {
+      "sha256": "5682db725a2b3f9b418044ec8268ab4b63b09062d51a8fea4c437de3277ccbcb",
+      "max_pixels": {"1710": [1290, 726]}
+    },
+    "/img/home-redesign/product-panels-480.webp": {
+      "sha256": "6e09f4d372014493caef3b737e2dd7a9c0358b2f0a5e89b9096310dfccb45794",
+      "max_pixels": {"1710": [557, 341]}
+    }
+  }
+}
