@@ -4,6 +4,7 @@ import argparse, hashlib, html, json, re, shutil
 from pathlib import Path
 from bs4 import BeautifulSoup
 from equipment_theme import catalog_category, catalog_overview, solutions_overview, solution_illustration
+from info_theme import apply_info_theme, info_theme_styles, software_devices_markup
 p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--overwrite-content',action='store_true');p.add_argument('--origin');p.add_argument('--mode',choices=['development','production'],default='development');a=p.parse_args()
 config=json.loads((Path(__file__).parent/'site.json').read_text())
 a.origin=(a.origin or config['production_origin' if a.mode=='production' else 'local_origin']).rstrip('/')
@@ -17,6 +18,7 @@ if a.mode=='production':
   raise SystemExit('Боевая сборка остановлена. Исправьте указанные изображения.')
 out.mkdir(parents=True,exist_ok=True)
 files={f.name:f.read_text() for f in sorted(src.glob('*.html')) if f.name!='index.html'}
+software_devices=software_devices_markup(files['pelcom-landing.html']) if 'software.html' in files else ''
 docs={f:BeautifulSoup(s,'html.parser') for f,s in files.items()}
 labels={'kiosk':'Инфокиоски','panels':'Интерактивные панели','tables':'Интерактивные столы','payment':'Терминалы оплаты','terminals':'Сенсорные терминалы','outdoor':'Уличные киоски','lectern':'Интерактивные трибуны','kids':'Детское оборудование','holo':'Голографические системы','accessible':'Доступная среда','led':'Светодиодные экраны','pylon':'Видеопилоны','queue':'Электронная очередь','nav':'Навигационные системы'}
 categories=[];models=[];model_files={}
@@ -120,7 +122,7 @@ for filename,raw in files.items():
    body=solutions_overview(body)
   elif key in ('pelcom-solution-museum','pelcom-solution-transport'):
    body=solution_illustration(body,key.removeprefix('pelcom-solution-'))
-  write(f'local/content/{key}.php',body)
+  write(f'local/content/{key}.php',apply_info_theme(body,key,software_devices))
   content=f"$APPLICATION->IncludeComponent('bitrix:main.include', '', ['AREA_FILE_SHOW'=>'file','PATH'=>'/local/content/{key}.php','EDIT_TEMPLATE'=>'']);"
  status="http_response_code(404);\n" if filename=='404.html' else ''
  if filename in model_files:status+="$pelcomModel = true;\n"
@@ -140,6 +142,8 @@ require $_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php';
 for name in ['img','specs']:shutil.copytree(src/name,out/name,dirs_exist_ok=True)
 for f in src.iterdir():
  if f.is_file() and f.suffix in ['.css','.js','.svg','.png']:shutil.copy2(f,out/f.name)
+if software_devices:
+ write('info-theme.css',info_theme_styles((src/'info-theme.css').read_text(),(src/'home-png.css').read_text()))
 lead=(out/'lead.js').read_text().replace('return Promise.resolve();','return Promise.reject(new Error("Lead delivery is not configured"));');write('lead.js',lead)
 manifest=dict(categories=categories,models=models,spec_codes=spec_codes,routes=route_manifest,redirects=links)
 write('local/migrations/catalog.json',json.dumps(manifest,ensure_ascii=False,indent=2))

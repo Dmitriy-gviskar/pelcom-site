@@ -4,6 +4,8 @@ $page = preg_match('/^[a-z0-9-]+$/D', $pelcomPage ?? '') ? $pelcomPage : 'pelcom
 require_once __DIR__.'/site-refresh.php';
 $pelcomInterior = pelcomUsesInteriorTheme($page);
 $pelcomPngShell = $page !== 'pelcom-landing';
+$infoTheme = in_array($page, ['software', 'pelcom-about', 'pelcom-service', 'contacts'], true)
+    || str_starts_with($page, 'pelcom-software-');
 $equipmentTheme = $page === 'products' || !empty($pelcomModel)
     || $page === 'solutions' || str_starts_with($page, 'pelcom-solution-')
     || preg_match('~^/catalog(?:/|$)~', parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
@@ -50,7 +52,10 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 <?php if ($equipmentTheme): ?>
 <link rel="stylesheet" href="/equipment-theme.css?v=20261124">
 <?php endif; ?>
-</head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?><?= $pelcomInterior ? ' pelcom-refresh' : '' ?><?= $pelcomPngShell ? ' pelcom-png-shell' : '' ?><?= $equipmentTheme ? ' pelcom-equipment-theme' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
+<?php if ($infoTheme): ?>
+<link rel="stylesheet" href="/info-theme.css?v=20261125-info">
+<?php endif; ?>
+</head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?><?= $pelcomInterior ? ' pelcom-refresh' : '' ?><?= $pelcomPngShell ? ' pelcom-png-shell' : '' ?><?= $equipmentTheme ? ' pelcom-equipment-theme' : '' ?><?= $infoTheme ? ' pelcom-info-theme' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 <script>(function(){var p=document.getElementById('panel');if(!p)return;function sync(){document.documentElement.style.setProperty('--pelcom-admin-offset',Math.max(0,(document.getElementById('bx-panel')||p).getBoundingClientRect().bottom)+'px')}sync();window.addEventListener('scroll',sync,{passive:true});if(window.ResizeObserver)new ResizeObserver(sync).observe(p)})();</script>
 <?php
 if ($pelcomPngShell) {

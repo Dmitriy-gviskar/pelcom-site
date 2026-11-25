@@ -79,6 +79,16 @@
       "max_pixels": {"1710": [260, 105], "390": [135, 55]}
     }
   },
+  "/about/": {
+    "/img/home-png/intersense-logo.webp": {
+      "sha256": "d0fd46fdb4920aa1375b90694bb8d2cce35cca6d704a152aa47c153ada99a0dc",
+      "max_pixels": {"1710": [546, 100], "390": [284, 52]}
+    },
+    "/img/home-png/astra-logo.webp": {
+      "sha256": "efb76e5561223dfc21bc079a7f18e8eea5f75a0b22e4f56153f896b72923e512",
+      "max_pixels": {"1710": [410, 108], "390": [213, 57]}
+    }
+  },
   "/catalog/": {
     "/img/home-redesign/kiosk-lobby.webp": {
       "sha256": "5682db725a2b3f9b418044ec8268ab4b63b09062d51a8fea4c437de3277ccbcb",
