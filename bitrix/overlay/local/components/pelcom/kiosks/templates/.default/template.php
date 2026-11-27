@@ -7,7 +7,9 @@
 ?>
 <a class="model-card fi <?= $p['FEATURED']['VALUE'] === 'Y' ? 'featured' : '' ?>" href="<?=htmlspecialcharsbx($item['URL'])?>">
     <?php if ($image): ?>
-    <img class="model-img" src="<?=htmlspecialcharsbx($image)?>" alt="<?=$name?>" loading="lazy">
+    <div class="model-photo">
+        <img class="model-img" src="<?=htmlspecialcharsbx($image)?>" alt="<?=$name?>" loading="lazy">
+    </div>
     <?php else: ?>
     <div class="model-img" aria-hidden="true"></div>
     <?php endif; ?>
