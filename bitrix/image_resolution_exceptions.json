@@ -1,36 +1,12 @@
 {
   "/": {
-    "/img/home-png/astra-logo.webp": {
-      "sha256": "efb76e5561223dfc21bc079a7f18e8eea5f75a0b22e4f56153f896b72923e512",
-      "max_pixels": {"1710": [410, 108], "390": [213, 57]}
-    },
     "/img/home-png/engineering-building.webp": {
       "sha256": "c9c2bfc6d4cc5763d0d7b60960997b1b181958e0d19a4f712ae4175b530502fb",
       "max_pixels": {"1710": [373, 696], "390": [194, 362]}
     },
-    "/img/home-png/intersense-logo.webp": {
-      "sha256": "d0fd46fdb4920aa1375b90694bb8d2cce35cca6d704a152aa47c153ada99a0dc",
-      "max_pixels": {"1710": [546, 100], "390": [284, 52]}
-    },
     "/img/home-png/project-emblem.webp": {
       "sha256": "fa275c1dd4dbadc9bdb63ef8583621a5b80885aced49bb9d982f76fb63e0cddb",
       "max_pixels": {"1710": [751, 453], "390": [218, 132]}
-    },
-    "/img/home-png/project-kiosk.webp": {
-      "sha256": "78fece9df8938aafb3968a6994559b8813fbe3bc69bdd13c558a8d105dc22437",
-      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
-    },
-    "/img/home-png/project-public-kiosk.webp": {
-      "sha256": "ff03b08e4eb911222b2e3017baa56e8731f7b014a5bca9317a5c458307336411",
-      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
-    },
-    "/img/home-png/project-table.webp": {
-      "sha256": "0a719055142808eaaad849aab3b2c9c411231fc582cb4603cf0559cc7a3dc069",
-      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
-    },
-    "/img/home-png/project-video-wall.webp": {
-      "sha256": "7f075465e2af604289c7f19974ef50a5bb8573fa5a935be2768464d7af963e4e",
-      "max_pixels": {"1710": [746, 376], "390": [344, 173]}
     },
     "/img/home-redesign/engineering-icon.webp": {
       "sha256": "a0a7d53c95497cbae5ccd9fc93b30a9f7427bec38f7580deecea67b86af99e41",
@@ -77,16 +53,6 @@
     "/img/home-png/footer-social-icons.webp": {
       "sha256": "a5936e1444cc6d607f63ab9a7a235acfa0ae509bb4d8bc072b93ff77c44d6cb5",
       "max_pixels": {"1710": [260, 105], "390": [135, 55]}
-    }
-  },
-  "/about/": {
-    "/img/home-png/intersense-logo.webp": {
-      "sha256": "d0fd46fdb4920aa1375b90694bb8d2cce35cca6d704a152aa47c153ada99a0dc",
-      "max_pixels": {"1710": [546, 100], "390": [284, 52]}
-    },
-    "/img/home-png/astra-logo.webp": {
-      "sha256": "efb76e5561223dfc21bc079a7f18e8eea5f75a0b22e4f56153f896b72923e512",
-      "max_pixels": {"1710": [410, 108], "390": [213, 57]}
     }
   },
   "/catalog/": {

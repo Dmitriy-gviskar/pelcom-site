@@ -75,10 +75,13 @@ def catalog_overview(body):
                 raise ValueError(f'Unexpected equipment category URL: {tile["href"]}')
             if slug in PRODUCT_IMAGES:
                 tile.img['src'] = f'{CATALOG_ASSETS}product-{slug}-480.webp'
+            cutout = fragment.new_tag('div', attrs={'class': 'catalog-cutout'})
+            tile.img.wrap(cutout)
             price_marker, count_marker = f'PELCOMCATPRICE-{slug}-END', f'PELCOMCATCOUNT-{slug}-END'
             copy = card_copy(fragment, tile.h3)
-            copy.append(price_marker)
-            copy.append(arrow_link(fragment, 'cat-arrow', count_marker))
+            if slug != 'rugged-tablet':
+                copy.append(price_marker)
+                copy.append(arrow_link(fragment, 'cat-arrow', count_marker))
             tile.select_one('.cat-card__body').replace_with(copy)
             replacements[price_marker] = f"<?=pelcomCatalogPriceMarkup($pelcomCategoryStats['{slug}']['price'] ?? null)?>"
             replacements[count_marker] = f"<?=pelcomCatalogCountLabel($pelcomCategoryStats['{slug}']['count'] ?? 0)?>"

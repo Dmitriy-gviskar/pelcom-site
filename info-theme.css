@@ -61,10 +61,8 @@
 .pelcom-info-theme .pelcom-content .pg-h em { white-space: nowrap; }
 
 .pelcom-info-theme .pelcom-content .info-software-devices {
-  width: min(100%, 390px);
-  height: auto;
+  width: 100%;
   justify-self: center;
-  mix-blend-mode: normal;
 }
 
 .pelcom-info-theme .info-screen {

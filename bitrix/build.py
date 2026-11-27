@@ -41,7 +41,7 @@ for file,doc in docs.items():
   models.append(m);category['models'].append(code);model_files[filename]=m
  categories.append(category)
 links={c['source']:c['url'] for c in categories};links.update({m['source']:m['url'] for m in models})
-fixed={'pelcom-landing.html':'/','products.html':'/catalog/','solutions.html':'/solutions/','software.html':'/software/','contacts.html':'/contacts/','privacy.html':'/privacy/','pelcom-about.html':'/about/','pelcom-service.html':'/service/','pelcom-partners.html':'/partners/','404.html':'/404/'}
+fixed={'pelcom-landing.html':'/','products.html':'/catalog/','pelcom-rugged-tablet.html':'/catalog/rugged-tablet/','solutions.html':'/solutions/','software.html':'/software/','contacts.html':'/contacts/','privacy.html':'/privacy/','pelcom-about.html':'/about/','pelcom-service.html':'/service/','pelcom-partners.html':'/partners/','404.html':'/404/'}
 for filename in files:
  if filename in links:continue
  links[filename]=fixed.get(filename,'/'+filename.removeprefix('pelcom-').removesuffix('.html').replace('solution-','solutions/').replace('software-','software/')+'/')
@@ -77,9 +77,9 @@ for filename,raw in files.items():
  write(f'local/templates/pelcom/parts/{key}-header.php',rewrite(header.group() if header else ''))
  write(f'local/templates/pelcom/parts/{key}-footer.php',rewrite(footer.group() if footer else ''))
  if key=='pelcom-landing':
-  dialogs=[doc.find('dialog',id=f'dialog-{company}') for company in ('pelcom','intersense','astra')]
-  assert all(dialogs), 'Missing homepage company dialog'
-  write('local/templates/pelcom/parts/png-company-dialogs.php',rewrite('\n'.join(map(str,dialogs))))
+  quote = doc.select_one('dialog[data-quote-dialog]')
+  assert quote, 'Missing quote dialog'
+  write('local/templates/pelcom/parts/quote-dialog.php', rewrite(str(quote)))
  category=next((c for c in categories if c['source']==filename),None)
  description=doc.find('meta',attrs={'name':'description'});description=description.get('content','') if description else ''
  if filename in model_files:
@@ -141,7 +141,7 @@ require $_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php';
  write(filename,'<!doctype html><meta http-equiv="refresh" content="0;url='+url+'"><a href="'+url+'">Перейти на страницу</a>')
 for name in ['img','specs']:shutil.copytree(src/name,out/name,dirs_exist_ok=True)
 for f in src.iterdir():
- if f.is_file() and f.suffix in ['.css','.js','.svg','.png']:shutil.copy2(f,out/f.name)
+ if f.is_file() and f.suffix in ['.css','.js','.svg','.png','.ico']:shutil.copy2(f,out/f.name)
 if software_devices:
  write('info-theme.css',info_theme_styles((src/'info-theme.css').read_text(),(src/'home-png.css').read_text()))
 lead=(out/'lead.js').read_text().replace('return Promise.resolve();','return Promise.reject(new Error("Lead delivery is not configured"));');write('lead.js',lead)

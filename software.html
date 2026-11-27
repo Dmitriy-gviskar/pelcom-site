@@ -53,6 +53,7 @@
   @media(max-width:900px){.sw-grid,.branded-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:640px){.sw-section{padding:80px 16px}.sw-grid,.branded-grid{grid-template-columns:1fr}.sw-card,.branded-card{padding:28px 22px}}
 </style>
+<link rel="stylesheet" href="pelcom-readable.css?v=20261127">
 </head>
 <body>
 
@@ -68,7 +69,7 @@
     <a href="contacts.html">Контакты</a>
   </nav>
   <div class="h-right">
-    <a href="tel:+74957770741" class="h-phone">+7 (495) 777-07-41</a>
+    <a href="tel:+74955483103" class="h-phone">+7 (495) 548-31-03</a>
     <a href="pelcom-landing.html" class="btn btn-blue btn-sm">Связаться</a>
   </div>
   <button class="burger" type="button" aria-label="Меню" onclick="this.closest('header').classList.toggle('open')"><span></span><span></span><span></span></button>
@@ -116,7 +117,25 @@
         <div class="branded-desc">Оболочка для сенсорных киосков. Админ-панель, киоск-режим 24/7, удалённое обновление, интеграция с 1С и CRM.</div>
         <span class="branded-arrow">Подробнее</span>
       </a>
-    </div>
+    <a href="pelcom-landing.html#contact" data-product="schedule" class="branded-card">
+        <div class="branded-icon" aria-hidden="true"><span>Расписание</span></div>
+        <div class="branded-name">Pelcom Расписание</div>
+        <div class="branded-desc">Расписание для интерактивных экранов.</div>
+        <span class="branded-arrow">Обсудить проект</span>
+      </a>
+      <a href="pelcom-landing.html#contact" data-product="fitting" class="branded-card">
+        <div class="branded-icon" aria-hidden="true"><span>Примерочные</span></div>
+        <div class="branded-name">Pelcom Примерочные</div>
+        <div class="branded-desc">Цифровой сервис для примерочных.</div>
+        <span class="branded-arrow">Обсудить проект</span>
+      </a>
+      <a href="pelcom-landing.html#contact" data-product="self-service" class="branded-card">
+        <div class="branded-icon" aria-hidden="true"><span>Самообслуживание</span></div>
+        <div class="branded-name">Pelcom Самообслуживание</div>
+        <div class="branded-desc">Программное обеспечение для терминалов самообслуживания.</div>
+        <span class="branded-arrow">Обсудить проект</span>
+      </a>
+      </div>
   </div>
 </section>
 
@@ -392,7 +411,7 @@
         <ul class="sw-features"><li>Инфокиоски</li><li>Столы</li><li>Панели</li></ul>
       </div>
       <div class="sw-card" data-cat="med">
-        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007CC2" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="sw-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M5 9h14m-7-2v7m0 0-4 7m4-7 4 7"/></svg></div>
         <div class="sw-tag">Больницы, школы</div>
         <div class="sw-title">Атлас человека</div>
         <div class="sw-desc">Интерактивный 3D-атлас анатомии: скелет, мышцы, органы, системы. Для медвузов и школ.</div>
@@ -456,8 +475,8 @@
   <div class="container">
     <div class="s-label">Сравнение</div>
     <h2 class="s-title">Возможности продуктов</h2>
-    <div style="overflow-x:auto;margin-top:40px">
-      <table style="width:100%;border-collapse:collapse;font-size:14px">
+    <div class="software-comparison-scroll" role="region" aria-label="Таблица сравнения" tabindex="0">
+      <table class="software-comparison" aria-label="Возможности продуктов">
         <thead><tr style="border-bottom:2px solid var(--rule)">
           <th style="text-align:left;padding:14px 16px;color:var(--dim);font-weight:500;font-size:12px;letter-spacing:1px;text-transform:uppercase">Функция</th>
           <th style="text-align:center;padding:14px 16px;color:var(--blue);font-weight:600;font-size:13px">Навигация</th>
@@ -465,15 +484,15 @@
           <th style="text-align:center;padding:14px 16px;color:var(--blue);font-weight:600;font-size:13px">Инфокиоск</th>
         </tr></thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Интерактивные карты</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td></tr>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Электронная очередь</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td></tr>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Киоск-режим 24/7</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Интеграция с 1С</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">SMS / Push-уведомления</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td></tr>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Мультиязычность</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Админ-панель</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
-          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Офлайн-режим</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
-          <tr><td style="padding:12px 16px;color:var(--dim)">Мониторинг устройств</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:rgba(255,255,255,.15)">—</td><td style="text-align:center;padding:12px 16px;color:#fff">✓</td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Интерактивные карты</td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Электронная очередь</td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Киоск-режим 24/7</td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Интеграция с 1С</td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">SMS / Push-уведомления</td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Мультиязычность</td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Админ-панель</td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td></tr>
+          <tr style="border-bottom:1px solid var(--rule)"><td style="padding:12px 16px;color:var(--dim)">Офлайн-режим</td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td></tr>
+          <tr><td style="padding:12px 16px;color:var(--dim)">Мониторинг устройств</td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="unavailable"><span aria-hidden="true">—</span><span class="visually-hidden">Недоступно</span></td><td class="available"><span aria-hidden="true">✓</span><span class="visually-hidden">Доступно</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -485,7 +504,7 @@
   <h2>Обсудим ваш проект?</h2>
   <p>Подберём готовое ПО или разработаем под ваши требования. Оставьте заявку — ответим в течение 2 часов.</p>
   <div class="cta-actions">
-    <a href="pelcom-landing.html" class="btn btn-white">Оставить заявку</a>
+    <a href="pelcom-landing.html#contact" class="btn btn-white">Оставить заявку</a>
   </div>
 </section>
 
@@ -504,7 +523,7 @@
         <a href="pelcom-about.html">О компании</a><a href="pelcom-service.html">Сервис</a><a href="pelcom-partners.html">Дилерам</a><a href="contacts.html">Контакты</a>
       </div>
       <div class="footer-col"><h4>Контакты</h4>
-        <a href="tel:+74957770741">+7 (495) 777-07-41</a><a href="mailto:info@pelcom.ru">info@pelcom.ru</a>
+        <a href="tel:+74955483103">+7 (495) 548-31-03</a><a href="mailto:info@pelcom.ru">info@pelcom.ru</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -515,8 +534,6 @@
 </footer>
 
 <div class="fab">
-  <a href="https://t.me/pelcom" class="tg" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.49 8.22l-1.83 8.63c-.14.61-.5.76-1.01.47l-2.78-2.05-1.34 1.29c-.15.15-.28.28-.57.28l.2-2.83 5.16-4.66c.22-.2-.05-.31-.34-.11l-6.38 4.02-2.75-.86c-.6-.19-.61-.6.13-.89l10.75-4.14c.5-.19.93.12.76.88z"/></svg></a>
-  <a href="https://wa.me/74957770741" class="wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.32-.16-1.88-.93-2.17-1.04-.29-.1-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.89-1.78-2.21-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.34-.26-.61-.52-.53-.71-.54-.18-.01-.39-.02-.6-.02-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.76.75.32 1.34.52 1.8.66.75.24 1.44.2 1.98.12.6-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37zM12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 22c-5.52 0-10-4.48-10-10S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/></svg></a>
 </div>
 
 <div class="cookie" id="cookie">

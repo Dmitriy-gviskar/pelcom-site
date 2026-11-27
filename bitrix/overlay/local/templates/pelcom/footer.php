@@ -7,7 +7,10 @@ if ($pelcomInterior ?? false) {
 }
 if ($pelcomPngShell ?? false) {
     echo pelcomPngFooter($page);
-    echo '<script src="/png-shell.js?v=20261124" defer></script>';
+    require __DIR__.'/parts/quote-dialog.php';
+    echo '<script src="/lead.js?v=20261127" defer></script>';
+    echo '<script src="/quote-dialog.js?v=20261127" defer></script>';
+    echo '<script src="/png-shell.js?v=20261127" defer></script>';
 } elseif ($pelcomInterior ?? false) {
     ob_start();
     require __DIR__.'/parts/'.$page.'-footer.php';
@@ -24,4 +27,4 @@ if ($pelcomPngShell ?? false) {
     </div>
 </aside>
 <script src="/pelcom-analytics.js?v=2" defer></script>
-<script src="/ui-polish.js?v=20261109-3" defer></script></body></html>
+<script src="/ui-polish.js?v=20261127" defer></script></body></html>

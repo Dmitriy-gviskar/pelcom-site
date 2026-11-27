@@ -30,7 +30,8 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 
-<link href="/home-png.css?v=20261125-presentation" rel="stylesheet"/>
+<link href="/home-png.css?v=20261127" rel="stylesheet"/>
+<link href="/pelcom-readable.css?v=20261127" rel="stylesheet"/>
 </head>
 <body>
 <header class="header" id="top">
@@ -43,13 +44,14 @@
 <a href="/solutions/">Решения</a>
 <a href="/software/">Программное обеспечение</a>
 <a href="#engineering">Инжиниринг</a>
-<a href="#group">Группа компаний ⌄</a>
+<a href="/about/#group">Группа компаний</a>
 <a href="/service/">Сервис</a>
 <a href="/contacts/">Контакты</a>
+<a class="mobile-header-action" href="tel:+74955483103">+7 495 548-31-03</a>
+<a class="mobile-header-action" href="/#contact">Обсудить проект</a>
 </nav>
 <div class="header-actions">
-<a class="header-contact" href="/contacts/">
-<span aria-hidden="true">☎</span> Контакты</a>
+<a class="header-phone" href="tel:+74955483103">+7 495 548-31-03</a>
 <button class="button" data-dialog="project" type="button">Обсудить проект</button>
 </div>
 <button aria-controls="site-nav" aria-expanded="false" aria-label="Меню" class="menu" type="button">☰</button>
@@ -70,15 +72,15 @@
 </div>
 </section>
 <nav aria-label="Компетенции" class="capabilities wrap">
-<a href="#engineering">
+<a href="/about/#group">
 <img alt="" decoding="async" height="80" loading="lazy" src="/img/home-redesign/engineering-icon.webp" width="80"/>
-<span>Инженерный<br/>центр</span>
+<span>Инжиниринговый центр</span>
 </a>
-<a href="#production">
+<a href="/about/#production">
 <img alt="" decoding="async" height="80" loading="lazy" src="/img/home-redesign/manufacture-icon.webp" width="80"/>
 <span>Собственное<br/>производство</span>
 </a>
-<a href="#software">
+<a href="/software/">
 <img alt="" decoding="async" height="80" loading="lazy" src="/img/home-redesign/software-icon.webp" width="80"/>
 <span>ПО и интеграция</span>
 </a>
@@ -110,35 +112,25 @@
 <p class="group-intro">Три компании. Единая технологическая экосистема.</p>
 <div class="group-cards">
 <article class="group-card">
-<div aria-label="PELCOM" class="group-logo" style="width:calc(128 * var(--u))">
+<div aria-label="PELCOM" class="group-logo">
 <img alt="PELCOM" decoding="async" height="138" loading="lazy" src="/img/home-redesign/pelcom-logo.webp" width="585"/>
 </div>
-<h3>Инженерный центр</h3>
+<h3>Инжиниринговый центр / агрегатор</h3>
 <p>Инженерная разработка и комплексное проектирование интерактивных решений.</p>
-<button aria-label="Подробнее о PELCOM" data-dialog="pelcom" type="button">Подробнее <span aria-hidden="true" class="arrow">→</span>
-</button>
 </article>
 <article class="group-card">
-<div aria-label="ИНТЕРСЕНС" class="group-logo" style="width:calc(128 * var(--u))">
-<span aria-hidden="true" class="crop" style="--ratio:126/23;width:calc(120 * var(--u))">
-<img alt="" decoding="async" height="23" loading="lazy" src="/img/home-png/intersense-logo.webp" width="126"/>
-</span>
+<div aria-label="ИНТЕРСЕНС" class="group-logo">
+<img alt="Интерсенс" decoding="async" height="100" loading="lazy" src="/img/home-redesign/intersense-logo.webp" width="411"/>
 </div>
-<h3>Сенсорные технологии</h3>
-<p>Разработка и реализация сенсорных решений.</p>
-<button aria-label="Подробнее о ИНТЕРСЕНС" data-dialog="intersense" type="button">Подробнее <span aria-hidden="true" class="arrow">→</span>
-</button>
+<h3>Производство</h3>
+<p>Производственные компетенции группы. Изготовление и сборка интерактивного оборудования, реализация серийных и индивидуальных решений.</p>
 </article>
 <article class="group-card">
-<div aria-label="ASTRA STUDIO GROUP" class="group-logo" style="width:calc(128 * var(--u))">
-<span aria-hidden="true" class="crop" style="--ratio:91/24;width:calc(90 * var(--u))">
-<img alt="" decoding="async" height="24" loading="lazy" src="/img/home-png/astra-logo.webp" width="91"/>
-</span>
+<div aria-label="ASTRA STUDIO GROUP" class="group-logo">
+<img alt="ASTRA STUDIO GROUP" decoding="async" height="225" loading="lazy" src="/img/home-redesign/astra-logo.webp" width="619"/>
 </div>
 <h3>Программное обеспечение</h3>
-<p>ПО, Aura и цифровые интерфейсы.</p>
-<button aria-label="Подробнее о ASTRA STUDIO GROUP" data-dialog="astra" type="button">Подробнее <span aria-hidden="true" class="arrow">→</span>
-</button>
+<p>Разработка программного обеспечения и цифровых интерфейсов.</p>
 </article>
 </div>
 </div>
@@ -207,30 +199,11 @@
 <a class="button" href="/software/">Узнать больше<span aria-hidden="true" class="arrow">→</span>
 </a>
 </div>
-<div aria-hidden="true" class="software-video software-devices">
-  <div class="software-device software-device--desktop">
-    <div class="software-device-screen">
-      <span class="software-device-bar">Панель управления</span>
-      <div class="software-device-dashboard"><span></span><span></span><span></span></div>
-    </div>
-  </div>
-  <div class="software-device software-device--tablet">
-    <div class="software-device-screen">
-      <span class="software-device-bar">Навигация</span>
-      <div class="software-device-map"><span></span><span></span><span></span></div>
-    </div>
-  </div>
-  <div class="software-device software-device--phone">
-    <div class="software-device-screen">
-      <span class="software-device-bar">Очередь</span>
-      <div class="software-device-tickets"><span></span><span></span><span></span></div>
-    </div>
-  </div>
-</div>
+<img class="software-video software-devices" alt="Цифровая экосистема PELCOM на планшете, мониторе и смартфоне" decoding="async" height="941" loading="lazy" src="/img/home-redesign/software-ecosystem.webp" width="1672"/>
 <ul>
 <li>Навигационные системы</li>
 <li>Электронная очередь</li>
-<li>Платформа Aura</li>
+<li>Собственная платформа</li>
 <li>Интеграция с внешними системами</li>
 </ul>
 </div>
@@ -258,7 +231,7 @@
 </span>
 <span>Образование</span>
 </a>
-<a class="industry-card" href="/solutions/">
+<a class="industry-card" href="/solutions/business/">
 <span aria-hidden="true" class="crop" style="--ratio:105/79;">
 <img alt="" decoding="async" height="332" loading="lazy" src="/img/home-redesign/industry-business.webp" width="484"/>
 </span>
@@ -280,49 +253,30 @@
 </div>
 </section>
 <section aria-labelledby="production-title" class="production" id="production">
-<span aria-hidden="true" class="crop production-photo" style="--ratio:343/121;">
-<img alt="" decoding="async" height="941" loading="lazy" sizes="(max-width: 700px) 100vw, 46vw" src="/img/home-redesign/production-detail.webp" srcset="/img/home-redesign/production-detail-836.webp 836w, /img/home-redesign/production-detail.webp 1672w" width="1672"/>
+<span aria-hidden="true" class="crop production-photo" style="--ratio:1672/941;">
+<img alt="" decoding="async" height="941" loading="lazy" sizes="(max-width: 700px) 100vw, 46vw" src="/img/home-redesign/factory-hall.webp" srcset="/img/home-redesign/factory-hall-836.webp 836w, /img/home-redesign/factory-hall.webp 1672w" width="1672"/>
 </span>
 <div class="production-copy">
 <h2 id="production-title">Собственное производство</h2>
 <p>Современные производственные мощности позволяют контролировать качество на всех этапах — от разработки до финальной сборки.</p>
-<a class="button button--outline" href="/about/">Узнать больше<span aria-hidden="true" class="arrow">→</span>
+<a class="button button--outline" href="/about/#production">Узнать больше<span aria-hidden="true" class="arrow">→</span>
 </a>
 </div>
 </section>
 <section aria-labelledby="projects-title" class="projects" id="cases">
 <div class="wrap">
+<div class="projects-copy">
 <h2 id="projects-title">Реализуем проекты под ключ</h2>
 <p>Комплексные решения для масштабных задач</p>
-<div class="project-grid">
-<a aria-label="Проект с информационным киоском" class="project-card" data-dialog="cases" href="#cases">
-<span aria-hidden="true" class="crop" style="--ratio:163/82;">
-<img alt="" decoding="async" height="82" loading="lazy" src="/img/home-png/project-kiosk.webp" width="163"/>
-</span>
-</a>
-<a aria-label="Проект с видеостеной" class="project-card" data-dialog="cases" href="#cases">
-<span aria-hidden="true" class="crop" style="--ratio:163/82;">
-<img alt="" decoding="async" height="82" loading="lazy" src="/img/home-png/project-video-wall.webp" width="163"/>
-</span>
-</a>
-<a aria-label="Проект с интерактивным столом" class="project-card" data-dialog="cases" href="#cases">
-<span aria-hidden="true" class="crop" style="--ratio:163/82;">
-<img alt="" decoding="async" height="82" loading="lazy" src="/img/home-png/project-table.webp" width="163"/>
-</span>
-</a>
-<a aria-label="Проект с киоском в общественном пространстве" class="project-card" data-dialog="cases" href="#cases">
-<span aria-hidden="true" class="crop" style="--ratio:163/82;">
-<img alt="" decoding="async" height="82" loading="lazy" src="/img/home-png/project-public-kiosk.webp" width="163"/>
-</span>
-</a>
 </div>
+<img class="projects-image" alt="Цифровая экосистема PELCOM: карта навигации на планшете, сервисы на мониторе и смартфоне" decoding="async" height="941" loading="lazy" src="/img/home-redesign/software-ecosystem.webp" width="1672"/>
 <a class="button button--outline" data-dialog="cases" href="#cases">Смотреть кейсы<span aria-hidden="true" class="arrow">→</span>
 </a>
 </div>
 </section>
 <section aria-labelledby="contact-title" class="cta" id="contact">
-<span aria-hidden="true" class="crop cta-art" style="--ratio:166/100;">
-<img alt="" decoding="async" height="100" loading="lazy" src="/img/home-png/project-emblem.webp" width="166"/>
+<span aria-hidden="true" class="crop cta-art" style="--ratio:1672/941;">
+<img alt="" decoding="async" height="941" loading="lazy" src="/img/home-redesign/project-emblem.webp" width="1672"/>
 </span>
 <div class="wrap">
 <div>
@@ -338,11 +292,7 @@
 <div class="wrap">
 <div class="footer-grid">
 <div class="footer-brand">
-<a aria-label="PELCOM — главная" href="#top">
-<span aria-hidden="true" class="crop footer-mark" style="--ratio:143/34;">
-<img alt="" decoding="async" height="34" src="/img/home-png/pelcom-footer-logo.webp" width="143"/>
-</span>
-</a>
+<img class="footer-mark" alt="PELCOM" decoding="async" width="780" height="205" src="/img/home-redesign/footer-metal-logo.webp"/>
 <p>Интерактивные технологии для реальных пространств</p>
 </div>
 <div class="footer-col">
@@ -356,23 +306,19 @@
 </div>
 <div class="footer-col">
 <h3>Группа компаний</h3>
-<a data-detail="pelcom" href="#group">PELCOM</a>
-<a data-detail="intersense" href="#group">ИНТЕРСЕНС</a>
-<a data-detail="astra" href="#group">ASTRA STUDIO GROUP</a>
+<p>PELCOM</p>
+<p>ИНТЕРСЕНС</p>
+<p>ASTRA STUDIO GROUP</p>
 </div>
 <div class="footer-col">
 <h3>Контакты</h3>
 <address>
 <a href="mailto:info@pelcom-tech.ru">info@pelcom-tech.ru</a>
-<p>г. Дубна, Московская область</p>
+<a href="tel:+74955483103">+7 495 548-31-03</a>
+<p><strong>Головной офис</strong><br/>РФ, 119021, город Москва, Оболенский переулок, дом 10, строение 2</p>
+<p><strong>Склад</strong><br/>РФ, 141980, город Дубна, улица Дружбы, дом 2</p>
+<p><strong>Производство</strong><br/>РФ, 142301, город Чехов, улица Зелёная, дом 3</p>
 </address>
-</div>
-<div class="footer-social">
-<span aria-hidden="true" class="crop" style="--ratio:57/23;width:calc(57 * var(--u))">
-<img alt="" decoding="async" height="23" src="/img/home-png/footer-social-icons.webp" width="57"/>
-</span>
-<a aria-label="Telegram PELCOM" class="footer-telegram" href="https://t.me/pelcom">
-</a>
 </div>
 </div>
 <div class="footer-bottom">
@@ -381,7 +327,7 @@
 </div>
 </div>
 </footer>
-<dialog aria-labelledby="title-project" class="dialog" id="dialog-project">
+<dialog aria-labelledby="title-project" class="dialog quote-dialog" data-quote-dialog="" id="dialog-project">
 <button aria-label="Закрыть" autofocus="" class="dialog-close" type="button">×</button>
 <h2 id="title-project">Запросить КП</h2>
 <p>Опишите задачу — подберём оборудование, рассчитаем стоимость и сроки. Ответим в течение рабочего дня.</p>
@@ -412,27 +358,6 @@
 <p>Мы свяжемся с вами в течение рабочего дня.</p>
 </div>
 </dialog>
-<dialog aria-labelledby="title-pelcom" class="dialog" id="dialog-pelcom">
-<button aria-label="Закрыть" autofocus="" class="dialog-close" type="button">×</button>
-<h2 id="title-pelcom">PELCOM</h2>
-<p>Инженерный центр. Инженерная разработка и комплексное проектирование интерактивных решений.</p>
-<button class="button" data-dialog="project" type="button">Обсудить проект<span aria-hidden="true" class="arrow">→</span>
-</button>
-</dialog>
-<dialog aria-labelledby="title-intersense" class="dialog" id="dialog-intersense">
-<button aria-label="Закрыть" autofocus="" class="dialog-close" type="button">×</button>
-<h2 id="title-intersense">ИНТЕРСЕНС</h2>
-<p>Сенсорные технологии. Разработка и реализация сенсорных решений.</p>
-<button class="button" data-dialog="project" type="button">Обсудить проект<span aria-hidden="true" class="arrow">→</span>
-</button>
-</dialog>
-<dialog aria-labelledby="title-astra" class="dialog" id="dialog-astra">
-<button aria-label="Закрыть" autofocus="" class="dialog-close" type="button">×</button>
-<h2 id="title-astra">ASTRA STUDIO GROUP</h2>
-<p>Программное обеспечение. ПО, Aura и цифровые интерфейсы.</p>
-<button class="button" data-dialog="project" type="button">Обсудить проект<span aria-hidden="true" class="arrow">→</span>
-</button>
-</dialog>
 
 <dialog aria-labelledby="title-cases" class="dialog case-dialog" id="dialog-cases">
 <button aria-label="Закрыть" autofocus="" class="dialog-close" type="button">×</button>
@@ -458,6 +383,7 @@
 <button type="button">Принять</button>
 </div>
 <script defer="" src="/lead.js"></script>
-<script defer="" src="/home-png.js?v=20261124"></script>
+<script defer="" src="/quote-dialog.js?v=20261127"></script>
+<script defer="" src="/home-png.js?v=20261127"></script>
 </body>
 </html>

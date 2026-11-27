@@ -55,6 +55,8 @@
   }
 
   function init(){
+    if(document.documentElement.dataset.pelcomLeadReady) return;
+    document.documentElement.dataset.pelcomLeadReady="1";
     document.addEventListener("click",function(e){
       if(!e.target.closest('[onclick*="openLeadPopup"]'))return;
       var f=document.getElementById("lpForm");

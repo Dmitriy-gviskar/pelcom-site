@@ -6,7 +6,7 @@ $pelcomInterior = pelcomUsesInteriorTheme($page);
 $pelcomPngShell = $page !== 'pelcom-landing';
 $infoTheme = in_array($page, ['software', 'pelcom-about', 'pelcom-service', 'contacts'], true)
     || str_starts_with($page, 'pelcom-software-');
-$equipmentTheme = $page === 'products' || !empty($pelcomModel)
+$equipmentTheme = $page === 'products' || $page === 'pelcom-rugged-tablet' || !empty($pelcomModel)
     || $page === 'solutions' || str_starts_with($page, 'pelcom-solution-')
     || preg_match('~^/catalog(?:/|$)~', parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
 if ($pelcomPngShell) {
@@ -24,6 +24,9 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 <meta property="og:url" content="<?=htmlspecialcharsbx($canonical)?>"><meta property="og:image" content="<?=htmlspecialcharsbx($origin)?>/og-image.png">
 <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="<?=htmlspecialcharsbx($canonical)?>">
 <?php $APPLICATION->ShowHead(); require __DIR__.'/parts/'.$page.'-head.php'; ?>
+<link rel="icon" type="image/x-icon" sizes="any" href="/favicon.ico?v=20261127">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20261127">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20261127">
 <style>.hd,#hdr{top:var(--pelcom-admin-offset,0px)!important}.hero>.crumbs,.pg-hero>.crumbs{top:86px}.crumbs-i{flex-wrap:wrap}@media(max-width:640px){.hero>.crumbs,.pg-hero>.crumbs{top:80px}}@media(max-width:640px){section[style*="padding:100px"]{padding:48px 20px!important}.s-title{font-size:clamp(22px,6vw,32px);overflow-wrap:anywhere}.pelcom-model .gl{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pelcom-model .st td{padding:12px 8px;overflow-wrap:anywhere}}@media(max-width:640px){.pg-h{font-size:clamp(30px,10vw,48px)}}</style>
 <link rel="stylesheet" href="/pelcom-analytics.css?v=2">
 <style id="pelcom-gallery-layout">
@@ -40,6 +43,12 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 .hero-media .spin360-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#182139d9;color:#fff;border-radius:20px;padding:7px 16px;white-space:nowrap}
 @media(max-width:900px){.hero-inner:has(.hero-media){grid-template-columns:minmax(0,1fr)}.hero:has(.hero-media){padding-top:210px!important}}
 </style>
+<style>
+@media(max-width:640px){
+  .pelcom-model .cta-band{padding-inline:20px}
+  .pelcom-model .cta-band h2{font-size:clamp(22px,7vw,28px);overflow-wrap:anywhere}
+}
+</style>
 <link rel="stylesheet" href="/ui-polish.css?v=20261109-6">
 <?php if ($pelcomInterior): ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap">
@@ -53,7 +62,10 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 <link rel="stylesheet" href="/equipment-theme.css?v=20261124">
 <?php endif; ?>
 <?php if ($infoTheme): ?>
-<link rel="stylesheet" href="/info-theme.css?v=20261125-info">
+<link rel="stylesheet" href="/info-theme.css?v=20261127">
+<?php endif; ?>
+<?php if ($pelcomPngShell): ?>
+<link rel="stylesheet" href="/pelcom-readable.css?v=20261127">
 <?php endif; ?>
 </head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?><?= $pelcomInterior ? ' pelcom-refresh' : '' ?><?= $pelcomPngShell ? ' pelcom-png-shell' : '' ?><?= $equipmentTheme ? ' pelcom-equipment-theme' : '' ?><?= $infoTheme ? ' pelcom-info-theme' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 <script>(function(){var p=document.getElementById('panel');if(!p)return;function sync(){document.documentElement.style.setProperty('--pelcom-admin-offset',Math.max(0,(document.getElementById('bx-panel')||p).getBoundingClientRect().bottom)+'px')}sync();window.addEventListener('scroll',sync,{passive:true});if(window.ResizeObserver)new ResizeObserver(sync).observe(p)})();</script>

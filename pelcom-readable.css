@@ -1,0 +1,239 @@
+:root {
+  --pelcom-body-size: clamp(1rem, .93rem + .2vw, 1.125rem);
+  --pelcom-label-size: .875rem;
+  --pelcom-card-size: clamp(1.125rem, 1rem + .4vw, 1.375rem);
+  --pelcom-section-size: clamp(1.6rem, 1.18rem + 1.6vw, 2.65rem);
+}
+
+:is(.header, .png-header) nav a,
+:is(.header-phone, .png-header-phone) {
+  color: #08234a;
+  font: 650 var(--pelcom-label-size)/1.3 Inter, system-ui, sans-serif;
+  white-space: nowrap;
+}
+:is(.header, .png-header) :is(.button, .png-button) {
+  min-height: 42px;
+  font-size: var(--pelcom-label-size);
+}
+@media (max-width: 1329px) {
+  :is(.header, .png-header) { height: 62px; }
+  :is(.header, .png-header) :is(.header-actions, .png-header-actions, nav) { display: none; }
+  :is(.header, .png-header) :is(.menu, .png-menu) { display: block; color: #08234a; background: none; border: 0; font-size: 24px; padding: 8px; }
+  :is(.header, .png-header) nav.open { position: absolute; inset: 100% 0 auto; display: grid; gap: 0; background: #f4f9ff; box-shadow: 0 9px 24px #143b6b25; padding: 6px 16px 12px; z-index: 4; }
+  :is(.header, .png-header) nav.open a { padding: 11px 0; }
+}
+@media (min-width: 1330px) {
+  :is(.header, .png-header) :is(.brand, .png-brand) { width: clamp(135px, 14vw, 260px); }
+}
+
+:is(#engineering, #group, #production, #contact) { scroll-margin-top: 90px; }
+:is(.png-hero-description, .engineering p, .group-intro, .equipment-copy p,
+    .software-copy p, .software ul, .industries p, .production-copy p,
+    .projects-copy p, .cta p, .steps li) {
+  font-size: var(--pelcom-body-size);
+  line-height: 1.5;
+}
+:is(.engineering, .group, .equipment, .software, .industries, .production, .projects, .cta) h2,
+body.pelcom-png-shell .png-group h2 { font-size: var(--pelcom-section-size); line-height: 1.13; }
+:is(.capabilities a, .product-card > span:last-child, .industry-card > span:last-child) { font-size: max(.9375rem, calc(8 * var(--u))); line-height: 1.32; }
+:is(.png-hero .button, .equipment .button, .software .button, .production .button, .projects .button, .cta .button) { font-size: max(.875rem, calc(7.5 * var(--u))); min-height: 42px; }
+.png-hero-kicker { font-size: max(.75rem, calc(7.5 * var(--u))); }
+body .equipment { height: auto; padding-block: clamp(22px, 3vw, 44px); }
+.equipment-track { overscroll-behavior-inline: contain; }
+.product-card :is(.crop, img) { border-radius: 0; }
+.product-card .crop img { object-fit: contain; }
+body .cta-art { width: min(28vw, 460px); opacity: .82; }
+@media (max-width: 680px) {
+  body .cta-art { opacity: .3; }
+  .png-hero .button { white-space: normal; }
+}
+
+:is(.group-logo, .png-group-logo) {
+  width: min(100%, 200px);
+  height: clamp(47px, 5.7vw, 83px);
+  margin-bottom: 12px;
+}
+:is(.group-logo, .png-group-logo) img { width: 100%; max-height: 100%; object-fit: contain; object-position: left; mix-blend-mode: multiply; }
+.group-card h3,
+body.pelcom-png-shell .png-group-card h3 { font-size: var(--pelcom-card-size); line-height: 1.24; }
+.group-card p,
+body.pelcom-png-shell .png-group-card p { max-width: 42ch; font-size: var(--pelcom-body-size); line-height: 1.5; margin-bottom: 0; }
+body.pelcom-png-shell .png-group .png-group-intro { font-size: var(--pelcom-body-size); }
+
+:is(.footer-grid, .png-footer-grid) { grid-template-columns: 1.1fr 1fr .9fr 1.55fr; }
+:is(.footer, .png-footer) :is(.footer-mark, .png-footer-mark) { width: min(100%, 275px); height: auto; }
+body :is(.footer, .png-footer) :is(h3, a, p),
+body.pelcom-png-shell .png-footer :is(h3, a, p),
+body.pelcom-png-shell .png-footer address p {
+  font-size: var(--pelcom-label-size);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+body :is(.footer, .png-footer) h3 { font-size: 1rem; }
+body :is(.footer, .png-footer) address p { margin-block: 8px; }
+:is(.footer-bottom, .png-footer-bottom) { flex-wrap: wrap; font-size: var(--pelcom-label-size); }
+@media (max-width: 840px) {
+  :is(.footer-grid, .png-footer-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+dialog[data-quote-dialog] {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: min(100% - 32px, 510px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  overflow: auto;
+  padding: clamp(18px, 4vw, 28px);
+  border: 1px solid #d2e2f4;
+  border-radius: 16px;
+  background: #f7fbff;
+  color: #08234a;
+  box-shadow: 0 20px 50px #03224345;
+  font: 400 1rem/1.5 Inter, system-ui, sans-serif;
+}
+dialog[data-quote-dialog]::backdrop { background: #061c3b80; }
+dialog[data-quote-dialog] h2 { margin: 0 24px 10px 0; font: 700 var(--pelcom-section-size)/1.13 Montserrat, Inter, sans-serif; }
+dialog[data-quote-dialog] p { font-size: 1rem; line-height: 1.45; margin: 0 0 14px; }
+dialog[data-quote-dialog] .dialog-close { position: absolute; right: 10px; top: 10px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: #08234a; font: 1.5rem/1 system-ui, sans-serif; cursor: pointer; }
+dialog[data-quote-dialog] .ff { display: grid; gap: 5px; margin: 0 0 12px; }
+dialog[data-quote-dialog] .ff label { color: inherit; font: 650 1rem/1.35 Inter, system-ui, sans-serif; text-transform: none; letter-spacing: normal; }
+dialog[data-quote-dialog] .ff :is(input, textarea) { box-sizing: border-box; width: 100%; min-height: 44px; padding: 10px; border: 1px solid #bdd3ec; border-radius: 8px; background: #fff; color: inherit; font: inherit; }
+dialog[data-quote-dialog] textarea { min-height: 66px; resize: vertical; }
+dialog[data-quote-dialog] .consent { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 13px; color: inherit; font-size: var(--pelcom-label-size); line-height: 1.45; }
+dialog[data-quote-dialog] .consent input { flex: none; width: 16px; height: 16px; margin: 2px 0 0; }
+dialog[data-quote-dialog] .form-privacy-link { font-size: var(--pelcom-label-size); }
+dialog[data-quote-dialog] a { color: #065ab0; text-decoration: underline; }
+dialog[data-quote-dialog] .quote-submit {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 24px;
+  background: #0759aa;
+  color: #fff;
+  font: 650 1rem/1.3 Inter, system-ui, sans-serif;
+  cursor: pointer;
+}
+
+:is(.pelcom-content, .solutions-main) :is(.hero-desc, .pg-desc, .page-lead, .solution-hero__description,
+    .s-sub, .pg-lead, .band-p, .cta-band p, .feat-card p, .solution-process-grid p,
+    .sw-desc, .branded-desc, .sol-desc, .st td, .model-specs li, .info-contact-form label) {
+  font-size: var(--pelcom-body-size);
+  line-height: 1.5;
+}
+:is(.pelcom-content, .solutions-main) :is(.s-title, .section-title, .models-heading, .solution-section h2, .cta-band h2, .prod-h) {
+  font-size: var(--pelcom-section-size);
+  line-height: 1.15;
+}
+:is(.pelcom-content, .solutions-main) :is(.sol-name, .feat-card h3, .branded-name, .sw-title, .interior-card-copy h3, .model-name) {
+  font-size: var(--pelcom-card-size);
+  line-height: 1.25;
+}
+:is(.pelcom-content, .solutions-main) :is(.cta-actions, .hero-actions, .solution-hero__actions) :is(a, button) {
+  min-height: 42px;
+  font-size: var(--pelcom-label-size);
+}
+:is(.pelcom-page-privacy, .pelcom-page-consent) .pelcom-content .page-wrap :is(p, li) {
+  max-width: 72ch;
+  font-size: var(--pelcom-body-size);
+  line-height: 1.7;
+}
+:is(.pelcom-page-privacy, .pelcom-page-consent) .pelcom-content .page-wrap h2 { font-size: var(--pelcom-card-size); }
+
+.software-comparison-scroll { position: relative; max-width: 100%; overflow-x: auto; margin-top: 24px; }
+.software-comparison { width: 100%; min-width: 565px; border-collapse: collapse; color: #08234a; background: #fff; font-size: 1rem; }
+.software-comparison :is(th, td) { padding: 12px 16px; border-bottom: 1px solid #d6e4f3; color: #08234a !important; font-size: 1rem !important; }
+.software-comparison td:not(:first-child) { position: relative; text-align: center; font-weight: 750; }
+.software-comparison td.available { color: #146347 !important; background: #e9f8ef; }
+.software-comparison td.unavailable { color: #51657c !important; background: #f4f7fb; }
+.software-comparison .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.branded-card[data-product] .branded-icon {
+  display: grid; place-items: center; width: 100%; min-height: 90px; padding: 8px;
+  color: #0759aa; background: #dfedfc; font-weight: 650; text-align: center;
+}
+.pelcom-info-theme .pelcom-content .contact-addresses p { font-size: var(--pelcom-body-size); line-height: 1.45; margin: 8px 0; }
+.pelcom-info-theme .pelcom-content .contact-addresses { grid-column: span 2; }
+.pelcom-info-theme .info-contact-layout .cmap { height: auto; min-height: 360px; align-self: stretch; }
+.pelcom-info-theme .info-contact-layout .cmap iframe { height: 100%; min-height: 0; }
+@media (max-width: 620px) {
+  .pelcom-info-theme .pelcom-content .contact-addresses { grid-column: 1 / -1; }
+}
+.rugged-hero-image { display: block; width: min(100%, 590px); height: auto; margin-inline: auto; }
+
+/* Outline masks follow the product photos used on the home rail and catalog tiles. */
+:where(img[src$="product-accessible-480.webp"]) { clip-path: polygon(35% 12%, 40% 11%, 62% 17%, 62% 81%, 38% 88%, 35% 86%); }
+:where(img[src$="product-holo-480.webp"]) { clip-path: polygon(28% 13%, 42% 11%, 72% 13%, 72% 17%, 60% 19%, 60% 23%, 71% 32%, 72% 36%, 58% 37%, 56% 81%, 69% 85%, 71% 89%, 42% 96%, 30% 88%, 43% 83%, 40% 37%, 28% 36%); }
+:where(img[src$="product-kids-480.webp"]) { clip-path: polygon(25% 27%, 77% 27%, 79% 29%, 82% 58%, 62% 59%, 60% 65%, 66% 67%, 70% 82%, 69% 85%, 29% 84%, 29% 81%, 39% 65%, 39% 59%, 16% 57%, 15% 55%); }
+:where(img[src$="product-kiosk-480.webp"]) { clip-path: polygon(39% 12%, 41% 11%, 60% 15%, 60% 82%, 65% 85%, 64% 87%, 43% 92%, 36% 88%, 35% 86%, 39% 84%); }
+:where(img[src$="product-lectern-480.webp"]) { clip-path: polygon(35% 21%, 60% 23%, 69% 36%, 62% 39%, 64% 88%, 68% 90%, 42% 95%, 33% 91%, 37% 88%, 40% 38%); }
+:where(img[src$="product-nav-480.webp"]) { clip-path: polygon(38% 21%, 57% 22%, 64% 36%, 63% 78%, 67% 80%, 66% 82%, 41% 87%, 33% 83%, 33% 81%, 38% 79%); }
+:where(img[src$="product-outdoor-480.webp"]) { clip-path: polygon(37% 10%, 42% 9%, 61% 12%, 61% 88%, 64% 90%, 44% 97%, 36% 92%, 39% 90%); }
+:where(img[src$="product-panels-480.webp"]) { clip-path: polygon(8% 7%, 92% 6%, 93% 91%, 8% 90%); }
+:where(img[src$="product-payment-480.webp"]) { clip-path: polygon(34% 21%, 39% 20%, 59% 22%, 64% 35%, 64% 78%, 67% 79%, 67% 81%, 40% 87%, 32% 83%, 33% 80%, 40% 78%, 39% 38%); }
+:where(img[src$="product-pylon-480.webp"]) { clip-path: polygon(39% 4%, 62% 7%, 62% 83%, 65% 86%, 65% 89%, 44% 96%, 37% 92%, 34% 88%, 39% 86%); }
+:where(img[src$="product-queue-480.webp"]) { clip-path: polygon(16% 25%, 70% 27%, 87% 52%, 87% 55%, 63% 58%, 64% 79%, 73% 83%, 73% 85%, 38% 94%, 25% 87%, 26% 83%, 36% 80%, 36% 60%, 28% 61%); }
+:where(img[src$="product-tables-480.webp"]) { clip-path: polygon(20% 40%, 60% 40%, 77% 48%, 78% 51%, 78% 78%, 76% 80%, 61% 77%, 61% 59%, 36% 62%, 36% 90%, 31% 91%, 20% 85%, 21% 57%, 23% 47%, 19% 42%); }
+:where(.catalog-cutout img[src$="terminals/metallic.jpg"]) { clip-path: polygon(38% 21%, 59% 21%, 64% 34%, 64% 78%, 67% 79%, 67% 81%, 41% 87%, 32% 83%, 33% 81%, 38% 79%); }
+:where(.catalog-cutout img[src$="renders/led.jpg"]) { clip-path: polygon(38% 10%, 41% 9%, 60% 13%, 60% 84%, 66% 87%, 64% 90%, 42% 95%, 34% 90%, 35% 88%, 39% 86%); }
+:where(img[src$="rugged-tablet.webp"]) { clip-path: polygon(22% 18%, 25% 18%, 25% 20%, 85% 20%, 85% 18%, 89% 18%, 89% 20%, 91% 21%, 91% 69%, 90% 71%, 79% 71%, 79% 91%, 78% 93%, 9% 93%, 8% 91%, 8% 42%, 10% 40%, 12% 40%, 12% 39%, 14% 39%, 14% 41%, 22% 41%); }
+
+body .catalog-cutout {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #e8f2fd;
+  border-radius: 9px;
+}
+body .catalog-cutout img.cat-card__img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: auto;
+  background: transparent;
+  mix-blend-mode: normal;
+}
+.product-card .crop { background: #e8f2fd; }
+.product-card img { aspect-ratio: auto; height: auto; max-height: 100%; background: transparent; }
+.product-card .crop { display: grid; place-items: center; }
+
+:is(.header, .png-header) :is(.mobile-header-action, .png-mobile-header-action) { display: none; }
+@media (max-width: 1329px) {
+  :is(.header, .png-header) nav.open :is(.mobile-header-action, .png-mobile-header-action) { display: block; }
+}
+
+.pelcom-page-pelcom-about :is(.timeline-body h4, .prod-fact-label) { font-size: var(--pelcom-card-size); }
+
+/* Keep the original sector artwork within its available pixel size at 2×. */
+.pelcom-equipment-theme .solution-hero__media--overview img { max-width: 168px; }
+.pelcom-equipment-theme .solution-hero__media:has(img[src*="/industry-"]):not(.solution-hero__media--overview) {
+  width: min(100%, 242px);
+  justify-self: center;
+}
+.pelcom-equipment-theme .solution-hero__media:not(.solution-hero__media--overview) img[src*="/industry-"] {
+  aspect-ratio: 484 / 332;
+}
+.pelcom-equipment-theme .sol-card img[src*="/industry-"] {
+  align-self: center;
+  width: min(100%, 242px);
+  aspect-ratio: 484 / 332;
+}
+.pelcom-equipment-theme .solution-hero__media:has(img[src*="/solution-illustrations/"]) {
+  width: min(100%, 480px);
+  justify-self: center;
+}
+
+.pelcom-page-pelcom-about :is(.timeline-body p, .prod-p, .prod-fact-sub) { font-size: var(--pelcom-body-size); line-height: 1.55; }
+
+/* These catalog photos are displayed within their native size at 2×. */
+.pelcom-model .hero-svg img[src$="/ivvytdx87ud2wj6mzl8f81cgaiwk008k.jpg"] { max-height: 380px; }
+.pelcom-model .hero-svg img[src$="/oi7eozfhrge4qtaqy37g6wsowdcgwx1a.jpg"] { max-width: min(100%, 512px) !important; }
+@media (max-width: 640px) {
+  .pelcom-model .pelcom-content .cta-band h2 {
+    font-size: clamp(22px, 7vw, 28px);
+    overflow-wrap: anywhere;
+  }
+}

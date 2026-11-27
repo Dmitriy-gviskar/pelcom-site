@@ -14,7 +14,7 @@
    if(fab.classList.contains('pelcom-contact'))return;
    if(!fab.querySelector('a[href^="tel:"]')&&header){var phone=header.querySelector('a[href^="tel:"]');if(phone){var call=phone.cloneNode(true);call.className='ph';call.textContent='';fab.appendChild(call);}}
    var links=document.createElement('div');links.className='pelcom-contact__links';links.id='pelcom-contact-links-'+index;links.hidden=true;
-   fab.querySelectorAll('a').forEach(function(a){var label=a.classList.contains('tg')?'Telegram':a.classList.contains('wa')?'WhatsApp':a.href.indexOf('tel:')===0?'Позвонить':a.getAttribute('aria-label');var text=document.createElement('span');text.textContent=label||'Связаться';a.appendChild(text);links.appendChild(a);});
+   fab.querySelectorAll('a').forEach(function(a){if(a.classList.contains('tg')||/^(?:t\.me|telegram\.me|(?:www\.)?youtube\.com|youtu\.be)$/.test(a.hostname)){a.remove();return;}var label=a.classList.contains('wa')?'WhatsApp':a.href.indexOf('tel:')===0?'Позвонить':a.getAttribute('aria-label');var text=document.createElement('span');text.textContent=label||'Связаться';a.appendChild(text);links.appendChild(a);});
    var toggle=document.createElement('button');toggle.type='button';toggle.className='pelcom-contact__toggle';toggle.textContent='Связаться';toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-controls',links.id);
    function close(){links.hidden=true;toggle.setAttribute('aria-expanded','false');}
    toggle.addEventListener('click',function(){var open=links.hidden;links.hidden=!open;toggle.setAttribute('aria-expanded',String(open));});

@@ -79,7 +79,8 @@ def software_body(body, key, devices):
     def branded(fragment):
         for card in fragment.select('.branded-card'):
             code = urlsplit(card['href']).path.strip('/').split('/')[-1]
-            card.select_one('.branded-icon').replace_with(software_visual(fragment, code, compact=True))
+            if code in SOFTWARE_VISUALS:
+                card.select_one('.branded-icon').replace_with(software_visual(fragment, code, compact=True))
 
     body = fragment_update(body, r'<section\b[^>]*>(?:(?!<section\b).)*?class="branded-grid".*?</section>', branded)
 
@@ -135,10 +136,10 @@ def company_or_service_body(body, service):
     body = re.sub(r'Год основания\.\s*Работаем и развиваемся уже 12 лет', 'Год основания', body, count=1)
     def production(fragment):
         photo = fragment.select_one('.prod-right img')
-        photo['src'] = '/img/home-redesign/production-detail.webp'
-        photo['srcset'] = '/img/home-redesign/production-detail-836.webp 836w, /img/home-redesign/production-detail.webp 1672w'
+        photo['src'] = '/img/home-redesign/factory-hall.webp'
+        photo['srcset'] = '/img/home-redesign/factory-hall-836.webp 836w, /img/home-redesign/factory-hall.webp 1672w'
         photo['sizes'] = '(max-width: 760px) 92vw, 44vw'
-        photo['alt'] = 'Сборка интерактивного оборудования'
+        photo['alt'] = 'Производственный цех'
         photo['width'], photo['height'] = '1672', '941'
         badge = fragment.select_one('.factory-badge')
         if badge:
