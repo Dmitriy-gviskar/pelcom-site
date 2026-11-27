@@ -65,7 +65,10 @@ $canonical=$origin.(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH) ?: '/');
 <link rel="stylesheet" href="/info-theme.css?v=20261127">
 <?php endif; ?>
 <?php if ($pelcomPngShell): ?>
-<link rel="stylesheet" href="/pelcom-readable.css?v=20261127-models">
+<link rel="stylesheet" href="/pelcom-readable.css?v=20261127-gallery">
+<?php if ($equipmentTheme): ?>
+<link rel="stylesheet" href="/pelcom-gallery-cutouts.css?v=20261127">
+<?php endif; ?>
 <?php endif; ?>
 </head><body class="pelcom-page-<?=htmlspecialcharsbx($page)?> <?= !empty($pelcomModel) ? 'pelcom-model' : '' ?><?= $pelcomInterior ? ' pelcom-refresh' : '' ?><?= $pelcomPngShell ? ' pelcom-png-shell' : '' ?><?= $equipmentTheme ? ' pelcom-equipment-theme' : '' ?><?= $infoTheme ? ' pelcom-info-theme' : '' ?>"><div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 <script>(function(){var p=document.getElementById('panel');if(!p)return;function sync(){document.documentElement.style.setProperty('--pelcom-admin-offset',Math.max(0,(document.getElementById('bx-panel')||p).getBoundingClientRect().bottom)+'px')}sync();window.addEventListener('scroll',sync,{passive:true});if(window.ResizeObserver)new ResizeObserver(sync).observe(p)})();</script>
